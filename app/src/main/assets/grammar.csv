@@ -1,0 +1,4 @@
+id,lesson_number,title,content,example_one,example_two,supporting_content,jlpt_level,category,related_grammar_references,related_kanji_references,related_vocab_references,difficulty_order,unlocks_content
+g001,1,は — Topic Marker,"The particle は marks the topic of a sentence. It tells the listener what the sentence is about.",私は学生です。(I am a student.),猫は動物です。(A cat is an animal.),,N5,particles,,,,1,g002
+g002,2,が — Subject Marker,"The particle が marks the grammatical subject. Used for new information or emphasis.",誰が来ましたか。(Who came?),猫がいます。(There is a cat.),,N5,particles,g001,,,2,g003
+g003,3,を — Object Marker,"The particle を marks the direct object of a verb.",水を飲みます。(I drink water.),本を読みます。(I read a book.),,N5,particles,g001|g002,k002,n001,3,g004

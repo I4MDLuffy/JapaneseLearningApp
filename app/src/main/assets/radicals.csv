@@ -1,0 +1,4 @@
+id,character,meaning,stroke_count,position,frequency,example_kanji,kanji_references,variant_forms
+r001,人,person,2,left,very common,休|体|他,k003,亻
+r002,水,water,4,any,very common,泳|池|海,k001,氵
+r003,山,mountain,3,any,common,岩|岡|岳,k003,

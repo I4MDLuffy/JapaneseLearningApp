@@ -1,0 +1,4 @@
+id,kanji,kanji_radical,dictionary_form,romaji,stem,transitivity,hiragana,meaning,verb_type,theme,present_affirmative,present_negative,past_affirmative,past_negative,te_form_affirmative,present_short_negative,te_form_negative_naide,te_form_negative_nakute,past_short_affirmative,past_short_negative,tai,volitional,ba_form_affirmative,ba_form_negative,potential,causative,passive,causative_passive,grammar_references,kanji_references,jlpt_level
+v001,食べる,食,たべる,taberu,たべ,transitive,たべる,to eat,ru,food,たべます,たべません,たべました,たべませんでした,たべて,たべない,たべないで,たべなくて,たべた,たべなかった,たべたい,たべよう,たべれば,たべなければ,たべられる,たべさせる,たべられる,たべさせられる,g001,k001,N5
+v002,飲む,飲,のむ,nomu,のみ,transitive,のむ,to drink,u,food / drink,のみます,のみません,のみました,のみませんでした,のんで,のまない,のまないで,のまなくて,のんだ,のまなかった,のみたい,のもう,のめば,のまなければ,のめる,のませる,のまれる,のまされる,g001,,N5
+v003,行く,,いく,iku,いき,intransitive,いく,to go,u,movement,いきます,いきません,いきました,いきませんでした,いって,いかない,いかないで,いかなくて,いった,いかなかった,いきたい,いこう,いけば,いかなければ,いける,いかせる,いかれる,いかされる,g002,,N5

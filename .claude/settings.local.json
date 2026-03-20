@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:\\\\Users\\\\ARSRa\\\\AndroidStudioProjects\\\\PersonalProject\" && ./gradlew assembleDebug 2>&1 | tail -60)",
+      "Bash(cd \"C:\\\\Users\\\\ARSRa\\\\AndroidStudioProjects\\\\PersonalProject\" && JAVA_HOME=\"/c/Program Files/Android/Android Studio/jbr\" ./gradlew assembleDebug 2>&1 | tail -80)",
+      "Bash(JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\" cd \"C:\\\\Users\\\\ARSRa\\\\AndroidStudioProjects\\\\PersonalProject\" && JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\" ./gradlew assembleDebug 2>&1 | grep -E \"error:|Error|FAILED\" | head -60)"
+    ]
+  }
+}

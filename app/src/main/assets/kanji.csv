@@ -1,0 +1,6 @@
+id,kanji,meaning,hiragana,on_yomi,kun_yomi,vocab_references,jlpt_level,theme,unicode,stroke_order_image,radical_references,stroke_count,grade_level,component_structure
+k001,食,eat / food,しょく,ショク,た.べる|く.う,voc001,N5,daily life,98DF,,r002,9,2,r002+r001
+k002,水,water,すい,スイ,みず,voc002,N5,nature,6C34,,r002,4,1,r002
+k003,山,mountain,さん,サン,やま,voc004,N5,nature,5C71,,r003,3,1,r003
+k004,日,sun / day,にち,ニチ|ジツ,ひ|か,voc005,N5,time,65E5,,,4,1,
+k005,人,person,じん,ジン|ニン,ひと,,N5,people,4EBA,,r001,2,1,r001

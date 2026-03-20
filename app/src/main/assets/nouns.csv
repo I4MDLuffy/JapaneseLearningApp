@@ -1,0 +1,5 @@
+id,kanji,kanji_radicals,romaji,pitch_accent,hiragana,example_references,alternate_reading,meaning,theme,radical_references,jlpt_level,unlocked_at_grammar_id
+n001,水,,mizu,LH,みず,p001,,water,nature,,N5,g001
+n002,山,,yama,LH,やま,,,mountain,nature,,N5,g001
+n003,人,,hito,LH,ひと,,,person / people,people,,N5,g001
+n004,日本,,nihon,LHHL,にほん,,,Japan,geography,,N5,g002

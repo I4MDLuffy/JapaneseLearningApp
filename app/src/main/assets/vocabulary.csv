@@ -1,0 +1,6 @@
+id,japanese,hiragana,kanji_references,romaji,english,category,jlpt_level,example_japanese,example_english,notes,part_of_speech,part_of_speech_references,frequency,pitch_accent
+voc001,食べる,たべる,k001,taberu,to eat,food,N5,毎日ご飯を食べます。,I eat rice every day.,,verb,,very high,LHL
+voc002,水,みず,k002,mizu,water,nature,N5,水をください。,Please give me water.,,noun,,very high,LH
+voc003,大きい,おおきい,,ookii,big / large,descriptions,N5,あの山は大きいです。,That mountain is big.,,adjective,,high,LHHL
+voc004,山,やま,k003,yama,mountain,nature,N5,あの山は高いです。,That mountain is tall.,,noun,,very high,LH
+voc005,日本,にほん,k004,nihon,Japan,geography,N5,日本に住んでいます。,I live in Japan.,,noun,,very high,LHL

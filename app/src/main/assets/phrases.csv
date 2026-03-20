@@ -1,0 +1,4 @@
+id,phrase,reading,meaning,vocabulary_references,kanji_references,jlpt_level,category,romaji,grammar_references
+p001,水をください。,みずをください。,Please give me water.,voc002,k002,N5,requests,Mizu wo kudasai.,g005
+p002,おはようございます。,おはようございます。,Good morning.,,,N5,greetings,Ohayou gozaimasu.,
+p003,ありがとうございます。,ありがとうございます。,Thank you very much.,,,N5,greetings,Arigatou gozaimasu.,

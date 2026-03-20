@@ -1,0 +1,4 @@
+id,kanji,hiragana,romaji,example_phrase_references,meaning,adjective_type,theme,past_affirmative,past_negative,past_affirmative_short,past_negative_short,present_affirmative,present_negative,present_negative_short,te_form_affirmative,te_form_negative,adj_naru,grammar_references,kanji_references,jlpt_level,unlocked_at_grammar_id
+a001,大きい,おおきい,ookii,,big,i,size,大きかったです,大きくなかったです,大きかった,大きくなかった,大きいです,大きくないです,大きくない,大きくて,大きくなくて,,g003,,N5,g003
+a002,小さい,ちいさい,chiisai,,small,i,size,小さかったです,小さくなかったです,小さかった,小さくなかった,小さいです,小さくないです,小さくない,小さくて,小さくなくて,,g003,,N5,g003
+a003,綺麗,きれい,kirei,,beautiful / clean,na,appearance,綺麗でした,綺麗ではありませんでした,綺麗だった,綺麗ではなかった,綺麗です,綺麗ではありません,綺麗ではない,綺麗で,綺麗ではなくて,綺麗になる,g004,,N5,g004
