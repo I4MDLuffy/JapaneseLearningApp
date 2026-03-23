@@ -70,10 +70,22 @@ import kotlinx.serialization.Serializable
 @Serializable data object PhraseListRoute
 @Serializable data class PhraseDetailRoute(val phraseId: String)
 
+// ── Radicals ──────────────────────────────────────────────────────────────────
+
+@Serializable data object RadicalListRoute
+@Serializable data class RadicalDetailRoute(val radicalId: String)
+@Serializable data class RadicalKanjiListRoute(val radicalId: String)
+@Serializable data class RadicalGameRoute(val groupId: String) // "all" or stroke-count group e.g. "2"
+
+// ── Study game term selection ──────────────────────────────────────────────────
+
+@Serializable data class GameSetupRoute(val gameType: String) // lesson + term type selection
+
 // ── Saved & Games ─────────────────────────────────────────────────────────────
 
 @Serializable data object SavedRoute
 @Serializable data object StudyGamesRoute
+@Serializable data class StudyGameRoute(val gameType: String, val setKey: String)
 
 // ── Settings ──────────────────────────────────────────────────────────────────
 

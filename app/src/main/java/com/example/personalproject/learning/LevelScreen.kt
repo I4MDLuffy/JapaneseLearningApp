@@ -59,7 +59,6 @@ fun LevelScreen(
                 LevelViewModel(
                     level = level,
                     grammarRepository = container.grammarRepository,
-                    vocabularyRepository = container.vocabularyRepository,
                     progressRepository = container.chapterProgressRepository,
                 )
             }
@@ -201,10 +200,12 @@ private fun chapterIcon(type: ChapterType): ImageVector = when (type) {
     ChapterType.GRAMMAR -> Icons.AutoMirrored.Filled.MenuBook
     ChapterType.VOCAB -> Icons.Default.Book
     ChapterType.STUDY_VOCAB -> Icons.Default.School
+    ChapterType.TERM_STUDY -> Icons.Default.School
 }
 
 private fun chapterTypeLabel(type: ChapterType): String = when (type) {
     ChapterType.GRAMMAR -> "Read grammar explanations"
     ChapterType.VOCAB -> "Learn new vocabulary"
     ChapterType.STUDY_VOCAB -> "Study vocabulary with flashcards"
+    ChapterType.TERM_STUDY -> "Study terms from this lesson"
 }

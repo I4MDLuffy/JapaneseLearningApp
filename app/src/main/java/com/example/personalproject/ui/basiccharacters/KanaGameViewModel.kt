@@ -7,7 +7,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val MATCH_BATCH_SIZE = 4
+private const val MATCH_BATCH_SIZE = 12
 private const val SPEED_TICKS = 30       // 30 × 100 ms = 3 s
 private const val SPEED_TICK_MS = 100L
 private const val MULTI_CHOICE_OPTIONS = 4

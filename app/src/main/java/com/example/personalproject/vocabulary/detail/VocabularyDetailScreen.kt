@@ -16,10 +16,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SuggestionChip
@@ -27,6 +32,8 @@ import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -47,7 +54,11 @@ import com.example.personalproject.vocabulary.detail.mvi.VocabularyDetailViewMod
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun VocabularyDetailScreen(wordId: String, onBack: () -> Unit) {
+fun VocabularyDetailScreen(
+    wordId: String,
+    onBack: () -> Unit,
+    onKanjiClick: ((String) -> Unit)? = null,
+) {
     val container = LocalAppContainer.current
     val vm: VocabularyDetailViewModel = viewModel(
         key = wordId,
@@ -58,9 +69,35 @@ fun VocabularyDetailScreen(wordId: String, onBack: () -> Unit) {
         }
     )
     val state by vm.uiState.collectAsStateWithLifecycle()
+    val isSaved by container.savedRepository.isItemSavedFlow("vocabulary", wordId)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val scope = rememberCoroutineScope()
 
     Scaffold(
-        topBar = { KotobaTopBar(title = state.word?.english ?: "Word", onBack = onBack) },
+        topBar = {
+            KotobaTopBar(
+                title = state.word?.english ?: "Word",
+                onBack = onBack,
+                actions = {
+                    IconButton(onClick = {
+                        scope.launch {
+                            container.savedRepository.toggle(
+                                type = "vocabulary",
+                                itemId = wordId,
+                                title = state.word?.japanese ?: wordId,
+                                reading = state.word?.hiragana ?: "",
+                                meaning = state.word?.english ?: "",
+                            )
+                        }
+                    }) {
+                        Icon(
+                            imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                            contentDescription = if (isSaved) "Unsave" else "Save",
+                        )
+                    }
+                },
+            )
+        },
     ) { padding ->
         when {
             state.isLoading -> Box(
@@ -68,7 +105,11 @@ fun VocabularyDetailScreen(wordId: String, onBack: () -> Unit) {
                 contentAlignment = Alignment.Center,
             ) { CircularProgressIndicator() }
 
-            state.word != null -> WordDetail(word = state.word!!, modifier = Modifier.padding(padding))
+            state.word != null -> WordDetail(
+                word = state.word!!,
+                onKanjiClick = onKanjiClick,
+                modifier = Modifier.padding(padding),
+            )
 
             else -> Box(
                 Modifier.fillMaxSize(),
@@ -80,7 +121,11 @@ fun VocabularyDetailScreen(wordId: String, onBack: () -> Unit) {
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun WordDetail(word: VocabularyWord, modifier: Modifier = Modifier) {
+private fun WordDetail(
+    word: VocabularyWord,
+    onKanjiClick: ((String) -> Unit)?,
+    modifier: Modifier = Modifier,
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -149,7 +194,6 @@ private fun WordDetail(word: VocabularyWord, modifier: Modifier = Modifier) {
             modifier = Modifier.padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            // ── Example sentence ─────────────────────────────────────────────
             if (word.exampleJapanese.isNotBlank()) {
                 SectionCard(label = "Example") {
                     Text(
@@ -169,17 +213,12 @@ private fun WordDetail(word: VocabularyWord, modifier: Modifier = Modifier) {
                 }
             }
 
-            // ── Notes ────────────────────────────────────────────────────────
             if (word.notes.isNotBlank()) {
                 SectionCard(label = "Notes") {
-                    Text(
-                        text = word.notes,
-                        style = MaterialTheme.typography.bodyMedium,
-                    )
+                    Text(text = word.notes, style = MaterialTheme.typography.bodyMedium)
                 }
             }
 
-            // ── Category & frequency ─────────────────────────────────────────
             if (word.category.isNotBlank() || word.frequency.isNotBlank()) {
                 SectionCard(label = "Details") {
                     if (word.category.isNotBlank()) {
@@ -217,7 +256,34 @@ private fun WordDetail(word: VocabularyWord, modifier: Modifier = Modifier) {
                 }
             }
 
+            // ── Related Kanji ─────────────────────────────────────────────────
+            if (onKanjiClick != null && word.kanjiReferences.isNotEmpty()) {
+                ReferencesSection(
+                    label = "Related Kanji",
+                    ids = word.kanjiReferences,
+                    onClick = onKanjiClick,
+                )
+            }
+
             Spacer(modifier = Modifier.height(24.dp))
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun ReferencesSection(label: String, ids: List<String>, onClick: (String) -> Unit) {
+    SectionCard(label = label) {
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            ids.forEach { id ->
+                SuggestionChip(
+                    onClick = { onClick(id) },
+                    label = { Text(id) },
+                    colors = SuggestionChipDefaults.suggestionChipColors(
+                        containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                    ),
+                )
+            }
         }
     }
 }

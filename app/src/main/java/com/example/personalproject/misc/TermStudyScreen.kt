@@ -33,6 +33,7 @@ fun TermStudyScreen(
     onAdjectives: () -> Unit,
     onNouns: () -> Unit,
     onKanji: () -> Unit,
+    onRadicals: () -> Unit,
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         KotobaTopBar(title = "Term Study", onBack = onBack)
@@ -58,6 +59,7 @@ fun TermStudyScreen(
                 Triple("形容詞", "Adjectives", onAdjectives),
                 Triple("名詞", "Nouns", onNouns),
                 Triple("漢字", "Kanji", onKanji),
+                Triple("部首", "Radicals", onRadicals),
             )
 
             categories.chunked(2).forEach { row ->

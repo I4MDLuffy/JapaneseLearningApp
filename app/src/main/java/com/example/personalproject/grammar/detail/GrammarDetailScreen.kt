@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,14 +15,23 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SuggestionChip
+import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
@@ -38,8 +49,14 @@ import com.example.personalproject.grammar.detail.mvi.GrammarDetailViewModel
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun GrammarDetailScreen(grammarId: String, onBack: () -> Unit) {
+fun GrammarDetailScreen(
+    grammarId: String,
+    onBack: () -> Unit,
+    onKanjiClick: ((String) -> Unit)? = null,
+    onGrammarClick: ((String) -> Unit)? = null,
+) {
     val container = LocalAppContainer.current
     val vm: GrammarDetailViewModel = viewModel(
         key = grammarId,
@@ -48,15 +65,47 @@ fun GrammarDetailScreen(grammarId: String, onBack: () -> Unit) {
         }
     )
     val state by vm.uiState.collectAsStateWithLifecycle()
+    val isSaved by container.savedRepository.isItemSavedFlow("grammar", grammarId)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val scope = rememberCoroutineScope()
 
     Scaffold(
-        topBar = { KotobaTopBar(title = state.entry?.title ?: "Grammar", onBack = onBack) },
+        topBar = {
+            KotobaTopBar(
+                title = state.entry?.title ?: "Grammar",
+                onBack = onBack,
+                actions = {
+                    IconButton(onClick = {
+                        val entry = state.entry ?: return@IconButton
+                        scope.launch {
+                            container.savedRepository.toggle(
+                                type = "grammar",
+                                itemId = grammarId,
+                                title = entry.title,
+                                reading = "Lesson ${entry.lessonNumber}",
+                                meaning = entry.content.take(80),
+                            )
+                        }
+                    }) {
+                        Icon(
+                            imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                            contentDescription = if (isSaved) "Unsave" else "Save",
+                        )
+                    }
+                },
+            )
+        },
     ) { padding ->
         when {
             state.isLoading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
-            state.entry != null -> GrammarDetail(entry = state.entry!!, modifier = Modifier.padding(padding))
+            state.entry != null -> GrammarDetail(
+                entry = state.entry!!,
+                onKanjiClick = onKanjiClick,
+                onGrammarClick = onGrammarClick,
+                modifier = Modifier.padding(padding),
+            )
             else -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text("Grammar lesson not found.")
             }
@@ -64,8 +113,14 @@ fun GrammarDetailScreen(grammarId: String, onBack: () -> Unit) {
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun GrammarDetail(entry: GrammarEntry, modifier: Modifier = Modifier) {
+private fun GrammarDetail(
+    entry: GrammarEntry,
+    onKanjiClick: ((String) -> Unit)?,
+    onGrammarClick: ((String) -> Unit)?,
+    modifier: Modifier = Modifier,
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -142,7 +197,43 @@ private fun GrammarDetail(entry: GrammarEntry, modifier: Modifier = Modifier) {
                 }
             }
 
+            // ── Related Kanji ─────────────────────────────────────────────────
+            if (onKanjiClick != null && entry.relatedKanjiReferences.isNotEmpty()) {
+                ReferencesSection(
+                    label = "Related Kanji",
+                    ids = entry.relatedKanjiReferences,
+                    onClick = onKanjiClick,
+                )
+            }
+
+            // ── Related Grammar ───────────────────────────────────────────────
+            if (onGrammarClick != null && entry.relatedGrammarReferences.isNotEmpty()) {
+                ReferencesSection(
+                    label = "Related Grammar",
+                    ids = entry.relatedGrammarReferences,
+                    onClick = onGrammarClick,
+                )
+            }
+
             Spacer(modifier = Modifier.height(24.dp))
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun ReferencesSection(label: String, ids: List<String>, onClick: (String) -> Unit) {
+    SectionCard(label = label) {
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            ids.forEach { id ->
+                SuggestionChip(
+                    onClick = { onClick(id) },
+                    label = { Text(id) },
+                    colors = SuggestionChipDefaults.suggestionChipColors(
+                        containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                    ),
+                )
+            }
         }
     }
 }

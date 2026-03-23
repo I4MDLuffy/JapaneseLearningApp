@@ -7,12 +7,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,7 +42,8 @@ fun HomeScreen(
 ) {
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
             .padding(horizontal = 12.dp),
     ) {
         Spacer(modifier = Modifier.height(12.dp))
@@ -71,20 +73,18 @@ fun HomeScreen(
         // ── Two-column grid ────────────────────────────────────────────────
         Row(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(bottom = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             // Left: Structured Learning
             Column(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxHeight(),
+                modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.spacedBy(5.dp),
             ) {
                 SectionLabel("Structured")
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "文",
                     title = "Basic\nCharacters",
                     subtitle = "Start here — zero knowledge",
@@ -94,28 +94,28 @@ fun HomeScreen(
                     subtitleColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "🌱",
                     title = "Beginner",
                     subtitle = "N5 · foundations",
                     onClick = onBeginner,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "🌿",
                     title = "Intermediate",
                     subtitle = "N4–N3 · building up",
                     onClick = onIntermediate,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "🎋",
                     title = "Advanced",
                     subtitle = "N2–N1 · mastery",
                     onClick = onAdvanced,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "⛩",
                     title = "Master",
                     subtitle = "Native level",
@@ -125,42 +125,40 @@ fun HomeScreen(
 
             // Right: Explore
             Column(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxHeight(),
+                modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.spacedBy(5.dp),
             ) {
                 SectionLabel("Explore")
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "📝",
                     title = "Grammar",
                     subtitle = "Rules & patterns",
                     onClick = onPurelyGrammar,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "💬",
                     title = "Conversational",
                     subtitle = "Quick phrases",
                     onClick = onQuickConversational,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "🔢",
                     title = "Counters",
                     subtitle = "Japanese counting",
                     onClick = onCounters,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "📖",
                     title = "Term Study",
                     subtitle = "Browse by category",
                     onClick = onTermStudy,
                 )
                 HomeNavCard(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.height(72.dp),
                     icon = "🗣",
                     title = "Dialogues",
                     subtitle = "Read conversations",
@@ -168,6 +166,7 @@ fun HomeScreen(
                 )
             }
         }
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 

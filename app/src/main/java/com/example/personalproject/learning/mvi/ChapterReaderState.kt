@@ -8,6 +8,16 @@ sealed interface ChapterItem {
     data class GrammarItem(val entry: GrammarEntry) : ChapterItem
     data class VocabItem(val word: VocabularyWord) : ChapterItem
     data class StudyVocabItem(val word: VocabularyWord) : ChapterItem
+
+    /** A study card for any term type (vocab, verb, adjective, noun, phrase, kanji). */
+    data class TermStudyItem(
+        val id: String,
+        val type: String,          // "vocab" | "verb" | "adjective" | "noun" | "phrase" | "kanji"
+        val displayScript: String, // Japanese/kanji shown on the front
+        val reading: String,       // hiragana reading
+        val romaji: String,
+        val meaning: String,
+    ) : ChapterItem
 }
 
 data class ChapterReaderState(

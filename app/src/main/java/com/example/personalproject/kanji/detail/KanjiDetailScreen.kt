@@ -22,11 +22,18 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -54,9 +61,36 @@ fun KanjiDetailScreen(kanjiId: String, onBack: () -> Unit) {
         }
     )
     val state by vm.uiState.collectAsStateWithLifecycle()
+    val isSaved by container.savedRepository.isItemSavedFlow("kanji", kanjiId)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val scope = rememberCoroutineScope()
 
     Scaffold(
-        topBar = { KotobaTopBar(title = state.entry?.meaning ?: "Kanji", onBack = onBack) },
+        topBar = {
+            KotobaTopBar(
+                title = state.entry?.meaning ?: "Kanji",
+                onBack = onBack,
+                actions = {
+                    IconButton(onClick = {
+                        val entry = state.entry ?: return@IconButton
+                        scope.launch {
+                            container.savedRepository.toggle(
+                                type = "kanji",
+                                itemId = kanjiId,
+                                title = entry.kanji,
+                                reading = entry.hiragana,
+                                meaning = entry.meaning,
+                            )
+                        }
+                    }) {
+                        Icon(
+                            imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                            contentDescription = if (isSaved) "Unsave" else "Save",
+                        )
+                    }
+                },
+            )
+        },
     ) { padding ->
         when {
             state.isLoading -> Box(

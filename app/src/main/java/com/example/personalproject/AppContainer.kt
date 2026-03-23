@@ -2,8 +2,10 @@ package com.example.personalproject
 
 import android.content.Context
 import androidx.compose.runtime.compositionLocalOf
+import com.example.personalproject.data.db.KotobaDatabase
 import com.example.personalproject.data.repository.AdjectiveRepository
 import com.example.personalproject.data.repository.ChapterProgressRepository
+import com.example.personalproject.data.repository.SavedRepository
 import com.example.personalproject.data.repository.DialogueRepository
 import com.example.personalproject.data.repository.GrammarRepository
 import com.example.personalproject.data.repository.KanaRepository
@@ -34,10 +36,16 @@ class AppContainer(context: Context) {
     val dialogueRepository: DialogueRepository = DialogueRepository(context.applicationContext)
     val miscRepository: MiscRepository = MiscRepository(context.applicationContext)
 
-    // Chapter progress (persisted via SharedPreferences)
+    // Chapter progress (SharedPreferences)
     val chapterProgressRepository: ChapterProgressRepository = ChapterProgressRepository(context.applicationContext)
 
-    // Settings (persisted via SharedPreferences)
+    // Room database
+    private val kotobaDatabase: KotobaDatabase = KotobaDatabase.getInstance(context.applicationContext)
+
+    // Saved items (Room-backed)
+    val savedRepository: SavedRepository = SavedRepository.create(kotobaDatabase)
+
+    // Settings (SharedPreferences)
     val settingsRepository: SettingsRepository = SettingsRepository(context.applicationContext)
 }
 

@@ -19,9 +19,18 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.SuggestionChip
+import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -40,7 +49,12 @@ import com.example.personalproject.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun PhraseDetailScreen(phraseId: String, onBack: () -> Unit) {
+fun PhraseDetailScreen(
+    phraseId: String,
+    onBack: () -> Unit,
+    onKanjiClick: ((String) -> Unit)? = null,
+    onGrammarClick: ((String) -> Unit)? = null,
+) {
     val container = LocalAppContainer.current
     val vm: PhraseDetailViewModel = viewModel(
         key = phraseId,
@@ -49,15 +63,47 @@ fun PhraseDetailScreen(phraseId: String, onBack: () -> Unit) {
         }
     )
     val state by vm.uiState.collectAsStateWithLifecycle()
+    val isSaved by container.savedRepository.isItemSavedFlow("phrase", phraseId)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val scope = rememberCoroutineScope()
 
     Scaffold(
-        topBar = { KotobaTopBar(title = state.entry?.meaning ?: "Phrase", onBack = onBack) },
+        topBar = {
+            KotobaTopBar(
+                title = state.entry?.meaning ?: "Phrase",
+                onBack = onBack,
+                actions = {
+                    IconButton(onClick = {
+                        val entry = state.entry ?: return@IconButton
+                        scope.launch {
+                            container.savedRepository.toggle(
+                                type = "phrase",
+                                itemId = phraseId,
+                                title = entry.phrase,
+                                reading = entry.reading,
+                                meaning = entry.meaning,
+                            )
+                        }
+                    }) {
+                        Icon(
+                            imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                            contentDescription = if (isSaved) "Unsave" else "Save",
+                        )
+                    }
+                },
+            )
+        },
     ) { padding ->
         when {
             state.isLoading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
-            state.entry != null -> PhraseDetail(entry = state.entry!!, modifier = Modifier.padding(padding))
+            state.entry != null -> PhraseDetail(
+                entry = state.entry!!,
+                onKanjiClick = onKanjiClick,
+                onGrammarClick = onGrammarClick,
+                modifier = Modifier.padding(padding),
+            )
             else -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text("Phrase not found.")
             }
@@ -66,7 +112,12 @@ fun PhraseDetailScreen(phraseId: String, onBack: () -> Unit) {
 }
 
 @Composable
-private fun PhraseDetail(entry: PhraseEntry, modifier: Modifier = Modifier) {
+private fun PhraseDetail(
+    entry: PhraseEntry,
+    onKanjiClick: ((String) -> Unit)?,
+    onGrammarClick: ((String) -> Unit)?,
+    modifier: Modifier = Modifier,
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -131,7 +182,31 @@ private fun PhraseDetail(entry: PhraseEntry, modifier: Modifier = Modifier) {
                 }
             }
 
+            if (onKanjiClick != null && entry.kanjiReferences.isNotEmpty()) {
+                ReferencesSection("Related Kanji", entry.kanjiReferences, onKanjiClick)
+            }
+            if (onGrammarClick != null && entry.grammarReferences.isNotEmpty()) {
+                ReferencesSection("Related Grammar", entry.grammarReferences, onGrammarClick)
+            }
+
             Spacer(modifier = Modifier.height(24.dp))
+        }
+    }
+}
+
+@Composable
+private fun ReferencesSection(label: String, ids: List<String>, onClick: (String) -> Unit) {
+    SectionCard(label = label) {
+        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            ids.forEach { id ->
+                SuggestionChip(
+                    onClick = { onClick(id) },
+                    label = { Text(id) },
+                    colors = SuggestionChipDefaults.suggestionChipColors(
+                        containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                    ),
+                )
+            }
         }
     }
 }

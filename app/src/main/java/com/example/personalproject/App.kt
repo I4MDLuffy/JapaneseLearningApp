@@ -43,6 +43,7 @@ import com.example.personalproject.navigation.AdvancedRoute
 import com.example.personalproject.navigation.BasicCharactersRoute
 import com.example.personalproject.navigation.BeginnerRoute
 import com.example.personalproject.navigation.ChapterReaderRoute
+import com.example.personalproject.navigation.StudyGameRoute
 import com.example.personalproject.navigation.CountersRoute
 import com.example.personalproject.navigation.DialogueReadingRoute
 import com.example.personalproject.navigation.GettingStartedRoute
@@ -67,6 +68,7 @@ import com.example.personalproject.navigation.PhraseDetailRoute
 import com.example.personalproject.navigation.PhraseListRoute
 import com.example.personalproject.navigation.PurelyGrammarRoute
 import com.example.personalproject.navigation.QuickConversationalRoute
+import com.example.personalproject.navigation.GameSetupRoute
 import com.example.personalproject.navigation.SavedRoute
 import com.example.personalproject.navigation.SettingsRoute
 import com.example.personalproject.navigation.StudyGamesRoute
@@ -90,12 +92,22 @@ import com.example.personalproject.ui.basiccharacters.KanaGroupGameScreen
 import com.example.personalproject.ui.basiccharacters.KanaTableScreen
 import com.example.personalproject.ui.components.BottomNavBar
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.games.GameSetupScreen
+import com.example.personalproject.ui.games.StudyGameScreen
 import com.example.personalproject.ui.games.StudyGamesScreen
 import com.example.personalproject.ui.home.HomeScreen
 import com.example.personalproject.ui.saved.SavedScreen
 import com.example.personalproject.ui.theme.PersonalProjectTheme
 import com.example.personalproject.data.kana.hiraganaGroups
 import com.example.personalproject.data.kana.katakanaGroups
+import com.example.personalproject.radicals.RadicalDetailScreen
+import com.example.personalproject.radicals.RadicalGameScreen
+import com.example.personalproject.radicals.RadicalKanjiListScreen
+import com.example.personalproject.radicals.RadicalListScreen
+import com.example.personalproject.navigation.RadicalDetailRoute
+import com.example.personalproject.navigation.RadicalGameRoute
+import com.example.personalproject.navigation.RadicalKanjiListRoute
+import com.example.personalproject.navigation.RadicalListRoute
 import com.example.personalproject.vocabulary.detail.VocabularyDetailScreen
 import com.example.personalproject.vocabulary.list.VocabularyListScreen
 
@@ -276,6 +288,44 @@ fun App(appContainer: AppContainer) {
                             onAdjectives = { navController.navigate(AdjectiveListRoute) },
                             onNouns = { navController.navigate(NounListRoute) },
                             onKanji = { navController.navigate(KanjiListRoute) },
+                            onRadicals = { navController.navigate(RadicalListRoute) },
+                        )
+                    }
+
+                    // ── Radicals ──────────────────────────────────────────────
+                    composable<RadicalListRoute> {
+                        RadicalListScreen(
+                            onBack = { navController.popBackStack() },
+                            onRadicalClick = { id -> navController.navigate(RadicalDetailRoute(id)) },
+                            onStudyGroup = { groupId -> navController.navigate(RadicalGameRoute(groupId)) },
+                            onStudyAll = { navController.navigate(RadicalGameRoute("all")) },
+                        )
+                    }
+
+                    composable<RadicalDetailRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<RadicalDetailRoute>()
+                        RadicalDetailScreen(
+                            radicalId = route.radicalId,
+                            onBack = { navController.popBackStack() },
+                            onViewKanji = { radicalId -> navController.navigate(RadicalKanjiListRoute(radicalId)) },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                        )
+                    }
+
+                    composable<RadicalKanjiListRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<RadicalKanjiListRoute>()
+                        RadicalKanjiListScreen(
+                            radicalId = route.radicalId,
+                            onBack = { navController.popBackStack() },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                        )
+                    }
+
+                    composable<RadicalGameRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<RadicalGameRoute>()
+                        RadicalGameScreen(
+                            groupId = route.groupId,
+                            onBack = { navController.popBackStack() },
                         )
                     }
 
@@ -310,6 +360,8 @@ fun App(appContainer: AppContainer) {
                         VerbDetailScreen(
                             verbId = route.verbId,
                             onBack = { navController.popBackStack() },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
                         )
                     }
 
@@ -325,6 +377,8 @@ fun App(appContainer: AppContainer) {
                         AdjectiveDetailScreen(
                             adjId = route.adjId,
                             onBack = { navController.popBackStack() },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
                         )
                     }
 
@@ -355,6 +409,8 @@ fun App(appContainer: AppContainer) {
                         GrammarDetailScreen(
                             grammarId = route.grammarId,
                             onBack = { navController.popBackStack() },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
                         )
                     }
 
@@ -370,16 +426,57 @@ fun App(appContainer: AppContainer) {
                         PhraseDetailScreen(
                             phraseId = route.phraseId,
                             onBack = { navController.popBackStack() },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
                         )
                     }
 
                     // ── Saved & Games ──────────────────────────────────────────
                     composable<SavedRoute> {
-                        SavedScreen()
+                        SavedScreen(
+                            onStudyVocab = { setKey ->
+                                navController.navigate(StudyGamesRoute)
+                            },
+                            onItemClick = { type, id ->
+                                when (type) {
+                                    "kanji" -> navController.navigate(KanjiDetailRoute(id))
+                                    "grammar" -> navController.navigate(GrammarDetailRoute(id))
+                                    "verb" -> navController.navigate(VerbDetailRoute(id))
+                                    "adjective" -> navController.navigate(AdjectiveDetailRoute(id))
+                                    "noun" -> navController.navigate(NounDetailRoute(id))
+                                    "phrase" -> navController.navigate(PhraseDetailRoute(id))
+                                    else -> navController.navigate(VocabularyDetailRoute(id))
+                                }
+                            },
+                        )
                     }
 
                     composable<StudyGamesRoute> {
-                        StudyGamesScreen()
+                        StudyGamesScreen(
+                            onGameStart = { gameType, _ ->
+                                navController.navigate(GameSetupRoute(gameType))
+                            }
+                        )
+                    }
+
+                    composable<GameSetupRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<GameSetupRoute>()
+                        GameSetupScreen(
+                            gameType = route.gameType,
+                            onBack = { navController.popBackStack() },
+                            onStart = { setKey ->
+                                navController.navigate(StudyGameRoute(route.gameType, setKey))
+                            },
+                        )
+                    }
+
+                    composable<StudyGameRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<StudyGameRoute>()
+                        StudyGameScreen(
+                            gameType = route.gameType,
+                            setKey = route.setKey,
+                            onBack = { navController.popBackStack() },
+                        )
                     }
 
                     // ── Settings ──────────────────────────────────────────────
@@ -412,6 +509,7 @@ fun App(appContainer: AppContainer) {
                             onWordClick = { wordId ->
                                 navController.navigate(VocabularyDetailRoute(wordId))
                             },
+                            onBack = { navController.popBackStack() },
                         )
                     }
 
@@ -420,6 +518,7 @@ fun App(appContainer: AppContainer) {
                         VocabularyDetailScreen(
                             wordId = route.wordId,
                             onBack = { navController.popBackStack() },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
                         )
                     }
 

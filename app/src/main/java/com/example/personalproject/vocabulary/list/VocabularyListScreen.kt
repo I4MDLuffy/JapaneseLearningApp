@@ -47,7 +47,7 @@ import com.example.personalproject.vocabulary.list.mvi.VocabularyListViewModel
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun VocabularyListScreen(onWordClick: (String) -> Unit) {
+fun VocabularyListScreen(onWordClick: (String) -> Unit, onBack: (() -> Unit)? = null) {
     val container = LocalAppContainer.current
     val vm: VocabularyListViewModel = viewModel(
         factory = viewModelFactory {
@@ -59,7 +59,7 @@ fun VocabularyListScreen(onWordClick: (String) -> Unit) {
     val state by vm.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
-        topBar = { KotobaTopBar(title = "Vocabulary") },
+        topBar = { KotobaTopBar(title = "Vocabulary", onBack = onBack) },
     ) { padding ->
         Column(
             modifier = Modifier

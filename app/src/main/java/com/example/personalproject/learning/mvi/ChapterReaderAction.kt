@@ -5,5 +5,6 @@ import com.example.personalproject.mvi.BaseAction
 sealed interface ChapterReaderAction : BaseAction {
     object NextItem : ChapterReaderAction
     object RevealStudyVocab : ChapterReaderAction
+    object ReviewAgain : ChapterReaderAction
     object CompleteChapter : ChapterReaderAction
 }
