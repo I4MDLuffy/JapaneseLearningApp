@@ -4,9 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -22,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,133 +41,142 @@ fun HomeScreen(
     onTermStudy: () -> Unit,
     onDialogueReading: () -> Unit,
 ) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 12.dp),
-    ) {
-        Spacer(modifier = Modifier.height(12.dp))
+    BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+        val gridHeight = maxHeight - 96.dp  // subtract header + spacers height
 
-        // ── Header ─────────────────────────────────────────────────────────
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(
-                text = "言葉",
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary,
-            )
-            Text(
-                text = "  Kotoba",
-                style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onBackground,
-            )
-        }
-        Text(
-            text = "What would you like to study?",
-            style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.55f),
-        )
-
-        Spacer(modifier = Modifier.height(10.dp))
-
-        // ── Two-column grid ────────────────────────────────────────────────
-        Row(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 12.dp),
         ) {
-            // Left: Structured Learning
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-            ) {
-                SectionLabel("Structured")
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "文",
-                    title = "Basic\nCharacters",
-                    subtitle = "Start here — zero knowledge",
-                    onClick = onBasicCharacters,
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                    subtitleColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "🌱",
-                    title = "Beginner",
-                    subtitle = "N5 · foundations",
-                    onClick = onBeginner,
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "🌿",
-                    title = "Intermediate",
-                    subtitle = "N4–N3 · building up",
-                    onClick = onIntermediate,
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "🎋",
-                    title = "Advanced",
-                    subtitle = "N2–N1 · mastery",
-                    onClick = onAdvanced,
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "⛩",
-                    title = "Master",
-                    subtitle = "Native level",
-                    onClick = onMaster,
-                )
-            }
+            Spacer(modifier = Modifier.height(12.dp))
 
-            // Right: Explore
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-            ) {
-                SectionLabel("Explore")
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "📝",
-                    title = "Grammar",
-                    subtitle = "Rules & patterns",
-                    onClick = onPurelyGrammar,
+            // ── Header ─────────────────────────────────────────────────────────
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    text = "言葉",
+                    fontSize = 26.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary,
                 )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "💬",
-                    title = "Conversational",
-                    subtitle = "Quick phrases",
-                    onClick = onQuickConversational,
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "🔢",
-                    title = "Counters",
-                    subtitle = "Japanese counting",
-                    onClick = onCounters,
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "📖",
-                    title = "Term Study",
-                    subtitle = "Browse by category",
-                    onClick = onTermStudy,
-                )
-                HomeNavCard(
-                    modifier = Modifier.height(72.dp),
-                    icon = "🗣",
-                    title = "Dialogues",
-                    subtitle = "Read conversations",
-                    onClick = onDialogueReading,
+                Text(
+                    text = "  Kotoba",
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = MaterialTheme.colorScheme.onBackground,
                 )
             }
+            Text(
+                text = "What would you like to study?",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.55f),
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // ── Two-column grid ────────────────────────────────────────────────
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(gridHeight)
+                    .padding(bottom = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                // Left: Structured Learning
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxHeight(),
+                    verticalArrangement = Arrangement.spacedBy(5.dp),
+                ) {
+                    SectionLabel("Structured")
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "文",
+                        title = "Basic\nCharacters",
+                        subtitle = "Start here — zero knowledge",
+                        onClick = onBasicCharacters,
+                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                        contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                        subtitleColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "🌱",
+                        title = "Beginner",
+                        subtitle = "N5 · foundations",
+                        onClick = onBeginner,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "🌿",
+                        title = "Intermediate",
+                        subtitle = "N4–N3 · building up",
+                        onClick = onIntermediate,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "🎋",
+                        title = "Advanced",
+                        subtitle = "N2–N1 · mastery",
+                        onClick = onAdvanced,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "⛩",
+                        title = "Master",
+                        subtitle = "Native level",
+                        onClick = onMaster,
+                    )
+                }
+
+                // Right: Explore
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxHeight(),
+                    verticalArrangement = Arrangement.spacedBy(5.dp),
+                ) {
+                    SectionLabel("Explore")
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "📝",
+                        title = "Grammar",
+                        subtitle = "Rules & patterns",
+                        onClick = onPurelyGrammar,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "💬",
+                        title = "Conversational",
+                        subtitle = "Quick phrases",
+                        onClick = onQuickConversational,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "🔢",
+                        title = "Counters",
+                        subtitle = "Japanese counting",
+                        onClick = onCounters,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "📖",
+                        title = "Term Study",
+                        subtitle = "Browse by category",
+                        onClick = onTermStudy,
+                    )
+                    HomeNavCard(
+                        modifier = Modifier.weight(1f),
+                        icon = "🗣",
+                        title = "Dialogues",
+                        subtitle = "Read conversations",
+                        onClick = onDialogueReading,
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(16.dp))
         }
-        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 

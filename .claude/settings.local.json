@@ -5,7 +5,15 @@
       "Bash(cd \"C:\\\\Users\\\\ARSRa\\\\AndroidStudioProjects\\\\PersonalProject\" && JAVA_HOME=\"/c/Program Files/Android/Android Studio/jbr\" ./gradlew assembleDebug 2>&1 | tail -80)",
       "Bash(JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\" cd \"C:\\\\Users\\\\ARSRa\\\\AndroidStudioProjects\\\\PersonalProject\" && JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\" ./gradlew assembleDebug 2>&1 | grep -E \"error:|Error|FAILED\" | head -60)",
       "Bash(cd:*)",
-      "Bash(sort -k2 -n)"
+      "Bash(sort -k2 -n)",
+      "Bash(python3 /c/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/gen_kanji.py)",
+      "Bash(python3 gen_kanji.py)",
+      "Bash(python3:*)",
+      "Bash(ls -la C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/*.csv)",
+      "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"vocabulary*.csv)",
+      "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"vocabulary_n*.csv)",
+      "Bash(wc -l \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"vocabulary*.csv)",
+      "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"*.csv)"
     ]
   }
 }

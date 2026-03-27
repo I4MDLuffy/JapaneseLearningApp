@@ -59,6 +59,7 @@ fun LevelScreen(
                 LevelViewModel(
                     level = level,
                     grammarRepository = container.grammarRepository,
+                    vocabularyRepository = container.vocabularyRepository,
                     progressRepository = container.chapterProgressRepository,
                 )
             }

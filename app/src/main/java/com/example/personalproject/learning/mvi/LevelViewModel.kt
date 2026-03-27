@@ -5,12 +5,16 @@ import com.example.personalproject.data.model.Chapter
 import com.example.personalproject.data.model.ChapterType
 import com.example.personalproject.data.repository.ChapterProgressRepository
 import com.example.personalproject.data.repository.GrammarRepository
+import com.example.personalproject.data.repository.VocabularyRepository
 import com.example.personalproject.mvi.BaseViewModel
 import kotlinx.coroutines.launch
+
+private const val VOCAB_CHAPTER_SIZE = 10
 
 class LevelViewModel(
     private val level: String,
     private val grammarRepository: GrammarRepository,
+    private val vocabularyRepository: VocabularyRepository,
     private val progressRepository: ChapterProgressRepository,
 ) : BaseViewModel<LevelState, LevelAction>(LevelState(levelName = levelDisplayName(level))) {
 
@@ -33,21 +37,29 @@ class LevelViewModel(
             updateState { copy(isLoading = true, error = null) }
             try {
                 val jlpt = jlptForLevel(level)
+                val chapters = mutableListOf<Chapter>()
+                var chapterIndex = 0
 
-                // Group grammar by lessonNumber, sorted ascending
+                // ── Vocabulary chapters (driven by vocabulary data) ────────────
+                val vocabChunks = vocabularyRepository.filterByJlpt(jlpt)
+                    .sortedBy { it.id }
+                    .chunked(VOCAB_CHAPTER_SIZE)
+
+                vocabChunks.forEachIndexed { idx, _ ->
+                    chapters.add(makeChapter(chapterIndex, ChapterType.VOCAB, idx, "Vocabulary ${idx + 1}"))
+                    chapterIndex++
+                    chapters.add(makeChapter(chapterIndex, ChapterType.STUDY_VOCAB, idx, "Study Vocab ${idx + 1}"))
+                    chapterIndex++
+                }
+
+                // ── Grammar chapters (driven by grammar data) ─────────────────
                 val grammar = grammarRepository.filterByJlpt(jlpt).sortedBy { it.lessonNumber }
                 val grammarByLesson = grammar.groupBy { it.lessonNumber }
                     .entries.sortedBy { it.key }
 
-                val chapters = mutableListOf<Chapter>()
-                var chapterIndex = 0
-
                 grammarByLesson.forEachIndexed { lessonIdx, (lessonNumber, _) ->
-                    // One grammar chapter per lesson (setIndex = lessonNumber for content lookup)
-                    chapters.add(makeChapter(chapterIndex, ChapterType.GRAMMAR, lessonNumber, "Lesson $lessonNumber"))
+                    chapters.add(makeChapter(chapterIndex, ChapterType.GRAMMAR, lessonNumber, "Grammar $lessonNumber"))
                     chapterIndex++
-
-                    // Term Study chapter paired with this lesson (setIndex = lessonIdx for chunking)
                     chapters.add(makeChapter(chapterIndex, ChapterType.TERM_STUDY, lessonIdx, "Term Study ${lessonIdx + 1}"))
                     chapterIndex++
                 }

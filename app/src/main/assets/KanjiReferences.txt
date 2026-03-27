@@ -1,0 +1,961 @@
+﻿Jlpt 1
+
+
+日一国人年大十二本中長出三時行見月分後前
+k0001        日        sun; day        ひ        ニチ,ジツ        ひ,び        N5        time        U+65E5        r107        4        1        single        1
+k0002        一        one        いち        イチ,イツ        ひと-        N5        number        U+4E00        r001        1        1        single        1
+k0003        国        country        くに        コク        くに        N5        society        U+56FD        r039,r146        8        2        enclosure        1
+k0004        人        person        ひと        ジン,ニン        ひと        N5        people        U+4EBA        r011        2        1        single        1
+k0005        年        year        とし        ネン        とし        N5        time        U+5E74        r150        6        2        single        1
+k0006        大        big        おお        ダイ,タイ        おお-        N5        description        U+5927        r047        3        1        single        1
+k0007        十        ten        じゅう        ジュウ        とお        N5        number        U+5341        r031        2        1        single        1
+k0008        二        two        に        ニ        ふた        N5        number        U+4E8C        r009        2        1        single        1
+k0009        本        book; origin        ほん        ホン        もと        N5        object        U+672C        r113        5        1        single        1
+k0010        中        middle; inside        なか        チュウ        なか        N5        position        U+4E2D        r039        4        1        enclosure        1
+k0011        長        long; leader        なが        チョウ        なが-        N5        description        U+9577        r262        8        2        single        1
+k0012        出        exit; go out        でる        シュツ        で-,だ-        N5        action        U+51FA        r060        5        1        top-bottom        1
+k0013        三        three        さん        サン        みっ-        N5        number        U+4E09        r001        3        1        single        1
+k0014        時        time; hour        とき        ジ        とき        N5        time        U+6642        r107,r040        10        2        left-right        1
+k0015        行        go; act        いく        コウ,ギョウ        い-,ゆ-        N5        action        U+884C        r220        6        2        single        1
+k0016        見        see        みる        ケン        み-        N5        action        U+898B        r225        7        1        single        1
+k0017        月        moon; month        つき        ゲツ,ガツ        つき        N5        time        U+6708        r110        4        1        single        1
+k0018        分        divide; minute        ふん        ブン,フン        わ-ける        N5        time        U+5206        r016,r024        4        2        top-bottom        1
+k0019        後        after        あと        ゴ,コウ        あと        N5        time        U+5F8C        r060,r084        9        2        left-right        1
+k0020        前        before        まえ        ゼン        まえ        N5        time        U+524D        r140,r024        9        2        top-bottom        1
+
+
+生五間上東四今金九入学高円子外八六下来気
+k0021        生        life; birth        いきる        セイ,ショウ        い-,う-まれる                N5        life        U+751F                r150        5        1        single        2
+k0022        五        five        ご        ゴ        いつ                N5        number        U+4E94                r001        4        1        single        2
+k0023        間        interval; space        あいだ        カン,ケン        あいだ                N5        time        U+9593                r263,r107        12        2        enclosure        2
+k0024        上        up; above        うえ        ジョウ        うえ                N5        position        U+4E0A                r001        3        1        single        2
+k0025        東        east        ひがし        トウ        ひがし                N5        direction        U+6771                r113        8        2        single        2
+k0026        四        four        よん        シ        よ,よっ                N5        number        U+56DB                r039        5        1        enclosure        2
+k0027        今        now        いま        コン        いま                N5        time        U+4ECA                r011        4        2        top-bottom        2
+k0028        金        gold; money        かね        キン,コン        かね                N5        object        U+91D1                r260        8        1        single        2
+k0029        九        nine        きゅう        キュウ,ク        ここの                N5        number        U+4E5D                r004        2        1        single        2
+k0030        入        enter        はいる        ニュウ        い-,はい-る                N5        action        U+5165                r015        2        1        single        2
+k0031        学        study        まなぶ        ガク        まな-ぶ                N5        education        U+5B66                r039,r050        8        1        top-bottom        2
+k0032        高        high; tall        たかい        コウ        たか-い                N5        description        U+9AD8                r289        10        2        enclosure        2
+k0033        円        yen; circle        えん        エン        まる-い                N5        money        U+5186                r018        4        1        enclosure        2
+k0034        子        child        こ        シ        こ                N5        people        U+5B50                r050        3        1        single        2
+k0035        外        outside        そと        ガイ,ゲ        そと                N5        position        U+5916                r046,r032        5        2        left-right        2
+k0036        八        eight        はち        ハチ        やっ                N5        number        U+516B                r016        2        1        single        2
+k0037        六        six        ろく        ロク        むっ                N5        number        U+516D                r008        4        1        top-bottom        2
+k0038        下        down; below        した        カ,ゲ        した                N5        position        U+4E0B                r001        3        1        single        2
+k0039        来        come        くる        ライ        く-る                N5        action        U+6765                r075        7        2        single        2
+k0040        気        spirit; energy        き        キ        き                N5        state        U+6C17                r124        6        1        single        2
+
+
+
+
+
+
+小七山話女北午百書先名川千水半男西電校語
+k0041        小        small        ちいさい        ショウ        ちい-さい                N5        description        U+5C0F                r055        3        1        single        3
+k0042        七        seven        なな        シチ        なな,なの                N5        number        U+4E03                r005        2        1        single        3
+k0043        山        mountain        やま        サン        やま                N5        nature        U+5C71                r060        3        1        single        3
+k0044        話        talk; speak        はなす        ワ        はな-す,はなし                N5        action        U+8A71                r228        13        2        left-right        3
+k0045        女        woman        おんな        ジョ,ニョ        おんな                N5        people        U+5973                r048        3        1        single        3
+k0046        北        north        きた        ホク        きた                N5        direction        U+5317                r021        5        2        left-right        3
+k0047        午        noon        ご        ゴ        うま                N5        time        U+5348                r070        4        2        single        3
+k0048        百        hundred        ひゃく        ヒャク        もも                N5        number        U+767E                r106        6        1        single        3
+k0049        書        write        かく        ショ        か-く                N5        action        U+66F8                r129        10        2        top-bottom        3
+k0050        先        previous; ahead        さき        セン        さき                N5        time        U+5148                r014        6        1        top-bottom        3
+k0051        名        name        な        メイ,ミョウ        な                N5        people        U+540D                r046,r037        6        1        top-bottom        3
+k0052        川        river        かわ        セン        かわ                N5        nature        U+5DDD                r064        3        1        single        3
+k0053        千        thousand        せん        セン        ち                N5        number        U+5343                r031        3        1        single        3
+k0054        水        water        みず        スイ        みず                N5        nature        U+6C34                r125        4        1        single        3
+k0055        半        half        はん        ハン        なか-ば                N5        number        U+534A                r026,r031        5        2        top-bottom        3
+k0056        男        man        おとこ        ダン,ナン        おとこ                N5        people        U+7537                r102,r026        7        1        top-bottom        3
+k0057        西        west        にし        セイ,サイ        にし                N5        direction        U+897F                r223        6        2        single        3
+k0058        電        electricity        でん        デン                (N/A)        N5        technology        U+96FB                r267,r107        13        2        top-bottom        3
+k0059        校        school        こう        コウ                (N/A)        N5        education        U+6821                r113,r101        10        2        left-right        3
+k0060        語        language        ご        ゴ        かた-る                N5        language        U+8A9E                r228        14        2        left-right        3
+
+
+土木聞食車何南万毎白天母火右読友左休父雨
+k0061        土        soil; earth        つち        ド,ト        つち                N5        nature        U+571F                r040        3        1        single        4
+k0062        木        tree; wood        き        ボク,モク        き                N5        nature        U+6728                r113        4        1        single        4
+k0063        聞        hear; ask        きく        ブン,モン        き-く                N5        action        U+805E                r263,r128        14        2        enclosure        4
+k0064        食        eat        たべる        ショク        た-べる                N5        action        U+98DF                r282        9        2        single        4
+k0065        車        car        くるま        シャ        くるま                N5        object        U+8ECA                r245        7        1        single        4
+k0066        何        what        なに        カ        なに,なん                N5        question        U+4F55                r012,r037        7        2        left-right        4
+k0067        南        south        みなみ        ナン        みなみ                N5        direction        U+5357                r070        9        2        single        4
+k0068        万        ten thousand        まん        マン,バン        よろず                N5        number        U+4E07                r004        3        2        single        4
+k0069        毎        every        まい        マイ        ごと                N5        time        U+6BCE                r120        6        2        single        4
+k0070        白        white        しろ        ハク,ビャク        しろ,しら-                N5        color        U+767D                r158        5        1        single        4
+k0071        天        heaven; sky        てん        テン        あめ                N5        nature        U+5929                r037        4        1        top-bottom        4
+k0072        母        mother        はは        ボ        はは                N5        people        U+6BCD                r120        5        2        single        4
+k0073        火        fire        ひ        カ        ひ                N5        nature        U+706B                r126        4        1        single        4
+k0074        右        right        みぎ        ウ,ユウ        みぎ                N5        position        U+53F3                r047,r037        5        1        left-right        4
+k0075        読        read        よむ        ドク        よ-む                N5        action        U+8AAD                r228,r070        14        2        left-right        4
+k0076        友        friend        とも        ユウ        とも                N5        people        U+53CB                r029        4        2        single        4
+k0077        左        left        ひだり        サ        ひだり                N5        position        U+5DE6                r047,r065        5        1        left-right        4
+k0078        休        rest        やすむ        キュウ        やす-む                N5        action        U+4F11                r012,r113        6        1        left-right        4
+k0079        父        father        ちち        フ        ちち                N5        people        U+7236                r132        4        1        single        4
+k0080        雨        rain        あめ        ウ        あめ                N5        nature        U+96E8                r267        8        1        single        4
+
+
+Jlpt 2
+会社新立手目言多安道口少空足店古買週花駅
+k0081        会        meet; association        あう        カイ,エ        あ-う                N4        society        U+4F1A                r011        6        2        top-bottom        5
+k0082        社        company; shrine        しゃ        シャ        やしろ                N4        society        U+793E                r142        7        2        left-right        5
+k0083        新        new        あたらしい        シン        あたら-しい                N4        description        U+65B0                r069,r101        13        2        left-right        5
+k0084        立        stand        たつ        リツ        た-つ                N4        action        U+7ACB                r176        5        1        single        5
+k0085        手        hand        て        シュ        て                N4        body        U+624B                r097        4        1        single        5
+k0086        目        eye        め        モク,ボク        め                N4        body        U+76EE                r162        5        1        single        5
+k0087        言        say; word        いう        ゲン,ゴン        い-う                N4        language        U+8A00                r228        7        1        single        5
+k0088        多        many        おおい        タ        おお-い                N4        quantity        U+591A                r046        6        2        top-bottom        5
+k0089        安        cheap; safe        やすい        アン        やす-い                N4        description        U+5B89                r040,r048        6        2        top-bottom        5
+k0090        道        road; way        みち        ドウ,トウ        みち                N4        place        U+9053                r249,r283        12        2        left-right        5
+k0091        口        mouth        くち        コウ,ク        くち                N4        body        U+53E3                r037        3        1        single        5
+k0092        少        few        すくない        ショウ        すく-ない                N4        quantity        U+5C11                r055        4        2        top-bottom        5
+k0093        空        sky; empty        そら        クウ        そら,あ-く                N4        nature        U+7A7A                r174,r065        8        2        top-bottom        5
+k0094        足        foot; sufficient        あし        ソク        あし,た-りる                N4        body        U+8DB3                r241        7        1        single        5
+k0095        店        store        みせ        テン        みせ                N4        place        U+5E97                r072        8        2        enclosure        5
+k0096        古        old        ふるい        コ        ふる-い                N4        time        U+53E4                r037        5        2        top-bottom        5
+k0097        買        buy        かう        バイ        か-う                N4        action        U+8CB7                r236        12        2        top-bottom        5
+k0098        週        week        しゅう        シュウ                (N/A)        N4        time        U+9031                r249,r039        11        2        left-right        5
+k0099        花        flower        はな        カ        はな                N4        nature        U+82B1                r083        7        1        top-bottom        5
+k0100        駅        station        えき        エキ                (N/A)        N4        place        U+99C5                r285        14        3        left-right        5
+
+
+飲魚同事自発者地業方場員開力問代明動京通
+k0101        飲        drink        のむ        イン        の-む                N4        action        U+98F2                r282        12        3        left-right        6
+k0102        魚        fish        さかな        ギョ        さかな                N4        nature        U+9B5A                r296        11        2        single        6
+k0103        同        same        おなじ        ドウ        おな-じ                N4        abstract        U+540C                r037        6        2        enclosure        6
+k0104        事        thing; matter        こと        ジ        こと                N4        abstract        U+4E8B                r007        8        3        single        6
+k0105        自        self        じ        ジ        みずか-ら                N4        abstract        U+81EA                r205        6        2        single        6
+k0106        発        depart; emit        はつ        ハツ                (N/A)        N4        action        U+767A                r105        9        3        top-bottom        6
+k0107        者        person (one who...)        もの        シャ        もの                N4        people        U+8005                r125        8        2        top-bottom        6
+k0108        地        ground; earth        ち        チ,ジ                (N/A)        N4        nature        U+5730                r040        6        2        left-right        6
+k0109        業        business; work        ぎょう        ギョウ        わざ                N4        society        U+696D                r224        13        3        top-bottom        6
+k0110        方        direction; way        かた        ホウ        かた                N4        position        U+65B9                r104        4        2        single        6
+k0111        場        place        ば        ジョウ        ば                N4        place        U+5834                r040        12        2        left-right        6
+k0112        員        member        いん        イン                (N/A)        N4        people        U+54E1                r037,r236        10        3        top-bottom        6
+k0113        開        open        ひらく        カイ        ひら-く,あ-く                N4        action        U+958B                r263        12        3        enclosure        6
+k0114        力        power        ちから        リョク,リキ        ちから                N4        abstract        U+529B                r026        2        1        single        6
+k0115        問        question; ask        とい        モン        と-う                N4        action        U+554F                r263        11        2        enclosure        6
+k0116        代        generation; substitute        だい        ダイ        か-わる                N4        time        U+4EE3                r012        5        3        left-right        6
+k0117        明        bright        あかるい        メイ,ミョウ        あか-るい                N4        description        U+660E                r107,r110        8        2        left-right        6
+k0118        動        move        うごく        ドウ        うご-く                N4        action        U+52D5                r026,r150        11        3        left-right        6
+k0119        京        capital        きょう        キョウ                (N/A)        N4        place        U+4EAC                r008        8        2        top-bottom        6
+k0120        通        pass; commute        とおる        ツウ,ツ        とお-る,かよ-う                N4        action        U+901A                r249,r080        10        2        left-right        6
+
+
+理体田主題意不作用度強持野以思家世正院心
+k0121        理        reason; logic        り        リ        ことわり                N4        abstract        U+7406                r146,r127        11        3        left-right        7
+k0122        体        body        からだ        タイ        からだ                N4        body        U+4F53                r012,r146        7        2        left-right        7
+k0123        田        rice field        た        デン        た                N4        nature        U+7530                r152        5        1        single        7
+k0124        主        main; master        ぬし        シュ        ぬし                N4        abstract        U+4E3B                r004        5        2        single        7
+k0125        題        topic; subject        だい        ダイ                (N/A)        N4        abstract        U+984C                r279,r152        18        3        left-right        7
+k0126        意        idea; meaning        い        イ                (N/A)        N4        abstract        U+610F                r092,r108        13        3        top-bottom        7
+k0127        不        not        ふ        フ                (N/A)        N4        abstract        U+4E0D                r001        4        1        single        7
+k0128        作        make; create        つくる        サク,サ        つく-る                N4        action        U+4F5C                r012,r167        7        2        left-right        7
+k0129        用        use        もちいる        ヨウ        もち-いる                N4        action        U+7528                r151        5        2        single        7
+k0130        度        degree; extent        ど        ド,ト                (N/A)        N4        abstract        U+5EA6                r072        9        3        enclosure        7
+k0131        強        strong        つよい        キョウ,ゴウ        つよ-い                N4        description        U+5F37                r076,r026        11        2        left-right        7
+k0132        持        hold        もつ        ジ        も-つ                N4        action        U+6301                r089,r053        9        2        left-right        7
+k0133        野        field; plains        の        ヤ        の                N4        nature        U+91CE                r152,r165        11        2        left-right        7
+k0134        以        by means of        い        イ                (N/A)        N4        abstract        U+4EE5                r013        5        3        single        7
+k0135        思        think        おもう        シ        おも-う                N4        abstract        U+601D                r092,r152        9        2        top-bottom        7
+k0136        家        house; family        いえ        カ,ケ        いえ,や                N4        place        U+5BB6                r174,r130        10        2        top-bottom        7
+k0137        世        world        よ        セ,セイ        よ                N4        abstract        U+4E16                r001        5        2        single        7
+k0138        正        correct        ただしい        セイ,ショウ        ただ-しい                N4        abstract        U+6B63                r116        5        1        single        7
+k0139        院        institution        いん        イン                (N/A)        N4        place        U+9662                r086,r014        10        3        left-right        7
+k0140        心        heart        こころ        シン        こころ                N4        body        U+5FC3                r092        4        1        single        7
+
+
+界教文元重近考画海売知集別物使品計死特私
+k0141        界        world; boundary        かい        カイ                (N/A)        N4        abstract        U+754C                r152,r026        9        3        top-bottom        8
+k0142        教        teach        おしえる        キョウ        おし-える                N4        education        U+6559                r101,r039        11        2        left-right        8
+k0143        文        sentence; writing        ぶん        ブン,モン        ふみ                N4        language        U+6587                r101        4        1        single        8
+k0144        元        origin        もと        ゲン,ガン        もと                N4        abstract        U+5143                r014        4        2        single        8
+k0145        重        heavy; important        おもい        ジュウ,チョウ        おも-い,かさ-ねる                N4        description        U+91CD                r150        9        2        single        8
+k0146        近        near        ちかい        キン        ちか-い                N4        position        U+8FD1                r249,r103        7        2        left-right        8
+k0147        考        think; consider        かんがえる        コウ        かんが-える                N4        abstract        U+8003                r125        6        2        top-bottom        8
+k0148        画        picture; draw        が        ガ,カク        えが-く                N4        art        U+753B                r102        8        2        single        8
+k0149        海        sea        うみ        カイ        うみ                N4        nature        U+6D77                r090,r120        9        2        left-right        8
+k0150        売        sell        うる        バイ        う-る,う-れる                N4        action        U+58F2                r040        7        2        top-bottom        8
+k0151        知        know        しる        チ        し-る                N4        abstract        U+77E5                r167,r037        8        2        left-right        8
+k0152        集        gather        あつまる        シュウ        あつ-まる,あつ-める                N4        action        U+96C6                r172        12        2        top-bottom        8
+k0153        別        separate        べつ        ベツ        わか-れる                N4        abstract        U+5225                r024,r037        7        2        left-right        8
+k0154        物        thing        もの        ブツ,モツ        もの                N4        abstract        U+7269                r138,r121        8        2        left-right        8
+k0155        使        use        つかう        シ        つか-う                N4        action        U+4F7F                r012,r166        8        2        left-right        8
+k0156        品        goods; item        しな        ヒン        しな                N4        object        U+54C1                r037        9        2        top-bottom        8
+k0157        計        measure; plan        はかる        ケイ        はか-る                N4        abstract        U+8A08                r228,r031        9        2        left-right        8
+k0158        死        die        しぬ        シ        し-ぬ                N4        action        U+6B7B                r115        6        3        left-right        8
+k0159        特        special        とく        トク                (N/A)        N4        description        U+7279                r138,r053        10        3        left-right        8
+k0160        私        private; I        わたし        シ        わたし                N4        people        U+79C1                r173        7        1        left-right        8
+
+
+始朝運終台広住真有町料工建急止送切転研究
+k0161        始        begin        はじめる        シ        はじ-める,はじ-まる                N4        action        U+59CB                r048,r029        8        2        left-right        9
+k0162        朝        morning        あさ        チョウ        あさ                N4        time        U+671D                r107,r110        12        2        left-right        9
+k0163        運        carry; transport        はこぶ        ウン        はこ-ぶ                N4        action        U+904B                r249,r024        12        2        left-right        9
+k0164        終        end        おわる        シュウ        お-わる,お-える                N4        time        U+7D42                r189,r001        11        2        left-right        9
+k0165        台        platform; stand        だい        ダイ,タイ                (N/A)        N4        object        U+53F0                r037        5        2        top-bottom        9
+k0166        広        wide        ひろい        コウ        ひろ-い                N4        description        U+5E83                r072        5        2        enclosure        9
+k0167        住        live; reside        すむ        ジュウ        す-む,す-まう                N4        action        U+4F4F                r012,r004        7        2        left-right        9
+k0168        真        true        ま        シン        ま                N4        abstract        U+771F                r181        10        2        top-bottom        9
+k0169        有        have; exist        ある        ユウ,ウ        あ-る                N4        abstract        U+6709                r132,r110        6        2        top-bottom        9
+k0170        町        town        まち        チョウ        まち                N4        place        U+753A                r152,r070        7        2        left-right        9
+k0171        料        material; fee        りょう        リョウ                (N/A)        N4        object        U+6599                r187,r102        10        3        left-right        9
+k0172        工        craft; construction        こう        コウ                (N/A)        N4        action        U+5DE5                r065        3        2        single        9
+k0173        建        build        たてる        ケン        た-てる,た-つ                N4        action        U+5EFA                r054,r076        9        3        left-right        9
+k0174        急        urgent        いそぐ        キュウ        いそ-ぐ                N4        state        U+6025                r080,r092        9        3        top-bottom        9
+k0175        止        stop        とまる        シ        と-まる,と-める                N4        action        U+6B62                r116        4        1        single        9
+k0176        送        send        おくる        ソウ        おく-る                N4        action        U+9001                r249,r132        9        2        left-right        9
+k0177        切        cut        きる        セツ,サイ        き-る                N4        action        U+5207                r024,r001        4        2        left-right        9
+k0178        転        turn        ころぶ        テン        ころ-ぶ                N4        action        U+8EE2                r245,r009        11        3        left-right        9
+k0179        研        grind; study        とぐ        ケン        と-ぐ                N4        action        U+7814                r169,r065        9        3        left-right        9
+k0180        究        research        きゅう        キュウ        きわ-める                N4        academic        U+7A76                r174,r021        7        3        top-bottom        9
+
+
+楽起着病質待試族銀早映親験英医仕去味写字
+k0181        楽        comfort; music        たのしい        ガク,ラク        たの-しい,たの-しむ                N4        life        U+697D                r075,r056        13        2        top-bottom        10
+k0182        起        wake; rise        おきる        キ        お-きる,お-こす                N4        action        U+8D77                r239,r067        10        2        left-right        10
+k0183        着        wear; arrive        きる        チャク,ジャク        き-る,つ-く                N4        action        U+7740                r193,r162        12        2        top-bottom        10
+k0184        病        illness        びょう        ビョウ        や-む                N4        health        U+75C5                r104        10        2        enclosure        10
+k0185        質        quality        しつ        シツ                (N/A)        N4        abstract        U+8CEA                r236,r103        15        3        top-bottom        10
+k0186        待        wait        まつ        タイ        ま-つ                N4        action        U+5F85                r060,r053        9        2        left-right        10
+k0187        試        test        ためす        シ        ため-す,こころ-みる                N4        action        U+8A66                r228,r065        13        2        left-right        10
+k0188        族        tribe; family        ぞく        ゾク                (N/A)        N4        society        U+65CF                r104,r167        11        3        left-right        10
+k0189        銀        silver        ぎん        ギン                (N/A)        N4        object        U+9280                r260,r124        14        3        left-right        10
+k0190        早        early        はやい        ソウ,サッ        はや-い                N4        time        U+65E9                r107        6        1        top-bottom        10
+k0191        映        reflect        うつる        エイ        うつ-る,うつ-す                N4        action        U+6620                r107,r047        9        2        left-right        10
+k0192        親        parent        おや        シン        おや,した-しい                N4        people        U+89AA                r147,r225        16        2        left-right        10
+k0193        験        test; examine        けん        ケン                (N/A)        N4        education        U+9A13                r285,r166        18        3        left-right        10
+k0194        英        England; excellent        えい        エイ                (N/A)        N4        abstract        U+82F1                r083,r047        8        2        top-bottom        10
+k0195        医        medicine        い        イ                (N/A)        N4        health        U+533B                r022        7        3        enclosure        10
+k0196        仕        do; serve        する        シ        つか-える                N4        action        U+4ED5                r012,r031        5        3        left-right        10
+k0197        去        go away        さる        キョ,コ        さ-る                N4        action        U+53BB                r040        5        2        top-bottom        10
+k0198        味        taste        あじ        ミ        あじ                N4        sense        U+5473                r037,r150        8        2        left-right        10
+k0199        写        copy        うつす        シャ        うつ-す,うつ-る                N4        action        U+5199                r018,r029        5        2        top-bottom        10
+k0200        字        character        じ        ジ        あざ                N4        language        U+5B57                r174,r050        6        1        top-bottom        10
+
+
+答夜音注帰歌悪図室歩風紙黒春赤青館屋色走
+k0201        答        answer        こたえる        トウ        こた-える                N4        action        U+7B54                r185,r037        12        2        top-bottom        11
+k0202        夜        night        よる        ヤ        よる                N4        time        U+591C                r036        8        2        top-bottom        11
+k0203        音        sound        おと        オン        おと,ね                N4        sense        U+97F3                r180        9        1        single        11
+k0204        注        pour; note        そそぐ        チュウ        そそ-ぐ                N4        action        U+6CE8                r090,r004        8        2        left-right        11
+k0205        帰        return        かえる        キ        かえ-る,かえ-す                N4        action        U+5E30                r068,r058        10        2        left-right        11
+k0206        歌        song        うた        カ        うた,うた-う                N4        art        U+6B4C                r115,r037        14        2        left-right        11
+k0207        悪        bad        わるい        アク,オ        わる-い                N4        description        U+60AA                r092,r107        11        2        top-bottom        11
+k0208        図        diagram        ず        ズ,ト                (N/A)        N4        abstract        U+56F3                r039        7        2        enclosure        11
+k0209        室        room        しつ        シツ        むろ                N4        place        U+5BA4                r174,r206        9        2        top-bottom        11
+k0210        歩        walk        あるく        ホ,ブ        ある-く                N4        action        U+6B69                r116        8        2        top-bottom        11
+k0211        風        wind        かぜ        フウ,フ        かぜ                N4        nature        U+98A8                r280        9        2        enclosure        11
+k0212        紙        paper        かみ        シ        かみ                N4        object        U+7D19                r189,r123        10        2        left-right        11
+k0213        黒        black        くろ        コク        くろ,くろ-い                N4        color        U+9ED2                r309        11        2        single        11
+k0214        春        spring        はる        シュン        はる                N4        time        U+6625                r109,r047        9        2        top-bottom        11
+k0215        赤        red        あか        セキ,シャク        あか,あか-い                N4        color        U+8D64                r238        7        1        single        11
+k0216        青        blue        あお        セイ,ショウ        あお,あお-い                N4        color        U+9752                r270        8        1        single        11
+k0217        館        building        かん        カン        やかた                N4        place        U+9928                r282,r059        16        3        left-right        11
+k0218        屋        roof; shop        や        オク        や                N4        place        U+5C4B                r058,r040        9        2        top-bottom        11
+k0219        色        color        いろ        ショク,シキ        いろ                N4        color        U+8272                r214        6        1        single        11
+k0220        走        run        はしる        ソウ        はし-る                N4        action        U+8D70                r239        7        2        single        11
+
+
+秋夏習洋旅服夕借曜肉貸堂鳥飯勉冬昼茶弟牛兄犬妹姉漢公
+k0221        秋        autumn        あき        シュウ        あき                N4        time        U+79CB                r173,r126        9        2        left-right        12
+k0222        夏        summer        なつ        カ,ゲ        なつ                N4        time        U+590F                r047        10        2        top-bottom        12
+k0223        習        learn        ならう        シュウ        なら-う                N4        education        U+7FD2                r196,r107        11        2        top-bottom        12
+k0224        洋        ocean; western        よう        ヨウ                (N/A)        N4        nature        U+6D0B                r090,r104        9        2        left-right        12
+k0225        旅        travel        たび        リョ        たび                N4        action        U+65C5                r104,r029        10        3        left-right        12
+k0226        服        clothes; obey        ふく        フク                (N/A)        N4        object        U+670D                r110,r036        8        2        left-right        12
+k0227        夕        evening        ゆう        セキ        ゆう                N4        time        U+5915                r046        3        1        single        12
+k0228        借        borrow        かりる        シャク        か-りる                N4        action        U+501F                r012,r110        10        2        left-right        12
+k0229        曜        weekday        よう        ヨウ                (N/A)        N4        time        U+66DC                r107,r172        18        3        left-right        12
+k0230        肉        meat        にく        ニク                (N/A)        N4        object        U+8089                r203        6        1        single        12
+k0231        貸        lend        かす        タイ        か-す                N4        action        U+8CB8                r236,r012        12        2        left-right        12
+k0232        堂        hall        どう        ドウ                (N/A)        N4        place        U+5802                r040,r008        11        3        top-bottom        12
+k0233        鳥        bird        とり        チョウ        とり                N4        nature        U+9CE5                r298        11        2        single        12
+k0234        飯        meal        はん        ハン        めし                N4        food        U+98EF                r282,r036        12        2        left-right        12
+k0235        勉        exert; study        べん        ベン                (N/A)        N4        education        U+52C9                r026,r063        10        3        left-right        12
+k0236        冬        winter        ふゆ        トウ        ふゆ                N4        time        U+51AC                r034        5        1        top-bottom        12
+k0237        昼        daytime        ひる        チュウ        ひる                N4        time        U+663C                r107        9        2        top-bottom        12
+k0238        茶        tea        ちゃ        チャ,サ                (N/A)        N4        food        U+8336                r083,r008        9        2        top-bottom        12
+k0239        弟        younger brother        おとうと        テイ,ダイ        おとうと                N4        people        U+5F1F                r057        7        2        single        12
+k0240        牛        cow        うし        ギュウ        うし                N4        animal        U+725B                r138        4        1        single        12
+k0241        兄        older brother        あに        ケイ,キョウ        あに                N4        people        U+5144                r014        5        1        top-bottom        12
+k0242        犬        dog        いぬ        ケン        いぬ                N4        animal        U+72AC                r140        4        1        single        12
+k0243        妹        younger sister        いもうと        マイ        いもうと                N4        people        U+59B9                r048,r150        8        2        left-right        12
+k0244        姉        older sister        あね        シ        あね                N4        people        U+59C9                r048,r068        8        2        left-right        12
+k0245        漢        Chinese; Han        かん        カン                (N/A)        N4        language        U+6F22                r090,r029        13        3        left-right        12
+k0246        公        public        こう        コウ        おおやけ                N4        society        U+516C                r016        4        2        top-bottom        12
+
+
+Jlpt 3
+耳民合市回首都進産引所説乗声働好頭光太顔
+k0247        耳        ear        みみ        ジ        みみ                N3        body        U+8033                r200        6        1        single        1
+k0248        民        people; nation        たみ        ミン        たみ                N3        society        U+6C11                r067        5        2        single        1
+k0249        合        join; fit        あう        ゴウ,ガッ        あ-う                N3        action        U+5408                r011,r037        6        2        top-bottom        1
+k0250        市        city; market        いち        シ        いち                N3        place        U+5E02                r068        5        2        top-bottom        1
+k0251        回        turn; times        まわる        カイ        まわ-る,まわ-す                N3        action        U+56DE                r039        6        2        enclosure        1
+k0252        首        neck; head        くび        シュ        くび                N3        body        U+9996                r283        9        2        single        1
+k0253        都        capital        みやこ        ト,ツ        みやこ                N3        place        U+90FD                r085,r040        11        3        left-right        1
+k0254        進        advance        すすむ        シン        すす-む,すす-める                N3        action        U+9032                r249,r172        11        3        left-right        1
+k0255        産        produce        うむ        サン        う-む,う-まれる                N3        action        U+7523                r104,r150        11        3        top-bottom        1
+k0256        引        pull        ひく        イン        ひ-く                N3        action        U+5F15                r076        4        1        single        1
+k0257        所        place        ところ        ショ        ところ                N3        place        U+6240                r095,r063        8        1        left-right        1
+k0258        説        explain; theory        せつ        セツ        と-く                N3        abstract        U+8AAC                r228,r131        14        3        left-right        1
+k0259        乗        ride        のる        ジョウ        の-る,の-せる                N3        action        U+4E57                r009        9        2        single        1
+k0260        声        voice        こえ        セイ,ショウ        こえ                N3        sense        U+58F0                r040        7        2        top-bottom        1
+k0261        働        work        はたらく        ドウ        はたら-く                N3        action        U+50CD                r012,r026        13        3        left-right        1
+k0262        好        like        すき        コウ        す-き,この-む                N3        feeling        U+597D                r048,r050        6        2        left-right        1
+k0263        頭        head        あたま        トウ,ズ        あたま                N3        body        U+982D                r279,r037        16        2        left-right        1
+k0264        光        light        ひかり        コウ        ひかり,ひか-る                N3        nature        U+5149                r014        6        1        top-bottom        1
+k0265        太        thick; big        ふとい        タイ        ふと-い                N3        description        U+592A                r047        4        2        single        1
+k0266        顔        face        かお        ガン        かお                N3        body        U+9854                r279,r046        18        3        left-right        1
+
+
+薬便遠暗洗寒議連対部内相定選米実関決全表
+k0267        薬        medicine        くすり        ヤク        くすり                N3        health        U+85AC                r083,r126        16        3        top-bottom        2
+k0268        便        convenience        べん        ベン,ビン        たよ-り                N3        abstract        U+4FBF                r012,r131        9        3        left-right        2
+k0269        遠        far        とおい        エン        とお-い                N3        position        U+9060                r249,r046        13        2        left-right        2
+k0270        暗        dark        くらい        アン        くら-い                N3        description        U+6697                r107,r108        13        2        left-right        2
+k0271        洗        wash        あらう        セン        あら-う                N3        action        U+6D17                r090,r014        9        2        left-right        2
+k0272        寒        cold        さむい        カン        さむ-い                N3        description        U+5BD2                r174,r034        12        2        top-bottom        2
+k0273        議        deliberate        ぎ        ギ                (N/A)        N3        abstract        U+8B70                r228,r047        20        3        left-right        2
+k0274        連        connect        つらなる        レン        つら-なる,つら-ねる                N3        action        U+9023                r249,r075        10        2        left-right        2
+k0275        対        oppose        たい        タイ                (N/A)        N3        abstract        U+5BFE                r053,r049        7        2        left-right        2
+k0276        部        section        ぶ        ブ                (N/A)        N3        society        U+90E8                r185,r085        11        2        left-right        2
+k0277        内        inside        うち        ナイ        うち                N3        position        U+5185                r018        4        1        enclosure        2
+k0278        相        mutual        あい        ソウ,ショウ        あい                N3        abstract        U+76F8                r113,r162        9        2        left-right        2
+k0279        定        decide        さだめる        テイ,ジョウ        さだ-める                N3        action        U+5B9A                r174,r116        8        2        top-bottom        2
+k0280        選        select        えらぶ        セン        えら-ぶ                N3        action        U+9078                r249,r067        15        3        left-right        2
+k0281        米        rice        こめ        ベイ,マイ        こめ                N3        food        U+7C73                r187        6        1        single        2
+k0282        実        truth; fruit        み        ジツ        み,みの-る                N3        abstract        U+5B9F                r174,r034        8        2        top-bottom        2
+k0283        関        relation        かん        カン                (N/A)        N3        abstract        U+95A2                r263,r076        14        3        enclosure        2
+k0284        決        decide        きめる        ケツ        き-める,き-まる                N3        action        U+6C7A                r090,r015        7        2        left-right        2
+k0285        全        all        ぜん        ゼン        まった-く                N3        abstract        U+5168                r011        6        1        top-bottom        2
+k0286        表        express; table        ひょう        ヒョウ        あらわ-す                N3        abstract        U+8868                r221,r001        8        2        top-bottom        2
+
+
+戦最調化当約法的要治成期取和機平加受続数
+k0287        戦        war; battle        たたかう        セン        たたか-う                N3        action        U+6226                r091,r094        13        3        left-right        3
+k0288        最        most        もっとも        サイ        もっと-も                N3        abstract        U+6700                r107,r057        12        2        top-bottom        3
+k0289        調        investigate; tone        しらべる        チョウ        しら-べる                N3        action        U+8ABF                r228,r181        15        3        left-right        3
+k0290        化        change        か        カ,ケ        ば-ける,ば-かす                N3        action        U+5316                r012        4        1        single        3
+k0291        当        appropriate; hit        あたる        トウ        あ-たる,あ-てる                N3        abstract        U+5F53                r056        6        2        top-bottom        3
+k0292        約        promise; approx.        やく        ヤク                (N/A)        N3        abstract        U+7D04                r189,r140        9        2        left-right        3
+k0293        法        law        ほう        ホウ        のり                N3        society        U+6CD5                r090,r040        8        2        left-right        3
+k0294        的        target; -al suffix        てき        テキ        まと                N3        grammar        U+7684                r169,r003        8        2        left-right        3
+k0295        要        need; main point        いる        ヨウ        い-る                N3        abstract        U+8981                r147,r048        9        2        top-bottom        3
+k0296        治        govern; heal        なおす        チ,ジ        なお-す,なお-る                N3        action        U+6CBB                r090,r037        8        2        left-right        3
+k0297        成        become; achieve        なる        セイ,ジョウ        な-る                N3        action        U+6210                r062        6        2        single        3
+k0298        期        period        き        キ,ゴ                (N/A)        N3        time        U+671F                r110,r065        12        3        left-right        3
+k0299        取        take        とる        シュ        と-る                N3        action        U+53D6                r200,r036        8        1        left-right        3
+k0300        和        harmony        わ        ワ        やわ-らぐ,なご-む                N3        abstract        U+548C                r173,r037        8        2        left-right        3
+k0301        機        machine; opportunity        き        キ                (N/A)        N3        object        U+6A5F                r113,r120        16        3        left-right        3
+k0302        平        flat; peace        たいら        ヘイ,ビョウ        たい-ら                N3        abstract        U+5E73                r070        5        1        single        3
+k0303        加        add        くわえる        カ        くわ-える,くわ-わる                N3        action        U+52A0                r026,r037        5        1        left-right        3
+k0304        受        receive        うける        ジュ        う-ける                N3        action        U+53D7                r130,r029        8        2        top-bottom        3
+k0305        続        continue        つづく        ゾク        つづ-く,つづ-ける                N3        action        U+7D9A                r189,r120        13        2        left-right        3
+k0306        数        number; count        かず        スウ,ス        かず,かぞ-える                N3        number        U+6570                r101,r150        13        2        left-right        3
+
+
+記初指点活原共得交予向勝面告反参利組信側
+k0307        記        record        き        キ        しる-す                N3        action        U+8A18                r228,r005        10        2        left-right        4
+k0308        初        first; beginning        はじめ        ショ        はじ-め                N3        time        U+521D                r183,r024        7        2        left-right        4
+k0309        指        finger; point        ゆび        シ        ゆび,さ-す                N3        body        U+6307                r089,r107        9        2        left-right        4
+k0310        点        point; mark        てん        テン                (N/A)        N3        abstract        U+70B9                r128,r004        9        2        top-bottom        4
+k0311        活        live; active        いきる        カツ        い-きる,い-かす                N3        action        U+6D3B                r090,r209        9        2        left-right        4
+k0312        原        origin; field        はら        ゲン        はら                N3        nature        U+539F                r034,r107        10        2        top-bottom        4
+k0313        共        together        とも        キョウ        とも                N3        abstract        U+5171                r016        6        2        top-bottom        4
+k0314        得        gain; obtain        える        トク        え-る,う-る                N3        action        U+5F97                r060,r109        11        2        left-right        4
+k0315        交        interact; mix        まじわる        コウ        まじ-わる,ま-ざる                N3        action        U+4EA4                r008        6        2        top-bottom        4
+k0316        予        advance; beforehand        よ        ヨ        あらかじ-め                N3        time        U+4E88                r063        4        2        single        4
+k0317        向        direction; face        むく        コウ        む-く,む-ける                N3        position        U+5411                r037        6        2        enclosure        4
+k0318        勝        win        かつ        ショウ        か-つ                N3        action        U+52DD                r026,r110        12        2        left-right        4
+k0319        面        face; surface        めん        メン        おもて                N3        abstract        U+9762                r274        9        2        single        4
+k0320        告        inform        つげる        コク        つ-げる                N3        action        U+544A                r125,r037        7        2        top-bottom        4
+k0321        反        oppose        はん        ハン        そ-る                N3        action        U+53CD                r029        4        2        single        4
+k0322        参        participate        さん        サン        まい-る                N3        action        U+53C2                r036,r011        8        2        top-bottom        4
+k0323        利        benefit        り        リ        き-く                N3        abstract        U+5229                r173,r024        7        2        left-right        4
+k0324        組        group        くみ        ソ        く-む,くみ                N3        society        U+7D44                r189,r048        11        2        left-right        4
+k0325        信        believe        しん        シン        しん-じる                N3        abstract        U+4FE1                r012,r228        9        2        left-right        4
+k0326        側        side        がわ        ソク        がわ                N3        position        U+5074                r012,r063        11        3        left-right        4
+
+
+求次昨官係感投変打直両式果必争談無位置流
+k0327        求        seek        もとめる        キュウ        もと-める                N3        action        U+6C42                r124        7        2        single        5
+k0328        次        next        つぎ        ジ        つぎ                N3        time        U+6B21                r115        6        2        left-right        5
+k0329        昨        yesterday        さく        サク                (N/A)        N3        time        U+6628                r107,r039        9        2        left-right        5
+k0330        官        government official        かん        カン                (N/A)        N3        society        U+5B98                r174        8        2        top-bottom        5
+k0331        係        relation        かかり        ケイ        かか-る                N3        abstract        U+4FC2                r012,r189        9        2        left-right        5
+k0332        感        feeling        かん        カン                (N/A)        N3        feeling        U+611F                r092,r062        13        3        top-bottom        5
+k0333        投        throw        なげる        トウ        な-げる                N3        action        U+6295                r089,r036        7        2        left-right        5
+k0334        変        change        かわる        ヘン        か-わる,か-える                N3        action        U+5909                r036        9        2        top-bottom        5
+k0335        打        hit        うつ        ダ        う-つ                N3        action        U+6253                r089,r031        5        1        left-right        5
+k0336        直        straight; fix        なおす        チョク,ジキ        なお-す,なお-る                N3        abstract        U+76F4                r181        8        2        top-bottom        5
+k0337        両        both        りょう        リョウ                (N/A)        N3        quantity        U+4E21                r018        6        2        enclosure        5
+k0338        式        style; formula        しき        シキ                (N/A)        N3        abstract        U+5F0F                r094        6        2        single        5
+k0339        果        fruit; result        はたす        カ        は-たす,は-てる                N3        abstract        U+679C                r075        8        2        single        5
+k0340        必        certainly        かならず        ヒツ        かなら-ず                N3        abstract        U+5FC5                r004        5        2        single        5
+k0341        争        contest        あらそう        ソウ        あらそ-う                N3        action        U+4E89                r080        6        2        top-bottom        5
+k0342        談        talk        だん        ダン                (N/A)        N3        action        U+8AC7                r228,r126        15        3        left-right        5
+k0343        無        none        ない        ム,ブ        な-い                N3        abstract        U+7121                r128        12        2        top-bottom        5
+k0344        位        rank        い        イ        くらい                N3        abstract        U+4F4D                r012,r176        7        2        left-right        5
+k0345        置        put; place        おく        チ        お-く                N3        action        U+7F6E                r192,r162        13        2        top-bottom        5
+k0346        流        flow        ながれる        リュウ        なが-れる,なが-す                N3        action        U+6D41                r090,r063        10        2        left-right        5
+
+
+局放球役身費付由夫石消神番害配育席残想念
+k0347        局        bureau;局        きょく        キョク                (N/A)        N3        society        U+5C40                r058,r037        7        2        enclosure        6
+k0348        放        release; put        はなす        ホウ        はな-す,はな-つ                N3        action        U+653E                r104,r100        8        2        left-right        6
+k0349        球        ball        たま        キュウ        たま                N3        object        U+7403                r146,r004        11        2        left-right        6
+k0350        役        role        やく        ヤク                (N/A)        N3        society        U+5F79                r060,r036        7        2        left-right        6
+k0351        身        body        み        シン        み                N3        body        U+8EAB                r243        7        2        single        6
+k0352        費        expense        ひ        ヒ        つい-やす                N3        money        U+8CBB                r236,r067        12        2        top-bottom        6
+k0353        付        attach        つける        フ        つ-ける,つ-く                N3        action        U+4ED8                r012,r053        5        1        left-right        6
+k0354        由        reason        ゆ        ユ,ユウ        よし                N3        abstract        U+7531                r152        5        1        single        6
+k0355        夫        husband        おっと        フ,フウ        おっと                N3        people        U+592B                r047        4        1        single        6
+k0356        石        stone        いし        セキ,シャク        いし                N3        nature        U+77F3                r169        5        1        single        6
+k0357        消        extinguish; erase        けす        ショウ        け-す,き-える                N3        action        U+6D88                r090,r055        10        2        left-right        6
+k0358        神        god        かみ        シン,ジン        かみ                N3        religion        U+795E                r142,r080        9        2        left-right        6
+k0359        番        number; turn        ばん        バン                (N/A)        N3        number        U+756A                r102,r150        12        2        top-bottom        6
+k0360        害        harm        がい        ガイ                (N/A)        N3        abstract        U+5BB3                r174,r037        10        2        top-bottom        6
+k0361        配        distribute        くばる        ハイ        くば-る                N3        action        U+914D                r251,r067        10        2        left-right        6
+k0362        育        educate        そだてる        イク        そだ-てる,そだ-つ                N3        education        U+80B2                r130,r110        8        2        top-bottom        6
+k0363        席        seat        せき        セキ                (N/A)        N3        place        U+5E2D                r072,r068        10        2        left-right        6
+k0364        残        remain        のこる        ザン        のこ-る,のこ-す                N3        action        U+6B8B                r115,r062        10        2        left-right        6
+k0365        想        thought        そう        ソウ        おも-う                N3        abstract        U+60F3                r092,r113        13        2        top-bottom        6
+k0366        念        idea; thought        ねん        ネン                (N/A)        N3        abstract        U+5FF5                r092,r004        8        2        top-bottom        6
+
+
+助労例然追商葉伝形景落負失差末守種美命福
+k0367        助        help        たすける        ジョ        たす-ける                N3        action        U+52A9                r026,r050        7        2        left-right        7
+k0368        労        labor        ろう        ロウ                (N/A)        N3        work        U+52B4                r026,r019        7        2        top-bottom        7
+k0369        例        example        れい        レイ        たと-える                N3        abstract        U+4F8B                r012,r165        8        2        left-right        7
+k0370        然        so; thus        ぜん        ゼン,ネン        しか-り                N3        abstract        U+7136                r128,r046        12        2        top-bottom        7
+k0371        追        chase        おう        ツイ        お-う                N3        action        U+8FFD                r249,r063        9        2        left-right        7
+k0372        商        commerce        しょう        ショウ        あきな-う                N3        economy        U+5546                r008,r037        11        2        top-bottom        7
+k0373        葉        leaf        は        ヨウ        は                N3        nature        U+8449                r083,r075        12        2        top-bottom        7
+k0374        伝        transmit        つたえる        デン        つた-える,つた-わる                N3        action        U+4F1D                r012,r009        6        2        left-right        7
+k0375        形        shape        かたち        ケイ,ギョウ        かたち                N3        abstract        U+5F62                r063,r026        7        2        left-right        7
+k0376        景        scenery        けい        ケイ                (N/A)        N3        nature        U+666F                r107,r047        12        2        top-bottom        7
+k0377        落        fall        おちる        ラク        お-ちる,お-とす                N3        action        U+843D                r083,r037        12        2        top-bottom        7
+k0378        負        lose; carry        まける        フ        ま-ける,お-う                N3        action        U+8CA0                r236        9        2        single        7
+k0379        失        lose        うしなう        シツ        うしな-う                N3        action        U+5931                r047        5        1        single        7
+k0380        差        difference        さ        サ        さ-す                N3        abstract        U+5DEE                r193,r065        10        2        top-bottom        7
+k0381        末        end        すえ        マツ,バツ        すえ                N3        time        U+672B                r075        5        1        single        7
+k0382        守        protect        まもる        シュ,ス        まも-る                N3        action        U+5B88                r174,r053        6        2        top-bottom        7
+k0383        種        kind        たね        シュ        たね                N3        nature        U+7A2E                r173,r150        14        2        left-right        7
+k0384        美        beauty        び        ビ        うつく-しい                N3        description        U+7F8E                r193,r047        9        2        top-bottom        7
+k0385        命        life; command        いのち        メイ,ミョウ        いのち                N3        life        U+547D                r037,r011        8        2        top-bottom        7
+k0386        福        fortune        ふく        フク                (N/A)        N3        abstract        U+798F                r142,r152        13        2        left-right        7
+
+
+望観察横深申様港達良候満敗路科積他客登速
+k0387        望        hope; desire        のぞむ        ボウ        のぞ-む                N3        abstract        U+671B                r107,r001        11        2        left-right        8
+k0388        観        observe        みる        カン                (N/A)        N3        action        U+898B                r101,r006        14        2        left-right        8
+k0389        察        examine        さつ        サツ                (N/A)        N3        action        U+63A2                r037,r036        15        2        top-bottom        8
+k0390        横        horizontal        よこ        オウ        よこ                N3        position        U+6A2A                r176,r036        15        2        left-right        8
+k0391        深        deep        ふかい        シン        ふか-い                N3        nature        U+6DF1                r180,r090        11        2        left-right        8
+k0392        申        say; report        もうす        シン        もう-す                N3        action        U+7533                r011,r010        5        1        top-bottom        8
+k0393        様        manner; appearance        さま        ヨウ        さま                N3        abstract        U+69D8                r047,r002        14        2        left-right        8
+k0394        港        port        みなと        コウ        みなと                N3        place        U+6E2F                r091,r060        11        2        left-right        8
+k0395        達        reach; attain        たつ        タツ                (N/A)        N3        action        U+9054                r060,r036        12        2        left-right        8
+k0396        良        good        よい        リョウ        よ-い                N3        description        U+826F                r047,r037        7        2        left-right        8
+k0397        候        climate; wait        そうろう        コウ                (N/A)        N3        time        U+5019                r095,r037        10        2        top-bottom        8
+k0398        満        full        みちる        マン        み-ちる                N3        abstract        U+6E80                r066,r090        12        2        left-right        8
+k0399        敗        failure        やぶれる        ハイ        やぶ-れる                N3        action        U+6557                r177,r036        12        2        top-bottom        8
+k0400        路        road        みち        ロ        みち                N3        place        U+8DEF                r242,r037        13        2        left-right        8
+k0401        科        department; course        か        カ                (N/A)        N3        abstract        U+79D1                r169,r113        9        2        left-right        8
+k0402        積        accumulate        つむ        セキ        つ-む,つ-もる                N3        action        U+7A4D                r113,r031        16        2        left-right        8
+k0403        他        other        ほか        タ        ほか                N3        abstract        U+4ED6                r012,r037        5        1        left-right        8
+k0404        客        customer        きゃく        キャク                (N/A)        N3        society        U+5BA2                r047,r011        10        2        top-bottom        8
+k0405        登        climb        のぼる        トウ        のぼ-る                N3        action        U+767B                r047,r061        12        2        left-right        8
+k0406        速        fast        はやい        ソク        はや-い                N3        description        U+901F                r156,r036        10        2        left-right        8
+
+
+飛殺号単完給苦園具辞馬愛未冷類王返熱宿覚
+k0407        飛        fly        とぶ        ヒ        と-ぶ,と-ばす                N3        action        U+98DB                r060,r029        9        2        left-right        9
+k0408        殺        kill        ころす        サツ,サイ        ころ-す                N3        action        U+6BBA                r026,r036        10        2        left-right        9
+k0409        号        number; title        ごう        ゴウ                (N/A)        N3        abstract        U+53F7                r031,r037        5        1        left-right        9
+k0410        単        single        ひとえ        タン                (N/A)        N3        abstract        U+5358                r074,r036        10        2        top-bottom        9
+k0411        完        complete        かん        カン                (N/A)        N3        abstract        U+5B8C                r175,r036        7        2        top-bottom        9
+k0412        給        provide        きゅう        キュウ        たまわ-る                N3        action        U+7D66                r007,r026        12        2        left-right        9
+k0413        苦        pain        くるしい        ク        くる-しい,にが-い                N3        feeling        U+82E6                r123,r036        10        2        left-right        9
+k0414        園        garden        その        エン        その                N3        place        U+5712                r152,r061        13        2        enclosure        9
+k0415        具        tool        ぐ        グ                (N/A)        N3        object        U+5177                r065,r036        8        2        left-right        9
+k0416        辞        resign; word        やめる        ジ        や-める                N3        action        U+8F9E                r229,r036        13        2        left-right        9
+k0417        馬        horse        うま        バ,マ        うま                N3        nature        U+99AC                r138        10        2        single        9
+k0418        愛        love        あい        アイ                (N/A)        N3        feeling        U+611B                r002,r036,r083        13        3        top-bottom        9
+k0419        未        not yet        み        ミ                (N/A)        N3        time        U+672A                r036,r007        5        1        top-bottom        9
+k0420        冷        cold        つめたい        レイ        つめ-たい,ひ-える                N3        feeling        U+51B7                r081,r037        7        2        left-right        9
+k0421        類        type        るい        ルイ                (N/A)        N3        abstract        U+985E                r197,r036        18        2        top-bottom        9
+k0422        王        king        おう        オウ                (N/A)        N3        abstract        U+738B                r146        4        1        single        9
+k0423        返        return        かえる        ヘン        かえ-す,かえ-る                N3        action        U+8FD4                r162,r036        9        2        left-right        9
+k0424        熱        heat        あつい        ネツ        あつ-い                N3        nature        U+71B1                r127,r036        15        2        left-right        9
+k0425        宿        inn        やど        シュク        やど-る                N3        place        U+5BBF                r174,r037        11        2        top-bottom        9
+k0426        覚        remember; awake        おぼえる        カク        おぼ-える                N3        action        U+899A                r112,r036        15        2        left-right        9
+
+
+船努散静喜幸等老曲庭徒欠息願絵笑束列遊君
+k0427        船        ship        ふね        セン        ふね                N3        place        U+8239        r137,r000        11        2        left-right        9
+k0428        努        strive        つとめる        ド        つと‑める                N3        action        U+52AA        r19,r力        7        2        left-right        9
+k0429        散        scatter        ちる        サン        ちる,ちらす                N2        action/U+6563        r90,r攴        12        2        left-right        9
+k0430        静        quiet        しずか        セイ,ジョウ        しず‑か                N3        feeling        U+9759        r47,r青        14        2        left-right        9
+k0431        喜        rejoice        よろこぶ        キ        よろこ‑ぶ                N3        feeling        U+559C        r49,r口        12        2        left-right        9
+k0432        幸        happiness        しあわせ        コウ        さち                N3        abstract        U+5E78        r90,r土        8        2        top-bottom        9
+k0433        等        equal        ひとしい        トウ        (N/A)                N3        abstract        U+7B49        r120,r寺        12        2        top-bottom        9
+k0434        老        old        おいる        ロウ        おい‑る                N3        nature        U+8001        r33,r匕        6        2        top-bottom        9
+k0435        曲        bend; music        まがる        キョク        まが‑る                N3        abstract        U+66F2        r30,r日        6        2        enclosure        9
+k0436        庭        courtyard        にわ        テイ        (N/A)                N3        place        U+5EAD        r40,r廷        10        2        enclosure        9
+k0437        徒        disciple        (N/A)        ト        (N/A)                N3        abstract/U+5F92        r54,r止        10        2        left-right        9
+k0438        欠        lack        かける        ケツ        か‑ける                N3        abstract        U+6B20        r76        4        1        single        9
+k0439        息        breath        いき        ソク        い‑き                N3        nature        U+606F        r61,r心        10        2        left-right        9
+k0440        願        request        ねがう        ガン        ねが‑う                N3        abstract        U+9858        r120,r頁        14        2        top-bottom        9
+k0441        絵        picture        え        カイ        (N/A)                N3        abstract/U+7D75        r120,r糸        12        2        left-right        9
+k0442        笑        laugh        わらう        ショウ        わら‑う,え‑む                N3        feeling        U+7B11        r46,r竹        10        2        top-bottom        9
+k0443        束        bundle        たば        ソク        (N/A)                N3        abstract        U+675F        r75,r木        7        2        top-bottom        9
+k0444        列        row        (N/A)        レツ        (N/A)                N3        abstract        U+5217        r18,r歹        6        2        left-right        9
+k0445        遊        play        あそぶ        ユウ        あそ‑ぶ                N3        action/U+904A        r162,r方        12        2        left-right        9
+k0446        君        you; ruler        きみ        クン        (N/A)                N3        abstract/U+541B        r30,r口        7        2        left-right        9
+
+
+折草酒悲晴陽歯雪礼昔泳鳴箱才政経現性制務
+k0447        折        fold        おる        セツ        お‑る                N3        action/U+6298        r64,r手        7        2        left-right        9
+k0448        草        grass        くさ        ソウ        (N/A)                N3        nature/U+8349        r140,r艹        9        2        top-bottom        9
+k0449        酒        alcohol        さけ        シュ        さけ                N3        nature/U+9152        r164,r水        10        2        left-right        9
+k0450        悲        sad        かなしい        ヒ        かな‑しい                N3        feeling/U+60B2        r94,r心        12        2        left-right        9
+k0451        晴        clear weather        はれる        セイ        はれ                N3        nature/U+6674        r72,r日        12        2        top-bottom        9
+k0452        陽        sun/yang        ひ        ヨウ        (N/A)                N3        nature/U+967D        r72,r阝        12        2        left-right        9
+k0453        歯        tooth        は        シ        (N/A)                N2        object/U+6B6F        r211,r止        16        2        top-bottom        9
+k0454        雪        snow        ゆき        セツ        (N/A)                N3        nature/U+96EA        r86,r雨        11        2        top-bottom        9
+k0455        礼        thanks        (N/A)        レイ        (N/A)                N3        abstract/U+79AE        r113,r示        5        1        left-right        9
+k0456        昔        long ago        むかし        セキ        (N/A)                N3        time/U+6614        r47,r日        8        2        top-bottom        9
+k0457        泳        swim        およぐ        エイ        およ‑ぐ                N3        action/U+6C34        r85,r水        8        2        left-right        9
+k0458        鳴        chirp/sound        なく        メイ        なく                N3        nature/U+9CF4        r169,r口        14        2        left-right        9
+k0459        箱        box        はこ        ソウ        (N/A)                N3        object/U+7BB1        r118,r竹        15        2        top-bottom        9
+k0460        才        talent        (N/A)        サイ        (N/A)                N3        abstract/U+624D        r37        3        1        single        9
+k0461        政        politics        まつりごと        セイ,ショウ        (N/A)                N3        abstract/U+653F        r65,r攴        9        2        left-right        9
+k0462        経        pass thru        へる        ケイ        (N/A)                N3        abstract/U+7D4C        r120,r糸        11        2        left-right        9
+k0463        現        appear        あらわれる        ゲン        あらわ‑れる                N3        abstract/U+73FE        r82,r見        11        2        left-right        9
+k0464        性        nature/sex        (N/A)        セイ,ショウ        (N/A)                N3        abstract/U+6027        r64,r心        8        2        left-right        9
+k0465        制        system        (N/A)        セイ        (N/A)                N3        abstract/U+5236        r61,r制        9        2        left-right        9
+k0466        務        duty        つとめ        ム        つと‑める                N3        abstract/U+52D9        r92,r務        12        2        left-right        9
+
+
+権支報済解資際判認在件任論増情示確容演歳
+k0467        権        authority        けん        ケン        (N/A)        N3        abstract        U+6A29        r198,r木        15        2        left-right        9
+k0468        支        support        ささえる        シ        ささ‑える                N3        action/U+652F        r65        4        1        single        9
+k0469        報        report        ほう        ホウ        (N/A)        N3        abstract        U+5831        r149,r言        12        2        left-right        9
+k0470        済        settle        すむ        サイ        す‑む                N3        abstract        U+6B8B        r85,r水        11        2        left-right        9
+k0471        解        resolution        とく        カイ        と‑く,と‑ける                N3        abstract        U+89E3        r149,r角        13        2        left-right        9
+k0472        資        resources        し        シ        (N/A)        N3        abstract        U+8CC7        r154,r貝        13        2        left-right        9
+k0473        際        occasion        きわ        サイ        きわ                N3        abstract        U+969B        r170,r阝        14        2        left-right        9
+k0474        判        judge        わかる        ハン        (N/A)        N3        abstract/U+5224        r18,r刂        8        2        left-right        9
+k0475        認        acknowledge        みとめる        ニン        みと‑める                N3        abstract/U+8A8D        r149,r言        14        2        left-right        9
+k0476        在        exist        ある        ザイ        (N/A)        N3        abstract/U+5728        r6,r土        6        2        left-right        9
+k0477        件        matter        くだん        ケン        (N/A)        N3        abstract/U+4EF6        r6,r亠        8        2        left-right        9
+k0478        任        responsibility        まかせる        ニン        まか‑せる                N3        abstract/U+4ED5        r9,r亻        6        2        left-right        9
+k0479        論        discuss        (N/A)        ロン        (N/A)        N3        abstract/U+8AD6        r149,r言        15        2        left-right        9
+k0480        増        increase        ふえる        ゾウ        ふ‑える,ふ‑やす                N3        abstract/U+5897        r130,r土        14        2        left-right        9
+k0481        情        feelings        なさけ        ジョウ,セイ        なさけ                N3        feeling/U+60C5        r61,r心        11        2        left-right        9
+k0482        示        show        しめす        ジ,シ        しめ‑す                N3        abstract/U+793A        r113        5        1        single        9
+k0483        確        certain        たしか        カク,コウ        たし‑か                N3        abstract/U+78BA        r172,r石        15        2        left-right        9
+k0484        容        contain        いれる        ヨウ        い‑れる                N3        abstract/U+5BB9        r40,r宀        10        2        top-bottom        9
+k0485        演        performance        (N/A)        エン        (N/A)        N3        action/U+6F14        r85,r水        14        2        left-right        9
+k0486        歳        age/years        さい        サイ        (N/A)        N3        time/U+6B73        r75,r止        13        2        left-right        9
+
+
+能格疑過常状職与供構割難優収断違規術備宅
+k0487        能        ability        よく        ノウ        (N/A)        N3        abstract        U+80FD        r166,r匕        10        2        left-right        9
+k0488        格        status        (N/A)        カク        (N/A)        N3        abstract        U+683C        r75,r木        10        2        left-right        9
+k0489        疑        doubt        うたがう        ギ        うたが‑う                N3        abstract/U+7591        r75,r匕        14        2        left-right        9
+k0490        過        pass over        すぎる        カ        すぎ‑る                N3        action/U+904E        r162,r辶        12        2        left-right        9
+k0491        常        normal        つね        ジョウ        つね                N3        abstract/U+5E38        r85,r巾        11        2        top-bottom        9
+k0492        状        condition        (N/A)        ジョウ        (N/A)        N3        abstract/U+72B6        r95,r犬        7        2        left-right        9
+k0493        職        job        (N/A)        ショク        (N/A)        N3        abstract/U+8077        r65,r耳        16        2        left-right        9
+k0494        与        give        あたえる        ヨ        あた‑える                N3        action/U+4E0E        r24,r一        3        1        single        9
+k0495        供        accompany        とも        キョウ        とも                N3        abstract/U+4F9B        r55,r八        8        2        left-right        9
+k0496        構        structure        かまえる        コウ        かま‑える                N3        abstract/U+69CB        r75,r木        14        2        left-right        9
+k0497        割        divide        わる        カツ        わ‑る                N3        action/U+5272        r29,r刀        10        2        left-right        9
+k0498        難        difficult        むずかしい        ナン        むずか‑しい                N3        abstract/U+96E3        r76,r隹        18        2        left-right        9
+k0499        優        superior        やさしい        ユウ        やさ‑しい                N3        abstract/U+512A        r85,r亻        17        2        left-right        9
+k0500        収        collect        おさめる        シュウ        おさ‑める                N3        action/U+53D6        r6,r丿        6        2        left-right        9
+k0501        断        cut off        たつ        ダン        た‑つ                N3        action/U+65AD        r170,r斤        11        2        left-right        9
+k0502        違        differs        ちがう        イ        ちが‑う                N3        abstract/U+9053        r162,r辛        13        2        left-right        9
+k0503        規        rule        (N/A)        キ        (N/A)        N3        abstract/U+898F        r149,r見        11        2        left-right        9
+k0504        術        art/technique        (N/A)        ジュツ        (N/A)        N3        abstract/U+8853        r149,r行        11        2        left-right        9
+k0505        備        prepare        そなえる        ビ        そな‑える                N3        action/U+5099        r158,r人        12        2        left-right        9
+k0506        宅        home        (N/A)        タク        (N/A)        N3        place/U+5BBF        r40,r宀        6        2        top-bottom        9
+
+
+警訪限退渡若非段財識呼程値突処否師易存座
+k0507        警        alert/guard        いましめる        ケイ        いましめる                N3        abstract        U+8B66        r149,r言        18        2        left-right        9
+k0508        訪        visit        たずねる        ホウ        たずねる,おとずれる                N3        action        U+8A2A        r149,r言        12        2        left-right        9
+k0509        限        limit        かぎる        ゲン        かぎる                N3        abstract/U+9650        r170,r阝        11        2        left-right        9
+k0510        退        retreat        しりぞく        タイ        しりぞく,どく                N3        action/U+9000        r162,r辶        9        2        left-right        9
+k0511        渡        cross over        わたる        ト        わたる,わたす                N3        action/U+6E21        r85,r水        12        2        left-right        9
+k0512        若        young        わかい        ジャク,ニャク        わかい                N3        nature/U+82E5        r140,r艹        8        2        top-bottom        9
+k0513        非        not; negative        (N/A)        ヒ        (N/A)                N3        abstract/U+975E        r175,r非        8        1        single        9
+k0514        段        step/grade        (N/A)        ダン,タン        (N/A)                N3        abstract/U+6BB5        r118,r殳        9        2        left-right        9
+k0515        財        wealth        たから        ザイ,サイ        たから                N3        abstract/U+8CA1        r154,r貝        13        2        left-right        9
+k0516        識        know; consciousness        しる        シキ        しる                N3        abstract/U+8B58        r149,r言        19        2        left-right        9
+k0517        呼        call        よぶ        コ        よぶ                N3        action/U+547C        r30,r口        8        2        left-right        9
+k0518        程        degree        ほど        テイ        (N/A)                N3        abstract/U+7A0B        r160,r禾        12        2        left-right        9
+k0519        値        value        あたい        チ        あたい                N3        abstract/U+5024        r9,r亻        10        2        left-right        9
+k0520        突        thrust        つく        トツ,カ        つく                N3        action/U+7A81        r112,r立        10        2        left-right        9
+k0521        処        deal with        ところ        ショ        ところ,こ                N3        abstract/U+51E6        r104,r冫        7        2        left-right        9
+k0522        否        no; negate        いな        ヒ        いな                N3        abstract/U+5426        r50,r口        7        2        left-right        9
+k0523        師        teacher/expert        (N/A)        シ        (N/A)                N3        abstract/U+5E2B        r21,r巾        10        2        left-right        9
+k0524        易        easy        やさしい        イ,エキ        やさしい                N3        abstract/U+6613        r130,r日        8        2        left-right        9
+k0525        存        exist        たもつ        ゾン        たもつ                N3        abstract/U+5B58        r6,r子        6        2        left-right        9
+k0526        座        seat        すわる        ザ        すわる                N3        place/U+5EA7        r40,r土        10        2        top-bottom        9
+
+
+破除降責捕危迎因富彼舞亡適婦寄込余妻背険
+k0527        破        break        やぶる        ハ        やぶ‑る                N3        action        U+7834        r112,r石        10        2        left-right        9
+k0528        除        remove        のぞく        ジョ        のぞ‑く                N3        action/U+9664        r162,r阝        10        2        left-right        9
+k0529        降        descend        ふる        コウ,ゴ        ふ‑る                N3        action/U+964D        r162,r阝        10        2        left-right        9
+k0530        責        responsibility        せめる        セキ        せめ‑る                N3        abstract/U+8CAC        r149,r貝        10        2        left-right        9
+k0531        捕        capture        つかまえる        ホ        つかま‑える                N3        action/U+6355        r85,r手        10        2        left-right        9
+k0532        危        dangerous        あぶない        キ        あぶな‑い                N3        nature/U+5371        r76,r厄        6        2        left-right        9
+k0533        迎        welcome        むかえる        ゲイ        むか‑える                N3        action/U+8FCE        r162,r辶        9        2        left-right        9
+k0534        因        cause        よる        イン        (N/A)                N3        abstract/U+56E0        r30,r大        6        2        left-right        9
+k0535        富        wealth        とみ        フ        とみ                N3        abstract/U+5BFF        r130,r宀        12        2        top-bottom        9
+k0536        彼        that        かれ        ヒ        かれ                N3        abstract/U+5F7C        r75,r彳        7        2        left-right        9
+k0537        舞        dance        まう        ブ,ム        まう                N3        action/U+821E        r111,r舛        15        2        left-right        9
+k0538        亡        deceased        (N/A)        ボウ,モウ        (N/A)        N3        abstract/U+4EA1        r3,r亠        3        1        single        9
+k0539        適        suitable        (N/A)        テキ        (N/A)        N3        abstract/U+9069        r162,r舌        14        2        left-right        9
+k0540        婦        woman/wife        よめ        フ        (N/A)                N3        abstract/U+5A66        r38,r女        10        2        left-right        9
+k0541        寄        approach        よる        キ        よ‑る                N3        action/U+5BC4        r38,r宀        10        2        left-right        9
+k0542        込        enter        こむ        コウ        こ‑む                N3        action/U+8FBC        r162,r辶        7        2        left-right        9
+k0543        余        extra        あまる        ヨ        あま‑る                N3        abstract/U+4F59        r6,r人        7        2        left-right        9
+k0544        妻        wife        つま        サイ        つま                N3        abstract/U+59BB        r38,r女        8        2        left-right        9
+k0545        背        back        せ        ハイ        せ                N3        abstract/U+80CC        r77,r肉        9        2        left-right        9
+k0546        険        rugged/dangerous        けわしい        ケン        けわ‑しい                N3        nature/U+96A0        r76,r阝        11        2        left-right        9
+
+
+頼途許抜留罪精婚浮絶押倒払勤遅居雑招困更
+k0547        頼        rely        たのむ        ライ        たの‑む                N3        action/U+983C        r162,r頁        16        2        left-right        9
+k0548        途        route        みち        ト        (N/A)                N3        abstract/U+9014        r162,r辶        10        2        left-right        9
+k0549        許        permit        ゆるす        キョ        ゆる‑す                N3        action/U+8A31        r149,r言        10        2        left-right        9
+k0550        抜        pull out        ぬく        バツ        ぬ‑く                N3        action/U+6298        r64,r手        7        2        left-right        9
+k0551        留        stay        とめる        リュウ,ル        と‑める                N3        action/U+7559        r72,r田        10        2        top-bottom        9
+k0552        罪        sin        つみ        ザイ        (N/A)                N3        abstract/U+7F6A        r118,r网        13        2        left-right        9
+k0553        精        refined        (N/A)        セイ        (N/A)                N3        abstract/U+7CBE        r120,r米        14        2        left-right        9
+k0554        婚        marriage        とつぐ        コン        とつ‑ぐ                N3        abstract/U+5A5A        r38,r女        11        2        left-right        9
+k0555        浮        float        うく        フ        う‑く,う‑かれる                N3        nature/U+6D6E        r85,r水        10        2        left-right        9
+k0556        絶        end        たえる        ゼツ        た‑える                N3        action/U+7D76        r149,r糸        12        2        left-right        9
+k0557        押        push        おす        オウ        お‑す                N3        action/U+625B        r75,r手        8        2        left-right        9
+k0558        倒        fall        たおれる        トウ        たお‑れる                N3        action/U+5012        r75,r人        10        2        left-right        9
+k0559        払        pay        はらう        フツ        はら‑う                N3        action/U+6255        r75,r手        5        2        left-right        9
+k0560        勤        diligent        つとめる        キン        つと‑める                N3        action/U+52E4        r92,r力        11        2        left-right        9
+k0561        遅        late        おそい        チ        おそ‑い                N3        abstract/U+9069        r162,r辶        12        2        left-right        9
+k0562        居        reside        いる        キョ        (N/A)                N3        abstract/U+5C45        r40,r尸        8        2        top-bottom        9
+k0563        雑        miscellaneous        まじる        ザツ,ゾウ        まじ‑る                N3        abstract/U+96D1        r120,r隹        14        2        left-right        9
+k0564        招        summon        まねく        ショウ        まね‑く                N3        action/U+62DB        r75,r手        9        2        left-right        9
+k0565        困        troubled        こまる        コン        こま‑る                N3        abstract/U+56F0        r118,r口        7        2        left-right        9
+k0566        更        change        さら        コウ        さら                N3        abstract/U+66F4        r77,r曰        7        2        top-bottom        9
+
+
+刻賛抱犯恐戻越欲痛互似探逃迷夢閉緒暮到寝
+k0567        刻        carve/time        きざむ        コク        きざ‑む                N3        action/U+523B        r18,r刂        9        2        left-right        9
+k0568        賛        praise        たたえる        サン        たた‑える                N3        abstract/U+8CA0        r154,r貝        16        2        left-right        9
+k0569        抱        embrace        だく        ホウ        だ‑く,いだ‑く                N3        action/U+62B1        r75,r手        7        2        left-right        9
+k0570        犯        crime        おかす        ハン        おか‑す                N3        action/U+72AF        r66,r犬        6        2        left-right        9
+k0571        恐        fear        おそれる        キョウ        おそ‑れる                N3        feeling/U+6050        r61,r心        9        2        left-right        9
+k0572        戻        return        もどる        レイ        もど‑る                N3        action/U+623B        r75,r手        7        2        left-right        9
+k0573        越        cross over        こす        エツ        こ‑す,こ‑える                N3        action/U+8D8A        r162,r走        12        2        left-right        9
+k0574        欲        want        ほしい        ヨク        ほ‑しい                N3        abstract/U+6B32        r61,r欠        11        2        left-right        9
+k0575        痛        pain        いたい        ツウ        いた‑い                N3        feeling/U+75DB        r104,r疒        12        2        left-right        9
+k0576        互        mutual        たがい        ゴ        (N/A)                N3        abstract/U+4E92        r37,r二        4        2        left-right        9
+k0577        似        resemble        にる        ジ        に‑る                N3        abstract/U+4F3C        r9,r人        7        2        left-right        9
+k0578        探        search        さがす        タン        さが‑す                N3        action/U+63A2        r85,r手        11        2        left-right        9
+k0579        逃        run away        にげる        トウ        にげ‑る                N3        action/U+9003        r162,r辶        9        2        left-right        9
+k0580        迷        be lost        まよう        メイ        まよう                N3        abstract/U+8FF7        r61,r糸        9        2        left-right        9
+k0581        夢        dream        ゆめ        ム        (N/A)                N3        abstract/U+5922        r109,r夕        13        2        top-bottom        9
+k0582        閉        close        とじる        ヘイ        とじ‑る                N3        action/U+9589        r169,r門        11        2        enclosure        9
+k0583        緒        beginning/thread        お        ショ        お                N3        abstract/U+7DD2        r61,r糸        14        2        left-right        9
+k0584        暮        end of day        くれる        ボ        く‑れる                N3        nature/U+66AE        r72,r日        12        2        top-bottom        9
+k0585        到        arrive        いたる        トウ        いた‑る                N3        action/U+5230        r162,r至        10        2        left-right        9
+k0586        寝        sleep        ねる        シン        ね‑る                N3        action/U+5BDD        r40,r宀        13        2        top-bottom        9
+
+
+盗吸御忘吹娘誤慣窓貧怒祖杯疲皆腹煙眠怖頂
+k0587        盗        steal        ぬすむ        トウ        ぬす‑む                N3        action/U+76DC        r154,r皿        11        2        left-right        9
+k0588        吸        inhale        すう        キュウ        す‑う                N3        action/U+5438        r30,r口        6        2        left-right        9
+k0589        御        honorific        おん        ギョ,ゴ        おん                N3        abstract/U+5FA1        r162,r彳        12        2        left-right        9
+k0590        忘        forget        わすれる        ボウ        わす‑れる                N3        action/U+5FD8        r61,r心        7        2        left-right        9
+k0591        吹        blow        ふく        スイ        ふ‑く                N3        action/U+5439        r75,r口        7        2        left-right        9
+k0592        娘        daughter        むすめ        ジョウ        むすめ                N3        abstract/U+5A18        r38,r女        10        2        left-right        9
+k0593        誤        mistake        あやまる        ゴ        あやま‑る                N3        action/U+8AA4        r149,r言        14        2        left-right        9
+k0594        慣        accustomed        なれる        カン        な‑れる                N3        abstract/U+6163        r61,r心        14        2        left-right        9
+k0595        窓        window        まど        ソウ        (N/A)                N3        object/U+7A93        r40,r穴        11        2        top-bottom        9
+k0596        貧        poor        まずしい        ヒン        まず‑しい                N3        abstract/U+8CA7        r154,r貝        10        2        left-right        9
+k0597        怒        anger        いかる        ド        いか‑る                N3        feeling/U+6012        r61,r心        7        2        left-right        9
+k0598        祖        ancestor        そ        ソ        (N/A)                N3        abstract/U+7956        r113,r示        10        2        left-right        9
+k0599        杯        cup        さかずき        ハイ        (N/A)                N3        object/U+676F        r84,r木        8        2        left-right        9
+k0600        疲        tired        つかれる        ヒ        つか‑れる                N3        feeling/U+75B2        r104,r疒        10        2        left-right        9
+k0601        皆        all        みな        カイ        みな                N3        abstract/U+7686        r107,r白        9        2        top-bottom        9
+k0602        腹        stomach        はら        フク        はら                N3        nature/U+8179        r130,r肉        12        2        left-right        9
+k0603        煙        smoke        けむり        エン        けむ‑る                N3        nature/U+7159        r86,r火        12        2        left-right        9
+k0604        眠        sleep        ねむる        ミン        ねむ‑る                N3        nature/U+7720        r113,r目        11        2        left-right        9
+k0605        怖        scary        こわい        フ        こわ‑い                N3        feeling/U+6015        r61,r心        8        2        left-right        9
+k0606        頂        top        いただく        チョウ        いただ‑く                N3        abstract/U+9802        r75,r頁        11        2        left-right        9
+
+
+晩髪忙靴恥偶偉猫掛幾
+k0607        晩        late evening        ばん        (N/A)        (N/A)        N3        nature/U+665A        r72,r日        12        2        top-bottom        9
+k0608        髪        hair        かみ        ハツ        かみ                N3        nature/U+9AEA        r190,r髟        14        2        top-bottom        9
+k0609        忙        busy        いそがしい        ボウ        いそが‑しい                N3        abstract/U+5FD9        r61,r心        7        2        left-right        9
+k0610        靴        shoes        くつ        カ        くつ                N3        object/U+978B        r177,r革        13        2        top-bottom        9
+k0611        恥        shame        はじ        チ        はじ                N3        feeling/U+6065        r61,r心        10        2        left-right        9
+k0612        偶        偶然        たま        グウ        たま                N3        abstract/U+5076        r9,r人        11        2        left-right        9
+k0613        偉        great        えらい        イ        えら‑い                N3        abstract/U+5049        r9,r人        12        2        left-right        9
+k0614        猫        cat        ねこ        ビョウ        ねこ                N3        nature/U+732B        r94,r犬        11        2        left-right        9
+k0615        掛        hang        かける        カイ        かけ‑る                N3        action/U+639B        r75,r手        9        2        left-right        9
+k0616        幾        how many        いく        キ        いく                N3        abstract/U+5E7E        r61,r幺        7        2        left-right        9
+
+
+Jlpt 4
+区県村低門森林短軽池弱菜協改府委軍各島副
+
+
+算線農州象賞辺課極量型谷史階管兵細丸録省
+
+
+橋岸周材戸央竹競根歴航鉄児印油輪植清倍億
+
+
+芸停陸玉波帯羽固囲卒順岩練令角貨血温季星
+
+
+庫坂底寺希仲栄札板包焼章照秒皮漁貯柱祭筆
+
+
+訓浴童塩兆畑毛緑祝衣荷黄臣浅雲炭勇械湖虫
+
+
+刷湯孫毒氷拾粉糸灯麦鼻胃貝皿党総領設査団
+
+
+革勢減再税営可比防補境導輸述武域額欧担準
+
+
+造被技復移個脳含蔵況針専接効湾旧券編捜超
+
+
+並療採介販将幅般貿講装諸劇河禁逆換久暴占
+
+
+均圧署伸爆延則乱普測豊厚齢略承了庁城層版
+
+
+絡損募裏仏績築混昇永著誌刊像香布宇巨震触
+
+
+依汚枚複郵骨傾届巻燃駐紹雇替預簡臓律贈薄
+
+
+群奥詰双刺純翌快片敬悩泉荒硬埋袋宝封胸砂
+
+
+賢腕床尊柔殿濃液肩零幼泊甘掃掘捨軟沈凍乳
+
+
+恋紅郊腰踊冊珍卵喫干溶鉱涙匹鋭枝塗軒叫拝
+
+
+乾棒祈綿汗銅湿咲召脂蒸肌耕鈍泥隅辛磨姓筒
+
+
+粒詞畳机膚濯塔沸灰菓帽枯涼舟符憎肯燥畜坊
+
+
+挟曇滴伺患籍跡瓶缶隻
+
+
+Jlpt 5
+暑第結案整器健標司康級救節泣保基価応検展
+
+
+条独率張環評製授批修拡故異善志恵賃宙操壁
+
+
+仮看較狭暖氏統派策提挙企藤沢裁証援施井護
+
+
+態鮮視幹宮衛監審義訴株姿閣衆影松撃佐核融
+
+
+票渉響推請士討攻崎督催及憲離激摘系郎盟従
+
+
+隊織振弁就献厳維浜遺塁邦素遣抗模雄益緊宣
+
+
+昭廃伊江僚吉盛皇臨踏壊債興源儀創障継筋闘
+
+
+葬避逮迫惑崩紀聴脱博締執房撤削密措載陣我
+
+
+為抑幕染奈傷択秀徴弾償功拠秘拒刑塚致繰尾
+
+
+描鈴盤項喪伴養懸街契掲躍棄邸縮還属慮枠露
+
+
+沖緩需射購揮充貢鹿却端獲郡併徹貴衝焦奪災
+
+
+浦析譲称納樹挑誘紛至宗促慎控智握俊銭渋銃
+
+
+携診託撮誕侵括謝孝駆透津稲裂敏是排裕堅訳
+
+
+芝綱典賀扱顧弘訟戒祉誉歓奏勧騒閥甲縄郷揺
+
+
+免既薦隣華範隠徳哲杉里釈己妥威豪熊滞微隆
+
+
+症暫忠倉彦肝喚沿妙唱阿索誠襲懇俳柄驚麻李
+
+
+浩剤瀬趣陥斎貫仙慰序旬兼聖旨即柳舎偽覇詳
+
+
+抵脅茂犠旗距雅飾網竜詩繁翼潟敵魅嫌斉敷擁
+
+
+圏酸罰滅礎腐脚潮梅尽僕桜滑孤炎賠句寿鋼頑
+
+
+鎖彩摩励縦輝蓄軸巡稼瞬砲噴誇祥牲秩帝宏唆
+
+
+阻泰賄撲堀菊絞縁唯膨矢耐塾漏慶猛芳懲剣彰
+
+
+棋丁恒揚冒之倫陳憶潜梨仁克岳概拘墓黙須偏
+
+
+雰遇諮卓亀糧簿炉牧殊殖艦輩穴奇慢鶴謀昌拍
+
+
+朗丈寛覆胞隔浄没暇肺貞靖鑑飼陰銘随烈尋稿
+
+
+丹啓也丘棟壌漫玄粘悟舗妊熟旭恩騰往豆遂狂
+
+
+岐陛緯培衰艇屈径淡抽披廷錦准磯奨浸剰胆繊
+
+
+駒虚霊帳悔諭惨虐翻墜沼据肥徐糖搭盾脈滝軌
+
+
+俵妨擦鯨荘諾雷漂懐勘栽拐駄添冠斜鏡聡浪亜
+
+
+覧詐壇勲魔酬紫曙紋卸奮欄逸涯拓眼獄尚彫穏
+
+
+顕巧矛垣欺釣萩粧粛栗愚嘉遭架鬼庶稚滋幻煮
+
+
+姫誓把践呈疎仰剛疾征砕謡嫁謙后嘆菌鎌巣頻
+
+
+琴班棚潔酷宰廊寂辰霞伏碁俗漠邪晶墨鎮洞履
+
+
+劣那殴娠奉憂朴亭淳怪鳩酔惜穫佳潤悼乏該赴
+
+
+桑桂髄虎盆晋穂壮堤飢傍疫累痴搬晃癒桐寸郭
+
+
+尿凶吐宴鷹賓虜陶鐘憾猪紘磁弥昆粗訂芽庄傘
+
+
+敦騎寧循忍怠如寮祐鵬鉛珠凝苗獣哀跳匠垂蛇
+
+
+澄縫僧眺唐亘呉凡憩媛溝恭刈睡錯伯笹穀陵霧
+
+
+魂弊妃舶餓窮掌麗綾臭悦刃縛暦宜盲粋辱毅轄
+
+
+猿弦稔窒炊洪摂飽冗桃狩朱渦紳枢碑鍛刀鼓裸
+
+
+猶塊旋弓幣膜扇腸槽慈楊伐駿漬糾亮墳坪紺慌
+
+
+娯吾椿舌羅峡俸厘峰圭醸蓮弔乙汁尼遍衡薫猟
+
+
+羊款閲偵喝敢胎酵憤豚遮扉硫赦窃泡瑞又慨紡
+
+
+恨肪扶戯伍忌濁奔斗蘭迅肖鉢朽殻享秦茅藩沙
+
+
+輔媒鶏禅嘱胴迭挿嵐椎絹陪剖譜郁悠淑帆暁傑
+
+
+楠笛玲奴錠拳翔遷拙侍尺峠篤肇渇叔雌亨堪叙
+
+
+酢吟逓嶺甚喬崇漆岬癖愉寅礁乃洲屯樺槙姻巌
+
+
+擬塀唇睦閑胡幽峻曹詠卑侮鋳抹尉槻隷禍蝶酪
+
+
+茎帥逝汽琢匿襟蛍蕉寡琉痢庸朋坑藍賊搾畔遼
+
+
+唄孔橘漱呂拷嬢苑巽杜渓翁廉謹瞳湧欣窯褒醜
+
+
+升殉煩巴禎劾堕租稜桟倭婿慕斐罷矯某囚魁虹
+
+
+鴻泌於赳漸蚊葵厄藻禄孟嫡尭嚇巳凸暢韻霜硝
+
+
+勅芹杏棺儒鳳馨慧愁楼彬匡眉欽薪褐賜嵯綜繕
+
+
+栓翠鮎榛凹艶惣蔦錬隼渚衷逐斥稀芙詔皐雛惟
+
+
+佑耀黛渥憧宵妄惇脩甫酌蚕嬉蒼暉頒只肢檀凱
+
+
+彗謄梓丑嗣叶汐絢朔伽畝抄爽黎惰蛮冴旺萌偲
+
+
+壱瑠允侯蒔鯉弧遥舜瑛附彪卯但綺芋茜凌皓洸
+
+
+毬婆緋鯛怜邑倣碧啄穣酉悌倹柚繭且丙伎冶吏
+
+
+塑墾弐斤旦朕汰濫爵璃痘瞭箇耗虞謁賦遵采丞
+
+
+亥亦伶侃侑倖凜凪勁勺匁叡哉奎宥崚嵩恕捷捺
+
+
+昂昴晏晟晨柊柾栞梢梧椋椰楓洵滉澪熙燎燦燿
+
+
+爾玖琳瑚瑳瑶眸碩竣笙紗紬絃綸耶胤脹茄茉莉
+
+
+莞菖菫蓉蕗衿袈裟詢誼諄諒迪銑錘鞠頌颯麟麿

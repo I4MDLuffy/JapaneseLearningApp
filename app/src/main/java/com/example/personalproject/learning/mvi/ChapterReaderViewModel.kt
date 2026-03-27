@@ -104,11 +104,10 @@ class ChapterReaderViewModel(
                         }
                     }
 
-                    // Legacy types kept for backward compat
                     ChapterType.VOCAB -> {
                         vocabularyRepository.filterByJlpt(jlpt)
                             .sortedBy { it.id }
-                            .chunked(5)
+                            .chunked(10)
                             .getOrElse(setIndex) { emptyList() }
                             .map { ChapterItem.VocabItem(it) }
                     }
@@ -116,7 +115,7 @@ class ChapterReaderViewModel(
                     ChapterType.STUDY_VOCAB -> {
                         vocabularyRepository.filterByJlpt(jlpt)
                             .sortedBy { it.id }
-                            .chunked(5)
+                            .chunked(10)
                             .getOrElse(setIndex) { emptyList() }
                             .map { ChapterItem.StudyVocabItem(it) }
                     }
