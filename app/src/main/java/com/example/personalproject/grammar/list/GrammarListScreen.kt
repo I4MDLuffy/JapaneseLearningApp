@@ -50,7 +50,7 @@ import com.example.personalproject.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun GrammarListScreen(onGrammarClick: (String) -> Unit, onBack: () -> Unit) {
+fun GrammarListScreen(onGrammarClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val vm: GrammarListViewModel = viewModel(
         factory = viewModelFactory { initializer { GrammarListViewModel(container.grammarRepository) } }
@@ -127,7 +127,9 @@ fun GrammarListScreen(onGrammarClick: (String) -> Unit, onBack: () -> Unit) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(state.displayedEntries, key = { it.id }) { entry ->
-                        GrammarListItem(entry = entry, onClick = { onGrammarClick(entry.id) })
+                        GrammarListItem(entry = entry, onClick = {
+                                onGrammarClick(entry.id, state.displayedEntries.joinToString("|") { it.id })
+                            })
                     }
                 }
             }

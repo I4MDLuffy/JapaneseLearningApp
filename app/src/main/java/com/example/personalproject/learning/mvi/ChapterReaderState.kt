@@ -28,4 +28,8 @@ data class ChapterReaderState(
     val isLoading: Boolean = true,
     val error: String? = null,
     val isCompleted: Boolean = false,
+    // Null when this is the last chapter in the level
+    val nextChapterType: String? = null,
+    val nextSetIndex: Int? = null,
+    val nextChapterTitle: String? = null,
 ) : BaseState

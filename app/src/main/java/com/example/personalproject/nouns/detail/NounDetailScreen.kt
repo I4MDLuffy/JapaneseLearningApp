@@ -43,11 +43,17 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.NounEntry
 import com.example.personalproject.nouns.detail.mvi.NounDetailViewModel
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
 
 @Composable
-fun NounDetailScreen(nounId: String, onBack: () -> Unit) {
+fun NounDetailScreen(
+    nounId: String,
+    onBack: () -> Unit,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
+) {
     val container = LocalAppContainer.current
     val vm: NounDetailViewModel = viewModel(
         key = nounId,
@@ -85,6 +91,11 @@ fun NounDetailScreen(nounId: String, onBack: () -> Unit) {
                     }
                 },
             )
+        },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
         },
     ) { padding ->
         when {

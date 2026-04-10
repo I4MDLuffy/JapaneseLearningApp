@@ -14,9 +14,13 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.HelpOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Slider
@@ -24,8 +28,12 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
@@ -36,14 +44,45 @@ import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.AppTheme
 import com.example.personalproject.data.model.StudyDirection
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.ScreenHelpDialog
 
 @Composable
 fun SettingsScreen(onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val settings by container.settingsRepository.settings.collectAsState()
+    var showHelp by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        if (!container.onboardingRepository.isScreenSeen("settings")) {
+            container.onboardingRepository.markScreenSeen("settings")
+            showHelp = true
+        }
+    }
+
+    if (showHelp) {
+        ScreenHelpDialog(
+            title = "Settings",
+            description = "Customise your Kotoba experience.\n\n" +
+                "• Theme — choose from six colour themes: System, Light, Dark, Sakura, Ocean, or Forest\n" +
+                "• Display — toggle Romaji (Latin pronunciation) and Furigana (hiragana above kanji)\n" +
+                "• Study Direction — set whether flashcards show English→Japanese or Japanese→English\n" +
+                "• Learning Mode — enable Structured Learning to hide advanced forms until you've reached that point\n" +
+                "• Accessibility — enable larger text or high contrast mode\n" +
+                "• Audio — master volume control for pronunciation playback (coming soon)",
+            onDismiss = { showHelp = false },
+        )
+    }
 
     Column(modifier = Modifier.fillMaxSize()) {
-        KotobaTopBar(title = "Settings", onBack = onBack)
+        KotobaTopBar(
+            title = "Settings",
+            onBack = onBack,
+            actions = {
+                IconButton(onClick = { showHelp = true }) {
+                    Icon(Icons.Outlined.HelpOutline, contentDescription = "Help")
+                }
+            },
+        )
 
         Column(
             modifier = Modifier

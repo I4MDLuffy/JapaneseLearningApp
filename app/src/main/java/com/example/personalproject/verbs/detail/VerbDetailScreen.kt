@@ -1,6 +1,7 @@
 package com.example.personalproject.verbs.detail
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,7 +45,10 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.VerbEntry
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.util.containsKana
+import com.example.personalproject.util.kanaToRomaji
 import com.example.personalproject.verbs.detail.mvi.VerbDetailViewModel
 
 @Composable
@@ -53,6 +57,8 @@ fun VerbDetailScreen(
     onBack: () -> Unit,
     onKanjiClick: ((String) -> Unit)? = null,
     onGrammarClick: ((String) -> Unit)? = null,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
     val vm: VerbDetailViewModel = viewModel(
@@ -92,6 +98,11 @@ fun VerbDetailScreen(
                 },
             )
         },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
+        },
     ) { padding ->
         when {
             state.isLoading -> Box(
@@ -119,6 +130,13 @@ private fun VerbDetail(
     onGrammarClick: ((String) -> Unit)?,
     modifier: Modifier = Modifier,
 ) {
+    val conjGrammarId = when {
+        entry.verbType.contains("Ru", ignoreCase = true) ||
+        entry.verbType.contains("Ichidan", ignoreCase = true) -> "g020"
+        entry.verbType.contains("Irregular", ignoreCase = true) -> "g022"
+        else -> "g021"
+    }
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -171,7 +189,7 @@ private fun VerbDetail(
         ) {
             // Info
             SectionCard(label = "Info") {
-                ConjugationRow("Verb Type", entry.verbType)
+                ConjugationRow("Verb Type", entry.verbType, grammarId = conjGrammarId, onGrammarClick = onGrammarClick)
                 if (entry.transitivity.isNotBlank()) {
                     HorizontalDivider(modifier = Modifier.padding(vertical = 6.dp), color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
                     ConjugationRow("Transitivity", entry.transitivity)
@@ -184,47 +202,47 @@ private fun VerbDetail(
 
             // Polite (long) forms
             SectionCard(label = "Polite Forms") {
-                ConjugationRow("Present +", entry.presentAffirmative)
+                ConjugationRow("Present +", entry.presentAffirmative, grammarId = conjGrammarId, onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Present –", entry.presentNegative)
+                ConjugationRow("Present –", entry.presentNegative, grammarId = conjGrammarId, onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Past +", entry.pastAffirmative)
+                ConjugationRow("Past +", entry.pastAffirmative, grammarId = "g034", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Past –", entry.pastNegative)
+                ConjugationRow("Past –", entry.pastNegative, grammarId = "g034", onGrammarClick = onGrammarClick)
             }
 
             // Te-form & short forms
             SectionCard(label = "Short & Te-forms") {
-                ConjugationRow("Te-form", entry.teFormAffirmative)
+                ConjugationRow("Te-form", entry.teFormAffirmative, grammarId = "g047", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Present neg.", entry.presentShortNegative)
+                ConjugationRow("Present neg.", entry.presentShortNegative, grammarId = "g065", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Te-form (ないで)", entry.teFormNegativeNaide)
+                ConjugationRow("Te-form (ないで)", entry.teFormNegativeNaide, grammarId = "g072", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Te-form (なくて)", entry.teFormNegativeNakute)
+                ConjugationRow("Te-form (なくて)", entry.teFormNegativeNakute, grammarId = "g047", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Past short +", entry.pastShortAffirmative)
+                ConjugationRow("Past short +", entry.pastShortAffirmative, grammarId = "g077", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Past short –", entry.pastShortNegative)
+                ConjugationRow("Past short –", entry.pastShortNegative, grammarId = "g077", onGrammarClick = onGrammarClick)
             }
 
             // Advanced forms
             SectionCard(label = "Advanced Forms") {
-                ConjugationRow("Tai (want to)", entry.tai)
+                ConjugationRow("Tai (want to)", entry.tai, grammarId = "g099", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Volitional", entry.volitional)
+                ConjugationRow("Volitional", entry.volitional, grammarId = "g045", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Ba + ", entry.baFormAffirmative)
+                ConjugationRow("Ba + ", entry.baFormAffirmative, grammarId = "g121", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Ba – ", entry.baFormNegative)
+                ConjugationRow("Ba – ", entry.baFormNegative, grammarId = "g121", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Potential", entry.potential)
+                ConjugationRow("Potential", entry.potential, grammarId = "g146", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Causative", entry.causative)
+                ConjugationRow("Causative", entry.causative, grammarId = "g143", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Passive", entry.passive)
+                ConjugationRow("Passive", entry.passive, grammarId = "g142", onGrammarClick = onGrammarClick)
                 Divider()
-                ConjugationRow("Caus. passive", entry.causativePassive)
+                ConjugationRow("Caus. passive", entry.causativePassive, grammarId = "g144", onGrammarClick = onGrammarClick)
             }
 
             if (onKanjiClick != null && entry.kanjiReferences.isNotEmpty()) {
@@ -265,20 +283,33 @@ private fun Divider() {
 }
 
 @Composable
-private fun ConjugationRow(label: String, value: String) {
+private fun ConjugationRow(
+    label: String,
+    value: String,
+    grammarId: String? = null,
+    onGrammarClick: ((String) -> Unit)? = null,
+) {
     if (value.isBlank()) return
+    val hasLink = grammarId != null && onGrammarClick != null
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
         Text(
             text = label,
             style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.weight(0.4f),
+            color = if (hasLink) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier
+                .weight(0.4f)
+                .then(if (hasLink) Modifier.clickable { onGrammarClick!!(grammarId!!) } else Modifier),
         )
-        Text(
-            text = value,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.6f),
-        )
+        Column(modifier = Modifier.weight(0.6f)) {
+            Text(text = value, style = MaterialTheme.typography.bodyMedium)
+            if (containsKana(value)) {
+                Text(
+                    text = kanaToRomaji(value),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                )
+            }
+        }
     }
 }
 

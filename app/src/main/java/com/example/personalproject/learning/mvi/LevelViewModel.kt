@@ -40,28 +40,40 @@ class LevelViewModel(
                 val chapters = mutableListOf<Chapter>()
                 var chapterIndex = 0
 
-                // ── Vocabulary chapters (driven by vocabulary data) ────────────
                 val vocabChunks = vocabularyRepository.filterByJlpt(jlpt)
                     .sortedBy { it.id }
                     .chunked(VOCAB_CHAPTER_SIZE)
 
-                vocabChunks.forEachIndexed { idx, _ ->
-                    chapters.add(makeChapter(chapterIndex, ChapterType.VOCAB, idx, "Vocabulary ${idx + 1}"))
-                    chapterIndex++
-                    chapters.add(makeChapter(chapterIndex, ChapterType.STUDY_VOCAB, idx, "Study Vocab ${idx + 1}"))
-                    chapterIndex++
-                }
-
-                // ── Grammar chapters (driven by grammar data) ─────────────────
-                val grammar = grammarRepository.filterByJlpt(jlpt).sortedBy { it.lessonNumber }
-                val grammarByLesson = grammar.groupBy { it.lessonNumber }
+                val grammarLessons = grammarRepository.filterByJlpt(jlpt)
+                    .sortedBy { it.lessonNumber }
+                    .groupBy { it.lessonNumber }
                     .entries.sortedBy { it.key }
+                    .toList()
 
-                grammarByLesson.forEachIndexed { lessonIdx, (lessonNumber, _) ->
-                    chapters.add(makeChapter(chapterIndex, ChapterType.GRAMMAR, lessonNumber, "Grammar $lessonNumber"))
-                    chapterIndex++
-                    chapters.add(makeChapter(chapterIndex, ChapterType.TERM_STUDY, lessonIdx, "Term Study ${lessonIdx + 1}"))
-                    chapterIndex++
+                // ── Interleaved: GRAMMAR → VOCAB → TERM_STUDY → STUDY_VOCAB ──
+                val maxLen = maxOf(vocabChunks.size, grammarLessons.size)
+                for (i in 0 until maxLen) {
+                    val grammarEntry = grammarLessons.getOrNull(i)
+                    val vocabChunk = vocabChunks.getOrNull(i)
+
+                    if (grammarEntry != null) {
+                        val (lessonNumber, entries) = grammarEntry
+                        val title = entries.firstOrNull()?.title ?: "Grammar $lessonNumber"
+                        chapters.add(makeChapter(chapterIndex, ChapterType.GRAMMAR, lessonNumber, title))
+                        chapterIndex++
+                    }
+                    if (vocabChunk != null) {
+                        chapters.add(makeChapter(chapterIndex, ChapterType.VOCAB, i, "Vocabulary ${i + 1}"))
+                        chapterIndex++
+                    }
+                    if (grammarEntry != null) {
+                        chapters.add(makeChapter(chapterIndex, ChapterType.TERM_STUDY, i, "Term Study ${i + 1}"))
+                        chapterIndex++
+                    }
+                    if (vocabChunk != null) {
+                        chapters.add(makeChapter(chapterIndex, ChapterType.STUDY_VOCAB, i, "Study Vocab ${i + 1}"))
+                        chapterIndex++
+                    }
                 }
 
                 updateState { copy(chapters = chapters, isLoading = false) }

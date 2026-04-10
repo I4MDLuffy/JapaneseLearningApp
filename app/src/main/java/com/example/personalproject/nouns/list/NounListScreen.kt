@@ -47,7 +47,7 @@ import com.example.personalproject.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun NounListScreen(onNounClick: (String) -> Unit, onBack: () -> Unit) {
+fun NounListScreen(onNounClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val vm: NounListViewModel = viewModel(
         factory = viewModelFactory { initializer { NounListViewModel(container.nounRepository) } }
@@ -124,7 +124,9 @@ fun NounListScreen(onNounClick: (String) -> Unit, onBack: () -> Unit) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(state.displayedEntries, key = { it.id }) { entry ->
-                        NounListItem(entry = entry, onClick = { onNounClick(entry.id) })
+                        NounListItem(entry = entry, onClick = {
+                                onNounClick(entry.id, state.displayedEntries.joinToString("|") { it.id })
+                            })
                     }
                 }
             }

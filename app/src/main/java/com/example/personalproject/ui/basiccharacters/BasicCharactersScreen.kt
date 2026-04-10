@@ -12,9 +12,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.HelpOutline
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,7 +31,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.ScreenHelpDialog
 
 @Composable
 fun BasicCharactersScreen(
@@ -30,8 +41,37 @@ fun BasicCharactersScreen(
     onHiragana: () -> Unit,
     onKatakana: () -> Unit,
 ) {
+    val container = LocalAppContainer.current
+    var showHelp by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        if (!container.onboardingRepository.isScreenSeen("basic_characters")) {
+            container.onboardingRepository.markScreenSeen("basic_characters")
+            showHelp = true
+        }
+    }
+
+    if (showHelp) {
+        ScreenHelpDialog(
+            title = "Basic Characters",
+            description = "Japanese uses two phonetic alphabets — Hiragana and Katakana — each with 46 base characters.\n\n" +
+                "• Hiragana (ひらがな) — used for native Japanese words and grammatical endings\n" +
+                "• Katakana (カタカナ) — used for foreign loanwords, emphasis, and onomatopoeia\n\n" +
+                "Tap a card to open its character table. From there you can play a matching game or typing quiz for individual groups, or study all characters at once.",
+            onDismiss = { showHelp = false },
+        )
+    }
+
     Column(modifier = Modifier.fillMaxSize()) {
-        KotobaTopBar(title = "Basic Characters", onBack = onBack)
+        KotobaTopBar(
+            title = "Basic Characters",
+            onBack = onBack,
+            actions = {
+                IconButton(onClick = { showHelp = true }) {
+                    Icon(Icons.Outlined.HelpOutline, contentDescription = "Help")
+                }
+            },
+        )
 
         Column(
             modifier = Modifier

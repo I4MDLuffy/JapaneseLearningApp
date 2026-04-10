@@ -50,7 +50,7 @@ import com.example.personalproject.verbs.list.mvi.VerbListViewModel
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun VerbListScreen(onVerbClick: (String) -> Unit, onBack: () -> Unit) {
+fun VerbListScreen(onVerbClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val vm: VerbListViewModel = viewModel(
         factory = viewModelFactory { initializer { VerbListViewModel(container.verbRepository) } }
@@ -127,7 +127,9 @@ fun VerbListScreen(onVerbClick: (String) -> Unit, onBack: () -> Unit) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(state.displayedEntries, key = { it.id }) { entry ->
-                        VerbListItem(entry = entry, onClick = { onVerbClick(entry.id) })
+                        VerbListItem(entry = entry, onClick = {
+                                onVerbClick(entry.id, state.displayedEntries.joinToString("|") { it.id })
+                            })
                     }
                 }
             }

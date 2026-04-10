@@ -43,7 +43,14 @@ import com.example.personalproject.data.model.Chapter
 import com.example.personalproject.data.model.ChapterType
 import com.example.personalproject.learning.mvi.LevelAction
 import com.example.personalproject.learning.mvi.LevelViewModel
+import androidx.compose.material.icons.outlined.HelpOutline
+import androidx.compose.material3.IconButton
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.ScreenHelpDialog
 
 @Composable
 fun LevelScreen(
@@ -52,6 +59,8 @@ fun LevelScreen(
     onChapter: (level: String, chapterIndex: Int, chapterType: String, setIndex: Int, chapterTitle: String) -> Unit,
 ) {
     val container = LocalAppContainer.current
+    var showHelp by remember { mutableStateOf(false) }
+
     val vm: LevelViewModel = viewModel(
         key = level,
         factory = viewModelFactory {
@@ -67,6 +76,34 @@ fun LevelScreen(
     )
     val state by vm.uiState.collectAsStateWithLifecycle()
 
+    val levelHelpDescription = when (level) {
+        "beginner" -> "The Beginner section covers JLPT N5 material — the foundations of Japanese.\n\n" +
+            "Chapters are organised by topic (vocabulary sets, grammar points, etc.). Tap a chapter to read it. " +
+            "Completed chapters are marked with a check. Work through them in order or jump to any topic that interests you."
+        "intermediate" -> "The Intermediate section covers JLPT N4–N3 material, building on the basics.\n\n" +
+            "Chapters introduce more complex grammar patterns, expanded vocabulary, and kanji. Tap a chapter to open it. " +
+            "Completed chapters are marked with a check."
+        "advanced" -> "The Advanced section covers JLPT N2–N1 material for learners approaching fluency.\n\n" +
+            "Chapters cover nuanced grammar, formal expressions, and a broad range of kanji. Tap a chapter to open it."
+        else -> "The Master section contains native-level material for learners aiming for full fluency.\n\n" +
+            "Chapters cover advanced expressions, classical forms, and domain-specific vocabulary. Tap a chapter to open it."
+    }
+
+    LaunchedEffect(Unit) {
+        if (!container.onboardingRepository.isScreenSeen("level_$level")) {
+            container.onboardingRepository.markScreenSeen("level_$level")
+            showHelp = true
+        }
+    }
+
+    if (showHelp) {
+        ScreenHelpDialog(
+            title = state.levelName.ifBlank { level.replaceFirstChar { it.uppercase() } },
+            description = levelHelpDescription,
+            onDismiss = { showHelp = false },
+        )
+    }
+
     val lifecycleOwner = LocalLifecycleOwner.current
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
@@ -80,7 +117,15 @@ fun LevelScreen(
 
     Scaffold(
         topBar = {
-            KotobaTopBar(title = state.levelName, onBack = onBack)
+            KotobaTopBar(
+                title = state.levelName,
+                onBack = onBack,
+                actions = {
+                    IconButton(onClick = { showHelp = true }) {
+                        Icon(Icons.Outlined.HelpOutline, contentDescription = "Help")
+                    }
+                },
+            )
         }
     ) { innerPadding ->
         when {

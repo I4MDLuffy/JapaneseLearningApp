@@ -44,6 +44,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.PhraseEntry
 import com.example.personalproject.phrases.detail.mvi.PhraseDetailViewModel
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
 
@@ -54,6 +55,8 @@ fun PhraseDetailScreen(
     onBack: () -> Unit,
     onKanjiClick: ((String) -> Unit)? = null,
     onGrammarClick: ((String) -> Unit)? = null,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
     val vm: PhraseDetailViewModel = viewModel(
@@ -92,6 +95,11 @@ fun PhraseDetailScreen(
                     }
                 },
             )
+        },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
         },
     ) { padding ->
         when {

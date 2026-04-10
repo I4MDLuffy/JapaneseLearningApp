@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 // ── Top-level ─────────────────────────────────────────────────────────────────
 
 @Serializable data object OpeningRoute
+@Serializable data object IntroductionRoute
 @Serializable data object HomeRoute
 
 // ── Basic Characters ──────────────────────────────────────────────────────────
@@ -43,32 +44,32 @@ import kotlinx.serialization.Serializable
 // ── Kanji ─────────────────────────────────────────────────────────────────────
 
 @Serializable data object KanjiListRoute
-@Serializable data class KanjiDetailRoute(val kanjiId: String)
+@Serializable data class KanjiDetailRoute(val kanjiId: String, val allIds: String = "")
 
 // ── Verbs ─────────────────────────────────────────────────────────────────────
 
 @Serializable data object VerbListRoute
-@Serializable data class VerbDetailRoute(val verbId: String)
+@Serializable data class VerbDetailRoute(val verbId: String, val allIds: String = "")
 
 // ── Adjectives ────────────────────────────────────────────────────────────────
 
 @Serializable data object AdjectiveListRoute
-@Serializable data class AdjectiveDetailRoute(val adjId: String)
+@Serializable data class AdjectiveDetailRoute(val adjId: String, val allIds: String = "")
 
 // ── Nouns ─────────────────────────────────────────────────────────────────────
 
 @Serializable data object NounListRoute
-@Serializable data class NounDetailRoute(val nounId: String)
+@Serializable data class NounDetailRoute(val nounId: String, val allIds: String = "")
 
 // ── Grammar ───────────────────────────────────────────────────────────────────
 
 @Serializable data object GrammarListRoute
-@Serializable data class GrammarDetailRoute(val grammarId: String)
+@Serializable data class GrammarDetailRoute(val grammarId: String, val allIds: String = "")
 
 // ── Phrases ───────────────────────────────────────────────────────────────────
 
 @Serializable data object PhraseListRoute
-@Serializable data class PhraseDetailRoute(val phraseId: String)
+@Serializable data class PhraseDetailRoute(val phraseId: String, val allIds: String = "")
 
 // ── Radicals ──────────────────────────────────────────────────────────────────
 

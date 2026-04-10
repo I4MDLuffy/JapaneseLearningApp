@@ -50,7 +50,7 @@ import com.example.personalproject.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun AdjectiveListScreen(onAdjectiveClick: (String) -> Unit, onBack: () -> Unit) {
+fun AdjectiveListScreen(onAdjectiveClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val vm: AdjectiveListViewModel = viewModel(
         factory = viewModelFactory { initializer { AdjectiveListViewModel(container.adjectiveRepository) } }
@@ -127,7 +127,9 @@ fun AdjectiveListScreen(onAdjectiveClick: (String) -> Unit, onBack: () -> Unit) 
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(state.displayedEntries, key = { it.id }) { entry ->
-                        AdjectiveListItem(entry = entry, onClick = { onAdjectiveClick(entry.id) })
+                        AdjectiveListItem(entry = entry, onClick = {
+                                onAdjectiveClick(entry.id, state.displayedEntries.joinToString("|") { it.id })
+                            })
                     }
                 }
             }

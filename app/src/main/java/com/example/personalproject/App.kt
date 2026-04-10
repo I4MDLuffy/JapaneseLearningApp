@@ -22,6 +22,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.personalproject.gettingstarted.GettingStartedScreen
+import com.example.personalproject.introduction.IntroductionScreen
 import com.example.personalproject.learning.ChapterReaderScreen
 import com.example.personalproject.learning.LevelScreen
 import com.example.personalproject.misc.CountersScreen
@@ -63,6 +64,7 @@ import com.example.personalproject.navigation.ModulesRoute
 import com.example.personalproject.navigation.NavHubRoute
 import com.example.personalproject.navigation.NounDetailRoute
 import com.example.personalproject.navigation.NounListRoute
+import com.example.personalproject.navigation.IntroductionRoute
 import com.example.personalproject.navigation.OpeningRoute
 import com.example.personalproject.navigation.PhraseDetailRoute
 import com.example.personalproject.navigation.PhraseListRoute
@@ -121,7 +123,8 @@ fun App(appContainer: AppContainer) {
             val backStack by navController.currentBackStackEntryAsState()
             val currentDest = backStack?.destination
 
-            val showBottomBar = currentDest?.hasRoute(OpeningRoute::class) != true
+            val showBottomBar = currentDest?.hasRoute(OpeningRoute::class) != true &&
+                currentDest?.hasRoute(IntroductionRoute::class) != true
 
             Scaffold(
                 bottomBar = {
@@ -138,8 +141,25 @@ fun App(appContainer: AppContainer) {
                     composable<OpeningRoute> {
                         OpeningScreen(
                             onStart = {
+                                if (appContainer.onboardingRepository.introSeen) {
+                                    navController.navigate(HomeRoute) {
+                                        popUpTo(OpeningRoute) { inclusive = true }
+                                    }
+                                } else {
+                                    navController.navigate(IntroductionRoute) {
+                                        popUpTo(OpeningRoute) { inclusive = true }
+                                    }
+                                }
+                            },
+                        )
+                    }
+
+                    // ── Introduction (first launch only) ──────────────────────
+                    composable<IntroductionRoute> {
+                        IntroductionScreen(
+                            onGetStarted = {
                                 navController.navigate(HomeRoute) {
-                                    popUpTo(OpeningRoute) { inclusive = true }
+                                    popUpTo(IntroductionRoute) { inclusive = true }
                                 }
                             },
                         )
@@ -153,7 +173,7 @@ fun App(appContainer: AppContainer) {
                             onIntermediate = { navController.navigate(IntermediateRoute) },
                             onAdvanced = { navController.navigate(AdvancedRoute) },
                             onMaster = { navController.navigate(MasterRoute) },
-                            onPurelyGrammar = { navController.navigate(PurelyGrammarRoute) },
+                            onPurelyGrammar = { navController.navigate(GrammarListRoute) },
                             onQuickConversational = { navController.navigate(QuickConversationalRoute) },
                             onCounters = { navController.navigate(CountersRoute) },
                             onTermStudy = { navController.navigate(TermStudyRoute) },
@@ -257,6 +277,19 @@ fun App(appContainer: AppContainer) {
                             setIndex = route.setIndex,
                             chapterTitle = route.chapterTitle,
                             onBack = { navController.popBackStack() },
+                            onContinue = { nextType, nextSIdx, nextTitle ->
+                                navController.navigate(
+                                    ChapterReaderRoute(
+                                        level = route.level,
+                                        chapterIndex = route.chapterIndex + 1,
+                                        chapterType = nextType,
+                                        setIndex = nextSIdx,
+                                        chapterTitle = nextTitle,
+                                    )
+                                ) {
+                                    popUpTo<ChapterReaderRoute> { inclusive = true }
+                                }
+                            },
                         )
                     }
 
@@ -336,98 +369,146 @@ fun App(appContainer: AppContainer) {
                     // ── Kanji ─────────────────────────────────────────────────
                     composable<KanjiListRoute> {
                         KanjiListScreen(
-                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onKanjiClick = { id, allIds -> navController.navigate(KanjiDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
                     }
                     composable<KanjiDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<KanjiDetailRoute>()
+                        val ids = if (route.allIds.isBlank()) emptyList() else route.allIds.split("|")
+                        val idx = ids.indexOf(route.kanjiId)
                         KanjiDetailScreen(
                             kanjiId = route.kanjiId,
                             onBack = { navController.popBackStack() },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(KanjiDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<KanjiDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(KanjiDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<KanjiDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
                     // ── Verbs ─────────────────────────────────────────────────
                     composable<VerbListRoute> {
                         VerbListScreen(
-                            onVerbClick = { id -> navController.navigate(VerbDetailRoute(id)) },
+                            onVerbClick = { id, allIds -> navController.navigate(VerbDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
                     }
                     composable<VerbDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<VerbDetailRoute>()
+                        val ids = if (route.allIds.isBlank()) emptyList() else route.allIds.split("|")
+                        val idx = ids.indexOf(route.verbId)
                         VerbDetailScreen(
                             verbId = route.verbId,
                             onBack = { navController.popBackStack() },
                             onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
                             onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(VerbDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<VerbDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(VerbDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<VerbDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
                     // ── Adjectives ────────────────────────────────────────────
                     composable<AdjectiveListRoute> {
                         AdjectiveListScreen(
-                            onAdjectiveClick = { id -> navController.navigate(AdjectiveDetailRoute(id)) },
+                            onAdjectiveClick = { id, allIds -> navController.navigate(AdjectiveDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
                     }
                     composable<AdjectiveDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<AdjectiveDetailRoute>()
+                        val ids = if (route.allIds.isBlank()) emptyList() else route.allIds.split("|")
+                        val idx = ids.indexOf(route.adjId)
                         AdjectiveDetailScreen(
                             adjId = route.adjId,
                             onBack = { navController.popBackStack() },
                             onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
                             onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(AdjectiveDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<AdjectiveDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(AdjectiveDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<AdjectiveDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
                     // ── Nouns ─────────────────────────────────────────────────
                     composable<NounListRoute> {
                         NounListScreen(
-                            onNounClick = { id -> navController.navigate(NounDetailRoute(id)) },
+                            onNounClick = { id, allIds -> navController.navigate(NounDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
                     }
                     composable<NounDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<NounDetailRoute>()
+                        val ids = if (route.allIds.isBlank()) emptyList() else route.allIds.split("|")
+                        val idx = ids.indexOf(route.nounId)
                         NounDetailScreen(
                             nounId = route.nounId,
                             onBack = { navController.popBackStack() },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(NounDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<NounDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(NounDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<NounDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
                     // ── Grammar ───────────────────────────────────────────────
                     composable<GrammarListRoute> {
                         GrammarListScreen(
-                            onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
+                            onGrammarClick = { id, allIds -> navController.navigate(GrammarDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
                     }
                     composable<GrammarDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<GrammarDetailRoute>()
+                        val ids = if (route.allIds.isBlank()) emptyList() else route.allIds.split("|")
+                        val idx = ids.indexOf(route.grammarId)
                         GrammarDetailScreen(
                             grammarId = route.grammarId,
                             onBack = { navController.popBackStack() },
                             onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
                             onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(GrammarDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<GrammarDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(GrammarDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<GrammarDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
                     // ── Phrases ───────────────────────────────────────────────
                     composable<PhraseListRoute> {
                         PhraseListScreen(
-                            onPhraseClick = { id -> navController.navigate(PhraseDetailRoute(id)) },
+                            onPhraseClick = { id, allIds -> navController.navigate(PhraseDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
                     }
                     composable<PhraseDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<PhraseDetailRoute>()
+                        val ids = if (route.allIds.isBlank()) emptyList() else route.allIds.split("|")
+                        val idx = ids.indexOf(route.phraseId)
                         PhraseDetailScreen(
                             phraseId = route.phraseId,
                             onBack = { navController.popBackStack() },
                             onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
                             onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(PhraseDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<PhraseDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(PhraseDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<PhraseDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
@@ -453,7 +534,7 @@ fun App(appContainer: AppContainer) {
 
                     composable<StudyGamesRoute> {
                         StudyGamesScreen(
-                            onGameStart = { gameType, _ ->
+                            onGameStart = { gameType ->
                                 navController.navigate(GameSetupRoute(gameType))
                             }
                         )

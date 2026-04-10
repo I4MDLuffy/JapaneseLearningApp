@@ -1,6 +1,7 @@
 package com.example.personalproject.adjectives.detail
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -45,7 +46,10 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.adjectives.detail.mvi.AdjectiveDetailViewModel
 import com.example.personalproject.data.model.AdjectiveEntry
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.util.containsKana
+import com.example.personalproject.util.kanaToRomaji
 
 @Composable
 fun AdjectiveDetailScreen(
@@ -53,6 +57,8 @@ fun AdjectiveDetailScreen(
     onBack: () -> Unit,
     onKanjiClick: ((String) -> Unit)? = null,
     onGrammarClick: ((String) -> Unit)? = null,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
     val vm: AdjectiveDetailViewModel = viewModel(
@@ -92,6 +98,11 @@ fun AdjectiveDetailScreen(
                 },
             )
         },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
+        },
     ) { padding ->
         when {
             state.isLoading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -117,6 +128,11 @@ private fun AdjDetail(
     onGrammarClick: ((String) -> Unit)?,
     modifier: Modifier = Modifier,
 ) {
+    val isIAdj = entry.adjType.equals("i", ignoreCase = true)
+    val presentGrammarId = if (isIAdj) "g039" else "g040"
+    val pastGrammarId    = if (isIAdj) "g041" else "g042"
+    val shortGrammarId   = if (isIAdj) "g078" else "g079"
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -167,30 +183,30 @@ private fun AdjDetail(
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             SectionCard(label = "Present") {
-                ConjRow("Affirmative", entry.presentAffirmative)
+                ConjRow("Affirmative", entry.presentAffirmative, grammarId = presentGrammarId, onGrammarClick = onGrammarClick)
                 Div()
-                ConjRow("Negative", entry.presentNegative)
+                ConjRow("Negative", entry.presentNegative, grammarId = presentGrammarId, onGrammarClick = onGrammarClick)
                 Div()
-                ConjRow("Neg. short", entry.presentNegativeShort)
+                ConjRow("Neg. short", entry.presentNegativeShort, grammarId = shortGrammarId, onGrammarClick = onGrammarClick)
             }
 
             SectionCard(label = "Past") {
-                ConjRow("Affirmative", entry.pastAffirmative)
+                ConjRow("Affirmative", entry.pastAffirmative, grammarId = pastGrammarId, onGrammarClick = onGrammarClick)
                 Div()
-                ConjRow("Negative", entry.pastNegative)
+                ConjRow("Negative", entry.pastNegative, grammarId = pastGrammarId, onGrammarClick = onGrammarClick)
                 Div()
-                ConjRow("Aff. short", entry.pastAffirmativeShort)
+                ConjRow("Aff. short", entry.pastAffirmativeShort, grammarId = shortGrammarId, onGrammarClick = onGrammarClick)
                 Div()
-                ConjRow("Neg. short", entry.pastNegativeShort)
+                ConjRow("Neg. short", entry.pastNegativeShort, grammarId = shortGrammarId, onGrammarClick = onGrammarClick)
             }
 
             SectionCard(label = "Te-form & Naru") {
-                ConjRow("Te-form +", entry.teFormAffirmative)
+                ConjRow("Te-form +", entry.teFormAffirmative, grammarId = "g061", onGrammarClick = onGrammarClick)
                 Div()
-                ConjRow("Te-form –", entry.teFormNegative)
+                ConjRow("Te-form –", entry.teFormNegative, grammarId = "g061", onGrammarClick = onGrammarClick)
                 if (entry.adjNaru.isNotBlank()) {
                     Div()
-                    ConjRow("+ なる", entry.adjNaru)
+                    ConjRow("+ なる", entry.adjNaru, grammarId = "g094", onGrammarClick = onGrammarClick)
                 }
             }
 
@@ -232,20 +248,33 @@ private fun Div() {
 }
 
 @Composable
-private fun ConjRow(label: String, value: String) {
+private fun ConjRow(
+    label: String,
+    value: String,
+    grammarId: String? = null,
+    onGrammarClick: ((String) -> Unit)? = null,
+) {
     if (value.isBlank()) return
+    val hasLink = grammarId != null && onGrammarClick != null
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
         Text(
             text = label,
             style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.weight(0.45f),
+            color = if (hasLink) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier
+                .weight(0.45f)
+                .then(if (hasLink) Modifier.clickable { onGrammarClick!!(grammarId!!) } else Modifier),
         )
-        Text(
-            text = value,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.55f),
-        )
+        Column(modifier = Modifier.weight(0.55f)) {
+            Text(text = value, style = MaterialTheme.typography.bodyMedium)
+            if (containsKana(value)) {
+                Text(
+                    text = kanaToRomaji(value),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                )
+            }
+        }
     }
 }
 

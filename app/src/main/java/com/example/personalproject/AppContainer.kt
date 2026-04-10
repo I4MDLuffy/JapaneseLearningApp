@@ -15,6 +15,7 @@ import com.example.personalproject.data.repository.ModuleRepository
 import com.example.personalproject.data.repository.NounRepository
 import com.example.personalproject.data.repository.PhraseRepository
 import com.example.personalproject.data.repository.RadicalRepository
+import com.example.personalproject.data.repository.OnboardingRepository
 import com.example.personalproject.data.repository.SettingsRepository
 import com.example.personalproject.data.repository.VerbRepository
 import com.example.personalproject.data.repository.VocabularyRepository
@@ -47,6 +48,9 @@ class AppContainer(context: Context) {
 
     // Settings (SharedPreferences)
     val settingsRepository: SettingsRepository = SettingsRepository(context.applicationContext)
+
+    // Onboarding / first-visit tracking (SharedPreferences)
+    val onboardingRepository: OnboardingRepository = OnboardingRepository(context.applicationContext)
 }
 
 val LocalAppContainer = compositionLocalOf<AppContainer> {

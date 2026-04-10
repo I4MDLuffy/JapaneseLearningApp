@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.outlined.HelpOutline
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -25,8 +26,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -36,6 +41,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.db.SavedItemEntity
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.ScreenHelpDialog
 import kotlinx.coroutines.launch
 
 @Composable
@@ -45,6 +51,26 @@ fun SavedScreen(
 ) {
     val container = LocalAppContainer.current
     val scope = rememberCoroutineScope()
+    var showHelp by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        if (!container.onboardingRepository.isScreenSeen("saved")) {
+            container.onboardingRepository.markScreenSeen("saved")
+            showHelp = true
+        }
+    }
+
+    if (showHelp) {
+        ScreenHelpDialog(
+            title = "Saved",
+            description = "Items you bookmark anywhere in the app appear here, grouped by type.\n\n" +
+                "• Tap any item to open its full detail page\n" +
+                "• Tap the bookmark icon on an item to remove it from your saved list\n" +
+                "• Tap Study next to Saved Vocabulary to launch a game with those words\n\n" +
+                "Use this screen to review and reinforce terms you want to remember.",
+            onDismiss = { showHelp = false },
+        )
+    }
 
     val allItems by container.savedRepository.getAllItems()
         .collectAsStateWithLifecycle(initialValue = emptyList())
@@ -61,7 +87,18 @@ fun SavedScreen(
         "phrase" to "Saved Phrases",
     )
 
-    Scaffold(topBar = { KotobaTopBar(title = "Saved") }) { padding ->
+    Scaffold(
+        topBar = {
+            KotobaTopBar(
+                title = "Saved",
+                actions = {
+                    IconButton(onClick = { showHelp = true }) {
+                        Icon(Icons.Outlined.HelpOutline, contentDescription = "Help")
+                    }
+                },
+            )
+        },
+    ) { padding ->
         if (allItems.isEmpty()) {
             Box(
                 modifier = Modifier.fillMaxSize().padding(padding).padding(32.dp),

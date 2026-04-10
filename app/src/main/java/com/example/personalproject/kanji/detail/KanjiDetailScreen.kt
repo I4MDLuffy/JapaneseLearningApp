@@ -47,12 +47,19 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.KanjiEntry
 import com.example.personalproject.kanji.detail.mvi.KanjiDetailViewModel
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.util.kanaToRomaji
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun KanjiDetailScreen(kanjiId: String, onBack: () -> Unit) {
+fun KanjiDetailScreen(
+    kanjiId: String,
+    onBack: () -> Unit,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
+) {
     val container = LocalAppContainer.current
     val vm: KanjiDetailViewModel = viewModel(
         key = kanjiId,
@@ -90,6 +97,11 @@ fun KanjiDetailScreen(kanjiId: String, onBack: () -> Unit) {
                     }
                 },
             )
+        },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
         },
     ) { padding ->
         when {
@@ -205,6 +217,11 @@ private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
             if (entry.hiragana.isNotBlank()) {
                 SectionCard(label = "Reading") {
                     Text(text = entry.hiragana, style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        text = kanaToRomaji(entry.hiragana),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                    )
                 }
             }
 
@@ -222,11 +239,14 @@ private fun ReadingRow(label: String, values: List<String>) {
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.weight(0.45f),
         )
-        Text(
-            text = values.joinToString("、"),
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.55f),
-        )
+        Column(modifier = Modifier.weight(0.55f)) {
+            Text(text = values.joinToString("、"), style = MaterialTheme.typography.bodyMedium)
+            Text(
+                text = values.joinToString(" / ") { kanaToRomaji(it) },
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+            )
+        }
     }
 }
 

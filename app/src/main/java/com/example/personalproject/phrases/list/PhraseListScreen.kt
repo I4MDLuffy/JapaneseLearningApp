@@ -47,7 +47,7 @@ import com.example.personalproject.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun PhraseListScreen(onPhraseClick: (String) -> Unit, onBack: () -> Unit) {
+fun PhraseListScreen(onPhraseClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val vm: PhraseListViewModel = viewModel(
         factory = viewModelFactory { initializer { PhraseListViewModel(container.phraseRepository) } }
@@ -124,7 +124,9 @@ fun PhraseListScreen(onPhraseClick: (String) -> Unit, onBack: () -> Unit) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(state.displayedEntries, key = { it.id }) { entry ->
-                        PhraseListItem(entry = entry, onClick = { onPhraseClick(entry.id) })
+                        PhraseListItem(entry = entry, onClick = {
+                                onPhraseClick(entry.id, state.displayedEntries.joinToString("|") { it.id })
+                            })
                     }
                 }
             }

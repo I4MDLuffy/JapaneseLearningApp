@@ -45,10 +45,11 @@ import com.example.personalproject.kanji.list.mvi.KanjiListAction
 import com.example.personalproject.kanji.list.mvi.KanjiListViewModel
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.util.kanaToRomaji
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun KanjiListScreen(onKanjiClick: (String) -> Unit, onBack: () -> Unit) {
+fun KanjiListScreen(onKanjiClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
     val container = LocalAppContainer.current
     val vm: KanjiListViewModel = viewModel(
         factory = viewModelFactory { initializer { KanjiListViewModel(container.kanjiRepository) } }
@@ -125,7 +126,9 @@ fun KanjiListScreen(onKanjiClick: (String) -> Unit, onBack: () -> Unit) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
                     items(state.displayedEntries, key = { it.id }) { entry ->
-                        KanjiListItem(entry = entry, onClick = { onKanjiClick(entry.id) })
+                        KanjiListItem(entry = entry, onClick = {
+                                onKanjiClick(entry.id, state.displayedEntries.joinToString("|") { it.id })
+                            })
                     }
                 }
             }
@@ -160,14 +163,14 @@ private fun KanjiListItem(entry: KanjiEntry, onClick: () -> Unit) {
             )
             if (entry.onYomi.isNotEmpty()) {
                 Text(
-                    text = "音: ${entry.onYomi.joinToString("、")}",
+                    text = "音: ${entry.onYomi.joinToString("、")}  ${entry.onYomi.joinToString(" / ") { kanaToRomaji(it) }}",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
             if (entry.kunYomi.isNotEmpty()) {
                 Text(
-                    text = "訓: ${entry.kunYomi.joinToString("、")}",
+                    text = "訓: ${entry.kunYomi.joinToString("、")}  ${entry.kunYomi.joinToString(" / ") { kanaToRomaji(it) }}",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

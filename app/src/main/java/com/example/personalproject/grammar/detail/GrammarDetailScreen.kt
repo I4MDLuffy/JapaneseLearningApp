@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.BookmarkBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -30,6 +31,7 @@ import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
@@ -46,8 +48,11 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.GrammarEntry
 import com.example.personalproject.grammar.detail.mvi.GrammarDetailViewModel
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.util.containsKana
+import com.example.personalproject.util.kanaToRomaji
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -56,6 +61,8 @@ fun GrammarDetailScreen(
     onBack: () -> Unit,
     onKanjiClick: ((String) -> Unit)? = null,
     onGrammarClick: ((String) -> Unit)? = null,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
     val vm: GrammarDetailViewModel = viewModel(
@@ -94,6 +101,11 @@ fun GrammarDetailScreen(
                     }
                 },
             )
+        },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
         },
     ) { padding ->
         when {
@@ -166,25 +178,8 @@ private fun GrammarDetail(
                 }
             }
 
-            if (entry.exampleOne.isNotBlank()) {
-                SectionCard(label = "Example 1") {
-                    Text(
-                        text = entry.exampleOne,
-                        style = MaterialTheme.typography.bodyLarge,
-                        fontWeight = FontWeight.Medium,
-                    )
-                }
-            }
-
-            if (entry.exampleTwo.isNotBlank()) {
-                SectionCard(label = "Example 2") {
-                    Text(
-                        text = entry.exampleTwo,
-                        style = MaterialTheme.typography.bodyLarge,
-                        fontWeight = FontWeight.Medium,
-                    )
-                }
-            }
+            if (entry.exampleOne.isNotBlank()) ExampleCard("Example 1", entry.exampleOne)
+            if (entry.exampleTwo.isNotBlank()) ExampleCard("Example 2", entry.exampleTwo)
 
             if (entry.supportingContent.isNotBlank()) {
                 SectionCard(label = "Notes") {
@@ -234,6 +229,79 @@ private fun ReferencesSection(label: String, ids: List<String>, onClick: (String
                     ),
                 )
             }
+        }
+    }
+}
+
+// ── Example parsing ────────────────────────────────────────────────────────────
+
+private data class ParsedExample(
+    val japanese: String,
+    val reading: String,   // hiragana extracted from (...) in the raw string
+    val romaji: String,    // generated from reading
+    val english: String,
+)
+
+/**
+ * Grammar examples are stored as:
+ *   "Japanese sentence。(ひらがなよみ。) — English translation."
+ * This function splits that into its three components so they can be
+ * displayed individually. Falls back to splitting on — if no kana parens found.
+ */
+private fun parseExample(raw: String): ParsedExample {
+    if (raw.isBlank()) return ParsedExample(raw, "", "", "")
+    val parenOpen = raw.indexOf('(')
+    val parenClose = if (parenOpen >= 0) raw.indexOf(')', parenOpen) else -1
+    if (parenOpen >= 0 && parenClose > parenOpen) {
+        val inside = raw.substring(parenOpen + 1, parenClose)
+        if (containsKana(inside)) {
+            val japanese = raw.substring(0, parenOpen).trim()
+            val reading = inside.trim()
+            val after = raw.substring(parenClose + 1).trim()
+            val english = after.removePrefix("—").removePrefix("–").removePrefix("-").trim()
+            return ParsedExample(japanese, reading, kanaToRomaji(reading), english)
+        }
+    }
+    // No kana-containing parens — split on em-dash if present
+    val dash = raw.indexOf('—')
+    return if (dash >= 0)
+        ParsedExample(raw.substring(0, dash).trim(), "", "", raw.substring(dash + 1).trim())
+    else
+        ParsedExample(raw, "", "", "")
+}
+
+@Composable
+private fun ExampleCard(label: String, raw: String) {
+    val parsed = remember(raw) { parseExample(raw) }
+    SectionCard(label = label) {
+        Text(
+            text = parsed.japanese,
+            style = MaterialTheme.typography.bodyLarge,
+            fontWeight = FontWeight.Medium,
+        )
+        if (parsed.reading.isNotBlank()) {
+            Spacer(modifier = Modifier.height(2.dp))
+            Text(
+                text = parsed.reading,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.85f),
+            )
+            Text(
+                text = parsed.romaji,
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+            )
+        }
+        if (parsed.english.isNotBlank()) {
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 6.dp),
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f),
+            )
+            Text(
+                text = parsed.english,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
     }
 }

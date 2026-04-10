@@ -14,6 +14,7 @@ import com.example.personalproject.mvi.BaseViewModel
 import kotlinx.coroutines.launch
 
 private const val TERM_STUDY_CHUNK = 10
+private const val VOCAB_CHAPTER_SIZE = 10
 
 class ChapterReaderViewModel(
     private val level: String,
@@ -120,7 +121,40 @@ class ChapterReaderViewModel(
                             .map { ChapterItem.StudyVocabItem(it) }
                     }
                 }
-                updateState { copy(items = items, isLoading = false) }
+                // ── Determine next chapter ────────────────────────────────────
+                val jlptForNext = jlpt
+                val vocabChunksForNext = vocabularyRepository.filterByJlpt(jlptForNext)
+                    .sortedBy { it.id }
+                    .chunked(VOCAB_CHAPTER_SIZE)
+                val grammarLessonsForNext = grammarRepository.filterByJlpt(jlptForNext)
+                    .sortedBy { it.lessonNumber }
+                    .groupBy { it.lessonNumber }
+                    .entries.sortedBy { it.key }
+                    .toList()
+
+                data class ChapterSpec(val type: ChapterType, val setIndex: Int, val title: String)
+                val allSpecs = buildList {
+                    val maxLen = maxOf(vocabChunksForNext.size, grammarLessonsForNext.size)
+                    for (i in 0 until maxLen) {
+                        val g = grammarLessonsForNext.getOrNull(i)
+                        val v = vocabChunksForNext.getOrNull(i)
+                        if (g != null) add(ChapterSpec(ChapterType.GRAMMAR, g.key, g.value.firstOrNull()?.title ?: "Grammar ${g.key}"))
+                        if (v != null) add(ChapterSpec(ChapterType.VOCAB, i, "Vocabulary ${i + 1}"))
+                        if (g != null) add(ChapterSpec(ChapterType.TERM_STUDY, i, "Term Study ${i + 1}"))
+                        if (v != null) add(ChapterSpec(ChapterType.STUDY_VOCAB, i, "Study Vocab ${i + 1}"))
+                    }
+                }
+                val next = allSpecs.getOrNull(chapterIndex + 1)
+
+                updateState {
+                    copy(
+                        items = items,
+                        isLoading = false,
+                        nextChapterType = next?.type?.name,
+                        nextSetIndex = next?.setIndex,
+                        nextChapterTitle = next?.title,
+                    )
+                }
             } catch (e: Exception) {
                 updateState { copy(error = e.message ?: "Failed to load items", isLoading = false) }
             }

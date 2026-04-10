@@ -1,0 +1,179 @@
+﻿1. The Topic Particle は (wa)
+   1.  In this context は is pronounced "wa" and is a particle to denote the topic of a conversation. 
+   2. In japanese conversation it is common to omit the subject, because of this it is important to keep context clues in mind.
+   3. It is not to be confused with the particle が which denotes the subject of a sentence and emphasizes that subject.
+2.  Question Sentences with the Particle か        
+   1. か is a particle that can be added at the end of any statement to make it a yes or no question.
+   2. It can also be used in conjunction with a "question" word なん (nan) to make a more complex question. Typically なん is placed before ですか.
+   3. Commonly なん is placed before a counter word such as じ, さい, and more.
+   4. Another form of なん is なに (nani) which is placed before a particle
+3. Connection of Nouns using の
+   1. の is a particle placed between nouns to denote specificity
+   2. The particle can be placed between any number of nouns to restrict the subject into more specificity
+   3. An example would be  たけしさんの車 (takeshi no kuruma) which means “Takeshi's car” or “The car of Takeshi”
+   4. It is important to note that the word “of” does not exist in japanese and this relationship between nouns can only go one way. If you were to reverse the order 車のたけし it would mean something like “Car made of Takeshi”... which is just scary. 
+4.  This, That, That over there, and Which (これ, それ, あれ, and どれ)
+   1. These are pointer words used with the particle は to reference an object.
+   2. これ (kore) refers to an object close to the speaker
+   3. それ (sore) refers to an object close to the listener
+   4. あれ (are) refers to an object far away from both listener and speaker
+   5. どれ (dore) refers to an unknown object and is used in question sentences
+   6. Do not use these pointers when referencing people in earshot as it is very impolite
+5.  This _, That _, That _ over there, Which _? (この, その, あの, and どの with a noun)
+   1. These are pointer words used with a noun for further specificity.
+   2. この (kono) refers to a specified noun that is close to the speaker.
+   3. その (sono) refers to a specified noun that is close to the listener.
+   4. あの (ano) refers to a specified noun that is far from both the speaker and the listener.
+   5. どの (dono) refers to a specified noun of unknown location.
+6.  Here, There, Over There, and Where? (ここ, そこ, あそこ, and どこ)
+   1. These are pointer words used to describe the location of a noun.
+   2. ここ (koko) refers to being close to the speaker
+   3. そこ (soko) refers to being close to the listener
+   4. あそこ (asoko) refers to being far from both the speaker and the listener
+   5. どこ (doko) refers to an unknown location
+   6. Instead of being placed at the beginning of a sentence or near a noun like the other pointer categories of pointer words these are used at the end followed by です (desu) or ですか (desuka) when asking a question.
+7.  The Question word for “Who” and “Whose” (だれの + Noun)
+   1. だれ (dare) is used without a noun and is the way of saying “who” typically as a question.
+   2. だれの (dareno) is followed by a known to ask a question like “Whose _ is this?”
+8.  The Particle for Similar Qualities (も)
+   1. も (mo) is a particle placed after a noun to denote that it is similar to a previously mentioned noun.
+   2. For example, if someone said an item was expensive and then mentioned another item that was expensive you would put も after that noun.
+9.  Ending sentences with です (desu)
+   1. To end a sentence with です is the polite way to assert a state of being in the present tense.
+10.  The Negative Forms of です (desu)
+   1. There are multiple ways to make a negative form of a statement depending on the desired interpretation
+   2. If you want to be more casual you would replace です with じゃないです (jyanaidesu)
+   3. If you want to be more conservative while speaking you would replace です with じゃありません (jyaarimasen)
+   4. If you want to write formally you should replace です with ではありません (dewaarimasen)
+11.  Seeking Confirmation With a Sentence Ending Particle ~ね (ne)
+12.  Expressing Confidence With a Sentence Ending Particle ~よ (yo)
+13.  Requesting Things From People
+* To politely ask for a (physical) item you would use ~をください (~wo kudasai) after the object being requested
+* Another way to request something is ~をおねがいします (~wo onegaishimasu), this is also placed after the object being requested but sounds slightly more pleading.
+* ~をおねがいします can also be used to ask for abstract objects, such as services, explanation, and understanding.
+14.  Pronunciation (Pitch Accent)
+* “Flat (Heiban)”
+* “Head-high (Atamadaka)”
+* “Middle-high (Nakadaka)”
+* “Tail-high (Odaka)”
+15. To Offer An Object To Another Person
+* The polite way to offer something to someone is by following the object with ~をどうぞ(~wo douzo)
+16. Verb Conjugation (Ru-Verbs)
+* Present Affirmative: 
+* Present Negative:
+17. Verb Conjugation (U-Verbs)
+* Present Affirmative: 
+* Present Negative:
+18. Verb Conjugation (Irregular Verbs)
+* Present Affirmative: 
+* Present Negative:
+19. Action Verbs Explained
+* Habitual Actions:
+* Future Actions:
+20.  The Particle を (wo) for Objects
+21.  The Particle で (de) for Place of Action
+22. The Particle に (ni) for Goal of Movement
+23. The Particle に (ni) for Time
+24. The Particle へ (he) Also for Goal of Movement (more literary)
+25. Extending an invitation using ~ませんか (~masenka)
+26. Describing Frequency Using Frequency Adverbs
+27. Flexibility of Japanese Sentences and Common Conventions
+28. The Topic Particle は (wa), Further Explained.
+29. Stating Existence for Animate and Inanimate Objects 
+* When you state something exists  instead of using は you use が for the subject particle
+* Also, instead of using で to say where it is located you will use に
+* Common practice is to describe the location first.
+* It can also used to say you have/own something OR to state that an event will take place
+* あります for non-living objects
+* います for living objects
+30.  Describing where things are
+* みぎ
+* ひだり
+* まえ
+* うしろ
+* なか
+* うえ
+* した
+* ちかく/ そば
+* となり
+31.  Past Tense of です, Affirmative and Negative
+* Conservative : じゃありませんでした and じゃなかったです
+32. Past Tense of Verbs, Affirmative and Negativr
+33. も Alternate Uses
+34. Duration of Activity じかん (jikan)
+35. Expressions of Quantity たくさん (takusan)
+36. The Particle と (to)
+37. Adjectives in the Present Tense (い)
+38. Adjectives in the Present Tense (な)
+39.  Adjectives in the Past Tense (い)
+40.  Adjectives in the Past Tense (な)
+41. Modifying Nouns with Adjectives
+42. Like, Dislike, and Neutrality
+* すき
+* きらい
+* すきでもきらいでもない
+43.  Suggesting a Plan of Action
+* ましょう/ましょうか
+44.  Counting Items in Japanese (Counter Words)
+45. Te Form (Ru-Verbs)
+46. Te Form (U-Verbs: う,つ,る)
+47. Te Form (U-Verbs: む,ぶ,ぬ)
+48. Te Form (U-Verbs: く,ぐ,す)
+49. Te Form (Irregular Verbs)
+50. Polite Requests (~てください)
+51. Describing Two Activities Using Te Form
+52. Granting Permission Using ~てもいいです
+53. Strongly Prohibiting Using ~てはいけません
+54. Explaining a Situation Using ~から
+55. Offering Assistance Using ~ましょうか
+56. Actions in Progress (Activity Verb て Form + いる) Past and Present
+57. Result of a Change (Change Verb て Form + いる) 
+58. Describing Body Parts (Body Part が + Adjective)
+59. Creating Compound Sentences with Adjective/Noun て Forms
+60. Changes From Compounding Japanese Words (れんだく） 
+61. Purpose of Movement (Verb Stem + にいく)
+62. Referring to Family Members (Your Own and Others’)
+63. Short Forms (Verbs)
+64. Short Forms (い-Adjectives)
+65. Short Forms (な-Adjectives)
+66. Short Forms (Nouns)
+67. Using Short Form as a Sign of Intimacy
+68. Saying What You Think (おともいます/ないとおもいます)
+69. Quoted Speech (といっていました)
+70. Asking Someone to Refrain (ないでください)
+71. Turning Verbs into Nouns Using のが
+72. The Subject Particle が and its differences to は
+73. Something and Anything (なにか/なにも)
+74. Irregular Verbs are Usually Just Nouns + する
+75. Past Tense Short Forms (Verbs)
+76. Past Tense Short Forms (い-Adjectives)
+77. Past Tense Short Forms (な-Adjectives)
+78. Past Tense Short Forms (Nouns) 
+79. Past Tense Short Forms Used Informally  
+80. Saying What You Think Happened Using とおもいます
+81. Quoting What Someone Said Using といっていました
+82. Describing Nouns With Adjectives
+83. Describing Nouns With Adjectives and Verbs
+84. Saying an Event Happened Using ました and もう~ました (Affirmative)
+85. Saying an Event Happened Using ていません and まだ~ていません (Negative)
+86. Explaining a Situation Using から in One Sentence
+87. Comparing Two Items Using のほうが and より
+88. Asking to Compare Two Items Using どちらのほうが/どっちのほうが
+89. Comparison Among Three or More Items Using のなかで~いちばん
+90. Omitting Noun in Adjective + Noun Using の
+91. Saying What You Are Planning To Do Using ~つもり
+92. Indicating a Change Using An Adjective and なる (To Become)
+93. Saying ‘Someone’ and ‘Not Anyone’
+94. Saying ‘Somewhere’ and ‘Not Anywhere’
+95. Using the Particle で to Describe Means of Transportation
+96. Using the Particle で to Describe the Tools Used
+97. Describing a Hope or Aspiration Using ~たい
+98. Mentioning Things You Will do With No Set Order/ As Examples Using ~たり and たりする
+99. Mentioning Something You Did in the Past with ~ことがある
+100. Proposing Examples Using や as a Particle (Similarly to と)
+101. Helping Verb for ‘Excess’ ~すぎる
+102. Giving Advice Using ~ほうがいいです
+103. Explaining a Situation More Formally Using ~ので
+104. Saying You ‘Must’ Do Something Using ~なければいけません (Formal)
+105. Saying You ‘Must’ Do Something Using ~なきゃいけません(Colloquil)
+106. Asking A Question Politely Using ~でしょうか
