@@ -40,6 +40,7 @@ import kotlinx.serialization.Serializable
 @Serializable data object CountersRoute
 @Serializable data object TermStudyRoute
 @Serializable data object DialogueReadingRoute
+@Serializable data class DialogueDetailRoute(val conversationTitle: String, val dialogueIds: String)
 
 // ── Kanji ─────────────────────────────────────────────────────────────────────
 
@@ -68,13 +69,13 @@ import kotlinx.serialization.Serializable
 
 // ── Phrases ───────────────────────────────────────────────────────────────────
 
-@Serializable data object PhraseListRoute
+@Serializable data class PhraseListRoute(val category: String = "")
 @Serializable data class PhraseDetailRoute(val phraseId: String, val allIds: String = "")
 
 // ── Radicals ──────────────────────────────────────────────────────────────────
 
 @Serializable data object RadicalListRoute
-@Serializable data class RadicalDetailRoute(val radicalId: String)
+@Serializable data class RadicalDetailRoute(val radicalId: String, val allIds: String = "")
 @Serializable data class RadicalKanjiListRoute(val radicalId: String)
 @Serializable data class RadicalGameRoute(val groupId: String) // "all" or stroke-count group e.g. "2"
 
@@ -82,11 +83,44 @@ import kotlinx.serialization.Serializable
 
 @Serializable data class GameSetupRoute(val gameType: String) // lesson + term type selection
 
+// ── Verb conjugation game ──────────────────────────────────────────────────────
+
+@Serializable data object VerbConjugationSetupRoute
+@Serializable data class VerbConjugationGameRoute(val level: String, val formKeys: String, val count: Int)
+
+// ── Grammar fill-in-blank ──────────────────────────────────────────────────────
+
+@Serializable data object GrammarFillInRoute
+
+// ── JLPT ─────────────────────────────────────────────────────────────────────
+
+@Serializable data object JlptRoute
+@Serializable data class JlptLevelRoute(val level: String)   // "N5" | "N4" | "N3" | "N2" | "N1"
+@Serializable data class JlptPracticeTestRoute(val level: String)
+
+// ── Onomatopoeia ──────────────────────────────────────────────────────────────
+
+@Serializable data object OnomatopoeiaRoute
+
 // ── Saved & Games ─────────────────────────────────────────────────────────────
 
 @Serializable data object SavedRoute
 @Serializable data object StudyGamesRoute
 @Serializable data class StudyGameRoute(val gameType: String, val setKey: String)
+
+// ── SRS Review ───────────────────────────────────────────────────────────────
+
+@Serializable data object ReviewRoute
+
+// ── Progress dashboard ────────────────────────────────────────────────────────
+
+@Serializable data object ProgressRoute
+
+// ── Kana writing game ─────────────────────────────────────────────────────────
+
+@Serializable data class KanaWritingGameRoute(
+    val kanaType: String,  // "hiragana" | "katakana" | "both"
+)
 
 // ── Settings ──────────────────────────────────────────────────────────────────
 

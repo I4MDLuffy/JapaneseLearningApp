@@ -1,6 +1,8 @@
 package com.example.personalproject.opening
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,6 +20,7 @@ import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -28,7 +31,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Slider
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -41,6 +43,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -102,13 +105,13 @@ fun OpeningScreen(onStart: () -> Unit) {
             Spacer(modifier = Modifier.height(32.dp))
 
             Text(
-                text = "言葉",
+                text = "小鳥",
                 fontSize = 48.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
             )
             Text(
-                text = "Kotoba",
+                text = "Kotori",
                 style = MaterialTheme.typography.headlineMedium,
                 color = MaterialTheme.colorScheme.onBackground,
             )
@@ -148,6 +151,7 @@ fun OpeningScreen(onStart: () -> Unit) {
             settings = settings,
             onDismiss = { showOptions = false },
             onThemeChange = { container.settingsRepository.updateTheme(it) },
+            onDarkModeChange = { container.settingsRepository.updateDarkMode(it) },
             onVolumeChange = { container.settingsRepository.updateVolume(it) },
             onRomajiChange = { container.settingsRepository.updateShowRomaji(it) },
             onFuriganaChange = { container.settingsRepository.updateShowFurigana(it) },
@@ -161,6 +165,7 @@ private fun OptionsDialog(
     settings: com.example.personalproject.data.model.AppSettings,
     onDismiss: () -> Unit,
     onThemeChange: (AppTheme) -> Unit,
+    onDarkModeChange: (Boolean) -> Unit,
     onVolumeChange: (Float) -> Unit,
     onRomajiChange: (Boolean) -> Unit,
     onFuriganaChange: (Boolean) -> Unit,
@@ -237,6 +242,8 @@ private fun OptionsDialog(
                     selected = settings.theme,
                     onSelect = onThemeChange,
                 )
+                Spacer(modifier = Modifier.height(8.dp))
+                SettingsToggleRow("Dark Mode", settings.isDarkMode, onDarkModeChange)
             }
         },
     )
@@ -266,41 +273,56 @@ private fun SettingsToggleRow(label: String, checked: Boolean, onCheckedChange: 
 
 @Composable
 private fun ThemeGrid(selected: AppTheme, onSelect: (AppTheme) -> Unit) {
-    val themes = AppTheme.entries
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        themes.chunked(2).forEach { row ->
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                row.forEach { theme ->
-                    val isSelected = theme == selected
-                    Surface(
-                        onClick = { onSelect(theme) },
-                        modifier = Modifier
-                            .weight(1f)
-                            .height(40.dp),
-                        shape = RoundedCornerShape(8.dp),
-                        color = if (isSelected)
-                            MaterialTheme.colorScheme.primaryContainer
-                        else
-                            MaterialTheme.colorScheme.surfaceVariant,
-                        tonalElevation = if (isSelected) 4.dp else 0.dp,
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Text(
-                                text = theme.displayName,
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                color = if (isSelected)
-                                    MaterialTheme.colorScheme.onPrimaryContainer
-                                else
-                                    MaterialTheme.colorScheme.onSurfaceVariant,
-                                textAlign = TextAlign.Center,
-                                modifier = Modifier.padding(horizontal = 4.dp),
-                            )
-                        }
+    val swatches = listOf(
+        AppTheme.JADE      to com.example.personalproject.ui.theme.SwatchJade,
+        AppTheme.SORBET    to com.example.personalproject.ui.theme.SwatchSorbet,
+        AppTheme.SAPPHIRE  to com.example.personalproject.ui.theme.SwatchSapphire,
+        AppTheme.AMETHYST  to com.example.personalproject.ui.theme.SwatchAmethyst,
+        AppTheme.SAKURA    to com.example.personalproject.ui.theme.SwatchSakura,
+    )
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly,
+    ) {
+        swatches.forEach { (theme, color) ->
+            val isSelected = theme == selected
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.clickable { onSelect(theme) },
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(40.dp)
+                        .clip(RoundedCornerShape(50))
+                        .background(color)
+                        .then(
+                            if (isSelected)
+                                Modifier.border(3.dp, MaterialTheme.colorScheme.onBackground, RoundedCornerShape(50))
+                            else
+                                Modifier
+                        ),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    if (isSelected) {
+                        Icon(
+                            imageVector = Icons.Default.Check,
+                            contentDescription = null,
+                            tint = Color.White,
+                            modifier = Modifier.size(18.dp),
+                        )
                     }
                 }
-                // Pad if odd number
-                if (row.size == 1) Spacer(modifier = Modifier.weight(1f))
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = theme.displayName,
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                    color = if (isSelected)
+                        MaterialTheme.colorScheme.primary
+                    else
+                        MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+                    textAlign = TextAlign.Center,
+                )
             }
         }
     }

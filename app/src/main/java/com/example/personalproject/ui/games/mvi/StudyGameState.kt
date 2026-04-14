@@ -1,11 +1,11 @@
 package com.example.personalproject.ui.games.mvi
 
-import com.example.personalproject.data.model.VocabularyWord
 import com.example.personalproject.mvi.BaseState
 
-enum class GameType { FLASHCARDS, TIMED_QUIZ, MATCH_PAIRS, KANA_SPEED, KANA_SWIPE, KANJI_DROP, KANJI_BUILDER }
+enum class GameType { FLASHCARDS, TIMED_QUIZ, MATCH_PAIRS, KANA_SPEED, KANA_SWIPE, KANJI_DROP, KANJI_BUILDER, FILL_BLANK }
 enum class PairMode { ENGLISH, ROMAJI }
 enum class StudyFeedback { CORRECT, WRONG }
+enum class FillBlankDirection { JP_TO_EN, EN_TO_JP }
 
 data class StudyMatchCard(
     val pairId: String,
@@ -17,14 +17,14 @@ sealed interface StudyGamePhase {
     object Loading : StudyGamePhase
 
     data class Flashcard(
-        val entries: List<VocabularyWord>,
+        val entries: List<StudyItem>,
         val currentIndex: Int = 0,
         val isRevealed: Boolean = false,
         val gotItCount: Int = 0,
     ) : StudyGamePhase
 
     data class TimedQuiz(
-        val entries: List<VocabularyWord>,
+        val entries: List<StudyItem>,
         val currentIndex: Int = 0,
         val options: List<String> = emptyList(),
         val selectedOption: String? = null,
@@ -34,7 +34,7 @@ sealed interface StudyGamePhase {
     ) : StudyGamePhase
 
     data class MatchPairs(
-        val entries: List<VocabularyWord>,
+        val entries: List<StudyItem>,
         val cards: List<StudyMatchCard>,
         val firstSelectedIndex: Int? = null,
         val matchedIds: Set<String> = emptySet(),
@@ -45,29 +45,37 @@ sealed interface StudyGamePhase {
     ) : StudyGamePhase
 
     /**
-     * Speed Round: show a vocabulary word, tap hiragana tiles in order to spell its reading.
-     * Each tap is immediately validated against the next expected character.
+     * Speed Round: show a vocabulary item, tap hiragana tiles in order to spell its reading.
      */
     data class KanaSpeed(
-        val entries: List<VocabularyWord>,
+        val entries: List<StudyItem>,
         val currentIndex: Int = 0,
-        val gridTiles: List<String> = emptyList(),    // 12-tile grid
-        val tappedIndices: List<Int> = emptyList(),   // indices tapped so far (in order)
+        val gridTiles: List<String> = emptyList(),
+        val tappedIndices: List<Int> = emptyList(),
         val timeRemaining: Float = 1f,
         val feedback: StudyFeedback? = null,
         val score: Int = 0,
     ) : StudyGamePhase
 
     /**
-     * Kana Swipe: show a vocabulary word in English, tap 8 hiragana tiles in order to spell
-     * its Japanese reading. No timer — undo and submit when ready.
+     * Kana Swipe: show an item in English, tap hiragana tiles in order to spell its reading.
      */
     data class KanaSwipe(
-        val entries: List<VocabularyWord>,
+        val entries: List<StudyItem>,
         val currentIndex: Int = 0,
-        val tiles: List<String> = emptyList(),  // 8 hiragana tiles
-        val path: List<Int> = emptyList(),       // tile indices in tap order
+        val tiles: List<String> = emptyList(),
+        val path: List<Int> = emptyList(),
         val feedback: StudyFeedback? = null,
+        val score: Int = 0,
+    ) : StudyGamePhase
+
+    data class FillBlank(
+        val entries: List<StudyItem>,
+        val currentIndex: Int = 0,
+        val direction: FillBlankDirection = FillBlankDirection.JP_TO_EN,
+        val inputText: String = "",
+        val isSubmitted: Boolean = false,
+        val isCorrect: Boolean? = null,
         val score: Int = 0,
     ) : StudyGamePhase
 

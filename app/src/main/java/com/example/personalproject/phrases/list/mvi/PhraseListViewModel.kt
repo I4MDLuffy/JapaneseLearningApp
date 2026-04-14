@@ -6,6 +6,7 @@ import com.example.personalproject.mvi.BaseViewModel
 
 class PhraseListViewModel(
     private val repository: PhraseRepository,
+    private val initialCategory: String = "",
 ) : BaseViewModel<PhraseListState, PhraseListAction>(PhraseListState()) {
 
     init {
@@ -26,11 +27,13 @@ class PhraseListViewModel(
         execute(
             block = { repository.getAllPhrases() },
             onSuccess = { entries ->
+                val base = if (initialCategory.isBlank()) entries
+                           else entries.filter { it.category.equals(initialCategory, ignoreCase = true) }
                 updateState {
                     copy(
-                        allEntries = entries,
-                        displayedEntries = entries,
-                        availableJlptLevels = entries.map { it.jlptLevel }.distinct().sorted(),
+                        allEntries = base,
+                        displayedEntries = base,
+                        availableJlptLevels = base.map { it.jlptLevel }.distinct().sorted(),
                         isLoading = false,
                     )
                 }

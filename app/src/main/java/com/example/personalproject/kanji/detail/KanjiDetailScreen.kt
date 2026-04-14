@@ -25,6 +25,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.SuggestionChip
@@ -45,22 +48,29 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
+import com.example.personalproject.LocalAppSettings
 import com.example.personalproject.data.model.KanjiEntry
 import com.example.personalproject.kanji.detail.mvi.KanjiDetailViewModel
 import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.SpeakableText
 import com.example.personalproject.util.kanaToRomaji
+import com.example.personalproject.util.rememberTts
+import com.example.personalproject.util.swipeToNavigate
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun KanjiDetailScreen(
     kanjiId: String,
     onBack: () -> Unit,
+    onKanjiClick: ((String) -> Unit)? = null,
+    onVocabClick: ((String) -> Unit)? = null,
     onPrevious: (() -> Unit)? = null,
     onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
+    val settings = LocalAppSettings.current
     val vm: KanjiDetailViewModel = viewModel(
         key = kanjiId,
         factory = viewModelFactory {
@@ -70,7 +80,10 @@ fun KanjiDetailScreen(
     val state by vm.uiState.collectAsStateWithLifecycle()
     val isSaved by container.savedRepository.isItemSavedFlow("kanji", kanjiId)
         .collectAsStateWithLifecycle(initialValue = false)
+    val isKnown by container.knownRepository.isItemKnownFlow("kanji", kanjiId)
+        .collectAsStateWithLifecycle(initialValue = false)
     val scope = rememberCoroutineScope()
+    val speak = rememberTts()
 
     Scaffold(
         topBar = {
@@ -78,6 +91,20 @@ fun KanjiDetailScreen(
                 title = state.entry?.meaning ?: "Kanji",
                 onBack = onBack,
                 actions = {
+                    state.entry?.let { entry ->
+                        IconButton(onClick = { speak(entry.hiragana.ifBlank { entry.kanji }) }) {
+                            Icon(Icons.Outlined.VolumeUp, contentDescription = "Pronounce")
+                        }
+                    }
+                    IconButton(onClick = {
+                        scope.launch { container.knownRepository.toggle("kanji", kanjiId) }
+                    }) {
+                        Icon(
+                            imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                            tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                     IconButton(onClick = {
                         val entry = state.entry ?: return@IconButton
                         scope.launch {
@@ -110,7 +137,14 @@ fun KanjiDetailScreen(
             ) { CircularProgressIndicator() }
 
             state.entry != null -> KanjiDetail(
-                entry = state.entry!!, modifier = Modifier.padding(padding)
+                entry = state.entry!!,
+                speak = speak,
+                showFurigana = settings.showFurigana,
+                showRomaji = settings.showRomaji,
+                onVocabClick = onVocabClick,
+                modifier = Modifier
+                    .padding(padding)
+                    .swipeToNavigate(onSwipeLeft = onNext, onSwipeRight = onPrevious),
             )
 
             else -> Box(
@@ -122,7 +156,14 @@ fun KanjiDetailScreen(
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
+private fun KanjiDetail(
+    entry: KanjiEntry,
+    speak: (String) -> Unit,
+    showFurigana: Boolean,
+    showRomaji: Boolean,
+    onVocabClick: ((String) -> Unit)?,
+    modifier: Modifier = Modifier,
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -146,6 +187,14 @@ private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center,
                 )
+                if (showFurigana && entry.hiragana.isNotBlank()) {
+                    SpeakableText(
+                        text = entry.hiragana,
+                        speak = speak,
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.85f),
+                    )
+                }
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = entry.meaning,
@@ -190,7 +239,12 @@ private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
             if (entry.onYomi.isNotEmpty() || entry.kunYomi.isNotEmpty()) {
                 SectionCard(label = "Readings") {
                     if (entry.onYomi.isNotEmpty()) {
-                        ReadingRow(label = "音読み (On'yomi)", values = entry.onYomi)
+                        ReadingRow(
+                            label = "音読み (On'yomi)",
+                            values = entry.onYomi,
+                            speak = speak,
+                            showRomaji = showRomaji,
+                        )
                     }
                     if (entry.kunYomi.isNotEmpty()) {
                         if (entry.onYomi.isNotEmpty()) {
@@ -199,7 +253,12 @@ private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
                                 color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
                             )
                         }
-                        ReadingRow(label = "訓読み (Kun'yomi)", values = entry.kunYomi)
+                        ReadingRow(
+                            label = "訓読み (Kun'yomi)",
+                            values = entry.kunYomi,
+                            speak = speak,
+                            showRomaji = showRomaji,
+                        )
                     }
                 }
             }
@@ -214,14 +273,20 @@ private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
                 }
             }
 
-            if (entry.hiragana.isNotBlank()) {
-                SectionCard(label = "Reading") {
-                    Text(text = entry.hiragana, style = MaterialTheme.typography.bodyLarge)
-                    Text(
-                        text = kanaToRomaji(entry.hiragana),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
-                    )
+            // Vocabulary that uses this kanji
+            if (onVocabClick != null && entry.vocabReferences.isNotEmpty()) {
+                SectionCard(label = "Example Vocabulary") {
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        entry.vocabReferences.forEach { id ->
+                            SuggestionChip(
+                                onClick = { onVocabClick(id) },
+                                label = { Text(id) },
+                                colors = SuggestionChipDefaults.suggestionChipColors(
+                                    containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                                ),
+                            )
+                        }
+                    }
                 }
             }
 
@@ -231,7 +296,7 @@ private fun KanjiDetail(entry: KanjiEntry, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun ReadingRow(label: String, values: List<String>) {
+private fun ReadingRow(label: String, values: List<String>, speak: (String) -> Unit, showRomaji: Boolean) {
     Row(modifier = Modifier.fillMaxWidth()) {
         Text(
             text = label,
@@ -240,12 +305,18 @@ private fun ReadingRow(label: String, values: List<String>) {
             modifier = Modifier.weight(0.45f),
         )
         Column(modifier = Modifier.weight(0.55f)) {
-            Text(text = values.joinToString("、"), style = MaterialTheme.typography.bodyMedium)
-            Text(
-                text = values.joinToString(" / ") { kanaToRomaji(it) },
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+            SpeakableText(
+                text = values.joinToString("、"),
+                speak = { speak(values.joinToString(" ")) },
+                style = MaterialTheme.typography.bodyMedium,
             )
+            if (showRomaji) {
+                Text(
+                    text = values.joinToString(" / ") { kanaToRomaji(it) },
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                )
+            }
         }
     }
 }

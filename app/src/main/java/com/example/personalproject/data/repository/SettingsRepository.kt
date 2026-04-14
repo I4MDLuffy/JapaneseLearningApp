@@ -16,8 +16,9 @@ class SettingsRepository(context: Context) {
     val settings: StateFlow<AppSettings> = _settings.asStateFlow()
 
     private fun load() = AppSettings(
-        theme = AppTheme.entries.find { it.name == prefs.getString("theme", AppTheme.SYSTEM.name) }
-            ?: AppTheme.SYSTEM,
+        theme = AppTheme.entries.find { it.name == prefs.getString("theme", AppTheme.SAKURA.name) }
+            ?: AppTheme.SAKURA,
+        isDarkMode = prefs.getBoolean("dark_mode", false),
         masterVolume = prefs.getFloat("master_volume", 1.0f),
         showRomaji = prefs.getBoolean("show_romaji", true),
         showFurigana = prefs.getBoolean("show_furigana", true),
@@ -36,6 +37,9 @@ class SettingsRepository(context: Context) {
 
     fun updateTheme(theme: AppTheme) =
         persist { prefs.edit().putString("theme", theme.name).apply() }
+
+    fun updateDarkMode(dark: Boolean) =
+        persist { prefs.edit().putBoolean("dark_mode", dark).apply() }
 
     fun updateVolume(volume: Float) =
         persist { prefs.edit().putFloat("master_volume", volume).apply() }

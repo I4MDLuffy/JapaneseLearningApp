@@ -47,6 +47,7 @@ private data class GameEntry(
 private val implementedGames = listOf(
     GameEntry("FLASHCARDS",    "🃏", "Flashcards",    "Study cards\none at a time",            implemented = true),
     GameEntry("TIMED_QUIZ",    "⏱",  "Timed Quiz",    "Multiple choice\nunder pressure",        implemented = true),
+    GameEntry("FILL_BLANK",    "✏️", "Fill in Blank", "Type the answer—\nno hints!",            implemented = true),
     GameEntry("MATCH_PAIRS",   "🔗", "Match Pairs",   "Match word\nto meaning",                 implemented = true),
     GameEntry("KANA_SPEED",    "⚡", "Speed Round",   "Tap hiragana\nbefore time runs out",     implemented = true),
     GameEntry("KANA_SWIPE",    "👆", "Kana Swipe",    "Tap hiragana tiles\nto spell the word",  implemented = true),
@@ -54,13 +55,26 @@ private val implementedGames = listOf(
     GameEntry("KANJI_BUILDER", "⬛", "Kanji Builder", "Tap the radicals\nthat form the kanji", implemented = true),
 )
 
+private val specialGames = listOf(
+    GameEntry("VERB_CONJUGATION", "🔄", "Verb Drill",    "Practice all\nconjugation forms",     implemented = true),
+    GameEntry("GRAMMAR_FILL_IN",  "📝", "Fill-in-Blank", "Complete grammar\nexample sentences", implemented = true),
+)
+
+private val writingGames = listOf(
+    GameEntry("KANA_WRITING", "✍️", "Kana Writing", "Trace hiragana &\nkatakana characters", implemented = true),
+)
+
 private val comingSoonGames = listOf(
     GameEntry("STROKE_ORDER", "✏️", "Stroke Order", "Write kanji in\ncorrect order"),
-    GameEntry("FILL_IN",      "📝", "Fill-in",      "Complete the\nsentence"),
 )
 
 @Composable
-fun StudyGamesScreen(onGameStart: (gameType: String) -> Unit = {}) {
+fun StudyGamesScreen(
+    onGameStart: (gameType: String) -> Unit = {},
+    onVerbConjugation: () -> Unit = {},
+    onGrammarFillIn: () -> Unit = {},
+    onKanaWriting: () -> Unit = {},
+) {
     val container = LocalAppContainer.current
     var showHelp by remember { mutableStateOf(false) }
 
@@ -79,11 +93,15 @@ fun StudyGamesScreen(onGameStart: (gameType: String) -> Unit = {}) {
                 "Available games:\n" +
                 "• Flashcards — flip cards to study at your own pace\n" +
                 "• Timed Quiz — answer multiple-choice questions under pressure\n" +
+                "• Fill in Blank — type the answer from memory with no hints\n" +
                 "• Match Pairs — connect words to their meanings\n" +
                 "• Speed Round — tap hiragana before the timer runs out\n" +
                 "• Kana Swipe — tap tiles to spell a word\n" +
                 "• Kanji Drop — identify the reading of a falling kanji\n" +
-                "• Kanji Builder — tap the radicals that form a kanji",
+                "• Kanji Builder — tap the radicals that form a kanji\n" +
+                "• Verb Drill — practise conjugating verbs into specific forms\n" +
+                "• Grammar Fill-in — complete grammar example sentences\n" +
+                "• Kana Writing — trace hiragana and katakana characters",
             onDismiss = { showHelp = false },
         )
     }
@@ -106,6 +124,19 @@ fun StudyGamesScreen(onGameStart: (gameType: String) -> Unit = {}) {
         ) {
             items(implementedGames) { game ->
                 GameCard(game = game, onClick = { onGameStart(game.gameType) })
+            }
+            items(specialGames) { game ->
+                GameCard(game = game, onClick = {
+                    when (game.gameType) {
+                        "VERB_CONJUGATION" -> onVerbConjugation()
+                        "GRAMMAR_FILL_IN" -> onGrammarFillIn()
+                    }
+                })
+            }
+            items(writingGames) { game ->
+                GameCard(game = game, onClick = {
+                    if (game.gameType == "KANA_WRITING") onKanaWriting()
+                })
             }
             items(comingSoonGames) { game ->
                 GameCard(game = game, onClick = {})

@@ -15,6 +15,8 @@ import com.example.personalproject.data.repository.ModuleRepository
 import com.example.personalproject.data.repository.NounRepository
 import com.example.personalproject.data.repository.PhraseRepository
 import com.example.personalproject.data.repository.RadicalRepository
+import com.example.personalproject.data.repository.KanaStatsRepository
+import com.example.personalproject.data.repository.KnownRepository
 import com.example.personalproject.data.repository.OnboardingRepository
 import com.example.personalproject.data.repository.SettingsRepository
 import com.example.personalproject.data.repository.VerbRepository
@@ -45,6 +47,12 @@ class AppContainer(context: Context) {
 
     // Saved items (Room-backed)
     val savedRepository: SavedRepository = SavedRepository.create(kotobaDatabase)
+
+    // Known/mastery items (Room-backed)
+    val knownRepository: KnownRepository = KnownRepository.create(kotobaDatabase)
+
+    // Kana weakness tracker (Room-backed)
+    val kanaStatsRepository: KanaStatsRepository = KanaStatsRepository.create(kotobaDatabase.kanaStatsDao())
 
     // Settings (SharedPreferences)
     val settingsRepository: SettingsRepository = SettingsRepository(context.applicationContext)

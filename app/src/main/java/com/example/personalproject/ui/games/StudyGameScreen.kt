@@ -21,6 +21,8 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -31,10 +33,13 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.text.input.ImeAction
+import com.example.personalproject.ui.games.mvi.FillBlankDirection
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -93,8 +98,7 @@ private fun StudyGameScreenInner(
                 StudyGameViewModel(
                     gameType = type,
                     setKey = setKey,
-                    vocabularyRepository = container.vocabularyRepository,
-                    savedRepository = container.savedRepository,
+                    container = container,
                 )
             }
         }
@@ -148,6 +152,14 @@ private fun StudyGameScreenInner(
                     onSubmit = { vm.dispatchAction(StudyGameAction.SubmitSwipe) },
                 )
 
+                is StudyGamePhase.FillBlank -> FillBlankContent(
+                    phase = phase,
+                    onDirectionChange = { vm.dispatchAction(StudyGameAction.SetFillBlankDirection(it)) },
+                    onInputChange = { vm.dispatchAction(StudyGameAction.UpdateFillBlankInput(it)) },
+                    onSubmit = { vm.dispatchAction(StudyGameAction.SubmitFillBlank) },
+                    onNext = { vm.dispatchAction(StudyGameAction.NextFillBlank) },
+                )
+
                 is StudyGamePhase.Results -> ResultsContent(
                     phase = phase,
                     onRestart = { vm.dispatchAction(StudyGameAction.Restart) },
@@ -175,7 +187,7 @@ private fun FlashcardContent(
     onGotIt: () -> Unit,
     onReview: () -> Unit,
 ) {
-    val word = phase.entries.getOrNull(phase.currentIndex) ?: return
+    val item = phase.entries.getOrNull(phase.currentIndex) ?: return
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -193,7 +205,7 @@ private fun FlashcardContent(
                 verticalArrangement = Arrangement.Center,
             ) {
                 Text(
-                    text = word.japanese,
+                    text = item.question,
                     fontSize = 52.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -201,21 +213,21 @@ private fun FlashcardContent(
                 )
                 if (phase.isRevealed) {
                     Spacer(Modifier.height(12.dp))
-                    if (word.hiragana.isNotBlank() && word.hiragana != word.japanese) {
+                    if (item.reading.isNotBlank() && item.reading != item.question) {
                         Text(
-                            text = word.hiragana,
+                            text = item.reading,
                             style = MaterialTheme.typography.titleLarge,
                             color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f),
                         )
                     }
                     Text(
-                        text = word.romaji,
+                        text = item.romaji,
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.6f),
                     )
                     Spacer(Modifier.height(8.dp))
                     Text(
-                        text = word.english,
+                        text = item.answer,
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -252,7 +264,7 @@ private fun TimedQuizContent(
     phase: StudyGamePhase.TimedQuiz,
     onSelect: (String) -> Unit,
 ) {
-    val word = phase.entries.getOrNull(phase.currentIndex) ?: return
+    val item = phase.entries.getOrNull(phase.currentIndex) ?: return
     val timerColor by animateColorAsState(
         targetValue = when {
             phase.timeRemaining > 0.5f -> MaterialTheme.colorScheme.primary
@@ -281,14 +293,14 @@ private fun TimedQuizContent(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
-                    text = word.japanese,
+                    text = item.question,
                     fontSize = 48.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
-                if (word.hiragana.isNotBlank() && word.hiragana != word.japanese) {
+                if (item.reading.isNotBlank() && item.reading != item.question) {
                     Text(
-                        text = word.hiragana,
+                        text = item.reading,
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
                     )
@@ -301,7 +313,7 @@ private fun TimedQuizContent(
                 val bgColor by animateColorAsState(
                     targetValue = when {
                         phase.selectedOption == null -> MaterialTheme.colorScheme.surfaceVariant
-                        option == word.english -> Color(0xFF4CAF50)
+                        option == item.answer -> Color(0xFF4CAF50)
                         option == phase.selectedOption -> MaterialTheme.colorScheme.error
                         else -> MaterialTheme.colorScheme.surfaceVariant
                     },
@@ -413,8 +425,8 @@ private fun KanaSpeedContent(
     phase: StudyGamePhase.KanaSpeed,
     onTapTile: (Int) -> Unit,
 ) {
-    val word = phase.entries.getOrNull(phase.currentIndex) ?: return
-    val target = HiraganaUtils.decompose(word.hiragana)
+    val item = phase.entries.getOrNull(phase.currentIndex) ?: return
+    val target = HiraganaUtils.decompose(item.reading)
     val answerSoFar = phase.tappedIndices.joinToString("") { phase.gridTiles.getOrElse(it) { "" } }
 
     val timerColor by animateColorAsState(
@@ -452,14 +464,14 @@ private fun KanaSpeedContent(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
-                    text = word.japanese,
+                    text = item.question,
                     fontSize = 48.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = word.english,
+                    text = item.answer,
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
                 )
@@ -492,7 +504,7 @@ private fun KanaSpeedContent(
                 if (phase.feedback != null) {
                     Spacer(Modifier.height(8.dp))
                     Text(
-                        text = if (phase.feedback == StudyFeedback.CORRECT) "Correct!" else "Answer: ${word.hiragana}",
+                        text = if (phase.feedback == StudyFeedback.CORRECT) "Correct!" else "Answer: ${item.reading}",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = Color.White,
@@ -548,8 +560,8 @@ private fun KanaSwipeContent(
     onUndo: () -> Unit,
     onSubmit: () -> Unit,
 ) {
-    val word = phase.entries.getOrNull(phase.currentIndex) ?: return
-    val target = HiraganaUtils.decompose(word.hiragana)
+    val item = phase.entries.getOrNull(phase.currentIndex) ?: return
+    val target = HiraganaUtils.decompose(item.reading)
 
     val cardBgTarget = when (phase.feedback) {
         StudyFeedback.CORRECT -> Color(0xFF4CAF50)
@@ -573,7 +585,7 @@ private fun KanaSwipeContent(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
-                    text = word.english,
+                    text = item.answer,
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -592,7 +604,7 @@ private fun KanaSwipeContent(
                 if (phase.feedback == StudyFeedback.WRONG) {
                     Spacer(Modifier.height(4.dp))
                     Text(
-                        text = "Answer: ${word.hiragana}",
+                        text = "Answer: ${item.reading}",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White.copy(alpha = 0.9f),
                     )
@@ -662,6 +674,126 @@ private fun KanaSwipeContent(
                 enabled = phase.path.size == target.size && phase.feedback == null,
             ) {
                 Text("Submit (${phase.path.size}/${target.size})")
+            }
+        }
+    }
+}
+
+// ── Fill in the Blank ─────────────────────────────────────────────────────────
+
+@Composable
+private fun FillBlankContent(
+    phase: StudyGamePhase.FillBlank,
+    onDirectionChange: (FillBlankDirection) -> Unit,
+    onInputChange: (String) -> Unit,
+    onSubmit: () -> Unit,
+    onNext: () -> Unit,
+) {
+    val item = phase.entries.getOrNull(phase.currentIndex) ?: return
+    val progress = (phase.currentIndex + 1).toFloat() / phase.entries.size.toFloat()
+
+    Column(
+        modifier = Modifier.fillMaxSize().padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        // Progress
+        LinearProgressIndicator(progress = { progress }, modifier = Modifier.fillMaxWidth())
+        Text(
+            text = "${phase.currentIndex + 1} / ${phase.entries.size}   Score: ${phase.score}",
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+        )
+
+        // Direction selector
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            FilterChip(
+                selected = phase.direction == FillBlankDirection.JP_TO_EN,
+                onClick = { onDirectionChange(FillBlankDirection.JP_TO_EN) },
+                label = { Text("Japanese → English") },
+            )
+            FilterChip(
+                selected = phase.direction == FillBlankDirection.EN_TO_JP,
+                onClick = { onDirectionChange(FillBlankDirection.EN_TO_JP) },
+                label = { Text("English → Romaji") },
+            )
+        }
+
+        // Question card
+        Card(
+            modifier = Modifier.fillMaxWidth().weight(1f),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+        ) {
+            Column(
+                modifier = Modifier.fillMaxSize().padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+            ) {
+                val questionText = if (phase.direction == FillBlankDirection.JP_TO_EN) item.question else item.answer
+                val hintText = if (phase.direction == FillBlankDirection.JP_TO_EN && item.reading.isNotBlank() && item.reading != item.question) item.reading else ""
+                Text(
+                    text = questionText,
+                    fontSize = if (phase.direction == FillBlankDirection.JP_TO_EN) 48.sp else 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    textAlign = TextAlign.Center,
+                )
+                if (hintText.isNotBlank()) {
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        text = hintText,
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
+                    )
+                }
+                if (phase.isSubmitted) {
+                    Spacer(Modifier.height(16.dp))
+                    val correctAnswer = if (phase.direction == FillBlankDirection.JP_TO_EN) item.answer else "${item.reading} / ${item.romaji}"
+                    Text(
+                        text = "✓ $correctAnswer",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = if (phase.isCorrect == true) Color(0xFF4CAF50) else MaterialTheme.colorScheme.error,
+                        fontWeight = FontWeight.SemiBold,
+                        textAlign = TextAlign.Center,
+                    )
+                }
+            }
+        }
+
+        // Input + submit
+        val hintLabel = if (phase.direction == FillBlankDirection.JP_TO_EN) "Type the English meaning" else "Type the romaji reading"
+        OutlinedTextField(
+            value = phase.inputText,
+            onValueChange = { if (!phase.isSubmitted) onInputChange(it) },
+            label = { Text(hintLabel) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = !phase.isSubmitted,
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+            keyboardActions = KeyboardActions(onDone = { if (!phase.isSubmitted) onSubmit() }),
+            isError = phase.isSubmitted && phase.isCorrect == false,
+        )
+
+        if (!phase.isSubmitted) {
+            Button(
+                onClick = onSubmit,
+                modifier = Modifier.fillMaxWidth(),
+                enabled = phase.inputText.isNotBlank(),
+            ) {
+                Text("Submit", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            }
+        } else {
+            Button(
+                onClick = onNext,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = if (phase.isCorrect == true) Color(0xFF4CAF50) else MaterialTheme.colorScheme.primary,
+                ),
+            ) {
+                Text(
+                    text = if (phase.isCorrect == true) "Correct! Next →" else "Next →",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                )
             }
         }
     }
@@ -807,12 +939,12 @@ private fun KanjiDropPlayingContent(
                 },
                 label = "kanji_bg",
             )
-            // Danger line at the drop limit
+            // Danger line at the drop limit — must match the max kanji offset (200.dp)
             HorizontalDivider(
                 modifier = Modifier
                     .fillMaxWidth()
                     .align(Alignment.TopCenter)
-                    .offset(y = 220.dp),
+                    .offset(y = 200.dp),
                 color = MaterialTheme.colorScheme.error.copy(alpha = 0.5f),
                 thickness = 2.dp,
             )

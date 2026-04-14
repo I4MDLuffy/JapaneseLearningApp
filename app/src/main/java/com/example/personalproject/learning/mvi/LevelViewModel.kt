@@ -5,16 +5,22 @@ import com.example.personalproject.data.model.Chapter
 import com.example.personalproject.data.model.ChapterType
 import com.example.personalproject.data.repository.ChapterProgressRepository
 import com.example.personalproject.data.repository.GrammarRepository
+import com.example.personalproject.data.repository.KanjiRepository
 import com.example.personalproject.data.repository.VocabularyRepository
 import com.example.personalproject.mvi.BaseViewModel
 import kotlinx.coroutines.launch
 
 private const val VOCAB_CHAPTER_SIZE = 10
+private const val KANJI_CHAPTER_SIZE = 5
+
+/** Count CJK kanji characters (basic block only) in a string. */
+private fun String.kanjiCount(): Int = count { it.code in 0x4E00..0x9FFF }
 
 class LevelViewModel(
     private val level: String,
     private val grammarRepository: GrammarRepository,
     private val vocabularyRepository: VocabularyRepository,
+    private val kanjiRepository: KanjiRepository,
     private val progressRepository: ChapterProgressRepository,
 ) : BaseViewModel<LevelState, LevelAction>(LevelState(levelName = levelDisplayName(level))) {
 
@@ -40,9 +46,15 @@ class LevelViewModel(
                 val chapters = mutableListOf<Chapter>()
                 var chapterIndex = 0
 
-                val vocabChunks = vocabularyRepository.filterByJlpt(jlpt)
-                    .sortedBy { it.id }
-                    .chunked(VOCAB_CHAPTER_SIZE)
+                // For beginner, restrict vocab to single-kanji words so learners
+                // aren't overwhelmed with compound kanji before mastering individuals.
+                val rawVocab = vocabularyRepository.filterByJlpt(jlpt).sortedBy { it.id }
+                val filteredVocab = if (level == "beginner") {
+                    rawVocab.filter { it.japanese.kanjiCount() <= 1 }
+                } else {
+                    rawVocab
+                }
+                val vocabChunks = filteredVocab.chunked(VOCAB_CHAPTER_SIZE)
 
                 val grammarLessons = grammarRepository.filterByJlpt(jlpt)
                     .sortedBy { it.lessonNumber }
@@ -50,16 +62,25 @@ class LevelViewModel(
                     .entries.sortedBy { it.key }
                     .toList()
 
-                // ── Interleaved: GRAMMAR → VOCAB → TERM_STUDY → STUDY_VOCAB ──
-                val maxLen = maxOf(vocabChunks.size, grammarLessons.size)
+                // Kanji are always individual characters; no beginner filter needed here.
+                val kanjiChunks = kanjiRepository.filterByJlpt(jlpt)
+                    .sortedBy { it.id }
+                    .chunked(KANJI_CHAPTER_SIZE)
+
+                // ── Interleaved: GRAMMAR → KANJI → VOCAB → TERM_STUDY → STUDY_VOCAB ──
+                val maxLen = maxOf(vocabChunks.size, grammarLessons.size, kanjiChunks.size)
                 for (i in 0 until maxLen) {
                     val grammarEntry = grammarLessons.getOrNull(i)
                     val vocabChunk = vocabChunks.getOrNull(i)
+                    val kanjiChunk = kanjiChunks.getOrNull(i)
 
                     if (grammarEntry != null) {
-                        val (lessonNumber, entries) = grammarEntry
-                        val title = entries.firstOrNull()?.title ?: "Grammar $lessonNumber"
-                        chapters.add(makeChapter(chapterIndex, ChapterType.GRAMMAR, lessonNumber, title))
+                        val title = grammarEntry.value.firstOrNull()?.title ?: "Grammar ${grammarEntry.key}"
+                        chapters.add(makeChapter(chapterIndex, ChapterType.GRAMMAR, grammarEntry.key, title))
+                        chapterIndex++
+                    }
+                    if (kanjiChunk != null) {
+                        chapters.add(makeChapter(chapterIndex, ChapterType.KANJI, i, "Kanji ${i + 1}"))
                         chapterIndex++
                     }
                     if (vocabChunk != null) {

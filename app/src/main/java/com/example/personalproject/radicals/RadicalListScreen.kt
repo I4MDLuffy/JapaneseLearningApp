@@ -43,7 +43,7 @@ import com.example.personalproject.ui.components.KotobaTopBar
 @Composable
 fun RadicalListScreen(
     onBack: () -> Unit,
-    onRadicalClick: (String) -> Unit,
+    onRadicalClick: (id: String, allIds: String) -> Unit,
     onStudyGroup: (groupId: String) -> Unit,
     onStudyAll: () -> Unit,
 ) {
@@ -63,6 +63,7 @@ fun RadicalListScreen(
         }
 
         val byStroke = radicals.groupBy { it.strokeCount }.entries.sortedBy { it.key }
+        val allIds = radicals.sortedBy { it.strokeCount }.joinToString(",") { it.id }
 
         LazyColumn(modifier = Modifier.fillMaxSize().padding(padding)) {
             item {
@@ -88,7 +89,7 @@ fun RadicalListScreen(
                 item {
                     RadicalGroupGrid(
                         radicals = group,
-                        onRadicalClick = onRadicalClick,
+                        onRadicalClick = { id -> onRadicalClick(id, allIds) },
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                 }

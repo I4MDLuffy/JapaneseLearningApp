@@ -47,15 +47,26 @@ import com.example.personalproject.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun PhraseListScreen(onPhraseClick: (id: String, allIds: String) -> Unit, onBack: () -> Unit) {
+fun PhraseListScreen(
+    onPhraseClick: (id: String, allIds: String) -> Unit,
+    onBack: () -> Unit,
+    category: String = "",
+) {
     val container = LocalAppContainer.current
     val vm: PhraseListViewModel = viewModel(
-        factory = viewModelFactory { initializer { PhraseListViewModel(container.phraseRepository) } }
+        factory = viewModelFactory {
+            initializer { PhraseListViewModel(container.phraseRepository, category) }
+        }
     )
     val state by vm.uiState.collectAsStateWithLifecycle()
 
+    val title = when {
+        category.isBlank() -> "Phrases"
+        else -> category.replaceFirstChar { it.uppercase() } + " Phrases"
+    }
+
     Scaffold(
-        topBar = { KotobaTopBar(title = "Phrases", onBack = onBack) },
+        topBar = { KotobaTopBar(title = title, onBack = onBack) },
     ) { padding ->
         Column(
             modifier = Modifier

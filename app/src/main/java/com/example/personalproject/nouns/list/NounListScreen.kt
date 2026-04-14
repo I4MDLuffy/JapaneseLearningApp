@@ -18,6 +18,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
@@ -30,6 +34,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -40,6 +45,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.NounEntry
+import kotlinx.coroutines.launch
 import com.example.personalproject.nouns.list.mvi.NounListAction
 import com.example.personalproject.nouns.list.mvi.NounListViewModel
 import com.example.personalproject.ui.components.JlptBadge
@@ -136,6 +142,13 @@ fun NounListScreen(onNounClick: (id: String, allIds: String) -> Unit, onBack: ()
 
 @Composable
 private fun NounListItem(entry: NounEntry, onClick: () -> Unit) {
+    val container = LocalAppContainer.current
+    val scope = rememberCoroutineScope()
+    val isKnown by container.knownRepository.isItemKnownFlow("noun", entry.id)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val isSaved by container.savedRepository.isItemSavedFlow("noun", entry.id)
+        .collectAsStateWithLifecycle(initialValue = false)
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -164,7 +177,23 @@ private fun NounListItem(entry: NounEntry, onClick: () -> Unit) {
             )
         }
 
-        Spacer(modifier = Modifier.width(12.dp))
+        // Known (star) toggle
+        IconButton(onClick = { scope.launch { container.knownRepository.toggle("noun", entry.id) } }) {
+            Icon(
+                imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+
+        // Bookmark toggle
+        IconButton(onClick = { scope.launch { container.savedRepository.toggle("noun", entry.id, entry.kanji.ifBlank { entry.hiragana }, entry.hiragana, entry.meaning) } }) {
+            Icon(
+                imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                contentDescription = if (isSaved) "Remove bookmark" else "Bookmark",
+                tint = MaterialTheme.colorScheme.primary,
+            )
+        }
 
         Column(horizontalAlignment = Alignment.End) {
             Text(

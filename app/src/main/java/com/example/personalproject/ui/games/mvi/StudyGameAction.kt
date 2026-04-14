@@ -28,4 +28,10 @@ sealed interface StudyGameAction : BaseAction {
     data class TapSwipeTile(val index: Int) : StudyGameAction
     object UndoSwipe : StudyGameAction
     object SubmitSwipe : StudyGameAction
+
+    // Fill in the Blank
+    data class SetFillBlankDirection(val direction: FillBlankDirection) : StudyGameAction
+    data class UpdateFillBlankInput(val text: String) : StudyGameAction
+    object SubmitFillBlank : StudyGameAction
+    object NextFillBlank : StudyGameAction
 }

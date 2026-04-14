@@ -18,6 +18,9 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -46,13 +49,17 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
+import com.example.personalproject.LocalAppSettings
 import com.example.personalproject.data.model.GrammarEntry
 import com.example.personalproject.grammar.detail.mvi.GrammarDetailViewModel
 import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.SpeakableText
 import com.example.personalproject.util.containsKana
 import com.example.personalproject.util.kanaToRomaji
+import com.example.personalproject.util.rememberTts
+import com.example.personalproject.util.swipeToNavigate
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -65,6 +72,7 @@ fun GrammarDetailScreen(
     onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
+    val settings = LocalAppSettings.current
     val vm: GrammarDetailViewModel = viewModel(
         key = grammarId,
         factory = viewModelFactory {
@@ -74,7 +82,10 @@ fun GrammarDetailScreen(
     val state by vm.uiState.collectAsStateWithLifecycle()
     val isSaved by container.savedRepository.isItemSavedFlow("grammar", grammarId)
         .collectAsStateWithLifecycle(initialValue = false)
+    val isKnown by container.knownRepository.isItemKnownFlow("grammar", grammarId)
+        .collectAsStateWithLifecycle(initialValue = false)
     val scope = rememberCoroutineScope()
+    val speak = rememberTts()
 
     Scaffold(
         topBar = {
@@ -82,6 +93,21 @@ fun GrammarDetailScreen(
                 title = state.entry?.title ?: "Grammar",
                 onBack = onBack,
                 actions = {
+                    state.entry?.let { entry ->
+                        if (entry.exampleOne.isNotBlank()) {
+                            IconButton(onClick = { speak(entry.exampleOne) }) {
+                                Icon(Icons.Outlined.VolumeUp, contentDescription = "Pronounce example")
+                            }
+                        }
+                    }
+                    IconButton(onClick = {
+                        scope.launch { container.knownRepository.toggle("grammar", grammarId) }
+                    }) {
+                        Icon(
+                            imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                        )
+                    }
                     IconButton(onClick = {
                         val entry = state.entry ?: return@IconButton
                         scope.launch {
@@ -114,9 +140,14 @@ fun GrammarDetailScreen(
             }
             state.entry != null -> GrammarDetail(
                 entry = state.entry!!,
+                speak = speak,
+                showFurigana = settings.showFurigana,
+                showRomaji = settings.showRomaji,
                 onKanjiClick = onKanjiClick,
                 onGrammarClick = onGrammarClick,
-                modifier = Modifier.padding(padding),
+                modifier = Modifier
+                    .padding(padding)
+                    .swipeToNavigate(onSwipeLeft = onNext, onSwipeRight = onPrevious),
             )
             else -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text("Grammar lesson not found.")
@@ -129,6 +160,9 @@ fun GrammarDetailScreen(
 @Composable
 private fun GrammarDetail(
     entry: GrammarEntry,
+    speak: (String) -> Unit,
+    showFurigana: Boolean,
+    showRomaji: Boolean,
     onKanjiClick: ((String) -> Unit)?,
     onGrammarClick: ((String) -> Unit)?,
     modifier: Modifier = Modifier,
@@ -178,8 +212,12 @@ private fun GrammarDetail(
                 }
             }
 
-            if (entry.exampleOne.isNotBlank()) ExampleCard("Example 1", entry.exampleOne)
-            if (entry.exampleTwo.isNotBlank()) ExampleCard("Example 2", entry.exampleTwo)
+            if (entry.exampleOne.isNotBlank()) {
+                ExampleCard("Example 1", entry.exampleOne, speak, showFurigana, showRomaji)
+            }
+            if (entry.exampleTwo.isNotBlank()) {
+                ExampleCard("Example 2", entry.exampleTwo, speak, showFurigana, showRomaji)
+            }
 
             if (entry.supportingContent.isNotBlank()) {
                 SectionCard(label = "Notes") {
@@ -192,22 +230,11 @@ private fun GrammarDetail(
                 }
             }
 
-            // ── Related Kanji ─────────────────────────────────────────────────
             if (onKanjiClick != null && entry.relatedKanjiReferences.isNotEmpty()) {
-                ReferencesSection(
-                    label = "Related Kanji",
-                    ids = entry.relatedKanjiReferences,
-                    onClick = onKanjiClick,
-                )
+                ReferencesSection("Related Kanji", entry.relatedKanjiReferences, onKanjiClick)
             }
-
-            // ── Related Grammar ───────────────────────────────────────────────
             if (onGrammarClick != null && entry.relatedGrammarReferences.isNotEmpty()) {
-                ReferencesSection(
-                    label = "Related Grammar",
-                    ids = entry.relatedGrammarReferences,
-                    onClick = onGrammarClick,
-                )
+                ReferencesSection("Related Grammar", entry.relatedGrammarReferences, onGrammarClick)
             }
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -233,21 +260,13 @@ private fun ReferencesSection(label: String, ids: List<String>, onClick: (String
     }
 }
 
-// ── Example parsing ────────────────────────────────────────────────────────────
-
 private data class ParsedExample(
     val japanese: String,
-    val reading: String,   // hiragana extracted from (...) in the raw string
-    val romaji: String,    // generated from reading
+    val reading: String,
+    val romaji: String,
     val english: String,
 )
 
-/**
- * Grammar examples are stored as:
- *   "Japanese sentence。(ひらがなよみ。) — English translation."
- * This function splits that into its three components so they can be
- * displayed individually. Falls back to splitting on — if no kana parens found.
- */
 private fun parseExample(raw: String): ParsedExample {
     if (raw.isBlank()) return ParsedExample(raw, "", "", "")
     val parenOpen = raw.indexOf('(')
@@ -262,7 +281,6 @@ private fun parseExample(raw: String): ParsedExample {
             return ParsedExample(japanese, reading, kanaToRomaji(reading), english)
         }
     }
-    // No kana-containing parens — split on em-dash if present
     val dash = raw.indexOf('—')
     return if (dash >= 0)
         ParsedExample(raw.substring(0, dash).trim(), "", "", raw.substring(dash + 1).trim())
@@ -271,21 +289,29 @@ private fun parseExample(raw: String): ParsedExample {
 }
 
 @Composable
-private fun ExampleCard(label: String, raw: String) {
+private fun ExampleCard(
+    label: String,
+    raw: String,
+    speak: (String) -> Unit,
+    showFurigana: Boolean,
+    showRomaji: Boolean,
+) {
     val parsed = remember(raw) { parseExample(raw) }
     SectionCard(label = label) {
-        Text(
+        SpeakableText(
             text = parsed.japanese,
-            style = MaterialTheme.typography.bodyLarge,
-            fontWeight = FontWeight.Medium,
+            speak = speak,
+            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Medium),
         )
-        if (parsed.reading.isNotBlank()) {
+        if (showFurigana && parsed.reading.isNotBlank()) {
             Spacer(modifier = Modifier.height(2.dp))
             Text(
                 text = parsed.reading,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.85f),
             )
+        }
+        if (showRomaji && parsed.romaji.isNotBlank()) {
             Text(
                 text = parsed.romaji,
                 style = MaterialTheme.typography.labelMedium,

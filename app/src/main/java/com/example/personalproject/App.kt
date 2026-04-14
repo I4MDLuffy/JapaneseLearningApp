@@ -26,6 +26,7 @@ import com.example.personalproject.introduction.IntroductionScreen
 import com.example.personalproject.learning.ChapterReaderScreen
 import com.example.personalproject.learning.LevelScreen
 import com.example.personalproject.misc.CountersScreen
+import com.example.personalproject.misc.DialogueDetailScreen
 import com.example.personalproject.misc.DialogueReadingScreen
 import com.example.personalproject.misc.MiscScreen
 import com.example.personalproject.misc.PurelyGrammarScreen
@@ -46,6 +47,7 @@ import com.example.personalproject.navigation.BeginnerRoute
 import com.example.personalproject.navigation.ChapterReaderRoute
 import com.example.personalproject.navigation.StudyGameRoute
 import com.example.personalproject.navigation.CountersRoute
+import com.example.personalproject.navigation.DialogueDetailRoute
 import com.example.personalproject.navigation.DialogueReadingRoute
 import com.example.personalproject.navigation.GettingStartedRoute
 import com.example.personalproject.navigation.GrammarDetailRoute
@@ -110,15 +112,43 @@ import com.example.personalproject.navigation.RadicalDetailRoute
 import com.example.personalproject.navigation.RadicalGameRoute
 import com.example.personalproject.navigation.RadicalKanjiListRoute
 import com.example.personalproject.navigation.RadicalListRoute
+import com.example.personalproject.navigation.JlptRoute
+import com.example.personalproject.navigation.JlptLevelRoute
+import com.example.personalproject.navigation.JlptPracticeTestRoute
+import com.example.personalproject.navigation.OnomatopoeiaRoute
+import com.example.personalproject.navigation.VerbConjugationSetupRoute
+import com.example.personalproject.navigation.VerbConjugationGameRoute
+import com.example.personalproject.navigation.GrammarFillInRoute
+import com.example.personalproject.jlpt.JlptScreen
+import com.example.personalproject.jlpt.JlptLevelScreen
+import com.example.personalproject.jlpt.JlptPracticeTestScreen
+import com.example.personalproject.misc.OnomatopoeiaScreen
+import com.example.personalproject.ui.games.VerbConjugationSetupScreen
+import com.example.personalproject.ui.games.VerbConjugationGameScreen
+import com.example.personalproject.ui.games.GrammarFillInScreen
 import com.example.personalproject.vocabulary.detail.VocabularyDetailScreen
 import com.example.personalproject.vocabulary.list.VocabularyListScreen
+import com.example.personalproject.navigation.ReviewRoute
+import com.example.personalproject.navigation.ProgressRoute
+import com.example.personalproject.navigation.KanaWritingGameRoute
+import com.example.personalproject.ui.review.ReviewScreen
+import com.example.personalproject.ui.progress.ProgressScreen
+import com.example.personalproject.ui.games.KanaWritingGameScreen
 
 @Composable
 fun App(appContainer: AppContainer) {
     val settings by appContainer.settingsRepository.settings.collectAsState()
 
-    PersonalProjectTheme(appTheme = settings.theme) {
-        CompositionLocalProvider(LocalAppContainer provides appContainer) {
+    PersonalProjectTheme(
+            appTheme = settings.theme,
+            isDarkMode = settings.isDarkMode,
+            largerText = settings.largerText,
+            highContrast = settings.highContrast,
+        ) {
+        CompositionLocalProvider(
+            LocalAppContainer provides appContainer,
+            LocalAppSettings provides settings,
+        ) {
             val navController = rememberNavController()
             val backStack by navController.currentBackStackEntryAsState()
             val currentDest = backStack?.destination
@@ -178,6 +208,8 @@ fun App(appContainer: AppContainer) {
                             onCounters = { navController.navigate(CountersRoute) },
                             onTermStudy = { navController.navigate(TermStudyRoute) },
                             onDialogueReading = { navController.navigate(DialogueReadingRoute) },
+                            onReview = { navController.navigate(ReviewRoute) },
+                            onProgress = { navController.navigate(ProgressRoute) },
                         )
                     }
 
@@ -201,6 +233,9 @@ fun App(appContainer: AppContainer) {
                             onPlayAll = {
                                 navController.navigate(KanaGroupGameRoute("hiragana", "all"))
                             },
+                            onPlaySelected = { groupIds ->
+                                navController.navigate(KanaGroupGameRoute("hiragana", groupIds))
+                            },
                         )
                     }
 
@@ -214,6 +249,9 @@ fun App(appContainer: AppContainer) {
                             },
                             onPlayAll = {
                                 navController.navigate(KanaGroupGameRoute("katakana", "all"))
+                            },
+                            onPlaySelected = { groupIds ->
+                                navController.navigate(KanaGroupGameRoute("katakana", groupIds))
                             },
                         )
                     }
@@ -304,7 +342,9 @@ fun App(appContainer: AppContainer) {
                     composable<QuickConversationalRoute> {
                         QuickConversationalScreen(
                             onBack = { navController.popBackStack() },
-                            onPhrases = { navController.navigate(PhraseListRoute) },
+                            onCategoryClick = { category ->
+                                navController.navigate(PhraseListRoute(category))
+                            },
                         )
                     }
 
@@ -322,6 +362,13 @@ fun App(appContainer: AppContainer) {
                             onNouns = { navController.navigate(NounListRoute) },
                             onKanji = { navController.navigate(KanjiListRoute) },
                             onRadicals = { navController.navigate(RadicalListRoute) },
+                            onOnomatopoeia = { navController.navigate(OnomatopoeiaRoute) },
+                            onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onVerbClick = { id -> navController.navigate(VerbDetailRoute(id)) },
+                            onAdjectiveClick = { id -> navController.navigate(AdjectiveDetailRoute(id)) },
+                            onNounClick = { id -> navController.navigate(NounDetailRoute(id)) },
+                            onGrammarClick = { id -> navController.navigate(GrammarDetailRoute(id)) },
+                            onPhraseClick = { id -> navController.navigate(PhraseDetailRoute(id)) },
                         )
                     }
 
@@ -329,7 +376,7 @@ fun App(appContainer: AppContainer) {
                     composable<RadicalListRoute> {
                         RadicalListScreen(
                             onBack = { navController.popBackStack() },
-                            onRadicalClick = { id -> navController.navigate(RadicalDetailRoute(id)) },
+                            onRadicalClick = { id, allIds -> navController.navigate(RadicalDetailRoute(id, allIds)) },
                             onStudyGroup = { groupId -> navController.navigate(RadicalGameRoute(groupId)) },
                             onStudyAll = { navController.navigate(RadicalGameRoute("all")) },
                         )
@@ -337,11 +384,19 @@ fun App(appContainer: AppContainer) {
 
                     composable<RadicalDetailRoute> { backStackEntry ->
                         val route = backStackEntry.toRoute<RadicalDetailRoute>()
+                        val ids = route.allIds.split(",").filter { it.isNotBlank() }
+                        val idx = ids.indexOf(route.radicalId)
                         RadicalDetailScreen(
                             radicalId = route.radicalId,
                             onBack = { navController.popBackStack() },
                             onViewKanji = { radicalId -> navController.navigate(RadicalKanjiListRoute(radicalId)) },
                             onKanjiClick = { id -> navController.navigate(KanjiDetailRoute(id)) },
+                            onPrevious = if (idx > 0) {
+                                { navController.navigate(RadicalDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<RadicalDetailRoute> { inclusive = true } } }
+                            } else null,
+                            onNext = if (idx >= 0 && idx < ids.size - 1) {
+                                { navController.navigate(RadicalDetailRoute(ids[idx + 1], route.allIds)) { popUpTo<RadicalDetailRoute> { inclusive = true } } }
+                            } else null,
                         )
                     }
 
@@ -363,7 +418,21 @@ fun App(appContainer: AppContainer) {
                     }
 
                     composable<DialogueReadingRoute> {
-                        DialogueReadingScreen(onBack = { navController.popBackStack() })
+                        DialogueReadingScreen(
+                            onBack = { navController.popBackStack() },
+                            onConversationClick = { title, ids ->
+                                navController.navigate(DialogueDetailRoute(title, ids))
+                            },
+                        )
+                    }
+
+                    composable<DialogueDetailRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<DialogueDetailRoute>()
+                        DialogueDetailScreen(
+                            conversationTitle = route.conversationTitle,
+                            dialogueIds = route.dialogueIds.split(",").filter { it.isNotBlank() },
+                            onBack = { navController.popBackStack() },
+                        )
                     }
 
                     // ── Kanji ─────────────────────────────────────────────────
@@ -380,6 +449,7 @@ fun App(appContainer: AppContainer) {
                         KanjiDetailScreen(
                             kanjiId = route.kanjiId,
                             onBack = { navController.popBackStack() },
+                            onVocabClick = { id -> navController.navigate(VocabularyDetailRoute(id)) },
                             onPrevious = if (idx > 0) {
                                 { navController.navigate(KanjiDetailRoute(ids[idx - 1], route.allIds)) { popUpTo<KanjiDetailRoute> { inclusive = true } } }
                             } else null,
@@ -488,8 +558,10 @@ fun App(appContainer: AppContainer) {
                     }
 
                     // ── Phrases ───────────────────────────────────────────────
-                    composable<PhraseListRoute> {
+                    composable<PhraseListRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<PhraseListRoute>()
                         PhraseListScreen(
+                            category = route.category,
                             onPhraseClick = { id, allIds -> navController.navigate(PhraseDetailRoute(id, allIds)) },
                             onBack = { navController.popBackStack() },
                         )
@@ -536,7 +608,54 @@ fun App(appContainer: AppContainer) {
                         StudyGamesScreen(
                             onGameStart = { gameType ->
                                 navController.navigate(GameSetupRoute(gameType))
-                            }
+                            },
+                            onVerbConjugation = { navController.navigate(VerbConjugationSetupRoute) },
+                            onGrammarFillIn = { navController.navigate(GrammarFillInRoute) },
+                            onKanaWriting = { navController.navigate(KanaWritingGameRoute("both")) },
+                        )
+                    }
+
+                    composable<VerbConjugationSetupRoute> {
+                        VerbConjugationSetupScreen(
+                            onBack = { navController.popBackStack() },
+                            onStart = { level, formKeys, count ->
+                                navController.navigate(VerbConjugationGameRoute(level, formKeys, count))
+                            },
+                        )
+                    }
+
+                    composable<VerbConjugationGameRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<VerbConjugationGameRoute>()
+                        VerbConjugationGameScreen(
+                            level = route.level,
+                            formKeys = route.formKeys,
+                            count = route.count,
+                            onBack = { navController.popBackStack() },
+                        )
+                    }
+
+                    composable<GrammarFillInRoute> {
+                        GrammarFillInScreen(onBack = { navController.popBackStack() })
+                    }
+
+                    composable<KanaWritingGameRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<KanaWritingGameRoute>()
+                        KanaWritingGameScreen(
+                            kanaType = route.kanaType,
+                            onBack = { navController.popBackStack() },
+                        )
+                    }
+
+                    // ── SRS Review ────────────────────────────────────────────
+                    composable<ReviewRoute> {
+                        ReviewScreen(onBack = { navController.popBackStack() })
+                    }
+
+                    // ── Progress dashboard ────────────────────────────────────
+                    composable<ProgressRoute> {
+                        ProgressScreen(
+                            onBack = { navController.popBackStack() },
+                            onStartReview = { navController.navigate(ReviewRoute) },
                         )
                     }
 
@@ -558,6 +677,39 @@ fun App(appContainer: AppContainer) {
                             setKey = route.setKey,
                             onBack = { navController.popBackStack() },
                         )
+                    }
+
+                    // ── JLPT ─────────────────────────────────────────────────
+                    composable<JlptRoute> {
+                        JlptScreen(
+                            onLevelClick = { level -> navController.navigate(JlptLevelRoute(level)) },
+                        )
+                    }
+
+                    composable<JlptLevelRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<JlptLevelRoute>()
+                        JlptLevelScreen(
+                            level = route.level,
+                            onBack = { navController.popBackStack() },
+                            onVocab = { navController.navigate(VocabularyListRoute) },
+                            onKanji = { navController.navigate(KanjiListRoute) },
+                            onGrammar = { navController.navigate(GrammarListRoute) },
+                            onPhrases = { navController.navigate(PhraseListRoute()) },
+                            onPracticeTest = { level -> navController.navigate(JlptPracticeTestRoute(level)) },
+                        )
+                    }
+
+                    composable<JlptPracticeTestRoute> { backStackEntry ->
+                        val route = backStackEntry.toRoute<JlptPracticeTestRoute>()
+                        JlptPracticeTestScreen(
+                            level = route.level,
+                            onBack = { navController.popBackStack() },
+                        )
+                    }
+
+                    // ── Onomatopoeia ──────────────────────────────────────────
+                    composable<OnomatopoeiaRoute> {
+                        OnomatopoeiaScreen(onBack = { navController.popBackStack() })
                     }
 
                     // ── Settings ──────────────────────────────────────────────

@@ -17,14 +17,21 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckBox
+import androidx.compose.material.icons.filled.CheckBoxOutlineBlank
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -43,7 +50,11 @@ fun KanaTableScreen(
     onBack: () -> Unit,
     onPlayGroup: (groupId: String) -> Unit,
     onPlayAll: () -> Unit,
+    onPlaySelected: ((groupIds: String) -> Unit)? = null,
 ) {
+    var selectedIds by remember { mutableStateOf(emptySet<String>()) }
+    val totalSelected = groups.filter { it.id in selectedIds }.sumOf { it.entries.size }
+
     Column(modifier = Modifier.fillMaxSize()) {
         KotobaTopBar(title = title, onBack = onBack)
 
@@ -56,8 +67,14 @@ fun KanaTableScreen(
             item { Spacer(modifier = Modifier.height(8.dp)) }
 
             items(groups) { group ->
+                val isSelected = group.id in selectedIds
                 KanaGroupSection(
                     group = group,
+                    isSelected = isSelected,
+                    showCheckbox = onPlaySelected != null,
+                    onToggleSelect = {
+                        selectedIds = if (isSelected) selectedIds - group.id else selectedIds + group.id
+                    },
                     onPlay = { onPlayGroup(group.id) },
                 )
             }
@@ -65,22 +82,30 @@ fun KanaTableScreen(
             item { Spacer(modifier = Modifier.height(8.dp)) }
         }
 
-        // Study All button pinned at bottom
+        // Bottom action bar
         HorizontalDivider()
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            Button(
+            // "Study Selected" button — only when groups are checked
+            if (onPlaySelected != null && selectedIds.isNotEmpty()) {
+                Button(
+                    onClick = { onPlaySelected(selectedIds.joinToString(",")) },
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Icon(Icons.Filled.PlayArrow, contentDescription = null, modifier = Modifier.size(20.dp))
+                    Text("  Study Selected ($totalSelected characters)")
+                }
+            }
+            // "Study All" button
+            OutlinedButton(
                 onClick = onPlayAll,
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Icon(
-                    Icons.Filled.PlayArrow,
-                    contentDescription = null,
-                    modifier = Modifier.size(20.dp),
-                )
+                Icon(Icons.Filled.PlayArrow, contentDescription = null, modifier = Modifier.size(20.dp))
                 Text(
                     text = "  Study All (${groups.sumOf { it.entries.size }} characters)",
                     style = MaterialTheme.typography.titleSmall,
@@ -93,13 +118,23 @@ fun KanaTableScreen(
 @Composable
 private fun KanaGroupSection(
     group: KanaGroup,
+    isSelected: Boolean,
+    showCheckbox: Boolean,
+    onToggleSelect: () -> Unit,
     onPlay: () -> Unit,
 ) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
-            .background(MaterialTheme.colorScheme.surfaceVariant)
+            .background(
+                if (isSelected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.4f)
+                else MaterialTheme.colorScheme.surfaceVariant
+            )
+            .then(
+                if (isSelected) Modifier.border(1.5.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(16.dp))
+                else Modifier
+            )
             .padding(12.dp),
     ) {
         Row(
@@ -107,12 +142,34 @@ private fun KanaGroupSection(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text(
-                text = group.label,
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary,
-            )
+            // Checkbox + label
+            Row(
+                modifier = Modifier
+                    .weight(1f)
+                    .then(if (showCheckbox) Modifier.clickable { onToggleSelect() } else Modifier),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
+                if (showCheckbox) {
+                    Icon(
+                        imageVector = if (isSelected) Icons.Filled.CheckBox else Icons.Filled.CheckBoxOutlineBlank,
+                        contentDescription = if (isSelected) "Deselect" else "Select",
+                        tint = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                        modifier = Modifier.size(20.dp),
+                    )
+                }
+                Text(
+                    text = group.label,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
+                    text = "(${group.entries.size})",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
+                )
+            }
             TextButton(onClick = onPlay) {
                 Icon(
                     Icons.Filled.PlayArrow,
@@ -130,7 +187,6 @@ private fun KanaGroupSection(
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // Render kana in rows of 5 (with spacers for incomplete rows)
         val chunked = group.entries.chunked(5)
         chunked.forEach { row ->
             Row(
@@ -140,7 +196,6 @@ private fun KanaGroupSection(
                 row.forEach { entry ->
                     KanaCell(entry = entry, modifier = Modifier.weight(1f))
                 }
-                // Fill remaining cells so alignment stays consistent
                 repeat(5 - row.size) {
                     Spacer(modifier = Modifier.weight(1f))
                 }

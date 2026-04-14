@@ -24,6 +24,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.SuggestionChip
@@ -44,12 +47,16 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
+import com.example.personalproject.LocalAppSettings
 import com.example.personalproject.adjectives.detail.mvi.AdjectiveDetailViewModel
 import com.example.personalproject.data.model.AdjectiveEntry
 import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.SpeakableText
 import com.example.personalproject.util.containsKana
 import com.example.personalproject.util.kanaToRomaji
+import com.example.personalproject.util.rememberTts
+import com.example.personalproject.util.swipeToNavigate
 
 @Composable
 fun AdjectiveDetailScreen(
@@ -61,6 +68,7 @@ fun AdjectiveDetailScreen(
     onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
+    val settings = LocalAppSettings.current
     val vm: AdjectiveDetailViewModel = viewModel(
         key = adjId,
         factory = viewModelFactory {
@@ -70,7 +78,10 @@ fun AdjectiveDetailScreen(
     val state by vm.uiState.collectAsStateWithLifecycle()
     val isSaved by container.savedRepository.isItemSavedFlow("adjective", adjId)
         .collectAsStateWithLifecycle(initialValue = false)
+    val isKnown by container.knownRepository.isItemKnownFlow("adjective", adjId)
+        .collectAsStateWithLifecycle(initialValue = false)
     val scope = rememberCoroutineScope()
+    val speak = rememberTts()
 
     Scaffold(
         topBar = {
@@ -78,6 +89,20 @@ fun AdjectiveDetailScreen(
                 title = state.entry?.meaning ?: "Adjective",
                 onBack = onBack,
                 actions = {
+                    state.entry?.let { entry ->
+                        IconButton(onClick = { speak(entry.kanji.ifBlank { entry.hiragana }) }) {
+                            Icon(Icons.Outlined.VolumeUp, contentDescription = "Pronounce")
+                        }
+                    }
+                    IconButton(onClick = {
+                        scope.launch { container.knownRepository.toggle("adjective", adjId) }
+                    }) {
+                        Icon(
+                            imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                            tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                     IconButton(onClick = {
                         val entry = state.entry ?: return@IconButton
                         scope.launch {
@@ -110,9 +135,14 @@ fun AdjectiveDetailScreen(
             }
             state.entry != null -> AdjDetail(
                 entry = state.entry!!,
+                speak = speak,
+                showFurigana = settings.showFurigana,
+                showRomaji = settings.showRomaji,
                 onKanjiClick = onKanjiClick,
                 onGrammarClick = onGrammarClick,
-                modifier = Modifier.padding(padding),
+                modifier = Modifier
+                    .padding(padding)
+                    .swipeToNavigate(onSwipeLeft = onNext, onSwipeRight = onPrevious),
             )
             else -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text("Adjective not found.")
@@ -124,6 +154,9 @@ fun AdjectiveDetailScreen(
 @Composable
 private fun AdjDetail(
     entry: AdjectiveEntry,
+    speak: (String) -> Unit,
+    showFurigana: Boolean,
+    showRomaji: Boolean,
     onKanjiClick: ((String) -> Unit)?,
     onGrammarClick: ((String) -> Unit)?,
     modifier: Modifier = Modifier,
@@ -155,19 +188,21 @@ private fun AdjDetail(
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center,
                 )
-                if (entry.hiragana.isNotBlank() && entry.hiragana != entry.kanji) {
-                    Text(
+                if (showFurigana && entry.hiragana.isNotBlank() && entry.hiragana != entry.kanji) {
+                    SpeakableText(
                         text = entry.hiragana,
+                        speak = speak,
                         style = MaterialTheme.typography.headlineMedium,
                         color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.85f),
                     )
                 }
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = entry.romaji,
-                    style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
-                )
+                if (showRomaji && entry.romaji.isNotBlank()) {
+                    Text(
+                        text = entry.romaji,
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                    )
+                }
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = entry.meaning,
@@ -183,30 +218,30 @@ private fun AdjDetail(
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             SectionCard(label = "Present") {
-                ConjRow("Affirmative", entry.presentAffirmative, grammarId = presentGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Affirmative", entry.presentAffirmative, speak, showRomaji, presentGrammarId, onGrammarClick)
                 Div()
-                ConjRow("Negative", entry.presentNegative, grammarId = presentGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Negative", entry.presentNegative, speak, showRomaji, presentGrammarId, onGrammarClick)
                 Div()
-                ConjRow("Neg. short", entry.presentNegativeShort, grammarId = shortGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Neg. short", entry.presentNegativeShort, speak, showRomaji, shortGrammarId, onGrammarClick)
             }
 
             SectionCard(label = "Past") {
-                ConjRow("Affirmative", entry.pastAffirmative, grammarId = pastGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Affirmative", entry.pastAffirmative, speak, showRomaji, pastGrammarId, onGrammarClick)
                 Div()
-                ConjRow("Negative", entry.pastNegative, grammarId = pastGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Negative", entry.pastNegative, speak, showRomaji, pastGrammarId, onGrammarClick)
                 Div()
-                ConjRow("Aff. short", entry.pastAffirmativeShort, grammarId = shortGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Aff. short", entry.pastAffirmativeShort, speak, showRomaji, shortGrammarId, onGrammarClick)
                 Div()
-                ConjRow("Neg. short", entry.pastNegativeShort, grammarId = shortGrammarId, onGrammarClick = onGrammarClick)
+                ConjRow("Neg. short", entry.pastNegativeShort, speak, showRomaji, shortGrammarId, onGrammarClick)
             }
 
             SectionCard(label = "Te-form & Naru") {
-                ConjRow("Te-form +", entry.teFormAffirmative, grammarId = "g061", onGrammarClick = onGrammarClick)
+                ConjRow("Te-form +", entry.teFormAffirmative, speak, showRomaji, "g061", onGrammarClick)
                 Div()
-                ConjRow("Te-form –", entry.teFormNegative, grammarId = "g061", onGrammarClick = onGrammarClick)
+                ConjRow("Te-form –", entry.teFormNegative, speak, showRomaji, "g061", onGrammarClick)
                 if (entry.adjNaru.isNotBlank()) {
                     Div()
-                    ConjRow("+ なる", entry.adjNaru, grammarId = "g094", onGrammarClick = onGrammarClick)
+                    ConjRow("+ なる", entry.adjNaru, speak, showRomaji, "g094", onGrammarClick)
                 }
             }
 
@@ -251,6 +286,8 @@ private fun Div() {
 private fun ConjRow(
     label: String,
     value: String,
+    speak: (String) -> Unit,
+    showRomaji: Boolean,
     grammarId: String? = null,
     onGrammarClick: ((String) -> Unit)? = null,
 ) {
@@ -266,8 +303,8 @@ private fun ConjRow(
                 .then(if (hasLink) Modifier.clickable { onGrammarClick!!(grammarId!!) } else Modifier),
         )
         Column(modifier = Modifier.weight(0.55f)) {
-            Text(text = value, style = MaterialTheme.typography.bodyMedium)
-            if (containsKana(value)) {
+            SpeakableText(text = value, speak = speak, style = MaterialTheme.typography.bodyMedium)
+            if (showRomaji && containsKana(value)) {
                 Text(
                     text = kanaToRomaji(value),
                     style = MaterialTheme.typography.labelSmall,

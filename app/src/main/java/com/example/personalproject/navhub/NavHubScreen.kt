@@ -69,7 +69,7 @@ fun NavHubScreen(
                 color = MaterialTheme.colorScheme.primary,
             )
             Text(
-                text = "  Kotoba",
+                text = "  Kotori",
                 style = MaterialTheme.typography.headlineSmall,
                 color = MaterialTheme.colorScheme.onBackground,
             )

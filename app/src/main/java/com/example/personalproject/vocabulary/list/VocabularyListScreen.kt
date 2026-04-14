@@ -18,6 +18,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
@@ -30,6 +34,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -40,6 +45,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.VocabularyWord
+import kotlinx.coroutines.launch
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
 import com.example.personalproject.vocabulary.list.mvi.VocabularyListAction
@@ -151,6 +157,13 @@ fun VocabularyListScreen(onWordClick: (String) -> Unit, onBack: (() -> Unit)? = 
 
 @Composable
 private fun VocabularyListItem(word: VocabularyWord, onClick: () -> Unit) {
+    val container = LocalAppContainer.current
+    val scope = rememberCoroutineScope()
+    val isKnown by container.knownRepository.isItemKnownFlow("vocab", word.id)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val isSaved by container.savedRepository.isItemSavedFlow("vocab", word.id)
+        .collectAsStateWithLifecycle(initialValue = false)
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -180,7 +193,23 @@ private fun VocabularyListItem(word: VocabularyWord, onClick: () -> Unit) {
             )
         }
 
-        Spacer(modifier = Modifier.width(12.dp))
+        // Known (star) toggle
+        IconButton(onClick = { scope.launch { container.knownRepository.toggle("vocab", word.id) } }) {
+            Icon(
+                imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+
+        // Bookmark toggle
+        IconButton(onClick = { scope.launch { container.savedRepository.toggle("vocab", word.id, word.japanese, word.hiragana, word.english) } }) {
+            Icon(
+                imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                contentDescription = if (isSaved) "Remove bookmark" else "Bookmark",
+                tint = MaterialTheme.colorScheme.primary,
+            )
+        }
 
         // Right: English + badge
         Column(horizontalAlignment = Alignment.End) {

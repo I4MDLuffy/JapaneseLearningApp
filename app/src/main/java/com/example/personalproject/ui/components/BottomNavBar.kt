@@ -3,6 +3,7 @@ package com.example.personalproject.ui.components
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.VideogameAsset
 import androidx.compose.material3.Icon
@@ -15,6 +16,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.personalproject.navigation.HomeRoute
+import com.example.personalproject.navigation.JlptRoute
 import com.example.personalproject.navigation.SavedRoute
 import com.example.personalproject.navigation.SettingsRoute
 import com.example.personalproject.navigation.StudyGamesRoute
@@ -38,6 +40,9 @@ fun BottomNavBar(navController: NavController) {
         },
         NavItem("Games", StudyGamesRoute, StudyGamesRoute::class) {
             Icon(Icons.Filled.VideogameAsset, contentDescription = "Games")
+        },
+        NavItem("JLPT", JlptRoute, JlptRoute::class) {
+            Icon(Icons.Filled.MenuBook, contentDescription = "JLPT")
         },
         NavItem("Settings", SettingsRoute, SettingsRoute::class) {
             Icon(Icons.Filled.Settings, contentDescription = "Settings")

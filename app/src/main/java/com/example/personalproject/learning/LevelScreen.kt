@@ -69,6 +69,7 @@ fun LevelScreen(
                     level = level,
                     grammarRepository = container.grammarRepository,
                     vocabularyRepository = container.vocabularyRepository,
+                    kanjiRepository = container.kanjiRepository,
                     progressRepository = container.chapterProgressRepository,
                 )
             }
@@ -78,14 +79,22 @@ fun LevelScreen(
 
     val levelHelpDescription = when (level) {
         "beginner" -> "The Beginner section covers JLPT N5 material — the foundations of Japanese.\n\n" +
-            "Chapters are organised by topic (vocabulary sets, grammar points, etc.). Tap a chapter to read it. " +
-            "Completed chapters are marked with a check. Work through them in order or jump to any topic that interests you."
+            "Each lesson follows a five-step cycle:\n" +
+            "1. Grammar — read the grammar explanation\n" +
+            "2. Kanji — study individual N5 kanji characters\n" +
+            "3. Vocabulary — learn new words (single-kanji and kana words to build familiarity gradually)\n" +
+            "4. Term Study — review terms from the lesson\n" +
+            "5. Study Vocab — flashcard review of the vocabulary set\n\n" +
+            "Completed chapters are marked with a check. Locked chapters (🔒) unlock after the previous chapter is complete."
         "intermediate" -> "The Intermediate section covers JLPT N4–N3 material, building on the basics.\n\n" +
-            "Chapters introduce more complex grammar patterns, expanded vocabulary, and kanji. Tap a chapter to open it. " +
+            "Each lesson follows a five-step cycle: Grammar → Kanji → Vocabulary → Term Study → Study Vocab.\n\n" +
+            "Chapters introduce more complex grammar patterns, expanded vocabulary, and kanji. " +
             "Completed chapters are marked with a check."
         "advanced" -> "The Advanced section covers JLPT N2–N1 material for learners approaching fluency.\n\n" +
+            "Each lesson follows a five-step cycle: Grammar → Kanji → Vocabulary → Term Study → Study Vocab.\n\n" +
             "Chapters cover nuanced grammar, formal expressions, and a broad range of kanji. Tap a chapter to open it."
         else -> "The Master section contains native-level material for learners aiming for full fluency.\n\n" +
+            "Each lesson follows a five-step cycle: Grammar → Kanji → Vocabulary → Term Study → Study Vocab.\n\n" +
             "Chapters cover advanced expressions, classical forms, and domain-specific vocabulary. Tap a chapter to open it."
     }
 
@@ -244,6 +253,7 @@ private fun ChapterRow(chapter: Chapter, onClick: () -> Unit) {
 
 private fun chapterIcon(type: ChapterType): ImageVector = when (type) {
     ChapterType.GRAMMAR -> Icons.AutoMirrored.Filled.MenuBook
+    ChapterType.KANJI -> Icons.Default.Book
     ChapterType.VOCAB -> Icons.Default.Book
     ChapterType.STUDY_VOCAB -> Icons.Default.School
     ChapterType.TERM_STUDY -> Icons.Default.School
@@ -251,6 +261,7 @@ private fun chapterIcon(type: ChapterType): ImageVector = when (type) {
 
 private fun chapterTypeLabel(type: ChapterType): String = when (type) {
     ChapterType.GRAMMAR -> "Read grammar explanations"
+    ChapterType.KANJI -> "Study kanji characters"
     ChapterType.VOCAB -> "Learn new vocabulary"
     ChapterType.STUDY_VOCAB -> "Study vocabulary with flashcards"
     ChapterType.TERM_STUDY -> "Study terms from this lesson"

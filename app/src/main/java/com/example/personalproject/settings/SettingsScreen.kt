@@ -1,6 +1,10 @@
 package com.example.personalproject.settings
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -8,13 +12,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.outlined.HelpOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -24,7 +31,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Slider
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,6 +42,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -45,6 +53,11 @@ import com.example.personalproject.data.model.AppTheme
 import com.example.personalproject.data.model.StudyDirection
 import com.example.personalproject.ui.components.KotobaTopBar
 import com.example.personalproject.ui.components.ScreenHelpDialog
+import com.example.personalproject.ui.theme.SwatchAmethyst
+import com.example.personalproject.ui.theme.SwatchJade
+import com.example.personalproject.ui.theme.SwatchSakura
+import com.example.personalproject.ui.theme.SwatchSapphire
+import com.example.personalproject.ui.theme.SwatchSorbet
 
 @Composable
 fun SettingsScreen(onBack: () -> Unit) {
@@ -62,12 +75,13 @@ fun SettingsScreen(onBack: () -> Unit) {
     if (showHelp) {
         ScreenHelpDialog(
             title = "Settings",
-            description = "Customise your Kotoba experience.\n\n" +
-                "• Theme — choose from six colour themes: System, Light, Dark, Sakura, Ocean, or Forest\n" +
+            description = "Customise your Kotori experience.\n\n" +
+                "• Theme — choose from five colour schemes: Jade, Sorbet, Sapphire, Amethyst, or Sakura\n" +
+                "• Dark Mode — toggle dark mode for the selected scheme\n" +
                 "• Display — toggle Romaji (Latin pronunciation) and Furigana (hiragana above kanji)\n" +
                 "• Study Direction — set whether flashcards show English→Japanese or Japanese→English\n" +
-                "• Learning Mode — enable Structured Learning to hide advanced forms until you've reached that point\n" +
-                "• Accessibility — enable larger text or high contrast mode\n" +
+                "• Learning Mode — enable Structured Learning to hide advanced forms until reached\n" +
+                "• Accessibility — Larger Text increases all font sizes app-wide; High Contrast maximises text/background contrast for improved readability\n" +
                 "• Audio — master volume control for pronunciation playback (coming soon)",
             onDismiss = { showHelp = false },
         )
@@ -95,14 +109,21 @@ fun SettingsScreen(onBack: () -> Unit) {
 
             SettingsCard(title = "Theme") {
                 Text(
-                    text = "Colour theme",
+                    text = "Colour scheme",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
                 )
-                Spacer(modifier = Modifier.height(8.dp))
-                ThemeGrid(
+                Spacer(modifier = Modifier.height(12.dp))
+                ThemeSwatch(
                     selected = settings.theme,
                     onSelect = { container.settingsRepository.updateTheme(it) },
+                )
+                HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
+                SettingsToggleRow(
+                    label = "Dark Mode",
+                    description = "Switch the current scheme to dark mode",
+                    checked = settings.isDarkMode,
+                    onCheckedChange = { container.settingsRepository.updateDarkMode(it) },
                 )
             }
 
@@ -219,6 +240,61 @@ fun SettingsScreen(onBack: () -> Unit) {
 }
 
 @Composable
+private fun ThemeSwatch(selected: AppTheme, onSelect: (AppTheme) -> Unit) {
+    val swatches = listOf(
+        AppTheme.JADE      to SwatchJade,
+        AppTheme.SORBET    to SwatchSorbet,
+        AppTheme.SAPPHIRE  to SwatchSapphire,
+        AppTheme.AMETHYST  to SwatchAmethyst,
+        AppTheme.SAKURA    to SwatchSakura,
+    )
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly,
+    ) {
+        swatches.forEach { (theme, color) ->
+            val isSelected = theme == selected
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.clickable { onSelect(theme) },
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(48.dp)
+                        .clip(CircleShape)
+                        .background(color)
+                        .then(
+                            if (isSelected) Modifier.border(3.dp, MaterialTheme.colorScheme.onSurface, CircleShape)
+                            else Modifier.border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.4f), CircleShape)
+                        ),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    if (isSelected) {
+                        Icon(
+                            imageVector = Icons.Default.Check,
+                            contentDescription = null,
+                            tint = Color.White,
+                            modifier = Modifier.size(22.dp),
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = theme.displayName,
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                    color = if (isSelected)
+                        MaterialTheme.colorScheme.primary
+                    else
+                        MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                    textAlign = TextAlign.Center,
+                )
+            }
+        }
+    }
+}
+
+@Composable
 private fun SettingsCard(title: String, content: @Composable () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -262,48 +338,5 @@ private fun SettingsToggleRow(
         }
         Spacer(modifier = Modifier.width(16.dp))
         Switch(checked = checked, onCheckedChange = onCheckedChange)
-    }
-}
-
-@Composable
-private fun ThemeGrid(selected: AppTheme, onSelect: (AppTheme) -> Unit) {
-    val themes = AppTheme.entries
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        themes.chunked(3).forEach { row ->
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                row.forEach { theme ->
-                    val isSelected = theme == selected
-                    Surface(
-                        onClick = { onSelect(theme) },
-                        modifier = Modifier
-                            .weight(1f)
-                            .height(44.dp),
-                        shape = RoundedCornerShape(8.dp),
-                        color = if (isSelected)
-                            MaterialTheme.colorScheme.primaryContainer
-                        else
-                            MaterialTheme.colorScheme.surface,
-                        tonalElevation = if (isSelected) 4.dp else 1.dp,
-                    ) {
-                        androidx.compose.foundation.layout.Box(
-                            contentAlignment = Alignment.Center,
-                        ) {
-                            Text(
-                                text = theme.displayName,
-                                style = MaterialTheme.typography.labelSmall,
-                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                color = if (isSelected)
-                                    MaterialTheme.colorScheme.onPrimaryContainer
-                                else
-                                    MaterialTheme.colorScheme.onSurface,
-                                textAlign = TextAlign.Center,
-                                modifier = Modifier.padding(horizontal = 4.dp),
-                            )
-                        }
-                    }
-                }
-                repeat(3 - row.size) { Spacer(modifier = Modifier.weight(1f)) }
-            }
-        }
     }
 }

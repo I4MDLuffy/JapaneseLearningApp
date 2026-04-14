@@ -22,6 +22,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.SuggestionChip
@@ -42,11 +45,15 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
+import com.example.personalproject.LocalAppSettings
 import com.example.personalproject.data.model.PhraseEntry
 import com.example.personalproject.phrases.detail.mvi.PhraseDetailViewModel
 import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.SpeakableText
+import com.example.personalproject.util.rememberTts
+import com.example.personalproject.util.swipeToNavigate
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -59,6 +66,7 @@ fun PhraseDetailScreen(
     onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
+    val settings = LocalAppSettings.current
     val vm: PhraseDetailViewModel = viewModel(
         key = phraseId,
         factory = viewModelFactory {
@@ -68,7 +76,10 @@ fun PhraseDetailScreen(
     val state by vm.uiState.collectAsStateWithLifecycle()
     val isSaved by container.savedRepository.isItemSavedFlow("phrase", phraseId)
         .collectAsStateWithLifecycle(initialValue = false)
+    val isKnown by container.knownRepository.isItemKnownFlow("phrase", phraseId)
+        .collectAsStateWithLifecycle(initialValue = false)
     val scope = rememberCoroutineScope()
+    val speak = rememberTts()
 
     Scaffold(
         topBar = {
@@ -76,6 +87,20 @@ fun PhraseDetailScreen(
                 title = state.entry?.meaning ?: "Phrase",
                 onBack = onBack,
                 actions = {
+                    state.entry?.let { entry ->
+                        IconButton(onClick = { speak(entry.phrase) }) {
+                            Icon(Icons.Outlined.VolumeUp, contentDescription = "Pronounce")
+                        }
+                    }
+                    IconButton(onClick = {
+                        scope.launch { container.knownRepository.toggle("phrase", phraseId) }
+                    }) {
+                        Icon(
+                            imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                            tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                     IconButton(onClick = {
                         val entry = state.entry ?: return@IconButton
                         scope.launch {
@@ -108,9 +133,14 @@ fun PhraseDetailScreen(
             }
             state.entry != null -> PhraseDetail(
                 entry = state.entry!!,
+                speak = speak,
+                showFurigana = settings.showFurigana,
+                showRomaji = settings.showRomaji,
                 onKanjiClick = onKanjiClick,
                 onGrammarClick = onGrammarClick,
-                modifier = Modifier.padding(padding),
+                modifier = Modifier
+                    .padding(padding)
+                    .swipeToNavigate(onSwipeLeft = onNext, onSwipeRight = onPrevious),
             )
             else -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text("Phrase not found.")
@@ -122,6 +152,9 @@ fun PhraseDetailScreen(
 @Composable
 private fun PhraseDetail(
     entry: PhraseEntry,
+    speak: (String) -> Unit,
+    showFurigana: Boolean,
+    showRomaji: Boolean,
     onKanjiClick: ((String) -> Unit)?,
     onGrammarClick: ((String) -> Unit)?,
     modifier: Modifier = Modifier,
@@ -141,14 +174,17 @@ private fun PhraseDetail(
                 modifier = Modifier.padding(horizontal = 24.dp, vertical = 32.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Text(
+                SpeakableText(
                     text = entry.phrase,
-                    fontSize = 32.sp,
-                    fontWeight = FontWeight.Bold,
+                    speak = speak,
+                    style = MaterialTheme.typography.headlineMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        fontSize = 32.sp,
+                    ),
                     color = MaterialTheme.colorScheme.onPrimary,
-                    textAlign = TextAlign.Center,
                 )
-                if (entry.reading.isNotBlank() && entry.reading != entry.phrase) {
+                if (showFurigana && entry.reading.isNotBlank() && entry.reading != entry.phrase) {
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = entry.reading,
@@ -156,12 +192,14 @@ private fun PhraseDetail(
                         color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.85f),
                     )
                 }
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = entry.romaji,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
-                )
+                if (showRomaji && entry.romaji.isNotBlank()) {
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Text(
+                        text = entry.romaji,
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                    )
+                }
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = entry.meaning,

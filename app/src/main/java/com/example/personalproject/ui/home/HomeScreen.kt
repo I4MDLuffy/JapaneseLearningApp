@@ -18,7 +18,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BarChart
+import androidx.compose.material.icons.filled.School
 import androidx.compose.material.icons.outlined.HelpOutline
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -27,18 +31,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.personalproject.LocalAppContainer
+import com.example.personalproject.data.model.NounEntry
 import com.example.personalproject.ui.components.ScreenHelpDialog
+import java.util.Calendar
 
 @Composable
 fun HomeScreen(
@@ -52,9 +61,21 @@ fun HomeScreen(
     onCounters: () -> Unit,
     onTermStudy: () -> Unit,
     onDialogueReading: () -> Unit,
+    onReview: () -> Unit = {},
+    onProgress: () -> Unit = {},
 ) {
     val container = LocalAppContainer.current
     var showHelp by remember { mutableStateOf(false) }
+    val dueCount by container.knownRepository.getDueCount().collectAsStateWithLifecycle(initialValue = 0)
+
+    val wordOfDay by produceState<NounEntry?>(initialValue = null) {
+        val all = container.nounRepository.getAllNouns()
+        if (all.isNotEmpty()) {
+            val dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) +
+                Calendar.getInstance().get(Calendar.YEAR) * 366
+            value = all[dayOfYear % all.size]
+        }
+    }
 
     LaunchedEffect(Unit) {
         if (!container.onboardingRepository.isScreenSeen("home")) {
@@ -97,7 +118,7 @@ fun HomeScreen(
                     color = MaterialTheme.colorScheme.primary,
                 )
                 Text(
-                    text = "  Kotoba",
+                    text = "  Kotori",
                     style = MaterialTheme.typography.headlineSmall,
                     color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.weight(1f),
@@ -120,7 +141,37 @@ fun HomeScreen(
                 color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.55f),
             )
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(6.dp))
+
+            // ── Word of the Day ────────────────────────────────────────────────
+            wordOfDay?.let { word ->
+                WordOfDayCard(word = word)
+                Spacer(modifier = Modifier.height(6.dp))
+            }
+
+            // ── Quick access: Review + Progress ───────────────────────────────
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                QuickAccessCard(
+                    modifier = Modifier.weight(1f),
+                    icon = Icons.Default.School,
+                    label = "SRS Review",
+                    badge = if (dueCount > 0) dueCount else null,
+                    highlighted = dueCount > 0,
+                    onClick = onReview,
+                )
+                QuickAccessCard(
+                    modifier = Modifier.weight(1f),
+                    icon = Icons.Default.BarChart,
+                    label = "Progress",
+                    badge = null,
+                    highlighted = false,
+                    onClick = onProgress,
+                )
+            }
+            Spacer(modifier = Modifier.height(2.dp))
 
             // ── Two-column grid ────────────────────────────────────────────────
             Row(
@@ -224,6 +275,114 @@ fun HomeScreen(
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
+        }
+    }
+}
+
+@Composable
+private fun QuickAccessCard(
+    modifier: Modifier = Modifier,
+    icon: ImageVector,
+    label: String,
+    badge: Int?,
+    highlighted: Boolean,
+    onClick: () -> Unit,
+) {
+    val containerColor = if (highlighted)
+        MaterialTheme.colorScheme.tertiaryContainer
+    else
+        MaterialTheme.colorScheme.surfaceVariant
+    val contentColor = if (highlighted)
+        MaterialTheme.colorScheme.onTertiaryContainer
+    else
+        MaterialTheme.colorScheme.onSurfaceVariant
+
+    Row(
+        modifier = modifier
+            .clip(RoundedCornerShape(10.dp))
+            .background(containerColor)
+            .clickable { onClick() }
+            .padding(horizontal = 12.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        BadgedBox(
+            badge = {
+                if (badge != null && badge > 0) {
+                    Badge { Text(badge.toString()) }
+                }
+            },
+        ) {
+            Icon(icon, contentDescription = null, modifier = Modifier.size(20.dp), tint = contentColor)
+        }
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelMedium,
+            fontWeight = FontWeight.Bold,
+            color = contentColor,
+        )
+    }
+}
+
+@Composable
+private fun WordOfDayCard(word: NounEntry) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(12.dp))
+            .background(MaterialTheme.colorScheme.secondaryContainer)
+            .padding(horizontal = 12.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = "Word of the day",
+                style = MaterialTheme.typography.labelSmall,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.65f),
+                letterSpacing = 0.5.sp,
+            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
+                Text(
+                    text = word.kanji.ifBlank { word.hiragana },
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer,
+                )
+                if (word.hiragana.isNotBlank() && word.hiragana != word.kanji) {
+                    Text(
+                        text = word.hiragana,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.7f),
+                    )
+                }
+            }
+            Text(
+                text = word.meaning,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.8f),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+        if (word.jlptLevel.isNotBlank()) {
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(6.dp))
+                    .background(MaterialTheme.colorScheme.secondary.copy(alpha = 0.25f))
+                    .padding(horizontal = 6.dp, vertical = 3.dp),
+            ) {
+                Text(
+                    text = word.jlptLevel,
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer,
+                )
+            }
         }
     }
 }

@@ -1,12 +1,11 @@
 package com.example.personalproject.data.model
 
 enum class AppTheme(val displayName: String) {
-    SYSTEM("System Default"),
-    LIGHT("Light"),
-    DARK("Dark"),
-    SAKURA("Sakura"),       // soft pink / gold
-    OCEAN("Ocean"),         // teal / deep blue
-    FOREST("Forest"),       // dark green / amber
+    JADE("Jade"),
+    SORBET("Sorbet"),
+    SAPPHIRE("Sapphire"),
+    AMETHYST("Amethyst"),
+    SAKURA("Sakura"),
 }
 
 enum class StudyDirection(val displayName: String) {
@@ -15,7 +14,8 @@ enum class StudyDirection(val displayName: String) {
 }
 
 data class AppSettings(
-    val theme: AppTheme = AppTheme.SYSTEM,
+    val theme: AppTheme = AppTheme.SAKURA,
+    val isDarkMode: Boolean = false,
     val masterVolume: Float = 1.0f,
     val showRomaji: Boolean = true,
     val showFurigana: Boolean = true,

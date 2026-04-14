@@ -13,7 +13,13 @@
       "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"vocabulary*.csv)",
       "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"vocabulary_n*.csv)",
       "Bash(wc -l \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"vocabulary*.csv)",
-      "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"*.csv)"
+      "Bash(ls \"C:/Users/ARSRa/AndroidStudioProjects/PersonalProject/app/src/main/assets/\"*.csv)",
+      "Bash(gradlew.bat compileDebugKotlin)",
+      "Bash(./gradlew compileDebugKotlin)",
+      "Bash(./gradlew assembleDebug)",
+      "Bash(JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\" ./gradlew assembleDebug)",
+      "Bash(xargs ls:*)",
+      "Bash(awk '{print $9, $5}')"
     ]
   }
 }

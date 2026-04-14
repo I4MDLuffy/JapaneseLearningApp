@@ -1,9 +1,13 @@
 package com.example.personalproject.ui.games.mvi
 
 import androidx.lifecycle.viewModelScope
+import com.example.personalproject.AppContainer
+import com.example.personalproject.data.model.AdjectiveEntry
+import com.example.personalproject.data.model.KanjiEntry
+import com.example.personalproject.data.model.NounEntry
+import com.example.personalproject.data.model.PhraseEntry
+import com.example.personalproject.data.model.VerbEntry
 import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.data.repository.SavedRepository
-import com.example.personalproject.data.repository.VocabularyRepository
 import com.example.personalproject.mvi.BaseViewModel
 import com.example.personalproject.ui.games.HiraganaUtils
 import kotlinx.coroutines.Job
@@ -13,20 +17,19 @@ import kotlinx.coroutines.launch
 private const val MATCH_BATCH_SIZE = 12
 private const val MULTI_OPTIONS = 4
 private const val QUIZ_TICKS = 50   // 50 × 100 ms = 5 s
-private const val SPEED_TICKS = 30  // 30 × 100 ms = 3 s
+private const val SPEED_TICKS = 60  // 60 × 100 ms = 6 s
 private const val TICK_MS = 100L
 private const val SWIPE_TILE_COUNT = 8
 
 class StudyGameViewModel(
     private val gameType: GameType,
     private val setKey: String,
-    private val vocabularyRepository: VocabularyRepository,
-    private val savedRepository: SavedRepository,
+    private val container: AppContainer,
 ) : BaseViewModel<StudyGameState, StudyGameAction>(StudyGameState()) {
 
     private var timerJob: Job? = null
-    private var allWords: List<VocabularyWord> = emptyList()
-    private var batches: List<List<VocabularyWord>> = emptyList()
+    private var allItems: List<StudyItem> = emptyList()
+    private var batches: List<List<StudyItem>> = emptyList()
 
     init { loadAndStart() }
 
@@ -57,6 +60,12 @@ class StudyGameViewModel(
             is StudyGameAction.TapSwipeTile -> handleTapSwipeTile(action.index)
             is StudyGameAction.UndoSwipe -> handleUndoSwipe()
             is StudyGameAction.SubmitSwipe -> handleSubmitSwipe()
+
+            // Fill in the Blank
+            is StudyGameAction.SetFillBlankDirection -> handleSetFillBlankDirection(action.direction)
+            is StudyGameAction.UpdateFillBlankInput -> handleUpdateFillBlankInput(action.text)
+            is StudyGameAction.SubmitFillBlank -> handleSubmitFillBlank()
+            is StudyGameAction.NextFillBlank -> handleNextFillBlank()
         }
     }
 
@@ -66,22 +75,36 @@ class StudyGameViewModel(
         viewModelScope.launch {
             updateState { copy(phase = StudyGamePhase.Loading, error = null) }
             try {
-                val words = loadWords()
-                allWords = words
-                batches = words.shuffled().chunked(MATCH_BATCH_SIZE)
-                startGame(words.shuffled())
+                val items = loadItems()
+                allItems = items
+                batches = items.shuffled().chunked(MATCH_BATCH_SIZE)
+                startGame(items.shuffled())
             } catch (e: Exception) {
                 updateState { copy(error = e.message ?: "Failed to load") }
             }
         }
     }
 
-    private suspend fun loadWords(): List<VocabularyWord> = when (setKey) {
-        "saved_vocabulary" -> {
-            val ids = savedRepository.getSavedItemIds("vocabulary")
-            ids.mapNotNull { vocabularyRepository.getWordById(it) }
+    private suspend fun loadItems(): List<StudyItem> = when {
+        setKey == "saved_vocabulary" || setKey == "saved_all" -> {
+            val ids = container.savedRepository.getSavedItemIds("vocabulary")
+            ids.mapNotNull { container.vocabularyRepository.getWordById(it) }.map { it.toStudyItem() }
+        }
+        setKey.startsWith("ids:") -> {
+            // Hand-picked items: "ids:TYPE:id1,id2,id3"
+            val parts = setKey.split(":")
+            val type = parts.getOrElse(1) { "vocab" }
+            val ids = parts.getOrElse(2) { "" }.split(",").filter { it.isNotBlank() }
+            loadPickedItems(type, ids)
+        }
+        setKey.startsWith("browse:") -> {
+            val parts = setKey.split(":")
+            val contentType = parts.getOrElse(1) { "vocab" }
+            val jlpt = parts.getOrElse(2) { "all" }
+            loadBrowseItems(contentType, jlpt)
         }
         else -> {
+            // Legacy: "beginner_vocab_0", "intermediate_vocab_2", etc.
             val parts = setKey.split("_")
             val jlpt = when (parts.getOrNull(0)) {
                 "beginner" -> "N5"
@@ -91,21 +114,59 @@ class StudyGameViewModel(
                 else -> "N5"
             }
             val setIndex = parts.getOrNull(2)?.toIntOrNull() ?: 0
-            vocabularyRepository.filterByJlpt(jlpt).sortedBy { it.id }.chunked(5).getOrElse(setIndex) { emptyList() }
+            container.vocabularyRepository.filterByJlpt(jlpt)
+                .sortedBy { it.id }
+                .chunked(5)
+                .getOrElse(setIndex) { emptyList() }
+                .map { it.toStudyItem() }
         }
     }
 
-    private fun startGame(words: List<VocabularyWord>) {
+    private suspend fun loadBrowseItems(type: String, jlpt: String): List<StudyItem> = when (type) {
+        "vocab" -> {
+            val words = if (jlpt == "all") container.vocabularyRepository.getAllWords()
+                        else container.vocabularyRepository.filterByJlpt(jlpt)
+            words.map { it.toStudyItem() }
+        }
+        "kanji" -> {
+            val items = if (jlpt == "all") container.kanjiRepository.getAllKanji()
+                        else container.kanjiRepository.filterByJlpt(jlpt)
+            items.map { it.toStudyItem() }
+        }
+        "verb" -> {
+            val items = if (jlpt == "all") container.verbRepository.getAllVerbs()
+                        else container.verbRepository.filterByJlpt(jlpt)
+            items.map { it.toStudyItem() }
+        }
+        "adjective" -> {
+            val items = if (jlpt == "all") container.adjectiveRepository.getAllAdjectives()
+                        else container.adjectiveRepository.filterByJlpt(jlpt)
+            items.map { it.toStudyItem() }
+        }
+        "noun" -> {
+            val items = if (jlpt == "all") container.nounRepository.getAllNouns()
+                        else container.nounRepository.filterByJlpt(jlpt)
+            items.map { it.toStudyItem() }
+        }
+        "phrase" -> {
+            val items = if (jlpt == "all") container.phraseRepository.getAllPhrases()
+                        else container.phraseRepository.filterByJlpt(jlpt)
+            items.map { it.toStudyItem() }
+        }
+        else -> emptyList()
+    }
+
+    private fun startGame(items: List<StudyItem>) {
         timerJob?.cancel()
         when (gameType) {
             GameType.FLASHCARDS -> updateState {
-                copy(phase = StudyGamePhase.Flashcard(words))
+                copy(phase = StudyGamePhase.Flashcard(items))
             }
             GameType.TIMED_QUIZ -> {
                 updateState {
                     copy(phase = StudyGamePhase.TimedQuiz(
-                        entries = words,
-                        options = buildOptions(words, 0),
+                        entries = items,
+                        options = buildOptions(items, 0),
                     ))
                 }
                 launchQuizTimer()
@@ -114,36 +175,38 @@ class StudyGameViewModel(
                 val mode = uiState.value.pairMode
                 updateState {
                     copy(phase = StudyGamePhase.MatchPairs(
-                        entries = words,
-                        cards = buildMatchCards(batches.getOrElse(0) { words.take(MATCH_BATCH_SIZE) }, mode),
+                        entries = items,
+                        cards = buildMatchCards(batches.getOrElse(0) { items.take(MATCH_BATCH_SIZE) }, mode),
                         totalBatches = batches.size,
                     ))
                 }
             }
             GameType.KANA_SPEED -> {
-                val speedWords = words.filter { it.hiragana.isNotBlank() }.ifEmpty { words }
-                val first = speedWords.getOrNull(0)
+                val speedItems = items.filter { it.reading.isNotBlank() }.ifEmpty { items }
+                val first = speedItems.getOrNull(0)
                 updateState {
                     copy(phase = StudyGamePhase.KanaSpeed(
-                        entries = speedWords,
-                        gridTiles = if (first != null) HiraganaUtils.buildGrid(first.hiragana) else emptyList(),
+                        entries = speedItems,
+                        gridTiles = if (first != null) HiraganaUtils.buildGrid(first.reading) else emptyList(),
                     ))
                 }
                 launchSpeedTimer()
             }
             GameType.KANA_SWIPE -> {
-                val swipeWords = words
-                    .filter { it.hiragana.isNotBlank() && HiraganaUtils.decompose(it.hiragana).size <= 6 }
-                    .ifEmpty { words.filter { it.hiragana.isNotBlank() }.ifEmpty { words } }
-                val first = swipeWords.getOrNull(0)
+                val swipeItems = items
+                    .filter { it.reading.isNotBlank() && HiraganaUtils.decompose(it.reading).size <= 6 }
+                    .ifEmpty { items.filter { it.reading.isNotBlank() }.ifEmpty { items } }
+                val first = swipeItems.getOrNull(0)
                 updateState {
                     copy(phase = StudyGamePhase.KanaSwipe(
-                        entries = swipeWords,
-                        tiles = if (first != null) HiraganaUtils.buildGrid(first.hiragana, SWIPE_TILE_COUNT) else emptyList(),
+                        entries = swipeItems,
+                        tiles = if (first != null) HiraganaUtils.buildGrid(first.reading, SWIPE_TILE_COUNT) else emptyList(),
                     ))
                 }
             }
-            // KANJI_DROP and KANJI_BUILDER are handled by their own screen composables
+            GameType.FILL_BLANK -> updateState {
+                copy(phase = StudyGamePhase.FillBlank(entries = items))
+            }
             else -> updateState { copy(phase = StudyGamePhase.Loading) }
         }
     }
@@ -168,9 +231,9 @@ class StudyGameViewModel(
 
     // ── Timed Quiz ────────────────────────────────────────────────────────────
 
-    private fun buildOptions(entries: List<VocabularyWord>, index: Int): List<String> {
-        val correct = entries[index].english
-        val distractors = allWords.map { it.english }
+    private fun buildOptions(entries: List<StudyItem>, index: Int): List<String> {
+        val correct = entries[index].answer
+        val distractors = allItems.map { it.answer }
             .filter { it != correct }
             .shuffled()
             .take(MULTI_OPTIONS - 1)
@@ -181,7 +244,7 @@ class StudyGameViewModel(
         val phase = uiState.value.phase as? StudyGamePhase.TimedQuiz ?: return
         if (phase.selectedOption != null) return
         timerJob?.cancel()
-        val correct = option == phase.entries[phase.currentIndex].english
+        val correct = option == phase.entries[phase.currentIndex].answer
         updateState { copy(phase = phase.copy(selectedOption = option, isCorrect = correct, score = if (correct) phase.score + 1 else phase.score)) }
         viewModelScope.launch { delay(900); advanceQuiz() }
     }
@@ -234,22 +297,22 @@ class StudyGameViewModel(
 
     // ── Match Pairs ───────────────────────────────────────────────────────────
 
-    private fun buildMatchCards(entries: List<VocabularyWord>, mode: PairMode): List<StudyMatchCard> =
-        entries.flatMap { w ->
+    private fun buildMatchCards(entries: List<StudyItem>, mode: PairMode): List<StudyMatchCard> =
+        entries.flatMap { item ->
             listOf(
-                StudyMatchCard(pairId = w.id, text = w.japanese, isJapanese = true),
-                StudyMatchCard(pairId = w.id, text = if (mode == PairMode.ENGLISH) w.english else w.romaji, isJapanese = false),
+                StudyMatchCard(pairId = item.id, text = item.question, isJapanese = true),
+                StudyMatchCard(pairId = item.id, text = if (mode == PairMode.ENGLISH) item.answer else item.romaji, isJapanese = false),
             )
         }.shuffled()
 
     private fun handleSetPairMode(mode: PairMode) {
         val phase = uiState.value.phase as? StudyGamePhase.MatchPairs ?: return
-        val currentBatchWords = batches.getOrElse(phase.batchIndex) { phase.entries.take(MATCH_BATCH_SIZE) }
+        val currentBatchItems = batches.getOrElse(phase.batchIndex) { phase.entries.take(MATCH_BATCH_SIZE) }
         updateState {
             copy(
                 pairMode = mode,
                 phase = phase.copy(
-                    cards = buildMatchCards(currentBatchWords, mode),
+                    cards = buildMatchCards(currentBatchItems, mode),
                     firstSelectedIndex = null,
                     matchedIds = emptySet(),
                     wrongIndices = emptySet(),
@@ -280,7 +343,7 @@ class StudyGameViewModel(
                         viewModelScope.launch {
                             delay(500)
                             if (nextBatch >= batches.size) {
-                                updateState { copy(phase = StudyGamePhase.Results(newScore, allWords.size, GameType.MATCH_PAIRS)) }
+                                updateState { copy(phase = StudyGamePhase.Results(newScore, allItems.size, GameType.MATCH_PAIRS)) }
                             } else {
                                 val mode = uiState.value.pairMode
                                 updateState {
@@ -312,7 +375,7 @@ class StudyGameViewModel(
     private fun handleTapGridTile(index: Int) {
         val phase = uiState.value.phase as? StudyGamePhase.KanaSpeed ?: return
         if (phase.feedback != null) return
-        val target = HiraganaUtils.decompose(phase.entries[phase.currentIndex].hiragana)
+        val target = HiraganaUtils.decompose(phase.entries[phase.currentIndex].reading)
         val nextExpected = target.getOrNull(phase.tappedIndices.size) ?: return
         if (phase.gridTiles.getOrNull(index) == nextExpected) {
             val newTapped = phase.tappedIndices + index
@@ -349,11 +412,11 @@ class StudyGameViewModel(
         if (next >= phase.entries.size) {
             updateState { copy(phase = StudyGamePhase.Results(phase.score, phase.entries.size, GameType.KANA_SPEED)) }
         } else {
-            val nextWord = phase.entries[next]
+            val nextItem = phase.entries[next]
             updateState {
                 copy(phase = phase.copy(
                     currentIndex = next,
-                    gridTiles = HiraganaUtils.buildGrid(nextWord.hiragana),
+                    gridTiles = HiraganaUtils.buildGrid(nextItem.reading),
                     tappedIndices = emptyList(),
                     feedback = null,
                     timeRemaining = 1f,
@@ -382,7 +445,7 @@ class StudyGameViewModel(
     private fun handleTapSwipeTile(index: Int) {
         val phase = uiState.value.phase as? StudyGamePhase.KanaSwipe ?: return
         if (phase.feedback != null) return
-        if (phase.path.contains(index)) return  // already in path
+        if (phase.path.contains(index)) return
         updateState { copy(phase = phase.copy(path = phase.path + index)) }
     }
 
@@ -395,8 +458,8 @@ class StudyGameViewModel(
     private fun handleSubmitSwipe() {
         val phase = uiState.value.phase as? StudyGamePhase.KanaSwipe ?: return
         if (phase.feedback != null || phase.path.isEmpty()) return
-        val word = phase.entries.getOrNull(phase.currentIndex) ?: return
-        val target = HiraganaUtils.decompose(word.hiragana)
+        val item = phase.entries.getOrNull(phase.currentIndex) ?: return
+        val target = HiraganaUtils.decompose(item.reading)
         val answer = phase.path.map { phase.tiles.getOrElse(it) { "" } }
         val correct = answer == target
         val newScore = if (correct) phase.score + 1 else phase.score
@@ -410,15 +473,124 @@ class StudyGameViewModel(
         if (next >= phase.entries.size) {
             updateState { copy(phase = StudyGamePhase.Results(phase.score, phase.entries.size, GameType.KANA_SWIPE)) }
         } else {
-            val nextWord = phase.entries[next]
+            val nextItem = phase.entries[next]
             updateState {
                 copy(phase = phase.copy(
                     currentIndex = next,
-                    tiles = HiraganaUtils.buildGrid(nextWord.hiragana, SWIPE_TILE_COUNT),
+                    tiles = HiraganaUtils.buildGrid(nextItem.reading, SWIPE_TILE_COUNT),
                     path = emptyList(),
                     feedback = null,
                 ))
             }
         }
     }
+
+    // ── Picked items ──────────────────────────────────────────────────────────
+
+    private suspend fun loadPickedItems(type: String, ids: List<String>): List<StudyItem> = when (type) {
+        "vocab" -> ids.mapNotNull { container.vocabularyRepository.getWordById(it) }.map { it.toStudyItem() }
+        "kanji" -> ids.mapNotNull { container.kanjiRepository.getKanjiById(it) }.map { it.toStudyItem() }
+        "verb" -> ids.mapNotNull { container.verbRepository.getVerbById(it) }.map { it.toStudyItem() }
+        "adjective" -> ids.mapNotNull { container.adjectiveRepository.getAdjectiveById(it) }.map { it.toStudyItem() }
+        "noun" -> ids.mapNotNull { container.nounRepository.getNounById(it) }.map { it.toStudyItem() }
+        "phrase" -> ids.mapNotNull { container.phraseRepository.getPhraseById(it) }.map { it.toStudyItem() }
+        else -> emptyList()
+    }
+
+    // ── Fill in the Blank ─────────────────────────────────────────────────────
+
+    private fun handleSetFillBlankDirection(direction: FillBlankDirection) {
+        val phase = uiState.value.phase as? StudyGamePhase.FillBlank ?: return
+        updateState { copy(phase = phase.copy(direction = direction, inputText = "", isSubmitted = false, isCorrect = null)) }
+    }
+
+    private fun handleUpdateFillBlankInput(text: String) {
+        val phase = uiState.value.phase as? StudyGamePhase.FillBlank ?: return
+        if (!phase.isSubmitted) updateState { copy(phase = phase.copy(inputText = text)) }
+    }
+
+    private fun handleSubmitFillBlank() {
+        val phase = uiState.value.phase as? StudyGamePhase.FillBlank ?: return
+        if (phase.isSubmitted || phase.inputText.isBlank()) return
+        val item = phase.entries.getOrNull(phase.currentIndex) ?: return
+        val typed = phase.inputText.trim().lowercase()
+        val isCorrect = when (phase.direction) {
+            FillBlankDirection.JP_TO_EN -> typed == item.answer.trim().lowercase()
+            FillBlankDirection.EN_TO_JP -> typed == item.reading.trim().lowercase() || typed == item.romaji.trim().lowercase()
+        }
+        val newScore = if (isCorrect) phase.score + 1 else phase.score
+        updateState { copy(phase = phase.copy(isSubmitted = true, isCorrect = isCorrect, score = newScore)) }
+    }
+
+    private fun handleNextFillBlank() {
+        val phase = uiState.value.phase as? StudyGamePhase.FillBlank ?: return
+        val next = phase.currentIndex + 1
+        if (next >= phase.entries.size) {
+            updateState { copy(phase = StudyGamePhase.Results(phase.score, phase.entries.size, GameType.FILL_BLANK)) }
+        } else {
+            updateState { copy(phase = phase.copy(currentIndex = next, inputText = "", isSubmitted = false, isCorrect = null)) }
+        }
+    }
 }
+
+// ── Extension functions: data model → StudyItem ───────────────────────────────
+
+private fun VocabularyWord.toStudyItem() = StudyItem(
+    id = id,
+    type = "vocab",
+    question = japanese,
+    reading = hiragana,
+    romaji = romaji,
+    answer = english,
+    jlptLevel = jlptLevel,
+)
+
+private fun KanjiEntry.toStudyItem() = StudyItem(
+    id = id,
+    type = "kanji",
+    question = kanji,
+    reading = hiragana,
+    romaji = hiragana,
+    answer = meaning,
+    jlptLevel = jlptLevel,
+)
+
+private fun VerbEntry.toStudyItem() = StudyItem(
+    id = id,
+    type = "verb",
+    question = kanji.ifBlank { dictionaryForm },
+    reading = dictionaryForm,
+    romaji = romaji,
+    answer = meaning,
+    jlptLevel = jlptLevel,
+)
+
+private fun AdjectiveEntry.toStudyItem() = StudyItem(
+    id = id,
+    type = "adjective",
+    question = kanji.ifBlank { hiragana },
+    reading = hiragana,
+    romaji = romaji,
+    answer = meaning,
+    jlptLevel = jlptLevel,
+)
+
+private fun NounEntry.toStudyItem() = StudyItem(
+    id = id,
+    type = "noun",
+    question = kanji.ifBlank { hiragana },
+    reading = hiragana,
+    romaji = romaji,
+    answer = meaning,
+    jlptLevel = jlptLevel,
+)
+
+private fun PhraseEntry.toStudyItem() = StudyItem(
+    id = id,
+    type = "phrase",
+    question = phrase,
+    reading = reading,
+    romaji = romaji,
+    answer = meaning,
+    jlptLevel = jlptLevel,
+)

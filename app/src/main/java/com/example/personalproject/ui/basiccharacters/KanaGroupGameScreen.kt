@@ -45,6 +45,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.kana.hiraganaGroups
 import com.example.personalproject.data.kana.katakanaGroups
 import com.example.personalproject.ui.components.KotobaTopBar
@@ -55,20 +56,43 @@ fun KanaGroupGameScreen(
     groupId: String,
     onBack: () -> Unit,
 ) {
+    val container = LocalAppContainer.current
     val groups = if (kanaType == "hiragana") hiraganaGroups else katakanaGroups
 
     val entries = remember(kanaType, groupId) {
-        if (groupId == "all") groups.flatMap { it.entries }
-        else groups.find { it.id == groupId }?.entries ?: emptyList()
+        when {
+            groupId == "all" -> groups.flatMap { it.entries }
+            groupId.contains(",") -> {
+                val ids = groupId.split(",").toSet()
+                groups.filter { it.id in ids }.flatMap { it.entries }
+            }
+            else -> groups.find { it.id == groupId }?.entries ?: emptyList()
+        }
     }
 
     val groupLabel = remember(kanaType, groupId) {
-        if (groupId == "all") "All ${kanaType.replaceFirstChar { it.uppercase() }}"
-        else groups.find { it.id == groupId }?.label ?: groupId
+        when {
+            groupId == "all" -> "All ${kanaType.replaceFirstChar { it.uppercase() }}"
+            groupId.contains(",") -> {
+                val ids = groupId.split(",").toSet()
+                val count = groups.filter { it.id in ids }.sumOf { it.entries.size }
+                "Selected ($count characters)"
+            }
+            else -> groups.find { it.id == groupId }?.label ?: groupId
+        }
     }
 
     val vm = viewModel<KanaGameViewModel>(
-        factory = viewModelFactory { initializer { KanaGameViewModel(entries) } },
+        factory = viewModelFactory {
+            initializer {
+                KanaGameViewModel(
+                    allEntries = entries,
+                    onAnswer = { kana, correct ->
+                        container.kanaStatsRepository.recordAnswer(kana, kanaType, correct)
+                    },
+                )
+            }
+        },
     )
 
     val state by vm.uiState.collectAsState()
@@ -122,7 +146,7 @@ private val allModes = listOf(
     ModeInfo(GameMode.FLASHCARD,       "Flashcard",        "Reveal the reading,\nmark correct or wrong"),
     ModeInfo(GameMode.TYPING,          "Type Romaji",      "See kana,\ntype the reading"),
     ModeInfo(GameMode.MULTIPLE_CHOICE, "Multiple Choice",  "Pick the correct\nromaji from 4 options"),
-    ModeInfo(GameMode.KANA_SPEED,      "Kana Speed",       "3 seconds per kana —\ntype before time runs out"),
+    ModeInfo(GameMode.KANA_SPEED,      "Kana Speed",       "6 seconds per kana —\ntype before time runs out"),
 )
 
 @Composable

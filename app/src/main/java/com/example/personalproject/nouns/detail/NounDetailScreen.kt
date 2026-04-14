@@ -23,6 +23,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -41,11 +44,15 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
+import com.example.personalproject.LocalAppSettings
 import com.example.personalproject.data.model.NounEntry
 import com.example.personalproject.nouns.detail.mvi.NounDetailViewModel
 import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.ui.components.SpeakableText
+import com.example.personalproject.util.rememberTts
+import com.example.personalproject.util.swipeToNavigate
 
 @Composable
 fun NounDetailScreen(
@@ -55,6 +62,7 @@ fun NounDetailScreen(
     onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
+    val settings = LocalAppSettings.current
     val vm: NounDetailViewModel = viewModel(
         key = nounId,
         factory = viewModelFactory {
@@ -64,7 +72,10 @@ fun NounDetailScreen(
     val state by vm.uiState.collectAsStateWithLifecycle()
     val isSaved by container.savedRepository.isItemSavedFlow("noun", nounId)
         .collectAsStateWithLifecycle(initialValue = false)
+    val isKnown by container.knownRepository.isItemKnownFlow("noun", nounId)
+        .collectAsStateWithLifecycle(initialValue = false)
     val scope = rememberCoroutineScope()
+    val speak = rememberTts()
 
     Scaffold(
         topBar = {
@@ -72,6 +83,20 @@ fun NounDetailScreen(
                 title = state.entry?.meaning ?: "Noun",
                 onBack = onBack,
                 actions = {
+                    state.entry?.let { entry ->
+                        IconButton(onClick = { speak(entry.kanji.ifBlank { entry.hiragana }) }) {
+                            Icon(Icons.Outlined.VolumeUp, contentDescription = "Pronounce")
+                        }
+                    }
+                    IconButton(onClick = {
+                        scope.launch { container.knownRepository.toggle("noun", nounId) }
+                    }) {
+                        Icon(
+                            imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                            tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                     IconButton(onClick = {
                         val entry = state.entry ?: return@IconButton
                         scope.launch {
@@ -102,7 +127,15 @@ fun NounDetailScreen(
             state.isLoading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
-            state.entry != null -> NounDetail(entry = state.entry!!, modifier = Modifier.padding(padding))
+            state.entry != null -> NounDetail(
+                entry = state.entry!!,
+                speak = speak,
+                showFurigana = settings.showFurigana,
+                showRomaji = settings.showRomaji,
+                modifier = Modifier
+                    .padding(padding)
+                    .swipeToNavigate(onSwipeLeft = onNext, onSwipeRight = onPrevious),
+            )
             else -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text("Noun not found.")
             }
@@ -111,7 +144,13 @@ fun NounDetailScreen(
 }
 
 @Composable
-private fun NounDetail(entry: NounEntry, modifier: Modifier = Modifier) {
+private fun NounDetail(
+    entry: NounEntry,
+    speak: (String) -> Unit,
+    showFurigana: Boolean,
+    showRomaji: Boolean,
+    modifier: Modifier = Modifier,
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -134,19 +173,21 @@ private fun NounDetail(entry: NounEntry, modifier: Modifier = Modifier) {
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center,
                 )
-                if (entry.hiragana.isNotBlank() && entry.hiragana != entry.kanji) {
-                    Text(
+                if (showFurigana && entry.hiragana.isNotBlank() && entry.hiragana != entry.kanji) {
+                    SpeakableText(
                         text = entry.hiragana,
+                        speak = speak,
                         style = MaterialTheme.typography.headlineMedium,
                         color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.85f),
                     )
                 }
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = entry.romaji,
-                    style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
-                )
+                if (showRomaji && entry.romaji.isNotBlank()) {
+                    Text(
+                        text = entry.romaji,
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f),
+                    )
+                }
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = entry.meaning,
@@ -175,7 +216,7 @@ private fun NounDetail(entry: NounEntry, modifier: Modifier = Modifier) {
                 }
                 if (entry.alternateReading.isNotBlank()) {
                     if (entry.theme.isNotBlank() || entry.pitchAccent.isNotBlank()) Div()
-                    DetailRow("Alt. reading", entry.alternateReading)
+                    DetailRowSpeakable("Alt. reading", entry.alternateReading, speak)
                 }
             }
 
@@ -202,6 +243,24 @@ private fun DetailRow(label: String, value: String) {
             modifier = Modifier.weight(0.4f),
         )
         Text(text = value, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(0.6f))
+    }
+}
+
+@Composable
+private fun DetailRowSpeakable(label: String, value: String, speak: (String) -> Unit) {
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.weight(0.4f),
+        )
+        SpeakableText(
+            text = value,
+            speak = speak,
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.weight(0.6f),
+        )
     }
 }
 

@@ -8,12 +8,13 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 private const val MATCH_BATCH_SIZE = 12
-private const val SPEED_TICKS = 30       // 30 × 100 ms = 3 s
+private const val SPEED_TICKS = 60       // 60 × 100 ms = 6 s
 private const val SPEED_TICK_MS = 100L
 private const val MULTI_CHOICE_OPTIONS = 4
 
 class KanaGameViewModel(
     private val allEntries: List<KanaEntry>,
+    private val onAnswer: (suspend (kana: String, correct: Boolean) -> Unit)? = null,
 ) : BaseViewModel<KanaGameState, KanaGameAction>(KanaGameState()) {
 
     private val batches: List<List<KanaEntry>> = allEntries.shuffled().chunked(MATCH_BATCH_SIZE)
@@ -137,10 +138,12 @@ class KanaGameViewModel(
     private fun handleTypingSubmit() {
         val phase = uiState.value.phase as? KanaGamePhase.Typing ?: return
         if (phase.feedback != null) return
-        val correct = phase.inputText.trim().equals(phase.entries[phase.currentIndex].romaji, ignoreCase = true)
+        val entry = phase.entries[phase.currentIndex]
+        val correct = phase.inputText.trim().equals(entry.romaji, ignoreCase = true)
         val feedback = if (correct) TypingFeedback.CORRECT else TypingFeedback.WRONG
         updateState { copy(phase = phase.copy(feedback = feedback, score = if (correct) phase.score + 1 else phase.score)) }
         viewModelScope.launch {
+            onAnswer?.invoke(entry.kana, correct)
             delay(900)
             val cur = uiState.value.phase as? KanaGamePhase.Typing ?: return@launch
             val next = cur.currentIndex + 1
@@ -166,6 +169,7 @@ class KanaGameViewModel(
 
     private fun handleAnswerFlashcard(correct: Boolean) {
         val phase = uiState.value.phase as? KanaGamePhase.Flashcard ?: return
+        viewModelScope.launch { onAnswer?.invoke(phase.entries[phase.currentIndex].kana, correct) }
         val next = phase.currentIndex + 1
         val newCorrect = if (correct) phase.correctCount + 1 else phase.correctCount
         val newIncorrect = if (!correct) phase.incorrectCount + 1 else phase.incorrectCount
@@ -209,10 +213,12 @@ class KanaGameViewModel(
     private fun handleSelectChoice(choice: String) {
         val phase = uiState.value.phase as? KanaGamePhase.MultipleChoice ?: return
         if (phase.selectedOption != null) return
-        val correct = choice == phase.entries[phase.currentIndex].romaji
+        val entry = phase.entries[phase.currentIndex]
+        val correct = choice == entry.romaji
         val newScore = if (correct) phase.score + 1 else phase.score
         updateState { copy(phase = phase.copy(selectedOption = choice, isCorrect = correct, score = newScore)) }
         viewModelScope.launch {
+            onAnswer?.invoke(entry.kana, correct)
             delay(900)
             val cur = uiState.value.phase as? KanaGamePhase.MultipleChoice ?: return@launch
             val next = cur.currentIndex + 1
@@ -265,6 +271,7 @@ class KanaGameViewModel(
     private fun handleSpeedTimerExpired() {
         val phase = uiState.value.phase as? KanaGamePhase.KanaSpeed ?: return
         if (phase.feedback != null) return
+        viewModelScope.launch { onAnswer?.invoke(phase.entries[phase.currentIndex].kana, false) }
         updateState { copy(phase = phase.copy(feedback = TypingFeedback.WRONG, timeRemaining = 0f)) }
         viewModelScope.launch {
             delay(900)
@@ -282,10 +289,12 @@ class KanaGameViewModel(
         val phase = uiState.value.phase as? KanaGamePhase.KanaSpeed ?: return
         if (phase.feedback != null) return
         timerJob?.cancel()
-        val correct = phase.inputText.trim().equals(phase.entries[phase.currentIndex].romaji, ignoreCase = true)
+        val entry = phase.entries[phase.currentIndex]
+        val correct = phase.inputText.trim().equals(entry.romaji, ignoreCase = true)
         val feedback = if (correct) TypingFeedback.CORRECT else TypingFeedback.WRONG
         updateState { copy(phase = phase.copy(feedback = feedback, score = if (correct) phase.score + 1 else phase.score)) }
         viewModelScope.launch {
+            onAnswer?.invoke(entry.kana, correct)
             delay(900)
             advanceSpeed()
         }

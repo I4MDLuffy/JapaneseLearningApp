@@ -60,7 +60,7 @@ fun IntroductionScreen(onGetStarted: () -> Unit) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Welcome to 言葉 Kotoba",
+            text = "Welcome to 小鳥 Kotori",
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary,
@@ -80,8 +80,8 @@ fun IntroductionScreen(onGetStarted: () -> Unit) {
 
         IntroSection(
             emoji = "📚",
-            title = "What is Kotoba?",
-            body = "Kotoba (言葉, meaning \"word\" or \"language\") is a structured Japanese learning app covering everything from the hiragana alphabet to advanced grammar. Whether you're a complete beginner or looking to deepen your knowledge, Kotoba has a path for you.",
+            title = "What is Kotori?",
+            body = "Kotori (小鳥, meaning \"little bird\") is a structured Japanese learning app covering everything from the hiragana alphabet to advanced grammar. Whether you're a complete beginner or looking to deepen your knowledge, Kotori has a path for you.",
         )
 
         HorizontalDivider(modifier = Modifier.padding(vertical = 20.dp))

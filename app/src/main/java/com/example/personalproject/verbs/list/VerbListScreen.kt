@@ -18,6 +18,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
@@ -32,6 +36,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -43,6 +48,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.VerbEntry
+import kotlinx.coroutines.launch
 import com.example.personalproject.ui.components.JlptBadge
 import com.example.personalproject.ui.components.KotobaTopBar
 import com.example.personalproject.verbs.list.mvi.VerbListAction
@@ -139,6 +145,13 @@ fun VerbListScreen(onVerbClick: (id: String, allIds: String) -> Unit, onBack: ()
 
 @Composable
 private fun VerbListItem(entry: VerbEntry, onClick: () -> Unit) {
+    val container = LocalAppContainer.current
+    val scope = rememberCoroutineScope()
+    val isKnown by container.knownRepository.isItemKnownFlow("verb", entry.id)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val isSaved by container.savedRepository.isItemSavedFlow("verb", entry.id)
+        .collectAsStateWithLifecycle(initialValue = false)
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -167,7 +180,23 @@ private fun VerbListItem(entry: VerbEntry, onClick: () -> Unit) {
             )
         }
 
-        Spacer(modifier = Modifier.width(12.dp))
+        // Known (star) toggle
+        IconButton(onClick = { scope.launch { container.knownRepository.toggle("verb", entry.id) } }) {
+            Icon(
+                imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+
+        // Bookmark toggle
+        IconButton(onClick = { scope.launch { container.savedRepository.toggle("verb", entry.id, entry.kanji.ifBlank { entry.dictionaryForm }, entry.dictionaryForm, entry.meaning) } }) {
+            Icon(
+                imageVector = if (isSaved) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
+                contentDescription = if (isSaved) "Remove bookmark" else "Bookmark",
+                tint = MaterialTheme.colorScheme.primary,
+            )
+        }
 
         Column(horizontalAlignment = Alignment.End) {
             Text(

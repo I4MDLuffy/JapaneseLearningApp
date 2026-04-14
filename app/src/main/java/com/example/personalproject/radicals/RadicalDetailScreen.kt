@@ -17,7 +17,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
@@ -27,6 +32,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -35,7 +43,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.personalproject.LocalAppContainer
 import com.example.personalproject.data.model.RadicalEntry
+import com.example.personalproject.ui.components.ItemNavigationBar
 import com.example.personalproject.ui.components.KotobaTopBar
+import com.example.personalproject.util.swipeToNavigate
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -44,13 +54,41 @@ fun RadicalDetailScreen(
     onBack: () -> Unit,
     onViewKanji: (radicalId: String) -> Unit,
     onKanjiClick: (kanjiId: String) -> Unit,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
 ) {
     val container = LocalAppContainer.current
     val radical by produceState<RadicalEntry?>(null) {
         value = container.radicalRepository.getRadicalById(radicalId)
     }
+    val isKnown by container.knownRepository.isItemKnownFlow("radical", radicalId)
+        .collectAsStateWithLifecycle(initialValue = false)
+    val scope = rememberCoroutineScope()
 
-    Scaffold(topBar = { KotobaTopBar(title = radical?.meaning ?: "Radical", onBack = onBack) }) { padding ->
+    Scaffold(
+        topBar = {
+            KotobaTopBar(
+                title = radical?.meaning ?: "Radical",
+                onBack = onBack,
+                actions = {
+                    IconButton(onClick = {
+                        scope.launch { container.knownRepository.toggle("radical", radicalId) }
+                    }) {
+                        Icon(
+                            imageVector = if (isKnown) Icons.Default.Star else Icons.Default.StarBorder,
+                            contentDescription = if (isKnown) "Mark as unknown" else "Mark as known",
+                            tint = if (isKnown) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                },
+            )
+        },
+        bottomBar = {
+            if (onPrevious != null || onNext != null) {
+                ItemNavigationBar(onPrevious = onPrevious, onNext = onNext)
+            }
+        },
+    ) { padding ->
         when {
             radical == null -> Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
@@ -59,7 +97,9 @@ fun RadicalDetailScreen(
                 radical = radical!!,
                 onViewKanji = { onViewKanji(radicalId) },
                 onKanjiClick = onKanjiClick,
-                modifier = Modifier.padding(padding),
+                modifier = Modifier
+                    .padding(padding)
+                    .swipeToNavigate(onSwipeLeft = onNext, onSwipeRight = onPrevious),
             )
         }
     }
