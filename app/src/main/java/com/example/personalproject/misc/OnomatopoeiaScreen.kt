@@ -1,4 +1,4 @@
-package com.example.personalproject.misc
+package app.kotori.japanese.misc
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -38,9 +38,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.ScreenHelpDialog
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.ScreenHelpDialog
 
 private data class OnomatopoeiaEntry(
     val japanese: String,

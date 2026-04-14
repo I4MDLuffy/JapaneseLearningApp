@@ -1,4 +1,4 @@
-package com.example.personalproject.jlpt
+package app.kotori.japanese.jlpt
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
@@ -43,8 +43,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
 import kotlinx.coroutines.delay
 
 private data class TestQuestion(

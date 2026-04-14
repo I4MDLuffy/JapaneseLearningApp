@@ -1,6 +1,6 @@
-package com.example.personalproject.modules.detail.mvi
+package app.kotori.japanese.modules.detail.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed class ModuleDetailAction : BaseAction {
     data class LoadModule(val id: String) : ModuleDetailAction()

@@ -1,0 +1,1095 @@
+id,japanese,hiragana,kanji_references,romaji,english,category,jlpt_level,example_japanese,example_english,notes,part_of_speech,part_of_speech_references,frequency,pitch_accent
+voc1001,耳,みみ,k0247,mimi,ear,body,N3,耳が痛い。,My ear hurts.,,noun,,very high,LH
+voc1002,耳鳴り,みみなり,k0247,miminari,ringing in the ears,health,N3,最近耳鳴りがひどい。,I've had bad ringing in my ears lately.,,noun,,medium,LHHL
+voc1003,耳元,みみもと,k0247,mimimoto,near one's ear,body,N3,彼は耳元でささやいた。,He whispered in my ear.,,noun,,low,LHHL
+voc1004,国民,こくみん,k0248,kokumin,citizen; national,society,N3,国民の意見を聞く必要がある。,We need to listen to the opinions of the citizens.,,noun,,very high,LLLH
+voc1005,民族,みんぞく,k0248,minzoku,ethnic group; people,society,N3,この地域には様々な民族が住んでいる。,Various ethnic groups live in this region.,,noun,,high,LHHH
+voc1006,民主,みんしゅ,k0248,minshu,democracy,society,N3,民主主義は重要な政治体制だ。,Democracy is an important political system.,,noun,,high,LHH
+voc1007,合う,あう,k0249,au,to fit; to match,action,N3,この服は私に合う。,This clothes fits me.,,verb,,very high,LH
+voc1008,合計,ごうけい,k0249,gokei,total; sum,abstract,N3,合計いくらですか？,How much is the total?,,noun,,very high,LHHL
+voc1009,場合,ばあい,k0249,baai,case; situation,abstract,N3,その場合はどうすればいいですか？,What should I do in that case?,,noun,,very high,LHL
+voc1010,市場,いちば,k0250,ichiba,market; marketplace,place,N3,毎朝市場で野菜を買う。,I buy vegetables at the market every morning.,,noun,,very high,LHL
+voc1011,市民,しみん,k0250,shimin,citizen,society,N3,市民の声を大切にしよう。,Let's value the voices of the citizens.,,noun,,high,LHL
+voc1012,都市,とし,k0250,toshi,city; urban area,place,N3,大きな都市に住みたい。,I want to live in a big city.,,noun,,very high,LH
+voc1013,回る,まわる,k0251,mawaru,to turn; to go around,action,N3,地球は太陽の周りを回っている。,The Earth revolves around the Sun.,,verb,,very high,LHL
+voc1014,回数,かいすう,k0251,kaisuu,number of times,abstract,N3,この薬は一日三回飲んでください。,Please take this medicine three times a day.,,noun,,high,LHHL
+voc1015,今回,こんかい,k0251,konkai,this time,time,N3,今回の旅行はとても楽しかった。,This trip was very enjoyable.,,noun,,very high,LHL
+voc1016,首,くび,k0252,kubi,neck; head,body,N3,首が痛くて動けない。,My neck hurts and I can't move.,,noun,,very high,LH
+voc1017,首都,しゅと,k0252,shuto,capital city,place,N3,東京は日本の首都だ。,Tokyo is the capital of Japan.,,noun,,very high,LH
+voc1018,首相,しゅしょう,k0252,shusho,prime minister,society,N3,新しい首相が選ばれた。,A new prime minister was elected.,,noun,,very high,LHL
+voc1019,都合,つごう,k0253,tsugo,convenience; circumstances,abstract,N3,都合がいい日はいつですか？,When is a convenient day for you?,,noun,,very high,LHL
+voc1020,都会,とかい,k0253,tokai,city; urban area,place,N3,都会の生活は忙しい。,Life in the city is busy.,,noun,,high,LHL
+voc1021,京都,きょうと,k0253,kyoto,Kyoto,place,N3,京都には古い寺がたくさんある。,There are many old temples in Kyoto.,,noun,,very high,LHL
+voc1022,進む,すすむ,k0254,susumu,to advance; to progress,action,N3,仕事がうまく進んでいる。,Work is progressing well.,,verb,,very high,LHL
+voc1023,進歩,しんぽ,k0254,shinpo,progress; advance,abstract,N3,科学は大きく進歩した。,Science has advanced greatly.,,noun,,high,LHL
+voc1024,進学,しんがく,k0254,shingaku,going on to higher education,education,N3,大学に進学するつもりだ。,I intend to go on to university.,,noun,,high,LHHL
+voc1025,生産,せいさん,k0255,seisan,production,abstract,N3,この工場では車を生産している。,This factory produces cars.,,noun,,high,LHL
+voc1026,産業,さんぎょう,k0255,sangyo,industry,society,N3,農業は重要な産業だ。,Agriculture is an important industry.,,noun,,high,LHHL
+voc1027,出産,しゅっさん,k0255,shussan,childbirth,health,N3,妻が出産した。,My wife gave birth.,,noun,,high,LHHL
+voc1028,引く,ひく,k0256,hiku,to pull; to draw,action,N3,ドアを引いて開けてください。,Please pull the door to open it.,,verb,,very high,LH
+voc1029,引っ越し,ひっこし,k0256,hikkoshi,moving (house),action,N3,来月引っ越しをする予定だ。,I'm planning to move next month.,,noun,,high,LHHL
+voc1030,引き受ける,ひきうける,k0256,hikiukeru,to take on; to accept,action,N3,その仕事を引き受けることにした。,I decided to take on that job.,,verb,,high,LHHLHL
+voc1031,所,ところ,k0257,tokoro,place; spot,place,N3,あの所に何がありますか？,What is in that place?,,noun,,very high,LHL
+voc1032,住所,じゅうしょ,k0257,jusho,address,abstract,N3,住所を教えてください。,Please tell me your address.,,noun,,very high,LHL
+voc1033,台所,だいどころ,k0257,daidokoro,kitchen,place,N3,台所で料理を作っている。,I'm cooking in the kitchen.,,noun,,very high,LHHL
+voc1034,説明,せつめい,k0258,setsumei,explanation,abstract,N3,もう一度説明してください。,Please explain it one more time.,,noun,,very high,LHHL
+voc1035,小説,しょうせつ,k0258,shosetsu,novel; fiction,art,N3,その小説はとても面白かった。,That novel was very interesting.,,noun,,very high,LHHL
+voc1036,意見,いけん,k0258,iken,opinion,abstract,N3,あなたの意見を聞かせてください。,Please let me hear your opinion.,also related to k0291,noun,,very high,LHL
+voc1037,乗る,のる,k0259,noru,to ride; to get on,action,N3,電車に乗って会社に行く。,I take the train to work.,,verb,,very high,LH
+voc1038,乗り物,のりもの,k0259,norimono,vehicle; transport,object,N3,どんな乗り物が好きですか？,What kind of vehicle do you like?,,noun,,high,LHHL
+voc1039,乗客,じょうきゃく,k0259,jokyaku,passenger,people,N3,電車の乗客が多い。,There are many passengers on the train.,,noun,,medium,LHHL
+voc1040,声,こえ,k0260,koe,voice,sense,N3,大きな声で話してください。,Please speak in a loud voice.,,noun,,very high,LH
+voc1041,声援,せいえん,k0260,seien,cheering; support,abstract,N3,観客の声援が選手を励ました。,The cheers of the audience encouraged the athlete.,,noun,,medium,LHL
+voc1042,歌声,うたごえ,k0260,utagoe,singing voice,art,N3,彼女の歌声はとても美しい。,Her singing voice is very beautiful.,,noun,,medium,LHHL
+voc1043,働く,はたらく,k0261,hataraku,to work,action,N3,毎日一生懸命働いている。,I work hard every day.,,verb,,very high,LHHL
+voc1044,働き者,はたらきもの,k0261,hatarakimono,hard worker,people,N3,彼はとても働き者だ。,He is a very hard worker.,,noun,,medium,LHHLH
+voc1045,好き,すき,k0262,suki,like; fondness,feeling,N3,音楽が好きです。,I like music.,,adjective,,very high,LH
+voc1046,好む,このむ,k0262,konomu,to prefer; to like,action,N3,彼は静かな場所を好む。,He prefers quiet places.,,verb,,high,LHL
+voc1047,好奇心,こうきしん,k0262,kokishin,curiosity,feeling,N3,子供は好奇心が旺盛だ。,Children are full of curiosity.,,noun,,medium,LHHHL
+voc1048,頭,あたま,k0263,atama,head,body,N3,頭が痛い。,I have a headache.,,noun,,very high,LHL
+voc1049,頭痛,ずつう,k0263,zutsuu,headache,health,N3,頭痛で学校を休んだ。,I stayed home from school with a headache.,,noun,,high,LHL
+voc1050,頭脳,ずのう,k0263,zuno,brain; intellect,abstract,N3,彼は優れた頭脳の持ち主だ。,He is a person of superior intellect.,,noun,,medium,LHL
+voc1051,光,ひかり,k0264,hikari,light,nature,N3,太陽の光は温かい。,The light of the sun is warm.,,noun,,very high,LHL
+voc1052,光る,ひかる,k0264,hikaru,to shine; to gleam,action,N3,星が夜空に光っている。,The stars are shining in the night sky.,,verb,,high,LHL
+voc1053,観光,かんこう,k0264,kanko,sightseeing; tourism,action,N3,観光で日本を訪れた。,I visited Japan for sightseeing.,,noun,,very high,LHL
+voc1054,太い,ふとい,k0265,futoi,thick; fat,description,N3,あの木はとても太い。,That tree is very thick.,,adjective,,very high,LHL
+voc1055,太る,ふとる,k0265,futoru,to gain weight,health,N3,最近少し太ってしまった。,I've gained a little weight lately.,,verb,,very high,LHL
+voc1056,太陽,たいよう,k0265,taiyo,sun,nature,N3,太陽が東から昇る。,The sun rises in the east.,,noun,,very high,LHHL
+voc1057,顔,かお,k0266,kao,face,body,N3,彼女の顔はとてもきれいだ。,Her face is very beautiful.,,noun,,very high,LH
+voc1058,顔色,かおいろ,k0266,kaoiro,complexion; facial expression,body,N3,顔色が悪い。大丈夫ですか？,You look pale. Are you okay?,,noun,,high,LHHL
+voc1059,笑顔,えがお,k0266,egao,smiling face,feeling,N3,彼女の笑顔は周りを明るくする。,Her smile brightens those around her.,,noun,,high,LHL
+voc1060,薬,くすり,k0267,kusuri,medicine; drug,health,N3,この薬を一日三回飲んでください。,Please take this medicine three times a day.,,noun,,very high,LHL
+voc1061,薬局,やっきょく,k0267,yakkyoku,pharmacy,place,N3,薬局で薬を買った。,I bought medicine at the pharmacy.,,noun,,very high,LHHL
+voc1062,薬品,やくひん,k0267,yakuhin,chemical; drug,health,N3,危険な薬品は注意して扱ってください。,Please handle dangerous chemicals with care.,,noun,,medium,LHHL
+voc1063,便利,べんり,k0268,benri,convenient; useful,abstract,N3,スマートフォンはとても便利だ。,Smartphones are very convenient.,,adjective,,very high,LHL
+voc1064,不便,ふべん,k0268,fuben,inconvenient,abstract,N3,この地域は交通が不便だ。,Transportation is inconvenient in this area.,,adjective,,high,LHL
+voc1065,便乗,びんじょう,k0268,binjo,taking advantage of,abstract,N3,友人の車に便乗させてもらった。,I got a ride in my friend's car.,,noun,,low,LHHL
+voc1066,遠い,とおい,k0269,toi,far; distant,position,N3,駅まで遠い。,It's far to the station.,,adjective,,very high,LHL
+voc1067,遠足,えんそく,k0269,ensoku,excursion; field trip,action,N3,明日は学校の遠足だ。,Tomorrow is the school excursion.,,noun,,high,LHHL
+voc1068,遠慮,えんりょ,k0269,enryo,restraint; hesitation,abstract,N3,遠慮しないでください。,Please don't hold back.,,noun,,very high,LHHL
+voc1069,暗い,くらい,k0270,kurai,dark,description,N3,部屋が暗い。電気をつけよう。,The room is dark. Let's turn on the light.,,adjective,,very high,LHL
+voc1070,暗記,あんき,k0270,anki,memorization,education,N3,単語を暗記するのが難しい。,Memorizing vocabulary is difficult.,,noun,,high,LHL
+voc1071,暗示,あんじ,k0270,anji,hint; suggestion,abstract,N3,彼の言葉には暗示が含まれていた。,His words contained a hint.,,noun,,medium,LHL
+voc1072,洗う,あらう,k0271,arau,to wash,action,N3,手を洗ってから食べてください。,Please wash your hands before eating.,,verb,,very high,LHL
+voc1073,洗濯,せんたく,k0271,sentaku,laundry; washing,action,N3,週末に洗濯をする。,I do laundry on weekends.,,noun,,very high,LHHL
+voc1074,洗面所,せんめんじょ,k0271,senmenjo,washroom; bathroom,place,N3,洗面所で顔を洗った。,I washed my face in the bathroom.,,noun,,high,LHHHL
+voc1075,寒い,さむい,k0272,samui,cold,description,N3,今日はとても寒い。,It's very cold today.,,adjective,,very high,LHL
+voc1076,寒気,さむけ,k0272,samuke,chill; cold feeling,health,N3,寒気がして熱が出てきた。,I got chills and developed a fever.,,noun,,high,LHL
+voc1077,厳寒,げんかん,k0272,genkan,severe cold; bitter cold,nature,N3,厳寒の冬を乗り越えた。,We made it through a bitterly cold winter.,,noun,,low,LHL
+voc1078,会議,かいぎ,k0273,kaigi,meeting; conference,society,N3,午後から会議があります。,There is a meeting in the afternoon.,,noun,,very high,LHL
+voc1079,議論,ぎろん,k0273,giron,argument; debate,abstract,N3,その問題について議論した。,We debated that issue.,,noun,,high,LHL
+voc1080,議会,ぎかい,k0273,gikai,parliament; assembly,society,N3,議会で新しい法律が成立した。,A new law was enacted in parliament.,,noun,,high,LHL
+voc1081,連絡,れんらく,k0274,renraku,contact; communication,action,N3,後で連絡します。,I'll contact you later.,,noun,,very high,LHHL
+voc1082,連続,れんぞく,k0274,renzoku,series; continuation,abstract,N3,三日連続で雨が降った。,It rained three days in a row.,,noun,,high,LHHL
+voc1083,関連,かんれん,k0274,kanren,relation; connection,abstract,N3,その事件に関連した情報を集めた。,I gathered information related to the incident.,also uses k0283,noun,,high,LHHL
+voc1084,対象,たいしょう,k0275,taisho,target; object,abstract,N3,子供を対象にしたイベントだ。,This is an event for children.,,noun,,high,LHHL
+voc1085,反対,はんたい,k0275,hantai,opposition; opposite,abstract,N3,その意見に反対だ。,I am opposed to that opinion.,also uses k0321,noun,,very high,LHHL
+voc1086,絶対,ぜったい,k0275,zettai,absolute; definitely,abstract,N3,絶対に遅れないようにしてください。,Please make sure not to be late.,,adverb,,very high,LHHL
+voc1087,部屋,へや,k0276,heya,room,place,N3,部屋を片付けてください。,Please tidy up the room.,,noun,,very high,LH
+voc1088,部分,ぶぶん,k0276,bubun,part; portion,abstract,N3,この部分が難しい。,This part is difficult.,,noun,,very high,LHL
+voc1089,全部,ぜんぶ,k0276,zenbu,all; everything,abstract,N3,全部食べましたか？,Did you eat everything?,,noun,,very high,LHL
+voc1090,内容,ないよう,k0277,naiyo,content; substance,abstract,N3,レポートの内容を確認した。,I checked the content of the report.,,noun,,very high,LHHL
+voc1091,国内,こくない,k0277,kokunai,domestic; within the country,abstract,N3,国内旅行が好きだ。,I like domestic travel.,,noun,,high,LHHL
+voc1092,内部,ないぶ,k0277,naibu,interior; inside,abstract,N3,建物の内部を調査した。,We investigated the interior of the building.,,noun,,high,LHL
+voc1093,相談,そうだん,k0278,sodan,consultation; discussion,action,N3,先生に相談したほうがいい。,You should consult your teacher.,,noun,,very high,LHHL
+voc1094,相手,あいて,k0278,aite,partner; opponent,people,N3,相手の気持ちを考えよう。,Let's think about the other person's feelings.,,noun,,very high,LHL
+voc1095,首相,しゅしょう,k0278,shusho,prime minister,society,N3,首相が演説を行った。,The prime minister gave a speech.,also uses k0252,noun,,high,LHL
+voc1096,決める,きめる,k0279,kimeru,to decide,action,N3,目標を決めることが大切だ。,It's important to decide on your goals.,,verb,,very high,LHL
+voc1097,決定,けってい,k0279,kettei,decision,abstract,N3,最終決定はいつ下りますか？,When will the final decision be made?,,noun,,very high,LHHL
+voc1098,決心,けっしん,k0279,kesshin,determination; resolution,abstract,N3,転職する決心をした。,I made up my mind to change jobs.,,noun,,high,LHHL
+voc1099,選ぶ,えらぶ,k0280,erabu,to choose; to select,action,N3,好きな色を選んでください。,Please choose your favorite color.,,verb,,very high,LHL
+voc1100,選手,せんしゅ,k0280,senshu,athlete; player,people,N3,オリンピック選手を目指している。,I'm aiming to become an Olympic athlete.,,noun,,very high,LHL
+voc1101,選挙,せんきょ,k0280,senkyo,election,society,N3,来週選挙がある。,There is an election next week.,,noun,,very high,LHHL
+voc1102,米,こめ,k0281,kome,rice (uncooked),food,N3,日本では米をよく食べる。,In Japan rice is eaten frequently.,,noun,,very high,LH
+voc1103,米国,べいこく,k0281,beikoku,United States,place,N3,米国に留学したい。,I want to study abroad in the United States.,,noun,,very high,LHL
+voc1104,玄米,げんまい,k0281,genmai,brown rice,food,N3,健康のために玄米を食べている。,I eat brown rice for my health.,,noun,,medium,LHL
+voc1105,実は,じつは,k0282,jitsuwa,actually; to tell the truth,abstract,N3,実は彼が好きだった。,Actually I liked him.,,adverb,,very high,LHL
+voc1106,実現,じつげん,k0282,jitsugen,realization; achievement,abstract,N3,夢を実現させたい。,I want to make my dream a reality.,,noun,,high,LHHL
+voc1107,果実,かじつ,k0282,kajitsu,fruit,food,N3,果実は甘くておいしい。,Fruit is sweet and delicious.,also uses k0339,noun,,medium,LHL
+voc1108,関係,かんけい,k0283,kankei,relationship; connection,abstract,N3,二人の関係はどうですか？,How is the relationship between the two of them?,,noun,,very high,LHL
+voc1109,関心,かんしん,k0283,kanshin,interest; concern,abstract,N3,政治に関心がある。,I'm interested in politics.,,noun,,very high,LHL
+voc1110,機関,きかん,k0283,kikan,institution; engine,society,N3,政府機関で働いている。,I work at a government institution.,also uses k0301,noun,,high,LHL
+voc1111,決断,けつだん,k0284,ketsudan,decision; resolution,abstract,N3,難しい決断を迫られた。,I was forced to make a difficult decision.,,noun,,high,LHHL
+voc1112,解決,かいけつ,k0284,kaiketsu,solution; resolution,abstract,N3,問題を解決する方法を考えた。,I thought of a way to solve the problem.,also uses k0471,noun,,very high,LHHL
+voc1113,全体,ぜんたい,k0285,zentai,whole; entire,abstract,N3,全体のバランスを考えよう。,Let's think about the overall balance.,,noun,,very high,LHHL
+voc1114,全員,ぜんいん,k0285,zenin,all members; everyone,people,N3,全員集まってください。,Please everyone gather together.,,noun,,very high,LHHL
+voc1115,完全,かんぜん,k0285,kanzen,perfect; complete,abstract,N3,完全に理解できた。,I was able to understand completely.,also uses k0411,adverb,,very high,LHHL
+voc1116,表現,ひょうげん,k0286,hyogen,expression,abstract,N3,自分の気持ちを表現するのが難しい。,It's hard to express my feelings.,,noun,,high,LHHL
+voc1117,発表,はっぴょう,k0286,happyo,presentation; announcement,action,N3,明日クラスで発表がある。,I have a presentation in class tomorrow.,,noun,,very high,LHHL
+voc1118,表情,ひょうじょう,k0286,hyojo,facial expression,feeling,N3,彼女の表情が気になった。,I was concerned about her facial expression.,,noun,,high,LHHL
+voc1119,戦争,せんそう,k0287,senso,war,society,N3,戦争はすべきではない。,War should not happen.,,noun,,very high,LHHL
+voc1120,挑戦,ちょうせん,k0287,chosen,challenge,action,N3,新しいことに挑戦するのが好きだ。,I like to challenge myself with new things.,,noun,,very high,LHHL
+voc1121,作戦,さくせん,k0287,sakusen,strategy; plan,abstract,N3,試合の作戦を立てた。,We came up with a strategy for the game.,,noun,,high,LHHL
+voc1122,最初,さいしょ,k0288,saisho,first; beginning,time,N3,最初から説明してください。,Please explain from the beginning.,,noun,,very high,LHHL
+voc1123,最後,さいご,k0288,saigo,last; final,time,N3,最後まで諦めないでください。,Please don't give up until the end.,,noun,,very high,LHHL
+voc1124,最高,さいこう,k0288,saiko,best; maximum,abstract,N3,今日は最高の天気だ。,Today's weather is the best.,,noun,,very high,LHHL
+voc1125,調べる,しらべる,k0289,shiraberu,to investigate; to check,action,N3,インターネットで調べてみた。,I tried looking it up on the internet.,,verb,,very high,LHHL
+voc1126,調子,ちょうし,k0289,choshi,condition; tune,abstract,N3,最近体の調子がよくない。,I haven't been feeling well lately.,,noun,,very high,LHL
+voc1127,調整,ちょうせい,k0289,chosei,adjustment; coordination,action,N3,スケジュールを調整する必要がある。,I need to adjust the schedule.,,noun,,high,LHHL
+voc1128,変化,へんか,k0290,henka,change; variation,abstract,N3,季節の変化を感じる。,I feel the change of seasons.,,noun,,very high,LHL
+voc1129,化学,かがく,k0290,kagaku,chemistry,education,N3,化学の授業が好きだ。,I like chemistry class.,,noun,,very high,LHL
+voc1130,文化,ぶんか,k0290,bunka,culture,society,N3,日本の文化に興味がある。,I'm interested in Japanese culture.,,noun,,very high,LHL
+voc1131,当然,とうぜん,k0291,tozen,natural; of course,abstract,N3,それは当然のことだ。,That is a matter of course.,,adverb,,very high,LHHL
+voc1132,適当,てきとう,k0291,tekito,appropriate; suitable,abstract,N3,適当な答えを選んでください。,Please choose an appropriate answer.,also uses k0539,noun,,high,LHHL
+voc1133,当たり前,あたりまえ,k0291,atarimae,natural; obvious,abstract,N3,彼が怒るのは当たり前だ。,It's natural that he is angry.,,noun,,very high,LHHHL
+voc1134,約束,やくそく,k0292,yakusoku,promise; appointment,abstract,N3,約束は必ず守ってください。,Please always keep your promises.,,noun,,very high,LHHL
+voc1135,予約,よやく,k0292,yoyaku,reservation; booking,action,N3,レストランを予約した。,I made a reservation at the restaurant.,also uses k0316,noun,,very high,LHL
+voc1136,約,やく,k0292,yaku,approximately,abstract,N3,約三十分かかります。,It takes about thirty minutes.,,adverb,,very high,H
+voc1137,法律,ほうりつ,k0293,horitsu,law,society,N3,法律を守ることが大切だ。,It is important to obey the law.,,noun,,very high,LHHL
+voc1138,方法,ほうほう,k0293,hoho,method; way,abstract,N3,もっといい方法はないだろうか。,Is there not a better method?,,noun,,very high,LHHL
+voc1139,文法,ぶんぽう,k0293,bunpo,grammar,language,N3,日本語の文法は難しい。,Japanese grammar is difficult.,,noun,,high,LHHL
+voc1140,目的,もくてき,k0294,mokuteki,purpose; goal,abstract,N3,旅行の目的は休暇だ。,The purpose of the trip is vacation.,,noun,,very high,LHHL
+voc1141,的確,てきかく,k0294,tekikaku,accurate; precise,abstract,N3,的確な判断が必要だ。,An accurate judgment is necessary.,,adjective,,medium,LHHL
+voc1142,要る,いる,k0295,iru,to need; to require,abstract,N3,お金が要る。,I need money.,,verb,,very high,H
+voc1143,必要,ひつよう,k0295,hitsuyou,necessary; need,abstract,N3,準備が必要です。,Preparation is necessary.,also uses k0340,noun,,very high,LHHL
+voc1144,要求,ようきゅう,k0295,yokyu,demand; requirement,abstract,N3,彼の要求は無理だった。,His demands were unreasonable.,,noun,,high,LHHL
+voc1145,治る,なおる,k0296,naoru,to heal; to be cured,health,N3,風邪が治った。,My cold has healed.,,verb,,very high,LHL
+voc1146,政治,せいじ,k0296,seiji,politics,society,N3,政治に興味がある。,I'm interested in politics.,also uses k0461,noun,,very high,LH
+voc1147,自治,じち,k0296,jichi,self-government,society,N3,地方自治は民主主義の基本だ。,Local self-government is the basis of democracy.,,noun,,medium,LH
+voc1148,成功,せいこう,k0297,seiko,success,abstract,N3,プロジェクトは成功した。,The project was a success.,,noun,,very high,LHHL
+voc1149,成長,せいちょう,k0297,seicho,growth; development,abstract,N3,子供の成長を見守る。,I watch over the growth of my child.,,noun,,very high,LHHL
+voc1150,達成,たっせい,k0297,tassei,achievement; accomplishment,abstract,N3,目標を達成した。,I achieved my goal.,also uses k0395,noun,,high,LHHL
+voc1151,期間,きかん,k0298,kikan,period; term,time,N3,入院期間は二週間だった。,The hospitalization period was two weeks.,also uses k0283,noun,,very high,LHL
+voc1152,定期,ていき,k0298,teiki,regular; fixed period,time,N3,定期的に検診を受けている。,I have regular checkups.,also uses k0279,noun,,high,LHL
+voc1153,期待,きたい,k0298,kitai,expectation; hope,feeling,N3,試合の結果に期待している。,I'm looking forward to the result of the match.,,noun,,very high,LHL
+voc1154,取る,とる,k0299,toru,to take; to get,action,N3,写真を取るのが好きだ。,I like taking photos.,,verb,,very high,LH
+voc1155,取り組む,とりくむ,k0299,torikumu,to tackle; to work on,action,N3,新しいプロジェクトに取り組んでいる。,I'm working on a new project.,,verb,,high,LHHLH
+voc1156,受け取る,うけとる,k0299,uketoru,to receive; to accept,action,N3,荷物を受け取った。,I received the package.,also uses k0304,verb,,high,LHHHL
+voc1157,和食,わしょく,k0300,washoku,Japanese food,food,N3,和食が大好きです。,I love Japanese food.,,noun,,very high,LHL
+voc1158,平和,へいわ,k0300,heiwa,peace,abstract,N3,世界の平和を願っている。,I hope for world peace.,also uses k0302,noun,,very high,LH
+voc1159,調和,ちょうわ,k0300,chowa,harmony; balance,abstract,N3,色の調和が大切だ。,Balance of colors is important.,also uses k0289,noun,,medium,LHL
+voc1160,機械,きかい,k0301,kikai,machine; machinery,object,N3,工場には多くの機械がある。,There are many machines in the factory.,,noun,,very high,LHL
+voc1161,機会,きかい,k0301,kikai,opportunity; chance,abstract,N3,いい機会なので挑戦してみよう。,It's a good opportunity so let's try.,,noun,,very high,LHL
+voc1162,飛行機,ひこうき,k0301,hikoki,airplane,object,N3,飛行機で旅行するのが好きだ。,I like to travel by airplane.,also uses k0407,noun,,very high,LHHL
+voc1163,平均,へいきん,k0302,heikin,average,abstract,N3,クラスの平均点は七十点だった。,The class average score was 70 points.,,noun,,high,LHHL
+voc1164,平日,へいじつ,k0302,heijitsu,weekday,time,N3,平日は毎朝早起きする。,I wake up early every morning on weekdays.,,noun,,very high,LHHL
+voc1165,公平,こうへい,k0302,kohei,fair; impartial,abstract,N3,公平に扱ってほしい。,I want to be treated fairly.,,adjective,,high,LHL
+voc1166,加える,くわえる,k0303,kuwaeru,to add; to include,action,N3,砂糖を少し加えてください。,Please add a little sugar.,,verb,,very high,LHHL
+voc1167,参加,さんか,k0303,sanka,participation,action,N3,イベントに参加しますか？,Will you participate in the event?,also uses k0322,noun,,very high,LHL
+voc1168,増加,ぞうか,k0303,zoka,increase,abstract,N3,人口が増加している。,The population is increasing.,also uses k0480,noun,,high,LHL
+voc1169,受ける,うける,k0304,ukeru,to receive; to take (exam),action,N3,試験を受ける準備ができている。,I'm ready to take the exam.,,verb,,very high,LHL
+voc1170,受付,うけつけ,k0304,uketsuke,reception; front desk,place,N3,受付で名前を書いてください。,Please write your name at the reception.,,noun,,very high,LHHL
+voc1171,受験,じゅけん,k0304,juken,taking an exam,education,N3,来年大学受験がある。,I have a university entrance exam next year.,,noun,,very high,LHL
+voc1172,続く,つづく,k0305,tsuzuku,to continue; to last,action,N3,雨が三日間続いている。,It has been raining for three days.,,verb,,very high,LHL
+voc1173,続ける,つづける,k0305,tsuzukeru,to continue (transitive),action,N3,練習を続けることが大切だ。,It's important to continue practicing.,,verb,,very high,LHHL
+voc1174,連続,れんぞく,k0305,renzoku,continuous; consecutive,abstract,N3,五試合連続で勝った。,We won five games in a row.,also uses k0274,noun,,high,LHHL
+voc1175,数える,かぞえる,k0306,kazoeru,to count,action,N3,参加者の数を数えた。,I counted the number of participants.,,verb,,very high,LHHL
+voc1176,数学,すうがく,k0306,sugaku,mathematics,education,N3,数学が得意ではない。,I'm not good at mathematics.,,noun,,very high,LHHL
+voc1177,多数,たすう,k0306,tasu,majority; large number,abstract,N3,多数の人が賛成した。,A large number of people agreed.,,noun,,high,LHL
+voc1178,記録,きろく,k0307,kiroku,record; documentation,abstract,N3,世界記録を更新した。,The world record was broken.,,noun,,very high,LHL
+voc1179,日記,にっき,k0307,nikki,diary; journal,abstract,N3,毎日日記を書いている。,I write in my diary every day.,,noun,,very high,LHL
+voc1180,記念,きねん,k0307,kinen,commemoration; memory,abstract,N3,卒業記念に写真を撮った。,We took a photo to commemorate graduation.,,noun,,very high,LHL
+voc1181,初めて,はじめて,k0308,hajimete,for the first time,time,N3,日本に初めて来た。,I came to Japan for the first time.,,adverb,,very high,LHHL
+voc1182,最初,さいしょ,k0308,saisho,first; the beginning,time,N3,最初の授業は九時だ。,The first class is at nine o'clock.,also uses k0288,noun,,very high,LHHL
+voc1183,初心者,しょしんしゃ,k0308,shoshinsha,beginner,people,N3,初心者向けのコースだ。,This is a course for beginners.,,noun,,high,LHHHL
+voc1184,指,ゆび,k0309,yubi,finger,body,N3,指を切ってしまった。,I cut my finger.,,noun,,very high,LH
+voc1185,指定,してい,k0309,shitei,designation; specified,abstract,N3,指定の場所に集まってください。,Please gather at the designated place.,,noun,,high,LHL
+voc1186,指示,しじ,k0309,shiji,instruction; direction,abstract,N3,先生の指示に従ってください。,Please follow the teacher's instructions.,,noun,,high,LH
+voc1187,点数,てんすう,k0310,tensuu,score; points,education,N3,テストの点数が上がった。,My test score went up.,,noun,,very high,LHL
+voc1188,観点,かんてん,k0310,kanten,point of view,abstract,N3,違う観点から考えてみよう。,Let's think from a different perspective.,also uses k0388,noun,,high,LHL
+voc1189,問題点,もんだいてん,k0310,mondaiten,problem; issue,abstract,N3,問題点を整理した。,I sorted out the issues.,,noun,,high,LHHHL
+voc1190,生活,せいかつ,k0311,seikatsu,daily life; living,action,N3,充実した生活を送っている。,I'm living a fulfilling life.,also uses k0021,noun,,very high,LHL
+voc1191,活動,かつどう,k0311,katsudo,activity,action,N3,ボランティア活動に参加している。,I participate in volunteer activities.,,noun,,very high,LHHL
+voc1192,活用,かつよう,k0311,katsuyo,utilization; conjugation,abstract,N3,スキルを活用する機会を探している。,I'm looking for opportunities to use my skills.,,noun,,high,LHHL
+voc1193,原因,げんいん,k0312,genin,cause; reason,abstract,N3,事故の原因を調べた。,I investigated the cause of the accident.,,noun,,very high,LHL
+voc1194,原料,げんりょう,k0312,genryo,raw material,object,N3,この製品の原料は何ですか？,What are the raw materials for this product?,,noun,,medium,LHHL
+voc1195,高原,こうげん,k0312,kogen,plateau; highland,nature,N3,夏は高原で過ごすのが好きだ。,I like to spend summers on the plateau.,,noun,,medium,LHL
+voc1196,共に,ともに,k0313,tomoni,together; along with,abstract,N3,友人と共に旅行した。,I traveled together with my friend.,,adverb,,high,LHL
+voc1197,共通,きょうつう,k0313,kyotsu,common; shared,abstract,N3,二人には共通の趣味がある。,The two of them have a common hobby.,,noun,,very high,LHHL
+voc1198,共同,きょうどう,k0313,kyodo,joint; cooperative,abstract,N3,共同で作業を進めた。,We carried out the work jointly.,,noun,,high,LHHL
+voc1199,得意,とくい,k0314,tokui,good at; specialty,abstract,N3,料理が得意だ。,I'm good at cooking.,,adjective,,very high,LHL
+voc1200,得る,える,k0314,eru,to get; to obtain,action,N3,経験から多くを得ることができた。,I was able to gain a lot from the experience.,,verb,,very high,H
+voc1201,納得,なっとく,k0314,nattoku,understanding; agreement,abstract,N3,彼の説明に納得した。,I was convinced by his explanation.,also uses k0258,noun,,high,LHHL
+voc1202,交通,こうつう,k0315,kotsu,traffic; transportation,society,N3,交通渋滞がひどい。,The traffic jam is terrible.,,noun,,very high,LHHL
+voc1203,交換,こうかん,k0315,koken,exchange; swap,action,N3,名刺を交換した。,I exchanged business cards.,,noun,,high,LHHL
+voc1204,外交,がいこう,k0315,gaiko,diplomacy,society,N3,二国間の外交関係が改善された。,The diplomatic relations between the two countries improved.,also uses k0035,noun,,medium,LHL
+voc1205,予定,よてい,k0316,yotei,schedule; plan,time,N3,明日の予定を確認した。,I confirmed tomorrow's schedule.,,noun,,very high,LHL
+voc1206,予想,よそう,k0316,yoso,expectation; prediction,abstract,N3,予想外の結果だった。,It was an unexpected result.,also uses k0365,noun,,very high,LHL
+voc1207,予習,よしゅう,k0316,yoshu,preparation; advance study,education,N3,授業の予習をしておいた。,I prepared for class in advance.,,noun,,high,LHL
+voc1208,向き,むき,k0317,muki,direction; suitability,position,N3,この仕事は彼に向きだ。,This job is suitable for him.,,noun,,high,LH
+voc1209,方向,ほうこう,k0317,hoko,direction,position,N3,どちらの方向ですか？,Which direction is it?,,noun,,very high,LHHL
+voc1210,前向き,まえむき,k0317,maemuki,positive; forward-looking,abstract,N3,前向きな姿勢が大切だ。,A positive attitude is important.,also uses k0020,noun,,high,LHHL
+voc1211,勝つ,かつ,k0318,katsu,to win,action,N3,試合に勝ちたい。,I want to win the match.,,verb,,very high,LH
+voc1212,勝負,しょうぶ,k0318,shobu,match; contest,action,N3,勝負は時の運だ。,Victory is up to fate.,,noun,,high,LHL
+voc1213,優勝,ゆうしょう,k0318,yusho,championship; first place,action,N3,大会で優勝した。,We won the championship.,also uses k0499,noun,,very high,LHHL
+voc1214,面白い,おもしろい,k0319,omoshiroi,interesting; funny,feeling,N3,この本はとても面白い。,This book is very interesting.,,adjective,,very high,LHHHL
+voc1215,場面,ばめん,k0319,bamen,scene; situation,abstract,N3,その場面は印象的だった。,That scene was impressive.,,noun,,high,LHL
+voc1216,表面,ひょうめん,k0319,hyomen,surface,abstract,N3,表面は滑らかだ。,The surface is smooth.,also uses k0286,noun,,high,LHHL
+voc1217,告げる,つげる,k0320,tsugeru,to inform; to tell,action,N3,彼に真実を告げた。,I told him the truth.,,verb,,medium,LHL
+voc1218,報告,ほうこく,k0320,hokoku,report; notification,action,N3,上司に結果を報告した。,I reported the results to my supervisor.,also uses k0469,noun,,very high,LHHL
+voc1219,広告,こうこく,k0320,koko,advertisement,abstract,N3,テレビの広告が多い。,There are many TV advertisements.,,noun,,very high,LHHL
+voc1220,反省,はんせい,k0321,hansei,reflection; remorse,abstract,N3,自分の行動を反省した。,I reflected on my actions.,,noun,,very high,LHHL
+voc1221,反応,はんのう,k0321,hanno,reaction; response,abstract,N3,薬の反応を調べた。,I examined the reaction to the medicine.,,noun,,very high,LHHL
+voc1222,違反,いはん,k0321,ihan,violation; infringement,society,N3,交通違反をしてしまった。,I committed a traffic violation.,also uses k0502,noun,,high,LHL
+voc1223,参加,さんか,k0322,sanka,participation,action,N3,会議に参加してください。,Please participate in the meeting.,also uses k0303,noun,,very high,LHL
+voc1224,参考,さんこう,k0322,sanko,reference; consultation,education,N3,この本を参考にしてください。,Please use this book as a reference.,,noun,,very high,LHHL
+voc1225,参拝,さんぱい,k0322,sanpai,visit to a shrine or temple,religion,N3,神社に参拝した。,I visited the shrine.,also uses k0358,noun,,medium,LHHL
+voc1226,利用,りよう,k0323,riyo,use; utilization,action,N3,図書館をよく利用する。,I often use the library.,,noun,,very high,LHL
+voc1227,利益,りえき,k0323,rieki,profit; benefit,economy,N3,会社の利益が増えた。,The company's profits increased.,,noun,,very high,LHL
+voc1228,有利,ゆうり,k0323,yuri,advantageous,abstract,N3,今の状況は有利だ。,The current situation is advantageous.,,adjective,,high,LHL
+voc1229,組む,くむ,k0324,kumu,to form; to assemble,action,N3,チームを組んで作業した。,I worked in a team.,,verb,,high,LH
+voc1230,組合,くみあい,k0324,kumiai,union; association,society,N3,労働組合に入っている。,I'm a member of a labor union.,also uses k0368,noun,,high,LHHL
+voc1231,番組,ばんぐみ,k0324,bangumi,TV/radio program,art,N3,好きな番組を録画した。,I recorded my favorite program.,also uses k0359,noun,,very high,LHHL
+voc1232,信じる,しんじる,k0325,shinjiru,to believe; to trust,abstract,N3,彼の言葉を信じる。,I believe his words.,,verb,,very high,LHHL
+voc1233,信頼,しんらい,k0325,shinrai,trust; confidence,abstract,N3,信頼できる友人がいる。,I have a trustworthy friend.,,noun,,very high,LHL
+voc1234,自信,じしん,k0325,jishin,self-confidence,feeling,N3,もっと自信を持ってください。,Please have more self-confidence.,,noun,,very high,LHL
+voc1235,側面,そくめん,k0326,sokumen,side; aspect,abstract,N3,問題の側面を分析した。,I analyzed aspects of the problem.,,noun,,medium,LHHL
+voc1236,両側,りょうがわ,k0326,ryogawa,both sides,position,N3,道の両側に木が植えてある。,Trees are planted on both sides of the road.,also uses k0337,noun,,high,LHHL
+voc1237,左側,ひだりがわ,k0326,hidari-gawa,left side,position,N3,左側を歩いてください。,Please walk on the left side.,,noun,,high,LHHHL
+voc1238,求める,もとめる,k0327,motomeru,to seek; to demand,action,N3,より良い生活を求めている。,I'm seeking a better life.,,verb,,very high,LHHL
+voc1239,要求,ようきゅう,k0327,yokyu,demand; request,abstract,N3,彼の要求に応えた。,I responded to his demands.,also uses k0295,noun,,high,LHHL
+voc1240,追求,ついきゅう,k0327,tsukyu,pursuit; chase,action,N3,夢を追求し続けている。,I continue to pursue my dream.,also uses k0371,noun,,high,LHHL
+voc1241,次,つぎ,k0328,tsugi,next,time,N3,次の電車は何時ですか？,What time is the next train?,,noun,,very high,LH
+voc1242,次第,しだい,k0328,shidai,depending on; as soon as,abstract,N3,結果次第で次の行動が変わる。,The next action depends on the result.,,noun,,high,LHL
+voc1243,目次,もくじ,k0328,mokuji,table of contents,abstract,N3,本の目次を見た。,I looked at the table of contents of the book.,,noun,,medium,LHL
+voc1244,昨日,きのう,k0329,kino,yesterday,time,N3,昨日は映画を見た。,I watched a movie yesterday.,,noun,,very high,LHL
+voc1245,昨年,さくねん,k0329,sakunen,last year,time,N3,昨年の今頃は旅行中だった。,Around this time last year I was traveling.,,noun,,very high,LHL
+voc1246,一昨日,おととい,k0329,ototoi,the day before yesterday,time,N3,一昨日に荷物が届いた。,The package arrived the day before yesterday.,,noun,,high,LHHHL
+voc1247,官僚,かんりょう,k0330,kanryo,bureaucrat; government official,society,N3,官僚制度には問題がある。,There are problems with the bureaucratic system.,,noun,,medium,LHHL
+voc1248,警官,けいかん,k0330,keikan,police officer,people,N3,警官が事故現場に来た。,A police officer came to the accident scene.,also uses k0507,noun,,high,LHL
+voc1249,官庁,かんちょう,k0330,kancho,government office,society,N3,官庁で手続きをした。,I completed the procedure at the government office.,,noun,,medium,LHL
+voc1250,係員,かかりいん,k0331,kakariin,person in charge; staff,people,N3,係員に質問した。,I asked a question to the staff member.,,noun,,medium,LHHHL
+voc1251,関係,かんけい,k0331,kankei,relationship,abstract,N3,二人はどんな関係ですか？,What kind of relationship do the two have?,also uses k0283,noun,,very high,LHL
+voc1252,感じる,かんじる,k0332,kanjiru,to feel,feeling,N3,春の暖かさを感じる。,I feel the warmth of spring.,,verb,,very high,LHHL
+voc1253,感動,かんどう,k0332,kando,deep emotion; being moved,feeling,N3,その映画に感動した。,I was deeply moved by that movie.,,noun,,very high,LHHL
+voc1254,感謝,かんしゃ,k0332,kansha,gratitude; thanks,feeling,N3,助けてくれてありがとう。感謝します。,Thank you for helping me. I'm grateful.,,noun,,very high,LHHL
+voc1255,投げる,なげる,k0333,nageru,to throw,action,N3,ボールを投げた。,I threw the ball.,,verb,,very high,LHL
+voc1256,投票,とうひょう,k0333,tohyo,voting; ballot,society,N3,選挙で投票した。,I voted in the election.,,noun,,high,LHHL
+voc1257,投資,とうし,k0333,toshi,investment,economy,N3,株に投資している。,I'm investing in stocks.,,noun,,high,LH
+voc1258,変わる,かわる,k0334,kawaru,to change,action,N3,気候が変わってきた。,The climate has been changing.,,verb,,very high,LHL
+voc1259,変更,へんこう,k0334,henko,change; alteration,action,N3,計画を変更した。,I changed the plan.,,noun,,very high,LHHL
+voc1260,大変,たいへん,k0334,taihen,very; difficult,abstract,N3,大変お世話になりました。,Thank you very much for your help.,,adverb,,very high,LHL
+voc1261,打つ,うつ,k0335,utsu,to hit; to strike,action,N3,ホームランを打った。,I hit a home run.,,verb,,very high,LH
+voc1262,打合せ,うちあわせ,k0335,uchiawase,meeting; briefing,action,N3,明日打合せがある。,There is a meeting tomorrow.,,noun,,high,LHHHL
+voc1263,一打,いちだ,k0335,ichida,one stroke/hit,action,N3,一打で勝負が決まった。,The contest was decided by one hit.,,noun,,low,LHL
+voc1264,直す,なおす,k0336,naosu,to fix; to correct,action,N3,壊れた椅子を直した。,I fixed the broken chair.,,verb,,very high,LHL
+voc1265,直接,ちょくせつ,k0336,chokusetsu,direct; immediately,abstract,N3,直接話した方がいい。,It's better to talk directly.,,adverb,,very high,LHHL
+voc1266,正直,しょうじき,k0336,shojiki,honest; honestly,abstract,N3,正直に答えてください。,Please answer honestly.,,adjective,,very high,LHHL
+voc1267,両方,りょうほう,k0337,ryoho,both,abstract,N3,どちらが好きですか？両方好きです。,Which do you prefer? I like both.,,noun,,very high,LHHL
+voc1268,両親,りょうしん,k0337,ryoshin,parents; both parents,people,N3,両親に感謝している。,I'm grateful to my parents.,,noun,,very high,LHHL
+voc1269,式典,しきてん,k0338,shikiten,ceremony,action,N3,卒業式典に参加した。,I participated in the graduation ceremony.,,noun,,medium,LHHL
+voc1270,正式,せいしき,k0338,seishiki,formal; official,abstract,N3,正式な手続きが必要だ。,A formal procedure is required.,,adjective,,high,LHHL
+voc1271,方式,ほうしき,k0338,hoshiki,method; system,abstract,N3,新しい方式を導入した。,We introduced a new system.,,noun,,high,LHHL
+voc1272,果たす,はたす,k0339,hatasu,to achieve; to fulfill,action,N3,責任を果たした。,I fulfilled my responsibility.,,verb,,high,LHL
+voc1273,結果,けっか,k0339,kekka,result; outcome,abstract,N3,試験の結果はどうでしたか？,How were your exam results?,,noun,,very high,LHL
+voc1274,効果,こうか,k0339,koka,effect; result,abstract,N3,この薬の効果がすぐに現れた。,The effect of this medicine appeared quickly.,,noun,,very high,LHL
+voc1275,必ず,かならず,k0340,kanarazu,certainly; without fail,abstract,N3,必ず連絡してください。,Please contact me without fail.,,adverb,,very high,LHHL
+voc1276,必死,ひっし,k0340,hisshi,desperate; frantic,abstract,N3,必死で練習した。,I practiced desperately.,,adjective,,high,LHL
+voc1277,争う,あらそう,k0341,arasou,to compete; to dispute,action,N3,二人は賞を争っている。,The two are competing for the prize.,,verb,,high,LHHL
+voc1278,競争,きょうそう,k0341,kyoso,competition,action,N3,激しい競争を勝ち抜いた。,I survived the intense competition.,,noun,,very high,LHHL
+voc1279,争い,あらそい,k0341,arasoi,conflict; dispute,abstract,N3,争いを避けることが大切だ。,It's important to avoid conflict.,,noun,,high,LHHL
+voc1280,相談,そうだん,k0342,sodan,consultation,action,N3,問題について相談したい。,I want to consult about the problem.,also uses k0278,noun,,very high,LHHL
+voc1281,談話,だんわ,k0342,danwa,conversation; talk,action,N3,首相が談話を発表した。,The prime minister issued a statement.,also uses k0252,noun,,medium,LHL
+voc1282,面談,めんだん,k0342,mendan,interview; personal meeting,action,N3,先生と面談をした。,I had an interview with the teacher.,also uses k0319,noun,,medium,LHL
+voc1283,無料,むりょう,k0343,muryo,free of charge,abstract,N3,このサービスは無料です。,This service is free of charge.,,noun,,very high,LHL
+voc1284,無理,むり,k0343,muri,impossible; unreasonable,abstract,N3,無理をしないでください。,Please don't push yourself too hard.,,noun,,very high,LH
+voc1285,無駄,むだ,k0343,muda,waste; useless,abstract,N3,無駄な時間を減らしたい。,I want to reduce wasted time.,,noun,,very high,LH
+voc1286,地位,ちい,k0344,chii,position; status,society,N3,社会的地位が上がった。,My social status has risen.,,noun,,high,LH
+voc1287,単位,たんい,k0344,tani,unit; credit,education,N3,大学の単位を取った。,I earned university credits.,also uses k0410,noun,,high,LH
+voc1288,くらい,くらい,k0344,kurai,rank; about (approximation),abstract,N3,どのくらいかかりますか？,About how long will it take?,,noun,,very high,LHL
+voc1289,置く,おく,k0345,oku,to place; to put,action,N3,本を棚に置いた。,I placed the book on the shelf.,,verb,,very high,LH
+voc1290,位置,いち,k0345,ichi,position; location,place,N3,地図で位置を確認した。,I confirmed the location on the map.,also uses k0344,noun,,very high,LH
+voc1291,放置,ほうち,k0345,hochi,abandonment; leaving alone,action,N3,問題を放置してはいけない。,We must not leave the problem unaddressed.,also uses k0348,noun,,medium,LHL
+voc1292,流れる,ながれる,k0346,nagareru,to flow,action,N3,川の水が流れている。,The river water is flowing.,,verb,,very high,LHHL
+voc1293,流行,りゅうこう,k0346,ryuko,trend; fashion,society,N3,今どんなファッションが流行ですか？,What fashion is trending now?,,noun,,very high,LHHL
+voc1294,交流,こうりゅう,k0346,koryu,exchange; interaction,action,N3,文化交流を通じて友人が増えた。,My friends increased through cultural exchange.,also uses k0315,noun,,high,LHHL
+voc1295,局長,きょくちょう,k0347,kyokucho,bureau chief; director,people,N3,局長に報告した。,I reported to the bureau chief.,,noun,,medium,LHHL
+voc1296,放送局,ほうそうきょく,k0347,hosokyoku,broadcasting station,place,N3,放送局でインタビューを受けた。,I was interviewed at the broadcasting station.,also uses k0348,noun,,medium,LHHHL
+voc1297,薬局,やっきょく,k0347,yakkyoku,pharmacy; drugstore,place,N3,近くの薬局に行った。,I went to the nearby pharmacy.,also uses k0267,noun,,very high,LHHL
+voc1298,放す,はなす,k0348,hanasu,to release; to let go,action,N3,捕まえた虫を放した。,I released the captured insect.,,verb,,high,LHL
+voc1299,放送,ほうそう,k0348,hoso,broadcast,action,N3,テレビで放送を見た。,I watched the broadcast on TV.,,noun,,very high,LHL
+voc1300,解放,かいほう,k0348,kaiho,release; liberation,action,N3,ストレスから解放されたい。,I want to be freed from stress.,also uses k0471,noun,,high,LHL
+voc1301,球,たま,k0349,tama,ball; sphere,object,N3,子供が球を投げた。,The child threw the ball.,,noun,,very high,LH
+voc1302,野球,やきゅう,k0349,yakyu,baseball,sport,N3,野球の試合を見に行った。,I went to watch a baseball game.,,noun,,very high,LHL
+voc1303,地球,ちきゅう,k0349,chikyu,Earth; the globe,nature,N3,地球は丸い。,The Earth is round.,,noun,,very high,LHL
+voc1304,役に立つ,やくにたつ,k0350,yaku ni tatsu,to be useful,action,N3,この辞書はとても役に立つ。,This dictionary is very useful.,,expression,,very high,LHHLHL
+voc1305,役者,やくしゃ,k0350,yakusha,actor; actress,people,N3,彼は有名な役者だ。,He is a famous actor.,,noun,,high,LHL
+voc1306,役割,やくわり,k0350,yakuwari,role; function,abstract,N3,自分の役割を果たした。,I fulfilled my own role.,,noun,,very high,LHHL
+voc1307,身体,しんたい,k0351,shintai,body; physique,body,N3,身体を鍛えることが大切だ。,It is important to train your body.,,noun,,very high,LHL
+voc1308,自身,じしん,k0351,jishin,oneself,abstract,N3,自分自身を信じてください。,Please believe in yourself.,,noun,,very high,LHL
+voc1309,身近,みぢか,k0351,mijika,familiar; close at hand,abstract,N3,身近な問題を解決したい。,I want to solve familiar problems.,,adjective,,high,LHHL
+voc1310,費用,ひよう,k0352,hiyo,cost; expense,money,N3,費用はいくらかかりますか？,How much will the cost be?,,noun,,very high,LHL
+voc1311,交通費,こうつうひ,k0352,kotsubi,transportation cost,money,N3,交通費を会社が払ってくれる。,The company pays my transportation costs.,,noun,,high,LHHHL
+voc1312,消費,しょうひ,k0352,shōhi,consumption,economy,N3,エネルギーの消費を減らそう。,Let's reduce energy consumption.,,noun,,very high,LHL
+voc1313,付く,つく,k0353,tsuku,to be attached; to stick,action,N3,シールが壁に付いた。,The sticker stuck to the wall.,,verb,,very high,LH
+voc1314,気付く,きづく,k0353,kizuku,to notice; to realize,action,N3,間違いに気付いた。,I noticed the mistake.,,verb,,very high,LHHL
+voc1315,受付,うけつけ,k0353,uketsuke,reception; front desk,place,N3,受付で名前を書いた。,I wrote my name at the reception desk.,,noun,,very high,LHHL
+voc1316,理由,りゆう,k0354,riyu,reason; cause,abstract,N3,理由を説明してください。,Please explain the reason.,,noun,,very high,LHL
+voc1317,自由,じゆう,k0354,jiyu,freedom; liberty,abstract,N3,自由に意見を言ってください。,Please feel free to express your opinion.,,noun,,very high,LHL
+voc1318,由来,ゆらい,k0354,yurai,origin; derivation,abstract,N3,この言葉の由来を調べた。,I looked up the origin of this word.,,noun,,medium,LHL
+voc1319,夫,おっと,k0355,otto,husband,people,N3,夫は今仕事中です。,My husband is working now.,,noun,,very high,LH
+voc1320,夫婦,ふうふ,k0355,fufu,married couple,people,N3,その夫婦はとても仲がいい。,That couple gets along very well.,,noun,,very high,LHH
+voc1321,夫人,ふじん,k0355,fujin,wife; Mrs.,people,N3,大統領夫人が来日した。,The president's wife visited Japan.,,noun,,high,LHL
+voc1322,石,いし,k0356,ishi,stone; rock,nature,N3,道で石を見つけた。,I found a stone on the road.,,noun,,very high,LH
+voc1323,石油,せきゆ,k0356,sekiyu,petroleum; oil,nature,N3,石油の価格が上がった。,The price of oil has risen.,,noun,,very high,LHL
+voc1324,宝石,ほうせき,k0356,hoseki,jewel; gem,object,N3,彼女は宝石が好きだ。,She likes jewels.,,noun,,high,LHL
+voc1325,消える,きえる,k0357,kieru,to disappear; to go out,action,N3,星が朝になって消えた。,The stars disappeared as morning came.,,verb,,very high,LHL
+voc1326,消す,けす,k0357,kesu,to erase; to turn off,action,N3,電気を消してください。,Please turn off the lights.,,verb,,very high,LH
+voc1327,消化,しょうか,k0357,shoka,digestion,health,N3,消化が悪い食べ物は避けよう。,Let's avoid foods that are hard to digest.,,noun,,high,LHL
+voc1328,神社,じんじゃ,k0358,jinja,Shinto shrine,religion,N3,お正月に神社へ行った。,I went to the shrine for New Year's.,,noun,,very high,LHL
+voc1329,神様,かみさま,k0358,kamisama,God; deity,religion,N3,神様にお祈りした。,I prayed to God.,,noun,,very high,LHHL
+voc1330,精神,せいしん,k0358,seishin,mind; spirit,abstract,N3,精神的に疲れている。,I am mentally tired.,,noun,,very high,LHL
+voc1331,番号,ばんごう,k0359,bango,number,abstract,N3,電話番号を教えてください。,Please tell me your phone number.,,noun,,very high,LHHL
+voc1332,番組,ばんぐみ,k0359,bangumi,program; broadcast,abstract,N3,好きなテレビ番組を見た。,I watched my favorite TV program.,,noun,,very high,LHHL
+voc1333,交番,こうばん,k0359,koban,police box,place,N3,道に迷って交番で聞いた。,I got lost and asked at the police box.,,noun,,very high,LHL
+voc1334,被害,ひがい,k0360,higai,damage; harm,abstract,N3,台風による被害が大きかった。,The damage from the typhoon was great.,,noun,,very high,LHL
+voc1335,害虫,がいちゅう,k0360,gaichū,harmful insect; pest,nature,N3,畑の害虫を駆除した。,I exterminated the pests in the field.,,noun,,medium,LHHL
+voc1336,公害,こうがい,k0360,kogai,pollution; public nuisance,nature,N3,工場の公害問題が深刻だ。,The factory pollution problem is serious.,,noun,,high,LHL
+voc1337,配る,くばる,k0361,kubaru,to distribute; to hand out,action,N3,プリントをクラスに配った。,I handed out the printouts to the class.,,verb,,very high,LHL
+voc1338,心配,しんぱい,k0361,shinpai,worry; concern,feeling,N3,試験のことが心配だ。,I am worried about the exam.,,noun,,very high,LHL
+voc1339,配達,はいたつ,k0361,haitatsu,delivery,action,N3,荷物が今日配達される。,The package will be delivered today.,,noun,,very high,LHHL
+voc1340,教育,きょういく,k0362,kyoiku,education,education,N3,子供の教育は大切だ。,Children's education is important.,,noun,,very high,LHHL
+voc1341,育てる,そだてる,k0362,sodateru,to raise; to bring up,action,N3,子供を愛情を持って育てた。,I raised my child with love.,,verb,,very high,LHHL
+voc1342,育つ,そだつ,k0362,sodatsu,to grow up; to be raised,action,N3,田舎で育ったので自然が好きだ。,I grew up in the countryside so I like nature.,,verb,,very high,LHL
+voc1343,席,せき,k0363,seki,seat; place,place,N3,空いている席に座ってください。,Please sit in an empty seat.,,noun,,very high,LH
+voc1344,出席,しゅっせき,k0363,shusseki,attendance; presence,education,N3,授業に出席した。,I attended class.,,noun,,very high,LHHL
+voc1345,欠席,けっせき,k0363,kesseki,absence,education,N3,病気で欠席した。,I was absent due to illness.,,noun,,very high,LHL
+voc1346,残る,のこる,k0364,nokoru,to remain; to be left,action,N3,食べ物が少し残っている。,A little food is left.,,verb,,very high,LHL
+voc1347,残念,ざんねん,k0364,zannen,regret; disappointment,feeling,N3,試合に負けて残念だ。,It is a shame that I lost the match.,,noun,,very high,LHHL
+voc1348,残業,ざんぎょう,k0364,zangyō,overtime work,work,N3,今日も残業になった。,I have to work overtime again today.,,noun,,very high,LHHL
+voc1349,想像,そうぞう,k0365,sozo,imagination,abstract,N3,未来を想像してみた。,I tried to imagine the future.,,noun,,very high,LHL
+voc1350,思想,しそう,k0365,shisō,thought; ideology,abstract,N3,哲学的な思想に興味がある。,I am interested in philosophical thought.,,noun,,high,LHL
+voc1351,予想,よそう,k0365,yosō,expectation; forecast,abstract,N3,天気予報の予想が当たった。,The weather forecast prediction was correct.,,noun,,very high,LHL
+voc1352,念のため,ねんのため,k0366,nen no tame,just to be sure,abstract,N3,念のために確認した。,I confirmed it just to be sure.,,expression,,high,LHLHL
+voc1353,記念,きねん,k0366,kinen,commemoration; memory,abstract,N3,卒業記念の写真を撮った。,I took a graduation commemorative photo.,,noun,,very high,LHL
+voc1354,専念,せんねん,k0366,sennen,devotion; concentration,abstract,N3,勉強に専念している。,I am devoting myself to studying.,,noun,,medium,LHL
+voc1355,助ける,たすける,k0367,tasukeru,to help; to rescue,action,N3,困っている人を助けた。,I helped someone who was in trouble.,,verb,,very high,LHHL
+voc1356,助手,じょしゅ,k0367,joshu,assistant; helper,people,N3,研究室の助手として働いている。,I work as a research assistant.,,noun,,high,LHL
+voc1357,助言,じょげん,k0367,jogen,advice; counsel,action,N3,先輩に助言をもらった。,I received advice from my senior.,,noun,,medium,LHL
+voc1358,労働,ろうどう,k0368,rodo,labor; work,work,N3,労働条件の改善を求めた。,I demanded improvement of working conditions.,,noun,,very high,LHL
+voc1359,労力,ろうりょく,k0368,roryoku,effort; labor,work,N3,多くの労力を費やした。,I spent a lot of effort.,,noun,,medium,LHL
+voc1360,苦労,くろう,k0368,kuro,hardship; trouble,feeling,N3,仕事で苦労している。,I am having a hard time at work.,,noun,,very high,LHL
+voc1361,例えば,たとえば,k0369,tatoeba,for example,abstract,N3,例えばこのような方法がある。,For example there is a method like this.,,adverb,,very high,LHHL
+voc1362,例外,れいがい,k0369,reigai,exception,abstract,N3,この規則に例外はない。,There are no exceptions to this rule.,,noun,,very high,LHL
+voc1363,前例,ぜんれい,k0369,zenrei,precedent,abstract,N3,前例のない出来事が起きた。,An unprecedented event occurred.,,noun,,medium,LHL
+voc1364,当然,とうぜん,k0370,tōzen,naturally; of course,abstract,N3,それは当然の結果だ。,That is a natural result.,,adverb,,very high,LHL
+voc1365,自然,しぜん,k0370,shizen,nature; natural,nature,N3,自然の中でリラックスできる。,I can relax in nature.,,noun,,very high,LHL
+voc1366,全然,ぜんぜん,k0370,zenzen,not at all; completely,abstract,N3,全然わからない。,I don't understand at all.,,adverb,,very high,LHL
+voc1367,追う,おう,k0371,ou,to chase; to follow,action,N3,犯人を警察が追っている。,The police are chasing the criminal.,,verb,,very high,LH
+voc1368,追加,ついか,k0371,tsuika,addition; supplement,action,N3,注文に追加してもいいですか？,May I add to the order?,,noun,,very high,LHL
+voc1369,追いかける,おいかける,k0371,oikakeru,to chase after,action,N3,走って逃げる子供を追いかけた。,I chased the child who ran away.,,verb,,high,LHHHHL
+voc1370,商品,しょうひん,k0372,shohin,product; merchandise,economy,N3,新しい商品を開発した。,We developed a new product.,,noun,,very high,LHL
+voc1371,商売,しょうばい,k0372,shobai,business; trade,economy,N3,商売がうまくいっている。,Business is going well.,,noun,,very high,LHHL
+voc1372,商店,しょうてん,k0372,shoten,shop; store,economy,N3,商店街を歩いた。,I walked through the shopping district.,,noun,,high,LHL
+voc1373,葉,は,k0373,ha,leaf,nature,N3,木の葉が風に揺れている。,The leaves on the tree are swaying in the wind.,,noun,,very high,LH
+voc1374,言葉,ことば,k0373,kotoba,word; language,abstract,N3,優しい言葉をかけてくれた。,They said kind words to me.,,noun,,very high,LHL
+voc1375,紅葉,こうよう,k0373,kōyō,autumn leaves,nature,N3,山の紅葉が美しい。,The autumn leaves on the mountain are beautiful.,,noun,,high,LHL
+voc1376,伝える,つたえる,k0374,tsutaeru,to convey; to communicate,action,N3,気持ちをうまく伝えられた。,I was able to convey my feelings well.,,verb,,very high,LHHL
+voc1377,伝わる,つたわる,k0374,tsutawaru,to be conveyed; to spread,action,N3,その知らせが全国に伝わった。,The news spread across the country.,,verb,,very high,LHHL
+voc1378,伝統,でんとう,k0374,dentō,tradition,abstract,N3,日本の伝統文化を大切にしたい。,I want to treasure Japan's traditional culture.,,noun,,very high,LHL
+voc1379,形,かたち,k0375,katachi,shape; form,abstract,N3,丸い形のケーキを作った。,I made a round-shaped cake.,,noun,,very high,LHL
+voc1380,形式,けいしき,k0375,keishiki,format; style,abstract,N3,書類の形式に従って記入した。,I filled it in according to the document format.,,noun,,very high,LHHL
+voc1381,人形,にんぎょう,k0375,ningyō,doll,object,N3,子供が人形で遊んでいる。,The child is playing with a doll.,,noun,,very high,LHHL
+voc1382,景色,けしき,k0376,keshiki,scenery; view,nature,N3,山頂からの景色が素晴らしい。,The scenery from the mountaintop is wonderful.,,noun,,very high,LHL
+voc1383,景気,けいき,k0376,keiki,economic conditions,economy,N3,最近景気が回復してきた。,The economy has been recovering lately.,,noun,,very high,LHL
+voc1384,背景,はいけい,k0376,haikei,background; backdrop,abstract,N3,この映画の背景は江戸時代だ。,The background of this movie is the Edo period.,,noun,,high,LHL
+voc1385,落ちる,おちる,k0377,ochiru,to fall; to drop,action,N3,財布が床に落ちた。,My wallet fell to the floor.,,verb,,very high,LHL
+voc1386,落ち着く,おちつく,k0377,ochitsuku,to calm down; to settle,action,N3,深呼吸して落ち着いた。,I took a deep breath and calmed down.,,verb,,very high,LHHHL
+voc1387,落とす,おとす,k0377,otosu,to drop; to lose,action,N3,鍵を落としてしまった。,I dropped my key.,,verb,,very high,LHL
+voc1388,負ける,まける,k0378,makeru,to lose; to be defeated,action,N3,試合に負けてしまった。,I lost the match.,,verb,,very high,LHL
+voc1389,負担,ふたん,k0378,futan,burden; load,abstract,N3,仕事の負担が大きい。,The workload is heavy.,,noun,,very high,LHL
+voc1390,勝負,しょうぶ,k0378,shobu,contest; match,action,N3,公平な勝負をしよう。,Let's have a fair contest.,,noun,,very high,LHL
+voc1391,失う,うしなう,k0379,ushinau,to lose; to miss,action,N3,大切なものを失った。,I lost something important.,,verb,,very high,LHHL
+voc1392,失敗,しっぱい,k0379,shippai,failure; mistake,action,N3,失敗を恐れずに挑戦しよう。,Let's challenge without fear of failure.,,noun,,very high,LHL
+voc1393,失礼,しつれい,k0379,shitsurei,rudeness; excuse me,abstract,N3,失礼ですがお名前は？,Excuse me but what is your name?,,noun,,very high,LHHL
+voc1394,差,さ,k0380,sa,difference; gap,abstract,N3,二つの数字の差を計算した。,I calculated the difference between the two numbers.,,noun,,very high,LH
+voc1395,差別,さべつ,k0380,sabetsu,discrimination,society,N3,差別のない社会を目指す。,We aim for a society without discrimination.,,noun,,very high,LHL
+voc1396,差し上げる,さしあげる,k0380,sashiageru,to give (humble),action,N3,プレゼントを差し上げます。,I humbly give you a present.,,verb,,high,LHHHL
+voc1397,週末,しゅうまつ,k0381,shūmatsu,weekend,time,N3,週末は家族と過ごした。,I spent the weekend with my family.,,noun,,very high,LHHL
+voc1398,末,すえ,k0381,sue,end; tip,time,N3,月末に報告書を提出する。,I will submit the report at the end of the month.,,noun,,high,LH
+voc1399,年末,ねんまつ,k0381,nenmatsu,year-end,time,N3,年末は忙しい時期だ。,Year-end is a busy time.,,noun,,very high,LHL
+voc1400,守る,まもる,k0382,mamoru,to protect; to obey,action,N3,ルールを守ることが大切だ。,It is important to obey the rules.,,verb,,very high,LHL
+voc1401,守衛,しゅえい,k0382,shuei,security guard,people,N3,守衛が建物の入口に立っている。,The security guard is standing at the building entrance.,,noun,,medium,LHL
+voc1402,留守,るす,k0382,rusu,being away from home,abstract,N3,留守中に電話があった。,There was a phone call while I was away.,,noun,,very high,LH
+voc1403,種類,しゅるい,k0383,shurui,type; kind,abstract,N3,様々な種類の花が咲いている。,Various kinds of flowers are blooming.,,noun,,very high,LHHL
+voc1404,種,たね,k0383,tane,seed; cause,nature,N3,花の種を植えた。,I planted flower seeds.,,noun,,very high,LH
+voc1405,品種,ひんしゅ,k0383,hinshu,variety; breed,nature,N3,新しい品種のりんごが開発された。,A new variety of apple was developed.,,noun,,medium,LHHL
+voc1406,美しい,うつくしい,k0384,utsukushii,beautiful,description,N3,富士山はとても美しい。,Mt. Fuji is very beautiful.,,adjective,,very high,LHHHHL
+voc1407,美術,びじゅつ,k0384,bijutsu,fine arts,art,N3,美術館で絵を見た。,I saw paintings at the art museum.,,noun,,very high,LHL
+voc1408,美容,びよう,k0384,biyo,beauty; cosmetics,health,N3,美容院で髪を切った。,I got a haircut at the beauty salon.,,noun,,very high,LHL
+voc1409,命,いのち,k0385,inochi,life,abstract,N3,命を大切にしてください。,Please treasure life.,,noun,,very high,LHL
+voc1410,命令,めいれい,k0385,meirei,order; command,abstract,N3,上司の命令に従った。,I obeyed my boss's order.,,noun,,very high,LHHL
+voc1411,運命,うんめい,k0385,unmei,fate; destiny,abstract,N3,これが私の運命だと思う。,I think this is my destiny.,,noun,,very high,LHHL
+voc1412,幸福,こうふく,k0386,kofuku,happiness; bliss,abstract,N3,家族の幸福を願っている。,I wish for my family's happiness.,,noun,,high,LHL
+voc1413,福祉,ふくし,k0386,fukushi,welfare; well-being,society,N3,社会福祉の仕事に就いた。,I got a job in social welfare.,,noun,,very high,LH
+voc1414,福袋,ふくぶくろ,k0386,fukubukuro,lucky bag; mystery bag,object,N3,お正月に福袋を買った。,I bought a lucky bag on New Year's.,,noun,,high,LHHL
+voc1415,望む,のぞむ,k0387,nozomu,to wish; to hope,abstract,N3,平和な世界を望んでいる。,I hope for a peaceful world.,,verb,,very high,LHL
+voc1416,希望,きぼう,k0387,kibo,hope; wish,abstract,N3,将来に希望を持っている。,I have hope for the future.,,noun,,very high,LHL
+voc1417,展望,てんぼう,k0387,tenbo,outlook; view,abstract,N3,将来の展望について話した。,I talked about future prospects.,,noun,,medium,LHL
+voc1418,観察,かんさつ,k0388,kansatsu,observation,action,N3,植物の成長を観察した。,I observed the growth of plants.,,noun,,high,LHHL
+voc1419,観客,かんきゃく,k0388,kankyaku,audience; spectator,people,N3,観客が大きな拍手をした。,The audience gave a big round of applause.,,noun,,very high,LHHL
+voc1420,観光,かんこう,k0388,kanko,sightseeing,action,N3,京都を観光した。,I went sightseeing in Kyoto.,,noun,,very high,LHL
+voc1421,察する,さっする,k0389,sassuru,to sense; to guess,action,N3,彼の気持ちを察した。,I sensed his feelings.,,verb,,high,LHHL
+voc1422,警察,けいさつ,k0389,keisatsu,police,society,N3,警察に連絡してください。,Please contact the police.,,noun,,very high,LHHL
+voc1423,診察,しんさつ,k0389,shinsatsu,medical examination,health,N3,医者に診察してもらった。,I had a medical examination by a doctor.,,noun,,very high,LHHL
+voc1424,横,よこ,k0390,yoko,horizontal; side,position,N3,横に並んでください。,Please line up side by side.,,noun,,very high,LH
+voc1425,横断,おうだん,k0390,odan,crossing; traverse,action,N3,横断歩道を渡った。,I crossed at the pedestrian crossing.,,noun,,high,LHL
+voc1426,横切る,よこぎる,k0390,yokogiru,to cross; to cut across,action,N3,猫が道を横切った。,A cat crossed the road.,,verb,,medium,LHHL
+voc1427,深い,ふかい,k0391,fukai,deep,description,N3,この池はとても深い。,This pond is very deep.,,adjective,,very high,LHL
+voc1428,深夜,しんや,k0391,shinya,late at night; midnight,time,N3,深夜まで仕事をした。,I worked until late at night.,,noun,,very high,LH
+voc1429,深刻,しんこく,k0391,shinkoku,serious; grave,abstract,N3,問題が深刻になってきた。,The problem has become serious.,,adjective,,very high,LHL
+voc1430,申し込む,もうしこむ,k0392,moshikomu,to apply; to register,action,N3,コースに申し込んだ。,I applied for the course.,,verb,,very high,LHHHHL
+voc1431,申請,しんせい,k0392,shinsei,application; petition,action,N3,ビザの申請をした。,I applied for a visa.,,noun,,very high,LHL
+voc1432,申し訳,もうしわけ,k0392,moshiwake,excuse; apology,abstract,N3,申し訳ありません。,I'm very sorry.,,noun,,very high,LHHHHL
+voc1433,様子,ようす,k0393,yosu,appearance; state,abstract,N3,彼の様子がおかしい。,His behavior seems strange.,,noun,,very high,LHL
+voc1434,様々,さまざま,k0393,samazama,various; diverse,abstract,N3,様々な意見がある。,There are various opinions.,,adjective,,very high,LHHL
+voc1435,同様,どうよう,k0393,doyō,same; likewise,abstract,N3,前回と同様の結果だった。,The result was the same as last time.,,noun,,very high,LHL
+voc1436,港,みなと,k0394,minato,harbor; port,place,N3,港に大きな船が止まっている。,A large ship is docked at the harbor.,,noun,,very high,LHL
+voc1437,空港,くうこう,k0394,kuko,airport,place,N3,空港まで迎えに行った。,I went to pick someone up at the airport.,,noun,,very high,LHL
+voc1438,港町,みなとまち,k0394,minatomachi,port town,place,N3,港町でおいしい魚を食べた。,I ate delicious fish in the port town.,,noun,,medium,LHHL
+voc1439,達する,たっする,k0395,tassuru,to reach; to attain,action,N3,目標に達した。,I reached my goal.,,verb,,very high,LHHL
+voc1440,友達,ともだち,k0395,tomodachi,friend,people,N3,友達と映画を見た。,I watched a movie with my friend.,,noun,,very high,LHHL
+voc1441,達成,たっせい,k0395,tassei,achievement,abstract,N3,目標を達成できた。,I was able to achieve my goal.,,noun,,very high,LHHL
+voc1442,良い,よい,k0396,yoi,good; fine,description,N3,天気が良い日は散歩する。,I take a walk on fine days.,,adjective,,very high,LH
+voc1443,良心,りょうしん,k0396,ryoshin,conscience,abstract,N3,良心に従って行動した。,I acted according to my conscience.,,noun,,high,LHHL
+voc1444,改良,かいりょう,k0396,kairyo,improvement,abstract,N3,製品を改良した。,We improved the product.,,noun,,high,LHHL
+voc1445,気候,きこう,k0397,kiko,climate; weather,nature,N3,この地域の気候は温暖だ。,The climate in this area is mild.,,noun,,very high,LHL
+voc1446,候補,こうほ,k0397,koho,candidate; nominee,society,N3,選挙の候補者が多い。,There are many candidates in the election.,,noun,,very high,LH
+voc1447,天候,てんこう,k0397,tenko,weather conditions,nature,N3,天候が悪くて試合が中止になった。,The game was cancelled due to bad weather.,,noun,,high,LHL
+voc1448,満員,まんいん,k0398,manin,full; packed,abstract,N3,電車が満員だった。,The train was packed.,,noun,,very high,LHL
+voc1449,満足,まんぞく,k0398,manzoku,satisfaction,feeling,N3,結果に満足している。,I am satisfied with the result.,,noun,,very high,LHHL
+voc1450,不満,ふまん,k0398,fuman,dissatisfaction,feeling,N3,現状に不満を感じている。,I feel dissatisfied with the current situation.,,noun,,very high,LHL
+voc1451,敗れる,やぶれる,k0399,yabureru,to be defeated,action,N3,チームが試合で敗れた。,The team was defeated in the game.,,verb,,high,LHHL
+voc1452,敗北,はいぼく,k0399,haiboku,defeat,action,N3,敗北を認めて次に進もう。,Let's acknowledge defeat and move on.,,noun,,high,LHHL
+voc1453,失敗,しっぱい,k0399,shippai,failure,abstract,N3,最初の挑戦は失敗だった。,The first attempt was a failure.,,noun,,very high,LHL
+voc1454,道路,どうろ,k0400,doro,road; highway,place,N3,道路工事で渋滞している。,There is a traffic jam due to road construction.,,noun,,very high,LHL
+voc1455,路線,ろせん,k0400,rosen,route; line,place,N3,新しい路線が開通した。,A new route has opened.,,noun,,very high,LHL
+voc1456,通路,つうろ,k0400,tsuro,passage; aisle,place,N3,通路を塞がないでください。,Please do not block the aisle.,,noun,,high,LHL
+voc1457,科目,かもく,k0401,kamoku,subject; course,education,N3,好きな科目は数学だ。,My favorite subject is mathematics.,,noun,,very high,LHL
+voc1458,科学,かがく,k0401,kagaku,science,education,N3,科学の進歩は目覚ましい。,The progress of science is remarkable.,,noun,,very high,LHL
+voc1459,外科,げか,k0401,geka,surgery; surgical department,health,N3,外科で手術を受けた。,I had surgery in the surgical department.,,noun,,very high,LH
+voc1460,積む,つむ,k0402,tsumu,to pile up; to accumulate,action,N3,荷物を車に積んだ。,I loaded the luggage into the car.,,verb,,very high,LH
+voc1461,積極的,せっきょくてき,k0402,sekkyokuteki,positive; proactive,abstract,N3,積極的に参加してください。,Please participate proactively.,,adjective,,very high,LHHHL
+voc1462,面積,めんせき,k0402,menseki,area; surface area,abstract,N3,この部屋の面積は何平方メートルですか？,What is the area of this room in square meters?,,noun,,high,LHHL
+voc1463,他,ほか,k0403,hoka,other; another,abstract,N3,他に何か必要ですか？,Is there anything else you need?,,noun,,very high,LH
+voc1464,他人,たにん,k0403,tanin,other person; stranger,people,N3,他人の意見を尊重することが大切だ。,It is important to respect others' opinions.,,noun,,very high,LHL
+voc1465,その他,そのほか,k0403,sonohoka,other; besides that,abstract,N3,その他に何か質問はありますか？,Are there any other questions?,,noun,,very high,LHHL
+voc1466,客,きゃく,k0404,kyaku,customer; guest,people,N3,お客さんが来た。,A customer came.,,noun,,very high,LH
+voc1467,観客,かんきゃく,k0404,kankyaku,audience,people,N3,コンサートの観客が多かった。,There were many audience members at the concert.,,noun,,very high,LHHL
+voc1468,乗客,じょうきゃく,k0404,jokyaku,passenger,people,N3,列車の乗客が降りてきた。,The passengers got off the train.,,noun,,high,LHHL
+voc1469,登る,のぼる,k0405,noboru,to climb; to go up,action,N3,山を登るのが好きだ。,I like climbing mountains.,,verb,,very high,LHL
+voc1470,登山,とざん,k0405,tozan,mountain climbing,action,N3,友人と登山を楽しんだ。,I enjoyed mountain climbing with my friend.,,noun,,high,LHL
+voc1471,登場,とうじょう,k0405,tojo,appearance; entry,abstract,N3,新しいキャラクターが登場した。,A new character appeared.,,noun,,very high,LHHL
+voc1472,速い,はやい,k0406,hayai,fast; quick,description,N3,彼はとても足が速い。,He runs very fast.,,adjective,,very high,LHL
+voc1473,速度,そくど,k0406,sokudo,speed; velocity,abstract,N3,車の速度を落としてください。,Please slow down the car.,,noun,,very high,LHL
+voc1474,高速,こうそく,k0406,kosoku,high speed; expressway,abstract,N3,高速道路で移動した。,I traveled on the expressway.,,noun,,very high,LHL
+voc1475,飛ぶ,とぶ,k0407,tobu,to fly; to jump,action,N3,鳥が空を飛んでいる。,A bird is flying in the sky.,,verb,,very high,LH
+voc1476,飛行機,ひこうき,k0407,hikoki,airplane,object,N3,飛行機で海外に行った。,I went abroad by airplane.,,noun,,very high,LHHL
+voc1477,飛び込む,とびこむ,k0407,tobikomu,to jump in; to dive,action,N3,プールに飛び込んだ。,I jumped into the pool.,,verb,,medium,LHHL
+voc1478,殺す,ころす,k0408,korosu,to kill,action,N3,虫を殺さないようにしている。,I try not to kill insects.,,verb,,high,LHL
+voc1479,殺人,さつじん,k0408,satsujin,murder; homicide,society,N3,殺人事件の捜査が始まった。,The investigation of the murder case began.,,noun,,high,LHHL
+voc1480,自殺,じさつ,k0408,jisatsu,suicide,abstract,N3,自殺防止の活動をしている。,I'm involved in suicide prevention activities.,,noun,,high,LHL
+voc1481,信号,しんごう,k0409,shingo,signal; traffic light,object,N3,信号が赤になった。,The traffic light turned red.,,noun,,very high,LHHL
+voc1482,号外,ごうがい,k0409,gogai,extra edition (newspaper),abstract,N3,号外が配られた。,An extra edition was distributed.,,noun,,medium,LHHL
+voc1483,番号,ばんごう,k0409,bango,number; issue,abstract,N3,整理番号を確認してください。,Please check your reference number.,,noun,,very high,LHHL
+voc1484,単語,たんご,k0410,tango,word; vocabulary,language,N3,毎日単語を覚えている。,I memorize vocabulary words every day.,,noun,,very high,LHL
+voc1485,単純,たんじゅん,k0410,tanjun,simple; plain,abstract,N3,単純な間違いをしてしまった。,I made a simple mistake.,,adjective,,very high,LHHL
+voc1486,単独,たんどく,k0410,tandoku,alone; solo,abstract,N3,単独で登山した。,I climbed the mountain alone.,,noun,,medium,LHHL
+voc1487,完成,かんせい,k0411,kansei,completion; finish,abstract,N3,作品がついに完成した。,The work was finally completed.,,noun,,very high,LHL
+voc1488,完全,かんぜん,k0411,kanzen,perfect; complete,abstract,N3,完全に回復した。,I have fully recovered.,,adjective,,very high,LHHL
+voc1489,完了,かんりょう,k0411,kanryo,completion; done,abstract,N3,作業が完了した。,The work is done.,,noun,,very high,LHHL
+voc1490,給料,きゅうりょう,k0412,kyuryo,salary; wages,money,N3,今月の給料が入った。,This month's salary came in.,,noun,,very high,LHHL
+voc1491,給食,きゅうしょく,k0412,kyushoku,school lunch; provided meal,food,N3,小学校の給食がおいしかった。,The school lunch at elementary school was delicious.,,noun,,very high,LHHL
+voc1492,補給,ほきゅう,k0412,hokyu,supply; replenishment,action,N3,水を補給してから出発した。,I replenished water before departing.,,noun,,medium,LHL
+voc1493,苦しい,くるしい,k0413,kurushii,painful; hard,feeling,N3,経済的に苦しい状況だ。,The economic situation is tough.,,adjective,,very high,LHHL
+voc1494,苦手,にがて,k0413,nigate,not good at; dislike,abstract,N3,数学が苦手だ。,I'm not good at mathematics.,,noun,,very high,LHL
+voc1495,苦労,くろう,k0413,kuro,hardship; toil,feeling,N3,苦労の末に成功した。,I succeeded after much hardship.,,noun,,very high,LHL
+voc1496,公園,こうえん,k0414,koen,park,place,N3,子供と公園で遊んだ。,I played in the park with my child.,,noun,,very high,LHL
+voc1497,動物園,どうぶつえん,k0414,dobutsuen,zoo,place,N3,動物園でパンダを見た。,I saw pandas at the zoo.,,noun,,very high,LHHHHL
+voc1498,幼稚園,ようちえん,k0414,yochien,kindergarten,education,N3,子供が幼稚園に入った。,My child entered kindergarten.,,noun,,very high,LHHHL
+voc1499,道具,どうぐ,k0415,dogu,tool; instrument,object,N3,料理道具を揃えた。,I assembled cooking tools.,,noun,,very high,LHL
+voc1500,具体的,ぐたいてき,k0415,gutaiteki,concrete; specific,abstract,N3,具体的な例を挙げてください。,Please give a specific example.,,adjective,,very high,LHHHL
+voc1501,具合,ぐあい,k0415,guai,condition; state of health,abstract,N3,体の具合が悪い。,I don't feel well.,,noun,,very high,LHL
+voc1502,辞書,じしょ,k0416,jisho,dictionary,object,N3,わからない言葉を辞書で調べた。,I looked up the unknown word in the dictionary.,,noun,,very high,LH
+voc1503,辞める,やめる,k0416,yameru,to quit; to resign,action,N3,会社を辞めることにした。,I decided to quit the company.,,verb,,very high,LHL
+voc1504,辞典,じてん,k0416,jiten,dictionary; encyclopedia,object,N3,百科辞典で調べた。,I looked it up in the encyclopedia.,,noun,,high,LHL
+voc1505,馬,うま,k0417,uma,horse,nature,N3,馬に乗ったことがある。,I have ridden a horse.,,noun,,very high,LH
+voc1506,競馬,けいば,k0417,keiba,horse racing,sport,N3,競馬場に行ったことがある。,I have been to a horse racing track.,,noun,,high,LHL
+voc1507,馬力,ばりき,k0417,bariki,horsepower; energy,abstract,N3,このエンジンは馬力がある。,This engine has horsepower.,,noun,,medium,LHL
+voc1508,愛する,あいする,k0418,aisuru,to love,feeling,N3,家族を心から愛している。,I love my family from the bottom of my heart.,,verb,,very high,LHHL
+voc1509,愛情,あいじょう,k0418,aijo,love; affection,feeling,N3,子供に愛情を注いでいる。,I pour affection into my child.,,noun,,very high,LHHL
+voc1510,愛用,あいよう,k0418,aiyo,regular use; favorite,action,N3,この道具を長年愛用している。,I have been using this tool for many years.,,noun,,medium,LHL
+voc1511,未来,みらい,k0419,mirai,future,time,N3,未来に希望を持っている。,I have hope for the future.,,noun,,very high,LHL
+voc1512,未定,みてい,k0419,mitei,undecided; not yet determined,abstract,N3,日程はまだ未定です。,The schedule is still undecided.,,noun,,high,LHL
+voc1513,未満,みまん,k0419,miman,less than; under,abstract,N3,十八歳未満は入場できない。,Those under 18 cannot enter.,,noun,,high,LHL
+voc1514,冷たい,つめたい,k0420,tsumetai,cold (to the touch),description,N3,冷たい水が飲みたい。,I want to drink cold water.,,adjective,,very high,LHHL
+voc1515,冷蔵庫,れいぞうこ,k0420,reizoko,refrigerator,object,N3,冷蔵庫に食べ物を入れた。,I put food in the refrigerator.,,noun,,very high,LHHHL
+voc1516,冷静,れいせい,k0420,reisei,calm; cool-headed,abstract,N3,冷静に判断することが大切だ。,It is important to judge calmly.,,adjective,,very high,LHL
+voc1517,類,るい,k0421,rui,kind; type; genus,abstract,N3,この生物にはいくつかの類がある。,This organism has several types.,,noun,,high,LH
+voc1518,類似,るいじ,k0421,ruiji,similarity; resemblance,abstract,N3,二つの作品に類似点が多い。,There are many similarities between the two works.,,noun,,medium,LHL
+voc1519,人類,じんるい,k0421,jinrui,humanity; humankind,abstract,N3,人類の歴史を学んだ。,I studied the history of humanity.,,noun,,very high,LHHL
+voc1520,王様,おうさま,k0422,osama,king,people,N3,王様が国民に演説した。,The king gave a speech to the citizens.,,noun,,very high,LHHL
+voc1521,王国,おうこく,k0422,okoku,kingdom,place,N3,その王国は長く繁栄した。,That kingdom prospered for a long time.,,noun,,medium,LHL
+voc1522,女王,じょおう,k0422,joo,queen,people,N3,女王が即位した。,The queen ascended to the throne.,,noun,,very high,LHL
+voc1523,返す,かえす,k0423,kaesu,to return; to give back,action,N3,借りた本を返した。,I returned the book I borrowed.,,verb,,very high,LH
+voc1524,返事,へんじ,k0423,henji,reply; response,action,N3,メールの返事をすぐに出した。,I sent a reply to the email immediately.,,noun,,very high,LHL
+voc1525,返品,へんぴん,k0423,henpin,return of goods,action,N3,商品を返品したい。,I want to return the product.,,noun,,high,LHL
+voc1526,熱い,あつい,k0424,atsui,hot,description,N3,熱いお茶を飲んだ。,I drank hot tea.,,adjective,,very high,LHL
+voc1527,熱心,ねっしん,k0424,nesshin,enthusiastic; earnest,abstract,N3,彼は仕事に熱心だ。,He is enthusiastic about his work.,,adjective,,very high,LHL
+voc1528,発熱,はつねつ,k0424,hatsunetsu,fever; heat generation,health,N3,発熱があって病院に行った。,I went to the hospital with a fever.,,noun,,high,LHL
+voc1529,宿題,しゅくだい,k0425,shukudai,homework,education,N3,宿題を忘れてしまった。,I forgot my homework.,,noun,,very high,LHHL
+voc1530,宿泊,しゅくはく,k0425,shukuhaku,lodging; accommodation,action,N3,ホテルに宿泊した。,I stayed at a hotel.,,noun,,very high,LHHL
+voc1531,下宿,げしゅく,k0425,geshuku,boarding house; lodging,place,N3,大学時代は下宿で暮らした。,I lived in a boarding house during my university days.,,noun,,medium,LHL
+voc1532,覚える,おぼえる,k0426,oboeru,to remember; to learn,action,N3,単語を覚えるのが大変だ。,It is hard to memorize vocabulary.,,verb,,very high,LHHL
+voc1533,目覚める,めざめる,k0426,mezameru,to wake up; to awaken,action,N3,朝六時に目覚めた。,I woke up at six in the morning.,,verb,,high,LHHL
+voc1534,感覚,かんかく,k0426,kankaku,sense; feeling,abstract,N3,音楽の感覚が優れている。,He has an excellent sense of music.,,noun,,very high,LHHL
+voc1535,船,ふね,k0427,fune,ship; boat,object,N3,船で島に渡った。,I crossed to the island by ship.,,noun,,very high,LH
+voc1536,船長,せんちょう,k0427,sencho,captain (of a ship),people,N3,船長が船を操縦した。,The captain steered the ship.,,noun,,high,LHHL
+voc1537,客船,きゃくせん,k0427,kyakusen,passenger ship,object,N3,大型客船に乗った。,I boarded a large passenger ship.,,noun,,medium,LHHL
+voc1538,努力,どりょく,k0428,doryoku,effort; endeavor,abstract,N3,努力すれば夢は叶う。,Dreams come true if you make efforts.,,noun,,very high,LHL
+voc1539,努める,つとめる,k0428,tsutomeru,to strive; to endeavor,action,N3,毎日勉強に努めている。,I strive to study every day.,,verb,,high,LHHL
+voc1540,静か,しずか,k0430,shizuka,quiet; calm,description,N3,静かな場所で勉強したい。,I want to study in a quiet place.,,adjective,,very high,LHL
+voc1541,静止,せいし,k0430,seishi,standstill; rest,abstract,N3,動いている物体が静止した。,The moving object came to a standstill.,,noun,,medium,LH
+voc1542,平静,へいせい,k0430,heisei,calm; composure,abstract,N3,平静を保つことが大切だ。,It is important to maintain composure.,,noun,,medium,LHL
+voc1543,喜ぶ,よろこぶ,k0431,yorokobu,to rejoice; to be glad,feeling,N3,合格して喜んだ。,I was delighted to pass.,,verb,,very high,LHHL
+voc1544,喜び,よろこび,k0431,yorokobi,joy; pleasure,feeling,N3,子供の笑顔に喜びを感じる。,I feel joy in my child's smile.,,noun,,very high,LHHL
+voc1545,大喜び,おおよろこび,k0431,oyorokobi,great joy; delight,feeling,N3,プレゼントをもらって大喜びした。,I was overjoyed to receive a present.,,noun,,high,LHHHHL
+voc1546,幸せ,しあわせ,k0432,shiawase,happiness; fortune,abstract,N3,家族と一緒にいると幸せだ。,I am happy when I am with my family.,,noun,,very high,LHHL
+voc1547,幸運,こううん,k0432,koun,good luck; fortune,abstract,N3,幸運を祈っています。,I wish you good luck.,,noun,,very high,LHL
+voc1548,不幸,ふこう,k0432,fuko,unhappiness; misfortune,abstract,N3,不幸な出来事が続いた。,Unfortunate events continued.,,noun,,high,LHL
+voc1549,等しい,ひとしい,k0433,hitoshii,equal; equivalent,description,N3,二つの数は等しい。,The two numbers are equal.,,adjective,,high,LHHL
+voc1550,平等,びょうどう,k0433,byodo,equality,abstract,N3,平等な社会を目指している。,We are aiming for an equal society.,,noun,,very high,LHHL
+voc1551,等分,とうぶん,k0433,tobun,equal division,abstract,N3,ケーキを等分に切った。,I cut the cake into equal portions.,,noun,,medium,LHL
+voc1552,老人,ろうじん,k0434,rojin,elderly person,people,N3,老人に席を譲った。,I gave up my seat to an elderly person.,,noun,,very high,LHL
+voc1553,老化,ろうか,k0434,roka,aging; senescence,health,N3,老化を防ぐ方法を調べた。,I researched methods to prevent aging.,,noun,,high,LH
+voc1554,老後,ろうご,k0434,rogo,old age; retirement,time,N3,老後のために貯金している。,I'm saving for my old age.,,noun,,very high,LH
+voc1555,曲,きょく,k0435,kyoku,music piece; tune,art,N3,好きな曲を聴いている。,I'm listening to my favorite music.,,noun,,very high,LH
+voc1556,曲がる,まがる,k0435,magaru,to turn; to bend,action,N3,次の角を右に曲がってください。,Please turn right at the next corner.,,verb,,very high,LHL
+voc1557,作曲,さっきょく,k0435,sakkyoku,musical composition,art,N3,彼は作曲の才能がある。,He has a talent for musical composition.,,noun,,high,LHHL
+voc1558,庭,にわ,k0436,niwa,garden; yard,place,N3,庭に花を植えた。,I planted flowers in the garden.,,noun,,very high,LH
+voc1559,庭園,ていえん,k0436,teien,garden; park,place,N3,日本庭園を散歩した。,I walked through a Japanese garden.,,noun,,medium,LHL
+voc1560,家庭,かてい,k0436,katei,home; family,abstract,N3,家庭を大切にしている。,I value my home and family.,,noun,,very high,LHL
+voc1561,欠ける,かける,k0438,kakeru,to lack; to be missing,abstract,N3,コップの端が欠けている。,The edge of the cup is chipped.,,verb,,high,LHL
+voc1562,欠点,けってん,k0438,ketten,fault; shortcoming,abstract,N3,自分の欠点を認めることが大切だ。,It is important to acknowledge one's own faults.,,noun,,very high,LHL
+voc1563,欠乏,けつぼう,k0438,ketsubo,shortage; lack,abstract,N3,睡眠欠乏は健康に悪い。,Sleep deprivation is bad for health.,,noun,,medium,LHL
+voc1564,息子,むすこ,k0439,musuko,son,people,N3,息子が大学に合格した。,My son passed the university entrance exam.,,noun,,very high,LHHL
+voc1565,息,いき,k0439,iki,breath,body,N3,深く息を吸った。,I took a deep breath.,,noun,,very high,LH
+voc1566,休息,きゅうそく,k0439,kyusoku,rest; repose,action,N3,仕事の後は休息が必要だ。,Rest is necessary after work.,,noun,,high,LHHL
+voc1567,願う,ねがう,k0440,negau,to wish; to hope,abstract,N3,成功を願っています。,I wish you success.,,verb,,very high,LHL
+voc1568,願い,ねがい,k0440,negai,wish; desire,abstract,N3,願いが叶った。,My wish came true.,,noun,,very high,LHL
+voc1569,お願い,おねがい,k0440,onegai,please; request,abstract,N3,お願いがあります。,I have a request.,,noun,,very high,LHHL
+voc1570,絵,え,k0441,e,picture; painting,art,N3,子供が絵を描いた。,My child drew a picture.,,noun,,very high,H
+voc1571,絵画,かいが,k0441,kaiga,painting; picture,art,N3,美術館で絵画を鑑賞した。,I appreciated paintings at the art museum.,,noun,,very high,LHL
+voc1572,絵本,えほん,k0441,ehon,picture book,object,N3,子供に絵本を読んであげた。,I read a picture book to my child.,,noun,,very high,LHL
+voc1573,笑う,わらう,k0442,warau,to laugh; to smile,feeling,N3,面白い話を聞いて笑った。,I laughed hearing the funny story.,,verb,,very high,LHL
+voc1574,笑顔,えがお,k0442,egao,smile,feeling,N3,笑顔で接客することが大切だ。,It is important to serve customers with a smile.,,noun,,very high,LHL
+voc1575,微笑む,ほほえむ,k0442,hohoemu,to smile gently,feeling,N3,彼女は優しく微笑んだ。,She smiled gently.,,verb,,high,LHHL
+voc1576,束,たば,k0443,taba,bundle; bunch,object,N3,花束をプレゼントした。,I gave a bouquet as a gift.,,noun,,very high,LH
+voc1577,花束,はなたば,k0443,hanataba,bouquet,object,N3,卒業式で花束をもらった。,I received a bouquet at the graduation ceremony.,,noun,,very high,LHL
+voc1578,約束,やくそく,k0443,yakusoku,promise,abstract,N3,約束を破ってはいけない。,You must not break a promise.,,noun,,very high,LHHL
+voc1579,列,れつ,k0444,retsu,row; line,abstract,N3,列に並んでください。,Please stand in line.,,noun,,very high,LH
+voc1580,行列,ぎょうれつ,k0444,gyoretsu,line; procession,abstract,N3,人気店に長い行列ができていた。,There was a long line at the popular restaurant.,,noun,,very high,LHHL
+voc1581,列車,れっしゃ,k0444,ressha,train,object,N3,列車に乗って旅をした。,I traveled by train.,,noun,,very high,LHL
+voc1582,遊ぶ,あそぶ,k0445,asobu,to play,action,N3,公園で子供たちが遊んでいる。,Children are playing in the park.,,verb,,very high,LHL
+voc1583,遊園地,ゆうえんち,k0445,yuenchi,amusement park,place,N3,遊園地に行って楽しんだ。,I went to the amusement park and had fun.,,noun,,very high,LHHL
+voc1584,遊び,あそび,k0445,asobi,play; game,action,N3,子供の頃の遊びを懐かしく思う。,I miss the games I played as a child.,,noun,,very high,LHL
+voc1585,君,きみ,k0446,kimi,you (informal),people,N3,君はどう思う？,What do you think?,,noun,,very high,LH
+voc1586,君主,くんしゅ,k0446,kunshu,monarch; ruler,people,N3,君主制の国に旅行した。,I traveled to a country with a monarchy.,,noun,,low,LHL
+voc1587,諸君,しょくん,k0446,shokun,everyone; gentlemen,people,N3,諸君に大切な話がある。,I have an important matter to tell everyone.,,noun,,low,LHL
+voc1588,折る,おる,k0447,oru,to fold; to break,action,N3,紙を折って鶴を作った。,I folded paper to make a crane.,,verb,,very high,LH
+voc1589,折り紙,おりがみ,k0447,origami,origami; paper folding,art,N3,折り紙で動物を作った。,I made animals with origami.,,noun,,very high,LHHL
+voc1590,骨折,こっせつ,k0447,kossetsu,bone fracture,health,N3,転んで骨折してしまった。,I fell and fractured a bone.,,noun,,high,LHHL
+voc1591,草,くさ,k0448,kusa,grass; weed,nature,N3,庭の草を抜いた。,I pulled weeds in the garden.,,noun,,very high,LH
+voc1592,草原,そうげん,k0448,sogen,meadow; plain,nature,N3,広い草原を歩いた。,I walked through a wide meadow.,,noun,,medium,LHL
+voc1593,雑草,ざっそう,k0448,zasso,weed,nature,N3,庭の雑草を取り除いた。,I removed the weeds from the garden.,,noun,,high,LHL
+voc1594,お酒,おさけ,k0449,osake,alcohol; sake,food,N3,お酒を飲みすぎないようにしている。,I try not to drink too much alcohol.,,noun,,very high,LHL
+voc1595,日本酒,にほんしゅ,k0449,nihonshu,Japanese sake,food,N3,日本酒を初めて飲んだ。,I drank Japanese sake for the first time.,,noun,,very high,LHHL
+voc1596,居酒屋,いざかや,k0449,izakaya,Japanese pub,place,N3,友達と居酒屋で飲んだ。,I drank with my friends at an izakaya.,,noun,,very high,LHHHL
+voc1597,悲しい,かなしい,k0450,kanashii,sad,feeling,N3,別れが悲しい。,The parting is sad.,,adjective,,very high,LHHL
+voc1598,悲しむ,かなしむ,k0450,kanashimu,to grieve; to feel sad,feeling,N3,友人の死を悲しんだ。,I grieved the death of my friend.,,verb,,high,LHHL
+voc1599,悲劇,ひげき,k0450,higeki,tragedy,abstract,N3,その映画は悲劇で終わった。,The movie ended in tragedy.,,noun,,high,LHL
+voc1600,晴れ,はれ,k0451,hare,clear weather; sunny,nature,N3,明日は晴れの予報だ。,Tomorrow's forecast is sunny.,,noun,,very high,LH
+voc1601,晴れる,はれる,k0451,hareru,to clear up,nature,N3,雨が止んで空が晴れた。,The rain stopped and the sky cleared up.,,verb,,very high,LHL
+voc1602,快晴,かいせい,k0451,kaisei,clear sky,nature,N3,今日は快晴で気持ちがいい。,Today is clear and feels great.,,noun,,high,LHL
+voc1603,陽気,ようき,k0452,yoki,cheerful; merry,description,N3,彼はいつも陽気だ。,He is always cheerful.,,adjective,,high,LHL
+voc1604,太陽光,たいようこう,k0452,taiyoko,sunlight,nature,N3,太陽光を利用した発電が増えている。,Solar power generation is increasing.,,noun,,high,LHHHL
+voc1605,陽光,ようこう,k0452,yoko,sunlight; sunshine,nature,N3,陽光が差し込んで部屋が明るい。,Sunlight is streaming in and the room is bright.,,noun,,medium,LHL
+voc1606,雪,ゆき,k0454,yuki,snow,nature,N3,雪が積もっている。,Snow has piled up.,,noun,,very high,LH
+voc1607,雪だるま,ゆきだるま,k0454,yukidaruma,snowman,object,N3,子供と雪だるまを作った。,I made a snowman with my child.,,noun,,very high,LHHHL
+voc1608,大雪,おおゆき,k0454,oyuki,heavy snow,nature,N3,大雪で交通が乱れた。,Transportation was disrupted by heavy snow.,,noun,,high,LHL
+voc1609,お礼,おれい,k0455,orei,thanks; gratitude,abstract,N3,お礼を言いに行った。,I went to express my thanks.,,noun,,very high,LHL
+voc1610,礼儀,れいぎ,k0455,reigi,manners; courtesy,abstract,N3,礼儀正しい人が好きだ。,I like people with good manners.,,noun,,high,LHL
+voc1611,失礼,しつれい,k0455,shitsurei,rude; excuse me,abstract,N3,失礼なことを言ってしまった。,I said something rude.,,noun,,very high,LHHL
+voc1612,昔,むかし,k0456,mukashi,long ago; old times,time,N3,昔はここに川があった。,Long ago there was a river here.,,noun,,very high,LHL
+voc1613,昔話,むかしばなし,k0456,mukashibanashi,old tale; folklore,art,N3,子供に昔話を聞かせた。,I told my child an old tale.,,noun,,very high,LHHHHL
+voc1614,大昔,おおむかし,k0456,omukashi,ancient times; long ago,time,N3,大昔の化石が発見された。,A fossil from ancient times was discovered.,,noun,,medium,LHHL
+voc1615,泳ぐ,およぐ,k0457,oyogu,to swim,action,N3,海で泳いだ。,I swam in the ocean.,,verb,,very high,LHL
+voc1616,水泳,すいえい,k0457,suiei,swimming,sport,N3,水泳が得意だ。,I'm good at swimming.,,noun,,very high,LHL
+voc1617,遠泳,えんえい,k0457,enei,long-distance swimming,sport,N3,遠泳大会に参加した。,I participated in a long-distance swimming event.,,noun,,low,LHL
+voc1618,鳴く,なく,k0458,naku,to chirp; to cry (animal),nature,N3,鳥が朝から鳴いている。,A bird has been chirping since morning.,,verb,,very high,LH
+voc1619,鳴らす,ならす,k0458,narasu,to ring; to sound,action,N3,ベルを鳴らした。,I rang the bell.,,verb,,high,LHL
+voc1620,鳴き声,なきごえ,k0458,nakigoe,cry; chirp (of animal),nature,N3,虫の鳴き声が聞こえる。,I can hear the chirping of insects.,,noun,,medium,LHHL
+voc1621,箱,はこ,k0459,hako,box,object,N3,贈り物を箱に入れた。,I put the gift in a box.,,noun,,very high,LH
+voc1622,宝箱,たからばこ,k0459,takarabako,treasure box,object,N3,昔の宝箱が見つかった。,An old treasure box was found.,,noun,,medium,LHHHL
+voc1623,箱根,はこね,k0459,hakone,Hakone (place),place,N3,箱根に温泉旅行に行った。,I went to Hakone for a hot spring trip.,,noun,,medium,LHL
+voc1624,才能,さいのう,k0460,saino,talent; gift,abstract,N3,彼には音楽の才能がある。,He has a musical talent.,,noun,,very high,LHHL
+voc1625,天才,てんさい,k0460,tensai,genius,abstract,N3,彼は数学の天才だ。,He is a mathematical genius.,,noun,,very high,LHL
+voc1626,才,さい,k0460,sai,years old; talent,abstract,N3,十八才で成人になった。,I became an adult at eighteen.,,noun,,very high,H
+voc1627,政治,せいじ,k0461,seiji,politics,society,N3,政治に関心を持つことが大切だ。,It is important to take an interest in politics.,,noun,,very high,LH
+voc1628,政府,せいふ,k0461,seifu,government,society,N3,政府が新しい政策を発表した。,The government announced a new policy.,,noun,,very high,LH
+voc1629,政策,せいさく,k0461,seisaku,policy; measure,society,N3,環境政策が重要だ。,Environmental policy is important.,,noun,,very high,LHL
+voc1630,経験,けいけん,k0462,keiken,experience,abstract,N3,様々な経験を積んだ。,I gained various experiences.,,noun,,very high,LHL
+voc1631,経済,けいざい,k0462,keizai,economy; economics,economy,N3,経済が成長している。,The economy is growing.,,noun,,very high,LHL
+voc1632,経営,けいえい,k0462,keiei,management; administration,work,N3,会社の経営が難しい。,Managing a company is difficult.,,noun,,very high,LHL
+voc1633,現在,げんざい,k0463,genzai,present; currently,time,N3,現在どこに住んでいますか？,Where do you currently live?,,noun,,very high,LHL
+voc1634,現実,げんじつ,k0463,genjitsu,reality; actuality,abstract,N3,夢と現実の違いがある。,There is a difference between dreams and reality.,,noun,,very high,LHHL
+voc1635,現場,げんば,k0463,genba,site; scene,place,N3,事故現場に警察が来た。,Police came to the accident scene.,,noun,,very high,LH
+voc1636,性格,せいかく,k0464,seikaku,personality; character,abstract,N3,彼は明るい性格だ。,He has a cheerful personality.,,noun,,very high,LHL
+voc1637,性質,せいしつ,k0464,seishitsu,nature; quality,abstract,N3,人の性質はなかなか変わらない。,People's nature rarely changes.,,noun,,high,LHL
+voc1638,女性,じょせい,k0464,josei,woman; female,people,N3,女性の社会進出が進んでいる。,Women's advancement in society is progressing.,,noun,,very high,LHL
+voc1639,制度,せいど,k0465,seido,system; institution,society,N3,教育制度を改革する必要がある。,The education system needs to be reformed.,,noun,,very high,LH
+voc1640,規制,きせい,k0465,kisei,regulation; control,society,N3,新しい規制が導入された。,New regulations were introduced.,,noun,,very high,LHL
+voc1641,体制,たいせい,k0465,taisei,system; regime,society,N3,政治体制が変わった。,The political system changed.,,noun,,high,LHL
+voc1642,務める,つとめる,k0466,tsutomeru,to serve; to work,work,N3,会長を務めている。,I serve as chairman.,,verb,,very high,LHHL
+voc1643,義務,ぎむ,k0466,gimu,duty; obligation,abstract,N3,投票は国民の義務だ。,Voting is the duty of citizens.,,noun,,very high,LH
+voc1644,事務,じむ,k0466,jimu,office work; clerical work,work,N3,事務作業が多くて大変だ。,There is so much office work it's tough.,,noun,,very high,LH
+voc1645,権利,けんり,k0467,kenri,right; privilege,society,N3,基本的人権を守ることが大切だ。,It is important to protect basic human rights.,,noun,,very high,LH
+voc1646,権力,けんりょく,k0467,kenryoku,power; authority,society,N3,権力の乱用は許されない。,Abuse of power is not permitted.,,noun,,very high,LHHL
+voc1647,人権,じんけん,k0467,jinken,human rights,society,N3,人権を尊重する社会を目指す。,We aim for a society that respects human rights.,,noun,,very high,LHL
+voc1648,支える,ささえる,k0468,sasaeru,to support; to hold up,action,N3,家族を支えるために働いている。,I work to support my family.,,verb,,very high,LHHL
+voc1649,支持,しじ,k0468,shiji,support; backing,abstract,N3,市民の支持を得た。,I gained the support of the citizens.,,noun,,very high,LH
+voc1650,支払い,しはらい,k0468,shiharai,payment,money,N3,支払いはカードでできますか？,Can I pay by card?,,noun,,very high,LHHL
+voc1651,情報,じょうほう,k0469,joho,information,abstract,N3,最新の情報を確認した。,I checked the latest information.,,noun,,very high,LHHL
+voc1652,報道,ほうどう,k0469,hodo,news coverage; reporting,abstract,N3,メディアの報道を見た。,I watched media coverage.,,noun,,very high,LHL
+voc1653,報告,ほうこく,k0469,hokoku,report; notification,action,N3,上司に進捗を報告した。,I reported the progress to my boss.,,noun,,very high,LHHL
+voc1654,済む,すむ,k0470,sumu,to be finished; to get by,action,N3,仕事が済んだら連絡して。,Contact me when work is finished.,,verb,,very high,LH
+voc1655,返済,へんさい,k0470,hensai,repayment; reimbursement,money,N3,ローンの返済が終わった。,Loan repayment is complete.,,noun,,high,LHL
+voc1656,決済,けっさい,k0470,kessai,settlement; payment,money,N3,オンラインで決済した。,I made payment online.,,noun,,high,LHL
+voc1657,解決,かいけつ,k0471,kaiketsu,solution; resolution,abstract,N3,問題が解決した。,The problem was solved.,,noun,,very high,LHHL
+voc1658,理解,りかい,k0471,rikai,understanding; comprehension,abstract,N3,相手の立場を理解することが大切だ。,It is important to understand the other person's position.,,noun,,very high,LHL
+voc1659,解説,かいせつ,k0471,kaisetsu,explanation; commentary,abstract,N3,専門家が詳しく解説した。,An expert gave a detailed explanation.,,noun,,high,LHHL
+voc1660,資料,しりょう,k0472,shiryo,material; document,abstract,N3,会議の資料を準備した。,I prepared materials for the meeting.,,noun,,very high,LHL
+voc1661,資金,しきん,k0472,shikin,funds; capital,money,N3,プロジェクトの資金を集めた。,I raised funds for the project.,,noun,,very high,LH
+voc1662,資源,しげん,k0472,shigen,resources,nature,N3,天然資源を大切にしなければならない。,We must cherish natural resources.,,noun,,very high,LHL
+voc1663,際,きわ,k0473,kiwa,edge; brink,abstract,N3,海の際に立った。,I stood at the water's edge.,,noun,,high,LH
+voc1664,国際,こくさい,k0473,kokusai,international,society,N3,国際的な問題に取り組んでいる。,I am working on international issues.,,noun,,very high,LHHL
+voc1665,実際,じっさい,k0473,jissai,actually; in practice,abstract,N3,実際に試してみた。,I actually tried it.,,adverb,,very high,LHHL
+voc1666,判断,はんだん,k0474,handan,judgment; decision,abstract,N3,冷静に判断することが大切だ。,It is important to make calm judgments.,,noun,,very high,LHHL
+voc1667,判明,はんめい,k0474,hanmei,becoming clear,abstract,N3,原因が判明した。,The cause became clear.,,noun,,medium,LHHL
+voc1668,裁判,さいばん,k0474,saiban,trial; court case,society,N3,裁判で無罪が証明された。,Innocence was proven in the trial.,,noun,,very high,LHL
+voc1669,認める,みとめる,k0475,mitomeru,to acknowledge; to admit,abstract,N3,自分の間違いを認めた。,I admitted my own mistake.,,verb,,very high,LHHL
+voc1670,確認,かくにん,k0475,kakunin,confirmation; verification,action,N3,予約を確認してください。,Please confirm the reservation.,,noun,,very high,LHHL
+voc1671,認識,にんしき,k0475,ninshiki,recognition; awareness,abstract,N3,問題の認識が大切だ。,Awareness of the problem is important.,,noun,,high,LHHL
+voc1672,在宅,ざいたく,k0476,zaitaku,being at home; working from home,abstract,N3,在宅勤務ができる会社に入った。,I joined a company where I can work from home.,,noun,,very high,LHL
+voc1673,存在,そんざい,k0476,sonzai,existence; being,abstract,N3,彼の存在が大きな支えになった。,His existence was a great support.,,noun,,very high,LHHL
+voc1674,在学,ざいがく,k0476,zaigaku,being enrolled; attending school,education,N3,在学中に研究を進めた。,I advanced my research while enrolled.,,noun,,medium,LHL
+voc1675,事件,じけん,k0477,jiken,incident; event,society,N3,不思議な事件が起きた。,A mysterious incident occurred.,,noun,,very high,LHL
+voc1676,条件,じょうけん,k0477,joken,condition; requirement,abstract,N3,仕事の条件を確認した。,I confirmed the job requirements.,,noun,,very high,LHHL
+voc1677,件数,けんすう,k0477,kensu,number of cases,abstract,N3,事故の件数が増えている。,The number of accidents is increasing.,,noun,,medium,LHL
+voc1678,任せる,まかせる,k0478,makaseru,to entrust; to leave to,action,N3,仕事を部下に任せた。,I entrusted the work to my subordinate.,,verb,,very high,LHHL
+voc1679,責任,せきにん,k0478,sekinin,responsibility,abstract,N3,責任を持って仕事をする。,I do my work with responsibility.,also uses k0530,noun,,very high,LHHL
+voc1680,任務,にんむ,k0478,ninmu,mission; duty,abstract,N3,任務を完了した。,I completed the mission.,,noun,,high,LHL
+voc1681,論文,ろんぶん,k0479,ronbun,thesis; paper,education,N3,卒業論文を書いている。,I am writing my graduation thesis.,,noun,,very high,LHHL
+voc1682,議論,ぎろん,k0479,giron,discussion; debate,abstract,N3,問題について議論した。,We debated the problem.,,noun,,very high,LHL
+voc1683,理論,りろん,k0479,riron,theory,abstract,N3,新しい理論を提唱した。,I proposed a new theory.,,noun,,high,LHL
+voc1684,増える,ふえる,k0480,fueru,to increase,action,N3,人口が増えている。,The population is increasing.,,verb,,very high,LHL
+voc1685,増加,ぞうか,k0480,zoka,increase,abstract,N3,交通事故が増加している。,Traffic accidents are increasing.,,noun,,high,LHL
+voc1686,増大,ぞうだい,k0480,zodai,growth; expansion,abstract,N3,需要が増大している。,Demand is growing.,,noun,,medium,LHL
+voc1687,感情,かんじょう,k0481,kanjo,emotion; feeling,feeling,N3,感情を抑えるのが難しい。,It's hard to suppress emotions.,,noun,,very high,LHHL
+voc1688,情報,じょうほう,k0481,joho,information; news,abstract,N3,情報を集めて分析した。,I collected and analyzed information.,,noun,,very high,LHHL
+voc1689,友情,ゆうじょう,k0481,yujo,friendship,feeling,N3,友情は大切にするものだ。,Friendship is something to be cherished.,,noun,,high,LHHL
+voc1690,示す,しめす,k0482,shimesu,to show; to indicate,action,N3,グラフで結果を示した。,I showed the results in a graph.,,verb,,very high,LHL
+voc1691,指示,しじ,k0482,shiji,instruction; direction,abstract,N3,上司の指示に従った。,I followed my boss's instructions.,,noun,,very high,LH
+voc1692,表示,ひょうじ,k0482,hyoji,display; indication,abstract,N3,画面に情報が表示された。,Information was displayed on the screen.,,noun,,very high,LHL
+voc1693,確かめる,たしかめる,k0483,tashikameru,to confirm; to verify,action,N3,事実を確かめた。,I confirmed the facts.,,verb,,very high,LHHHL
+voc1694,確認,かくにん,k0483,kakunin,confirmation,action,N3,予約の確認をした。,I confirmed the reservation.,,noun,,very high,LHHL
+voc1695,正確,せいかく,k0483,seikaku,accurate; correct,abstract,N3,正確な情報が必要だ。,Accurate information is necessary.,,adjective,,very high,LHL
+voc1696,容赦,ようしゃ,k0484,yosha,forgiveness; mercy,abstract,N3,容赦なく批判された。,I was criticized mercilessly.,,noun,,medium,LHL
+voc1697,内容,ないよう,k0484,naiyo,content; substance,abstract,N3,報告書の内容を確認した。,I confirmed the content of the report.,,noun,,very high,LHHL
+voc1698,容量,ようりょう,k0484,yōryō,capacity; volume,abstract,N3,このバッグの容量は大きい。,This bag has a large capacity.,,noun,,high,LHHL
+voc1699,演奏,えんそう,k0485,enso,musical performance,art,N3,ピアノの演奏を聴いた。,I listened to a piano performance.,,noun,,very high,LHHL
+voc1700,演説,えんぜつ,k0485,enzetsu,speech; address,action,N3,大統領が演説をした。,The president gave a speech.,,noun,,very high,LHHL
+voc1701,演技,えんぎ,k0485,engi,acting; performance,art,N3,彼の演技が素晴らしかった。,His acting was wonderful.,,noun,,very high,LHHL
+voc1702,歳,さい,k0486,sai,years old; age,time,N3,今年三十歳になった。,I turned thirty this year.,,noun,,very high,H
+voc1703,年齢,ねんれい,k0486,nenrei,age,time,N3,年齢を問わず参加できる。,Anyone can participate regardless of age.,,noun,,very high,LHHL
+voc1704,歳月,さいげつ,k0486,saigetsu,years; time,time,N3,歳月が経つのは早い。,The years pass quickly.,,noun,,medium,LHL
+voc1705,能力,のうりょく,k0487,noryoku,ability; capability,abstract,N3,能力を最大限に発揮した。,I demonstrated my ability to the fullest.,,noun,,very high,LHHL
+voc1706,可能,かのう,k0487,kano,possible; feasible,abstract,N3,それは可能ですか？,Is that possible?,,adjective,,very high,LHL
+voc1707,才能,さいのう,k0487,saino,talent; ability,abstract,N3,彼女には絵の才能がある。,She has a talent for painting.,,noun,,very high,LHHL
+voc1708,格差,かくさ,k0488,kakusa,gap; disparity,society,N3,経済的格差が広がっている。,Economic disparity is widening.,,noun,,high,LHL
+voc1709,規格,きかく,k0488,kikaku,standard; specification,abstract,N3,国際規格に合わせて製品を作った。,I made the product according to international standards.,,noun,,high,LHL
+voc1710,価格,かかく,k0488,kakaku,price; value,economy,N3,商品の価格を調べた。,I checked the price of the product.,,noun,,very high,LHL
+voc1711,疑う,うたがう,k0489,utagau,to doubt; to suspect,abstract,N3,彼の話を疑った。,I doubted his story.,,verb,,very high,LHHL
+voc1712,疑問,ぎもん,k0489,gimon,question; doubt,abstract,N3,疑問があれば質問してください。,Please ask if you have any questions.,,noun,,very high,LHL
+voc1713,不思議,ふしぎ,k0489,fushigi,mysterious; wonder,abstract,N3,不思議な出来事が起きた。,A mysterious event occurred.,,adjective,,very high,LHHL
+voc1714,過ぎる,すぎる,k0490,sugiru,to pass; to exceed,action,N3,時間が過ぎるのが早い。,Time passes quickly.,,verb,,very high,LHL
+voc1715,過去,かこ,k0490,kako,past,time,N3,過去のことは忘れよう。,Let's forget about the past.,,noun,,very high,LH
+voc1716,経過,けいか,k0490,keika,passage; progress,time,N3,手術後の経過が良好だ。,Recovery after surgery is going well.,,noun,,very high,LHL
+voc1717,常に,つねに,k0491,tsuneni,always; constantly,abstract,N3,常に前向きな姿勢が大切だ。,A positive attitude is always important.,,adverb,,very high,LHL
+voc1718,日常,にちじょう,k0491,nichijo,everyday; daily life,abstract,N3,日常生活を大切にしている。,I value my daily life.,,noun,,very high,LHHL
+voc1719,非常,ひじょう,k0491,hijo,emergency; very,abstract,N3,非常に重要な問題だ。,This is a very important issue.,,adverb,,very high,LHL
+voc1720,状況,じょうきょう,k0492,jokyo,situation; circumstances,abstract,N3,現在の状況を説明した。,I explained the current situation.,,noun,,very high,LHHL
+voc1721,状態,じょうたい,k0492,jotai,state; condition,abstract,N3,患者の状態が安定している。,The patient's condition is stable.,,noun,,very high,LHHL
+voc1722,症状,しょうじょう,k0492,shojo,symptom,health,N3,風邪の症状が出てきた。,Cold symptoms have appeared.,,noun,,very high,LHHL
+voc1723,職場,しょくば,k0493,shokuba,workplace,work,N3,職場の雰囲気が良い。,The workplace atmosphere is good.,,noun,,very high,LHL
+voc1724,職業,しょくぎょう,k0493,shokugyo,occupation; profession,work,N3,将来の職業について考えた。,I thought about my future occupation.,,noun,,very high,LHHL
+voc1725,職員,しょくいん,k0493,shokuin,staff; employee,people,N3,学校の職員全員が集まった。,All school staff gathered.,,noun,,very high,LHHL
+voc1726,与える,あたえる,k0494,ataeru,to give; to provide,action,N3,子供に機会を与えたい。,I want to give opportunities to children.,,verb,,very high,LHHL
+voc1727,与党,よとう,k0494,yoto,ruling party,society,N3,与党が選挙に勝った。,The ruling party won the election.,,noun,,high,LHL
+voc1728,授与,じゅよ,k0494,juyo,conferment; awarding,abstract,N3,優秀な学生に賞が授与された。,A prize was awarded to the outstanding student.,,noun,,medium,LHL
+voc1729,供給,きょうきゅう,k0495,kyokyu,supply; provision,economy,N3,食料の供給が不足している。,Food supply is insufficient.,,noun,,high,LHHL
+voc1730,提供,ていきょう,k0495,teikyo,provision; offer,action,N3,無料でサービスを提供している。,We provide the service free of charge.,,noun,,very high,LHHL
+voc1731,子供,こども,k0495,kodomo,child,people,N3,子供が公園で遊んでいる。,The child is playing in the park.,,noun,,very high,LHL
+voc1732,構造,こうぞう,k0496,kozo,structure; construction,abstract,N3,建物の構造を調べた。,I investigated the structure of the building.,,noun,,very high,LHHL
+voc1733,機構,きこう,k0496,kiko,mechanism; organization,abstract,N3,国際機構に加盟した。,We joined the international organization.,,noun,,medium,LHL
+voc1734,構える,かまえる,k0496,kamaeru,to set up; to be ready,action,N3,カメラを構えて撮影した。,I held up the camera and took photos.,,verb,,high,LHHL
+voc1735,割る,わる,k0497,waru,to divide; to break,action,N3,皿を割ってしまった。,I broke a plate.,,verb,,very high,LH
+voc1736,割合,わりあい,k0497,wariai,proportion; rate,abstract,N3,合格率の割合を計算した。,I calculated the proportion of the pass rate.,,noun,,very high,LHHL
+voc1737,割引,わりびき,k0497,waribiki,discount,economy,N3,会員は割引が受けられる。,Members can receive discounts.,,noun,,very high,LHHL
+voc1738,難しい,むずかしい,k0498,muzukashii,difficult,description,N3,この問題は難しい。,This problem is difficult.,,adjective,,very high,LHHHL
+voc1739,困難,こんなん,k0498,konnan,difficulty; hardship,abstract,N3,困難な状況を乗り越えた。,I overcame a difficult situation.,,noun,,very high,LHHL
+voc1740,難問,なんもん,k0498,nanmon,difficult question,abstract,N3,難問に挑戦した。,I challenged a difficult question.,,noun,,medium,LHL
+voc1741,優しい,やさしい,k0499,yasashii,kind; gentle,description,N3,彼女はとても優しい。,She is very kind.,,adjective,,very high,LHHL
+voc1742,優秀,ゆうしゅう,k0499,yushu,excellent; outstanding,abstract,N3,優秀な成績で卒業した。,I graduated with excellent grades.,,noun,,very high,LHHL
+voc1743,優先,ゆうせん,k0499,yusen,priority; precedence,abstract,N3,安全を優先してください。,Please give priority to safety.,,noun,,very high,LHHL
+voc1744,収入,しゅうにゅう,k0500,shunyu,income; revenue,money,N3,毎月の収入が安定している。,My monthly income is stable.,,noun,,very high,LHHL
+voc1745,収集,しゅうしゅう,k0500,shushu,collection; gathering,action,N3,切手を収集している。,I collect stamps.,,noun,,high,LHHL
+voc1746,回収,かいしゅう,k0500,kaishu,collection; recovery,action,N3,古紙回収の日に出した。,I put it out on the used paper collection day.,,noun,,high,LHHL
+voc1747,断る,ことわる,k0501,kotowaru,to refuse; to decline,action,N3,誘いを断った。,I declined the invitation.,,verb,,very high,LHHL
+voc1748,判断,はんだん,k0501,handan,judgment; decision,abstract,N3,自分で判断してください。,Please make your own judgment.,,noun,,very high,LHHL
+voc1749,切断,せつだん,k0501,setsudan,cutting; disconnection,action,N3,電源を切断した。,I disconnected the power.,,noun,,medium,LHHL
+voc1750,違う,ちがう,k0502,chigau,to differ; to be wrong,abstract,N3,それは違います。,That is incorrect.,,verb,,very high,LHL
+voc1751,間違い,まちがい,k0502,machigai,mistake; error,abstract,N3,間違いを訂正した。,I corrected the mistake.,,noun,,very high,LHHHL
+voc1752,相違,そうい,k0502,soi,difference; discrepancy,abstract,N3,意見に相違がある。,There is a difference in opinion.,,noun,,medium,LHL
+voc1753,規則,きそく,k0503,kisoku,rule; regulation,society,N3,規則を守ることが大切だ。,It is important to obey the rules.,,noun,,very high,LHL
+voc1754,規模,きぼ,k0503,kibo,scale; size,abstract,N3,大規模なイベントが開催された。,A large-scale event was held.,,noun,,very high,LHL
+voc1755,定規,じょうぎ,k0503,jogi,ruler (measuring tool),object,N3,定規で線を引いた。,I drew a line with a ruler.,,noun,,high,LHL
+voc1756,技術,ぎじゅつ,k0504,gijutsu,technology; skill,abstract,N3,最新の技術を学んだ。,I learned the latest technology.,,noun,,very high,LHL
+voc1757,芸術,げいじゅつ,k0504,geijutsu,art; fine arts,art,N3,芸術に深い関心がある。,I have a deep interest in art.,,noun,,very high,LHHL
+voc1758,手術,しゅじゅつ,k0504,shujutsu,surgery; operation,health,N3,手術は成功した。,The surgery was successful.,,noun,,very high,LHHL
+voc1759,備える,そなえる,k0505,sonaeru,to prepare; to equip,action,N3,災害に備えて準備をした。,I prepared for disasters.,,verb,,very high,LHHL
+voc1760,設備,せつび,k0505,setsubi,equipment; facilities,object,N3,最新の設備が整っている。,The latest equipment is in place.,,noun,,very high,LHL
+voc1761,準備,じゅんび,k0505,junbi,preparation,action,N3,試験の準備をしている。,I am preparing for the exam.,,noun,,very high,LHL
+voc1762,自宅,じたく,k0506,jitaku,one's home,place,N3,自宅で仕事をしている。,I work at home.,,noun,,very high,LHL
+voc1763,宅配,たくはい,k0506,takuhai,home delivery,action,N3,宅配で荷物を送った。,I sent a package by home delivery.,,noun,,very high,LHHL
+voc1764,帰宅,きたく,k0506,kitaku,returning home,action,N3,帰宅したら連絡します。,I'll contact you when I get home.,,noun,,very high,LHL
+voc1765,警告,けいこく,k0507,keikoku,warning; caution,abstract,N3,危険を警告する看板がある。,There is a sign warning of danger.,,noun,,high,LHHL
+voc1766,警察,けいさつ,k0507,keisatsu,police,society,N3,警察に通報した。,I reported it to the police.,,noun,,very high,LHHL
+voc1767,警備,けいび,k0507,keibi,security; guard,society,N3,イベントの警備をした。,I provided security for the event.,,noun,,high,LHL
+voc1768,訪問,ほうもん,k0508,homon,visit,action,N3,お客様が訪問してくださった。,A customer visited us.,,noun,,very high,LHHL
+voc1769,訪れる,おとずれる,k0508,otozureru,to visit; to come,action,N3,春が訪れた。,Spring has come.,,verb,,very high,LHHHHL
+voc1770,来訪,らいほう,k0508,raiho,visit; coming,action,N3,大切なお客様の来訪があった。,An important guest came to visit.,,noun,,medium,LHL
+voc1771,限る,かぎる,k0509,kagiru,to limit; to restrict,action,N3,参加者を二十人に限る。,We limit participants to twenty people.,,verb,,very high,LHL
+voc1772,限界,げんかい,k0509,genkai,limit; boundary,abstract,N3,自分の限界に挑戦した。,I challenged my own limits.,,noun,,very high,LHHL
+voc1773,無限,むげん,k0509,mugen,infinite; limitless,abstract,N3,可能性は無限だ。,The possibilities are infinite.,,noun,,high,LHL
+voc1774,退職,たいしょく,k0510,taishoku,retirement; resignation,work,N3,六十歳で退職する予定だ。,I plan to retire at sixty.,,noun,,very high,LHHL
+voc1775,撤退,てったい,k0510,tettai,withdrawal; retreat,action,N3,軍が撤退した。,The army withdrew.,,noun,,medium,LHHL
+voc1776,後退,こうたい,k0510,kotai,retreat; regression,action,N3,一歩後退して考え直した。,I took a step back and reconsidered.,,noun,,medium,LHL
+voc1777,渡す,わたす,k0511,watasu,to hand over; to give,action,N3,書類を担当者に渡した。,I handed the documents to the person in charge.,,verb,,very high,LHL
+voc1778,渡る,わたる,k0511,wataru,to cross; to go across,action,N3,橋を渡って向こう岸に行った。,I crossed the bridge to the other bank.,,verb,,very high,LHL
+voc1779,渡航,とこう,k0511,toko,traveling abroad,action,N3,海外渡航の準備をした。,I prepared for traveling abroad.,,noun,,medium,LHL
+voc1780,若い,わかい,k0512,wakai,young,description,N3,彼はまだ若い。,He is still young.,,adjective,,very high,LHL
+voc1781,若者,わかもの,k0512,wakamono,young person; youth,people,N3,若者の意見を聞きたい。,I want to hear the opinions of young people.,,noun,,very high,LHHL
+voc1782,若干,じゃっかん,k0512,jakkan,a few; somewhat,abstract,N3,若干の問題がある。,There are a few problems.,,noun,,high,LHL
+voc1783,非常,ひじょう,k0513,hijo,emergency; not normal,abstract,N3,非常口はどこですか？,Where is the emergency exit?,,noun,,very high,LHL
+voc1784,非公開,ひこうかい,k0513,hikōkai,not open to public; private,abstract,N3,その情報は非公開だ。,That information is not public.,,noun,,medium,LHHHL
+voc1785,非難,ひなん,k0513,hinan,criticism; blame,abstract,N3,彼の行動が非難された。,His actions were criticized.,,noun,,high,LHL
+voc1786,段階,だんかい,k0514,dankai,stage; step,abstract,N3,プロジェクトは次の段階に入った。,The project entered the next stage.,,noun,,very high,LHHL
+voc1787,手段,しゅだん,k0514,shudan,means; method,abstract,N3,目的のためにあらゆる手段を使った。,I used every means for the purpose.,,noun,,very high,LHL
+voc1788,段落,だんらく,k0514,danraku,paragraph,abstract,N3,文章を段落に分けた。,I divided the text into paragraphs.,,noun,,medium,LHHL
+voc1789,財産,ざいさん,k0515,zaisan,property; assets,money,N3,財産を守ることが大切だ。,It is important to protect one's assets.,,noun,,very high,LHL
+voc1790,財政,ざいせい,k0515,zaisei,finance; budget,money,N3,国の財政が厳しい。,The country's finances are tight.,,noun,,high,LHL
+voc1791,財布,さいふ,k0515,saifu,wallet; purse,object,N3,財布を落としてしまった。,I dropped my wallet.,,noun,,very high,LHL
+voc1792,意識,いしき,k0516,ishiki,consciousness; awareness,abstract,N3,問題意識を持つことが大切だ。,It is important to be aware of problems.,,noun,,very high,LHL
+voc1793,知識,ちしき,k0516,chishiki,knowledge,abstract,N3,幅広い知識を持っている。,I have wide-ranging knowledge.,,noun,,very high,LHL
+voc1794,常識,じょうしき,k0516,joshiki,common sense,abstract,N3,常識的な判断をした。,I made a common-sense judgment.,,noun,,very high,LHHL
+voc1795,呼ぶ,よぶ,k0517,yobu,to call; to invite,action,N3,名前を呼ばれた。,My name was called.,,verb,,very high,LH
+voc1796,呼びかける,よびかける,k0517,yobikakeru,to call out; to appeal,action,N3,市民に協力を呼びかけた。,I appealed to citizens for cooperation.,,verb,,high,LHHHHL
+voc1797,深呼吸,しんこきゅう,k0517,shinkokyu,deep breathing,health,N3,深呼吸してリラックスした。,I took deep breaths and relaxed.,also uses k0391,noun,,high,LHHHL
+voc1798,程度,ていど,k0518,teido,degree; extent,abstract,N3,どの程度できますか？,To what degree can you do it?,,noun,,very high,LHL
+voc1799,過程,かてい,k0518,katei,process; course,abstract,N3,解決の過程を説明した。,I explained the process of resolution.,,noun,,high,LHL
+voc1800,日程,にってい,k0518,nittei,schedule; itinerary,time,N3,旅行の日程を決めた。,I decided the travel itinerary.,,noun,,very high,LHL
+voc1801,価値,かち,k0519,kachi,value; worth,abstract,N3,この絵の価値は高い。,The value of this painting is high.,,noun,,very high,LHL
+voc1802,数値,すうち,k0519,suchi,numerical value,abstract,N3,測定の数値を記録した。,I recorded the measurement values.,,noun,,high,LHL
+voc1803,値段,ねだん,k0519,nedan,price; cost,economy,N3,この商品の値段はいくらですか？,How much is the price of this product?,,noun,,very high,LHL
+voc1804,突然,とつぜん,k0520,totsuzen,suddenly; unexpectedly,abstract,N3,突然雨が降ってきた。,It suddenly started raining.,,adverb,,very high,LHHL
+voc1805,突破,とっぱ,k0520,toppa,breakthrough; breaking through,action,N3,難関を突破した。,I broke through the difficult barrier.,,noun,,high,LHL
+voc1806,衝突,しょうとつ,k0520,shototsu,collision; clash,action,N3,二台の車が衝突した。,Two cars collided.,,noun,,high,LHHL
+voc1807,処理,しょり,k0521,shori,processing; handling,action,N3,データを処理した。,I processed the data.,,noun,,very high,LHL
+voc1808,処分,しょぶん,k0521,shobun,disposal; punishment,action,N3,不要なものを処分した。,I disposed of unnecessary things.,,noun,,high,LHL
+voc1809,対処,たいしょ,k0521,taisho,dealing with; coping,action,N3,問題に対処した。,I dealt with the problem.,,noun,,high,LHL
+voc1810,否定,ひてい,k0522,hitei,denial; negation,abstract,N3,その事実を否定できない。,I cannot deny that fact.,,noun,,high,LHL
+voc1811,否決,ひけつ,k0522,hiketsu,rejection; veto,abstract,N3,提案が否決された。,The proposal was rejected.,,noun,,medium,LHL
+voc1812,拒否,きょひ,k0522,kyohi,refusal; rejection,action,N3,要求を拒否した。,I refused the demand.,,noun,,high,LH
+voc1813,医師,いし,k0523,ishi,physician; doctor,people,N3,医師に相談した。,I consulted a physician.,,noun,,very high,LH
+voc1814,教師,きょうし,k0523,kyoshi,teacher,people,N3,教師として働いている。,I work as a teacher.,,noun,,very high,LHL
+voc1815,師匠,ししょう,k0523,shisho,master; teacher,people,N3,師匠から技術を学んだ。,I learned techniques from my master.,,noun,,medium,LHL
+voc1816,容易,ようい,k0524,yoi,easy; simple,abstract,N3,この問題は容易に解決できる。,This problem can be easily solved.,,adjective,,high,LHL
+voc1817,貿易,ぼうえき,k0524,boeki,trade; commerce,economy,N3,国際貿易が活発だ。,International trade is active.,,noun,,very high,LHL
+voc1818,安易,あんい,k0524,ani,easy; facile,abstract,N3,安易な解決策は危険だ。,An easy solution is dangerous.,,adjective,,medium,LHL
+voc1819,存在,そんざい,k0525,sonzai,existence,abstract,N3,神の存在を信じる。,I believe in the existence of God.,,noun,,very high,LHHL
+voc1820,保存,ほぞん,k0525,hozon,preservation; saving,action,N3,データを保存した。,I saved the data.,,noun,,very high,LHL
+voc1821,現存,げんぞん,k0525,genzon,existing; extant,abstract,N3,現存する最古の建物だ。,It is the oldest existing building.,,noun,,medium,LHHL
+voc1822,座る,すわる,k0526,suwaru,to sit down,action,N3,椅子に座ってください。,Please sit in the chair.,,verb,,very high,LHL
+voc1823,座席,ざせき,k0526,zaseki,seat,place,N3,飛行機の座席を予約した。,I reserved an airplane seat.,,noun,,very high,LHL
+voc1824,星座,せいざ,k0526,seiza,constellation,nature,N3,夜空の星座を観察した。,I observed the constellations in the night sky.,,noun,,high,LHL
+voc1825,破る,やぶる,k0527,yaburu,to tear; to break,action,N3,記録を破った。,I broke the record.,,verb,,very high,LHL
+voc1826,破壊,はかい,k0527,hakai,destruction,action,N3,建物が破壊された。,The building was destroyed.,,noun,,high,LHL
+voc1827,突破,とっぱ,k0527,toppa,breakthrough,action,N3,予算の壁を突破した。,I broke through the budget barrier.,,noun,,high,LHL
+voc1828,除く,のぞく,k0528,nozoku,to exclude; to remove,action,N3,不要なものを除いた。,I removed unnecessary things.,,verb,,very high,LHL
+voc1829,除外,じょがい,k0528,jogai,exclusion; exception,abstract,N3,この規則から除外された。,I was excluded from this rule.,,noun,,medium,LHHL
+voc1830,解除,かいじょ,k0528,kaijo,cancellation; lifting (ban),action,N3,禁止令が解除された。,The ban was lifted.,,noun,,high,LHL
+voc1831,降る,ふる,k0529,furu,to fall (rain/snow),nature,N3,雨が降っている。,It is raining.,,verb,,very high,LH
+voc1832,降りる,おりる,k0529,oriru,to get off; to descend,action,N3,次の駅で降りる。,I get off at the next station.,,verb,,very high,LHL
+voc1833,下降,かこう,k0529,kako,descent; decrease,abstract,N3,気温が下降している。,The temperature is falling.,,noun,,medium,LHL
+voc1834,責任,せきにん,k0530,sekinin,responsibility,abstract,N3,責任を果たすことが大切だ。,It is important to fulfill one's responsibility.,,noun,,very high,LHHL
+voc1835,責める,せめる,k0530,semeru,to blame; to criticize,action,N3,自分を責めないでください。,Please don't blame yourself.,,verb,,high,LHL
+voc1836,自責,じせき,k0530,jiseki,self-reproach,abstract,N3,失敗して自責の念にかられた。,I was tormented by self-reproach after failing.,,noun,,medium,LHL
+voc1837,捕まえる,つかまえる,k0531,tsukamaeru,to catch; to capture,action,N3,泥棒を捕まえた。,I caught the thief.,,verb,,very high,LHHHL
+voc1838,逮捕,たいほ,k0531,taiho,arrest,society,N3,犯人が逮捕された。,The criminal was arrested.,,noun,,high,LHL
+voc1839,捕獲,ほかく,k0531,hokaku,capture; catch,action,N3,野生動物を捕獲した。,I captured a wild animal.,,noun,,medium,LHL
+voc1840,危険,きけん,k0532,kiken,danger; risk,abstract,N3,危険な場所には近づかないでください。,Please don't go near dangerous places.,,noun,,very high,LHL
+voc1841,危機,きき,k0532,kiki,crisis; emergency,abstract,N3,経済危機が起きた。,An economic crisis occurred.,,noun,,very high,LH
+voc1842,危険性,きけんせい,k0532,kikisei,danger level; risk,abstract,N3,その薬の危険性を調べた。,I investigated the risk of that medicine.,,noun,,high,LHHHL
+voc1843,迎える,むかえる,k0533,mukaeru,to welcome; to meet,action,N3,空港に友人を迎えに行った。,I went to the airport to meet my friend.,,verb,,very high,LHHL
+voc1844,歓迎,かんげい,k0533,kangei,welcome,action,N3,温かく歓迎された。,I was warmly welcomed.,,noun,,very high,LHHL
+voc1845,出迎え,でむかえ,k0533,demukae,meeting; welcoming,action,N3,空港で出迎えをした。,I went to meet someone at the airport.,,noun,,high,LHHL
+voc1846,原因,げんいん,k0534,genin,cause; reason,abstract,N3,事故の原因は不明だ。,The cause of the accident is unknown.,,noun,,very high,LHL
+voc1847,要因,よういん,k0534,yoin,factor; cause,abstract,N3,成功の要因を分析した。,I analyzed the factors of success.,,noun,,high,LHL
+voc1848,起因,きいん,k0534,kiin,cause; origin,abstract,N3,問題の起因を調べた。,I investigated the origin of the problem.,,noun,,low,LHL
+voc1849,富む,とむ,k0535,tomu,to be rich in; to abound in,abstract,N3,この地域は自然に富んでいる。,This region is rich in nature.,,verb,,high,LH
+voc1850,富裕,ふゆう,k0535,fuyu,wealthy; affluent,abstract,N3,富裕層の割合が増えている。,The proportion of wealthy people is increasing.,,noun,,medium,LHL
+voc1851,豊富,ほうふ,k0535,hofu,abundant; rich,abstract,N3,この地域は食材が豊富だ。,This region has abundant ingredients.,,adjective,,high,LHL
+voc1852,彼,かれ,k0536,kare,he; him; boyfriend,people,N3,彼は親切な人だ。,He is a kind person.,,noun,,very high,LH
+voc1853,彼女,かのじょ,k0536,kanojo,she; her; girlfriend,people,N3,彼女と映画を見た。,I watched a movie with her.,,noun,,very high,LHL
+voc1854,彼ら,かれら,k0536,karera,they (male/mixed),people,N3,彼らは友達だ。,They are friends.,,noun,,very high,LHL
+voc1855,舞台,ぶたい,k0537,butai,stage; setting,art,N3,舞台に立つのが夢だ。,My dream is to stand on the stage.,,noun,,very high,LHL
+voc1856,舞踊,ぶよう,k0537,buyo,dance; dancing,art,N3,日本舞踊を習っている。,I'm learning Japanese dance.,,noun,,medium,LHL
+voc1857,舞う,まう,k0537,mau,to dance; to flutter,art,N3,蝶が花の周りを舞っている。,A butterfly is fluttering around the flowers.,,verb,,high,LH
+voc1858,死亡,しぼう,k0538,shibo,death,abstract,N3,事故で死亡した。,They died in the accident.,,noun,,very high,LHL
+voc1859,亡くなる,なくなる,k0538,nakunaru,to pass away; to die,abstract,N3,祖父が亡くなった。,My grandfather passed away.,,verb,,very high,LHHL
+voc1860,逃亡,とうぼう,k0538,tobo,escape; flight,action,N3,犯人が逃亡した。,The criminal escaped.,,noun,,high,LHL
+voc1861,適切,てきせつ,k0539,tekisetsu,appropriate; suitable,abstract,N3,適切な対応をした。,I took an appropriate response.,,adjective,,very high,LHHL
+voc1862,適応,てきおう,k0539,tekio,adaptation; adjustment,abstract,N3,新しい環境に適応した。,I adapted to the new environment.,,noun,,high,LHHL
+voc1863,快適,かいてき,k0539,kaiteki,comfortable; pleasant,abstract,N3,快適な環境で仕事したい。,I want to work in a comfortable environment.,,adjective,,very high,LHL
+voc1864,主婦,しゅふ,k0540,shufu,housewife,people,N3,主婦として家事をしている。,I do housework as a housewife.,,noun,,very high,LH
+voc1865,婦人,ふじん,k0540,fujin,woman; lady,people,N3,婦人向けの商品が多い。,There are many products for women.,,noun,,high,LHL
+voc1866,夫婦,ふうふ,k0540,fufu,married couple,people,N3,二人は仲の良い夫婦だ。,The two are a happily married couple.,,noun,,very high,LHH
+voc1867,寄る,よる,k0541,yoru,to approach; to stop by,action,N3,帰りにコンビニに寄った。,I stopped by a convenience store on the way home.,,verb,,very high,LH
+voc1868,寄付,きふ,k0541,kifu,donation; contribution,action,N3,慈善団体に寄付をした。,I made a donation to a charity.,,noun,,very high,LH
+voc1869,寄り道,よりみち,k0541,yorimichi,detour; stopping along the way,action,N3,帰り道に公園に寄り道した。,I made a detour to the park on the way home.,,noun,,medium,LHHL
+voc1870,込む,こむ,k0542,komu,to be crowded; to be packed,action,N3,電車が混んでいる。,The train is crowded.,,verb,,very high,LH
+voc1871,申し込む,もうしこむ,k0542,moshikomu,to apply; to sign up,action,N3,講座に申し込んだ。,I signed up for the course.,,verb,,very high,LHHHHL
+voc1872,込み合う,こみあう,k0542,komiau,to be crowded,action,N3,週末は駅が込み合う。,The station is crowded on weekends.,,verb,,medium,LHHL
+voc1873,余る,あまる,k0543,amaru,to be left over; to remain,action,N3,食べ物が余った。,Food was left over.,,verb,,very high,LHL
+voc1874,余裕,よゆう,k0543,yoyu,margin; leeway,abstract,N3,時間的余裕がある。,I have time to spare.,,noun,,very high,LHL
+voc1875,余計,よけい,k0543,yokei,extra; unnecessary,abstract,N3,余計なことを言ってしまった。,I said something unnecessary.,,adjective,,high,LHL
+voc1876,妻,つま,k0544,tsuma,wife,people,N3,妻と一緒に旅行した。,I traveled with my wife.,,noun,,very high,LH
+voc1877,夫妻,ふさい,k0544,fusai,husband and wife; couple,people,N3,田中夫妻が来た。,Mr. and Mrs. Tanaka came.,,noun,,high,LHL
+voc1878,妻子,さいし,k0544,saishi,wife and children,people,N3,妻子のために働いている。,I work for my wife and children.,,noun,,medium,LH
+voc1879,背中,せなか,k0545,senaka,back (of body),body,N3,背中が痛い。,My back hurts.,,noun,,very high,LHL
+voc1880,背景,はいけい,k0545,haikei,background; setting,abstract,N3,問題の背景を理解した。,I understood the background of the problem.,,noun,,very high,LHL
+voc1881,背が高い,せがたかい,k0545,se ga takai,tall,description,N3,彼はとても背が高い。,He is very tall.,,expression,,very high,LHLHL
+voc1882,険しい,けわしい,k0546,kewashii,steep; rugged,nature,N3,険しい山道を登った。,I climbed the steep mountain path.,,adjective,,medium,LHHL
+voc1883,保険,ほけん,k0546,hoken,insurance,money,N3,保険に入っている。,I have insurance.,,noun,,very high,LHL
+voc1884,危険,きけん,k0546,kiken,danger,abstract,N3,険しい崖は危険だ。,A steep cliff is dangerous.,,noun,,very high,LHL
+voc1885,頼む,たのむ,k0547,tanomu,to ask; to request,action,N3,手伝いを頼んだ。,I asked for help.,,verb,,very high,LHL
+voc1886,頼りになる,たよりになる,k0547,tayori ni naru,to be reliable,action,N3,彼は頼りになる人だ。,He is a reliable person.,,expression,,high,LHHLHL
+voc1887,信頼,しんらい,k0547,shinrai,trust; reliance,abstract,N3,信頼関係を築いた。,I built a relationship of trust.,,noun,,very high,LHL
+voc1888,途中,とちゅう,k0548,tochu,midway; on the way,time,N3,途中で疲れてしまった。,I got tired midway.,,noun,,very high,LHL
+voc1889,途上,とじょう,k0548,tojo,on the way; in progress,abstract,N3,発展途上の国に旅した。,I traveled to a developing country.,,noun,,medium,LHL
+voc1890,用途,ようと,k0548,yoto,use; application,abstract,N3,この道具の用途を説明した。,I explained the use of this tool.,,noun,,medium,LHL
+voc1891,許す,ゆるす,k0549,yurusu,to forgive; to permit,action,N3,彼の間違いを許した。,I forgave his mistake.,,verb,,very high,LHL
+voc1892,許可,きょか,k0549,kyoka,permission; approval,abstract,N3,入場許可をもらった。,I received permission to enter.,,noun,,very high,LHL
+voc1893,免許,めんきょ,k0549,menkyo,license; permit,abstract,N3,運転免許を取った。,I got a driver's license.,,noun,,very high,LHL
+voc1894,抜く,ぬく,k0550,nuku,to pull out; to extract,action,N3,雑草を抜いた。,I pulled out weeds.,,verb,,very high,LH
+voc1895,抜け出す,ぬけだす,k0550,nukedasu,to slip out; to escape,action,N3,困難な状況から抜け出した。,I escaped from the difficult situation.,,verb,,high,LHHHL
+voc1896,選び抜く,えらびぬく,k0550,erabinuku,to carefully select; to pick out,action,N3,最高の選手を選び抜いた。,I carefully selected the best players.,,verb,,medium,LHHHHL
+voc1897,留学,りゅうがく,k0551,ryugaku,studying abroad,education,N3,アメリカに留学した。,I studied abroad in America.,,noun,,very high,LHHL
+voc1898,留まる,とどまる,k0551,todomaru,to stay; to remain,action,N3,その場に留まった。,I stayed in that place.,,verb,,high,LHHL
+voc1899,書き留める,かきとめる,k0551,kakitomeru,to write down; to note,action,N3,重要な情報を書き留めた。,I wrote down important information.,,verb,,medium,LHHHHL
+voc1900,罪,つみ,k0552,tsumi,sin; crime,abstract,N3,罪を犯してしまった。,I committed a crime.,,noun,,very high,LH
+voc1901,罪悪感,ざいあくかん,k0552,zaiakukan,sense of guilt,feeling,N3,罪悪感を感じた。,I felt a sense of guilt.,,noun,,medium,LHHHL
+voc1902,無罪,むざい,k0552,muzai,innocence; not guilty,abstract,N3,裁判で無罪になった。,I was found not guilty in court.,,noun,,high,LHL
+voc1903,精神,せいしん,k0553,seishin,spirit; mind,abstract,N3,精神力が大切だ。,Mental strength is important.,,noun,,very high,LHL
+voc1904,精巧,せいこう,k0553,seiko,elaborate; exquisite,abstract,N3,精巧な機械を作った。,I made an elaborate machine.,,adjective,,low,LHL
+voc1905,精一杯,せいいっぱい,k0553,sei ippai,with all one's might,abstract,N3,精一杯努力した。,I made every effort.,,adverb,,high,LHHHL
+voc1906,結婚,けっこん,k0554,kekkon,marriage,abstract,N3,来年結婚する予定だ。,I plan to get married next year.,,noun,,very high,LHHL
+voc1907,離婚,りこん,k0554,rikon,divorce,abstract,N3,二人は離婚した。,The two got divorced.,,noun,,high,LHL
+voc1908,婚約,こんやく,k0554,konyaku,engagement (to be married),abstract,N3,婚約指輪を贈った。,I gave an engagement ring.,,noun,,high,LHHL
+voc1909,浮かぶ,うかぶ,k0555,ukabu,to float; to come to mind,nature,N3,アイデアが浮かんだ。,An idea came to mind.,,verb,,very high,LHL
+voc1910,浮く,うく,k0555,uku,to float,nature,N3,木が水に浮いている。,Wood is floating on the water.,,verb,,very high,LH
+voc1911,浮気,うわき,k0555,uwaki,infidelity; flirtation,abstract,N3,浮気は信頼を壊す。,Infidelity destroys trust.,,noun,,medium,LHL
+voc1912,絶える,たえる,k0556,taeru,to die out; to cease,action,N3,その言語が絶えた。,That language died out.,,verb,,medium,LHL
+voc1913,絶対,ぜったい,k0556,zettai,absolute; definitely,abstract,N3,絶対に成功する。,I will definitely succeed.,,adverb,,very high,LHHL
+voc1914,絶滅,ぜつめつ,k0556,zetsumetsu,extinction,nature,N3,その動物は絶滅した。,That animal became extinct.,,noun,,high,LHHL
+voc1915,押す,おす,k0557,osu,to push; to press,action,N3,ボタンを押してください。,Please push the button.,,verb,,very high,LH
+voc1916,押しつける,おしつける,k0557,oshitsukeru,to impose; to force on,action,N3,意見を押しつけないでください。,Please don't impose your opinions.,,verb,,medium,LHHHHL
+voc1917,押印,おういん,k0557,oin,stamping; affixing seal,action,N3,書類に押印した。,I stamped the documents.,,noun,,medium,LHL
+voc1918,倒れる,たおれる,k0558,taoreru,to fall down; to collapse,action,N3,疲れて倒れてしまった。,I collapsed from exhaustion.,,verb,,very high,LHHL
+voc1919,倒す,たおす,k0558,taosu,to knock down; to defeat,action,N3,敵チームを倒した。,I defeated the opposing team.,,verb,,very high,LHL
+voc1920,打倒,だとう,k0558,dato,overthrow; defeat,action,N3,チャンピオンを打倒することが目標だ。,My goal is to defeat the champion.,,noun,,medium,LHL
+voc1921,払う,はらう,k0559,harau,to pay; to brush off,action,N3,料金を払った。,I paid the fee.,,verb,,very high,LHL
+voc1922,支払い,しはらい,k0559,shiharai,payment,money,N3,支払いが遅れた。,Payment was delayed.,,noun,,very high,LHHL
+voc1923,払い戻し,はらいもどし,k0559,haraimodoshi,refund; reimbursement,money,N3,払い戻しの手続きをした。,I went through the refund procedure.,,noun,,high,LHHHL
+voc1924,勤める,つとめる,k0560,tsutomeru,to work; to be employed,work,N3,銀行に勤めている。,I work at a bank.,,verb,,very high,LHHL
+voc1925,勤勉,きんべん,k0560,kinben,diligent; hardworking,abstract,N3,勤勉な人は成功する。,A diligent person will succeed.,,adjective,,high,LHL
+voc1926,通勤,つうきん,k0560,tsukin,commuting to work,work,N3,毎日電車で通勤している。,I commute by train every day.,,noun,,very high,LHHL
+voc1927,遅い,おそい,k0561,osoi,late; slow,description,N3,今日は仕事が遅くなった。,Work ran late today.,,adjective,,very high,LHL
+voc1928,遅刻,ちこく,k0561,chikoku,being late; tardiness,action,N3,電車が遅れて遅刻した。,The train was delayed and I was late.,,noun,,very high,LHL
+voc1929,遅れる,おくれる,k0561,okureru,to be late; to fall behind,action,N3,工事が予定より遅れている。,The construction is behind schedule.,,verb,,very high,LHHL
+voc1930,居る,いる,k0562,iru,to be; to exist (animate),action,N3,家に居る。,I am at home.,,verb,,very high,H
+voc1931,居間,いま,k0562,ima,living room,place,N3,居間でテレビを見た。,I watched TV in the living room.,,noun,,very high,LH
+voc1932,居心地,いごこち,k0562,igokochi,comfort; atmosphere,abstract,N3,この部屋は居心地がいい。,This room is comfortable.,,noun,,high,LHHL
+voc1933,雑誌,ざっし,k0563,zasshi,magazine,object,N3,雑誌を読むのが好きだ。,I like reading magazines.,,noun,,very high,LHL
+voc1934,雑談,ざつだん,k0563,zatsudan,chat; small talk,action,N3,休憩中に雑談した。,I chatted during the break.,,noun,,high,LHHL
+voc1935,複雑,ふくざつ,k0563,fukuzatsu,complex; complicated,abstract,N3,この問題は複雑だ。,This problem is complicated.,,adjective,,very high,LHHL
+voc1936,招く,まねく,k0564,maneku,to invite; to beckon,action,N3,友人を家に招いた。,I invited a friend to my home.,,verb,,very high,LHL
+voc1937,招待,しょうたい,k0564,shotai,invitation,action,N3,パーティーに招待された。,I was invited to a party.,,noun,,very high,LHHL
+voc1938,招集,しょうしゅう,k0564,shoshu,summoning; calling together,action,N3,緊急会議が招集された。,An emergency meeting was called.,,noun,,medium,LHHL
+voc1939,困る,こまる,k0565,komaru,to be troubled; to be in trouble,action,N3,財布を忘れて困った。,I was in trouble because I forgot my wallet.,,verb,,very high,LHL
+voc1940,困難,こんなん,k0565,konnan,difficulty; trouble,abstract,N3,困難な状況を乗り越えた。,I overcame a difficult situation.,,noun,,very high,LHHL
+voc1941,困惑,こんわく,k0565,konwaku,perplexity; embarrassment,feeling,N3,突然の質問に困惑した。,I was perplexed by the sudden question.,,noun,,medium,LHHL
+voc1942,更に,さらに,k0566,sarani,furthermore; even more,abstract,N3,更に努力が必要だ。,Even more effort is necessary.,,adverb,,very high,LHL
+voc1943,更新,こうしん,k0566,koshin,renewal; update,action,N3,免許証を更新した。,I renewed my license.,,noun,,very high,LHL
+voc1944,変更,へんこう,k0566,henko,change; modification,action,N3,計画を変更した。,I changed the plan.,,noun,,very high,LHHL
+voc1945,時刻,じこく,k0567,jikoku,time; hour,time,N3,出発の時刻を確認した。,I confirmed the departure time.,,noun,,very high,LHL
+voc1946,刻む,きざむ,k0567,kizamu,to carve; to mince,action,N3,玉ねぎを細かく刻んだ。,I finely minced the onion.,,verb,,high,LHL
+voc1947,時刻表,じこくひょう,k0567,jikokuhyo,timetable,abstract,N3,電車の時刻表を確認した。,I checked the train timetable.,,noun,,very high,LHHHHL
+voc1948,賛成,さんせい,k0568,sansei,agreement; approval,abstract,N3,その意見に賛成だ。,I agree with that opinion.,,noun,,very high,LHHL
+voc1949,賛否,さんぴ,k0568,sanpi,for and against; pros and cons,abstract,N3,賛否両論の意見が出た。,Both supporting and opposing opinions came out.,,noun,,medium,LHL
+voc1950,絶賛,ぜっさん,k0568,zessan,high praise; rave review,abstract,N3,映画が絶賛された。,The movie received rave reviews.,,noun,,medium,LHHL
+voc1951,抱く,だく,k0569,daku,to embrace; to hug,action,N3,赤ちゃんを抱いた。,I held the baby.,,verb,,very high,LH
+voc1952,抱負,ほうふ,k0569,hofu,aspiration; ambition,abstract,N3,新年の抱負を語った。,I talked about my New Year's aspirations.,,noun,,medium,LHL
+voc1953,抱える,かかえる,k0569,kakaeru,to hold; to have (a problem),action,N3,多くの問題を抱えている。,I have many problems.,,verb,,high,LHHL
+voc1954,犯罪,はんざい,k0570,hanzai,crime,society,N3,犯罪を防ぐための対策が必要だ。,Measures to prevent crime are necessary.,,noun,,very high,LHHL
+voc1955,犯人,はんにん,k0570,hannin,criminal; culprit,people,N3,犯人が捕まった。,The criminal was caught.,,noun,,very high,LHHL
+voc1956,違反,いはん,k0570,ihan,violation; offense,society,N3,交通ルールを違反した。,I violated traffic rules.,,noun,,high,LHL
+voc1957,恐れ,おそれ,k0571,osore,fear; danger,feeling,N3,失敗を恐れないでください。,Please don't be afraid of failure.,,noun,,high,LHL
+voc1958,恐ろしい,おそろしい,k0571,osoroshii,terrible; frightening,feeling,N3,恐ろしい夢を見た。,I had a terrible dream.,,adjective,,very high,LHHHL
+voc1959,恐怖,きょうふ,k0571,kyofu,fear; terror,feeling,N3,暗い場所への恐怖がある。,I have a fear of dark places.,,noun,,high,LHL
+voc1960,戻る,もどる,k0572,modoru,to return; to go back,action,N3,家に戻った。,I returned home.,,verb,,very high,LHL
+voc1961,戻す,もどす,k0572,modosu,to put back; to return,action,N3,本を棚に戻した。,I put the book back on the shelf.,,verb,,very high,LHL
+voc1962,引き戻す,ひきもどす,k0572,hikimodosu,to pull back; to bring back,action,N3,過去に引き戻されたような気持ちだ。,I feel as if I've been pulled back to the past.,,verb,,medium,LHHHHL
+voc1963,越える,こえる,k0573,koeru,to cross over; to exceed,action,N3,山を越えて村に着いた。,I crossed the mountain and reached the village.,,verb,,very high,LHL
+voc1964,越境,えっきょう,k0573,ekkyo,crossing a border,action,N3,国境を越えた。,I crossed the national border.,,noun,,medium,LHHL
+voc1965,超越,ちょうえつ,k0573,choetsu,transcendence; surpassing,abstract,N3,人間の限界を超越した。,It surpassed human limits.,,noun,,medium,LHHL
+voc1966,欲しい,ほしい,k0574,hoshii,want; desire,feeling,N3,新しい本が欲しい。,I want a new book.,,adjective,,very high,LHL
+voc1967,欲求,よっきゅう,k0574,yokkyu,desire; craving,feeling,N3,食欲という欲求がある。,There is a desire called appetite.,,noun,,medium,LHHL
+voc1968,欲張り,よくばり,k0574,yokubari,greedy; covetous,feeling,N3,欲張りすぎると失敗する。,Being too greedy leads to failure.,,noun,,medium,LHHL
+voc1969,痛い,いたい,k0575,itai,painful; hurting,feeling,N3,足が痛い。,My leg hurts.,,adjective,,very high,LHL
+voc1970,痛み,いたみ,k0575,itami,pain; ache,feeling,N3,腰の痛みが続いている。,The back pain continues.,,noun,,very high,LHL
+voc1971,頭痛,ずつう,k0575,zutsuu,headache,health,N3,頭痛がひどくて動けない。,My headache is so bad I can't move.,,noun,,very high,LHL
+voc1972,互いに,たがいに,k0576,tagai ni,mutually; each other,abstract,N3,互いに助け合おう。,Let's help each other.,,adverb,,very high,LHHL
+voc1973,相互,そうご,k0576,sogo,mutual; reciprocal,abstract,N3,相互理解が大切だ。,Mutual understanding is important.,,noun,,high,LHL
+voc1974,互助,ごじょ,k0576,gojo,mutual aid,abstract,N3,互助の精神が社会を支える。,The spirit of mutual aid supports society.,,noun,,low,LH
+voc1975,似る,にる,k0577,niru,to resemble; to look like,abstract,N3,父に似ている。,I resemble my father.,,verb,,very high,LH
+voc1976,似合う,にあう,k0577,niau,to suit; to look good on,abstract,N3,その服がよく似合っている。,That clothing suits you well.,,verb,,very high,LHL
+voc1977,似顔絵,にがおえ,k0577,nigaoe,portrait; caricature,art,N3,似顔絵を描いてもらった。,I had a portrait drawn.,,noun,,medium,LHHHL
+voc1978,探す,さがす,k0578,sagasu,to search for; to look for,action,N3,鍵を探している。,I'm looking for my key.,,verb,,very high,LHL
+voc1979,探検,たんけん,k0578,tanken,exploration; expedition,action,N3,洞窟を探検した。,I explored the cave.,,noun,,high,LHHL
+voc1980,探偵,たんてい,k0578,tantei,detective,people,N3,探偵が事件を解決した。,The detective solved the case.,,noun,,high,LHHL
+voc1981,逃げる,にげる,k0579,nigeru,to run away; to escape,action,N3,危険な場所から逃げた。,I ran away from a dangerous place.,,verb,,very high,LHL
+voc1982,逃亡,とうぼう,k0579,tobo,escape; flight,action,N3,犯人が逃亡中だ。,The criminal is on the run.,,noun,,high,LHL
+voc1983,逃げ場,にげば,k0579,nigeba,escape route; refuge,abstract,N3,逃げ場がなくなった。,I had nowhere to escape.,,noun,,medium,LHHL
+voc1984,迷う,まよう,k0580,mayou,to get lost; to be at a loss,abstract,N3,どちらを選ぶか迷っている。,I'm at a loss about which to choose.,,verb,,very high,LHL
+voc1985,迷子,まいご,k0580,maigo,lost child,people,N3,デパートで迷子になった。,I got lost in the department store.,,noun,,very high,LHL
+voc1986,迷惑,めいわく,k0580,meiwaku,trouble; nuisance,abstract,N3,ご迷惑をおかけして申し訳ない。,I'm sorry for the trouble I've caused.,,noun,,very high,LHHL
+voc1987,夢,ゆめ,k0581,yume,dream,abstract,N3,夢を持つことが大切だ。,It is important to have dreams.,,noun,,very high,LH
+voc1988,夢中,むちゅう,k0581,muchu,absorbed in; crazy about,abstract,N3,ゲームに夢中になっている。,I'm absorbed in a game.,,noun,,very high,LHL
+voc1989,悪夢,あくむ,k0581,akumu,nightmare,abstract,N3,悪夢にうなされた。,I was tormented by a nightmare.,,noun,,high,LHL
+voc1990,閉める,しめる,k0582,shimeru,to close; to shut,action,N3,ドアを閉めてください。,Please close the door.,,verb,,very high,LHL
+voc1991,閉まる,しまる,k0582,shimaru,to close (intransitive),action,N3,店が閉まっている。,The store is closed.,,verb,,very high,LHL
+voc1992,開閉,かいへい,k0582,kaihei,opening and closing,action,N3,自動ドアが開閉している。,The automatic door is opening and closing.,,noun,,medium,LHL
+voc1993,一緒,いっしょ,k0583,issho,together,abstract,N3,一緒に行きましょう。,Let's go together.,,noun,,very high,LHL
+voc1994,同緒,どうしょ,k0583,dosho,same beginning; same thread,abstract,N3,同緒に出発した。,We departed at the same time.,,noun,,low,LHL
+voc1995,端緒,たんしょ,k0583,tansho,beginning; clue,abstract,N3,解決の端緒を見つけた。,I found a clue to the solution.,,noun,,low,LHL
+voc1996,暮れる,くれる,k0584,kureru,to get dark; to come to an end,nature,N3,日が暮れてきた。,The day is getting dark.,,verb,,high,LHL
+voc1997,夕暮れ,ゆうぐれ,k0584,yugure,dusk; twilight,nature,N3,夕暮れの景色が美しい。,The scenery at dusk is beautiful.,,noun,,high,LHHL
+voc1998,暮らし,くらし,k0584,kurashi,living; livelihood,abstract,N3,豊かな暮らしを目指している。,I'm aiming for a rich life.,,noun,,very high,LHL
+voc1999,到着,とうちゃく,k0585,tochaku,arrival,action,N3,目的地に到着した。,I arrived at my destination.,,noun,,very high,LHHL
+voc2000,到来,とうらい,k0585,torai,arrival; coming,action,N3,春の到来を感じた。,I felt the arrival of spring.,,noun,,medium,LHL
+voc2001,到底,とうてい,k0585,totei,by no means; no matter what,abstract,N3,到底間に合わない。,I can't possibly make it in time.,,adverb,,very high,LHL
+voc2002,寝る,ねる,k0586,neru,to sleep; to lie down,action,N3,早く寝てください。,Please go to sleep early.,,verb,,very high,LH
+voc2003,寝室,しんしつ,k0586,shinshitsu,bedroom,place,N3,寝室を片付けた。,I tidied up the bedroom.,,noun,,very high,LHHL
+voc2004,昼寝,ひるね,k0586,hirune,nap,action,N3,昼寝をして元気が回復した。,I took a nap and recovered my energy.,,noun,,very high,LHL
+voc2005,盗む,ぬすむ,k0587,nusumu,to steal,action,N3,財布を盗まれた。,My wallet was stolen.,,verb,,very high,LHL
+voc2006,盗難,とうなん,k0587,tonan,theft; robbery,society,N3,車上盗難に遭った。,I was victimized by car theft.,,noun,,high,LHHL
+voc2007,窃盗,せっとう,k0587,setto,theft; larceny,society,N3,窃盗罪で逮捕された。,He was arrested for theft.,,noun,,medium,LHHL
+voc2008,吸う,すう,k0588,suu,to inhale; to suck,action,N3,たばこを吸わないようにしている。,I try not to smoke.,,verb,,very high,LH
+voc2009,吸収,きゅうしゅう,k0588,kyushu,absorption; assimilation,action,N3,新しい知識を吸収した。,I absorbed new knowledge.,,noun,,very high,LHHL
+voc2010,呼吸,こきゅう,k0588,kokyu,breathing; respiration,health,N3,深く呼吸してリラックスした。,I breathed deeply and relaxed.,,noun,,very high,LHL
+voc2011,お御,おん,k0589,on,honorific prefix,abstract,N3,御礼申し上げます。,I express my sincere thanks.,,noun,,high,H
+voc2012,御社,おんしゃ,k0589,onsha,your company (honorific),abstract,N3,御社のサービスに満足しています。,I am satisfied with your company's service.,,noun,,high,LHL
+voc2013,御存知,ごぞんじ,k0589,gozonii,you know (honorific),abstract,N3,御存知の通りです。,As you know.,,expression,,medium,LHHHL
+voc2014,忘れる,わすれる,k0590,wasureru,to forget,action,N3,鍵を忘れてしまった。,I forgot my key.,,verb,,very high,LHHL
+voc2015,忘れ物,わすれもの,k0590,wasuremono,forgotten item; lost property,object,N3,電車に忘れ物をした。,I left something on the train.,,noun,,very high,LHHHL
+voc2016,物忘れ,ものわすれ,k0590,monowasure,forgetfulness,abstract,N3,最近物忘れが多い。,I've been forgetting things a lot lately.,,noun,,high,LHHHL
+voc2017,吹く,ふく,k0591,fuku,to blow,nature,N3,風が強く吹いている。,The wind is blowing strongly.,,verb,,very high,LH
+voc2018,吹雪,ふぶき,k0591,fubuki,blizzard,nature,N3,吹雪で視界が悪い。,Visibility is poor due to the blizzard.,,noun,,high,LHL
+voc2019,一吹き,ひとふき,k0591,hitofuki,one puff; one gust,nature,N3,一吹きで蝋燭が消えた。,The candle went out with one puff.,,noun,,low,LHHL
+voc2020,娘,むすめ,k0592,musume,daughter; young woman,people,N3,娘が今年大学に入学した。,My daughter entered university this year.,,noun,,very high,LHHL
+voc2021,お嬢さん,おじょうさん,k0592,ojosan,daughter; young lady (polite),people,N3,お嬢さんはどちらに？,Where is your daughter?,,noun,,high,LHHHHL
+voc2022,娘婿,むすめむこ,k0592,musumemuko,son-in-law,people,N3,娘婿が来月結婚する。,My son-in-law is getting married next month.,,noun,,low,LHHHL
+voc2023,誤り,あやまり,k0593,ayamari,error; mistake,abstract,N3,誤りを訂正した。,I corrected the error.,,noun,,very high,LHHL
+voc2024,誤解,ごかい,k0593,gokai,misunderstanding,abstract,N3,誤解を解いた。,I cleared up the misunderstanding.,,noun,,very high,LHL
+voc2025,誤字,ごじ,k0593,goji,misprint; wrong character,abstract,N3,文章に誤字があった。,There was a misprint in the text.,,noun,,medium,LH
+voc2026,慣れる,なれる,k0594,nareru,to get used to; to become familiar,action,N3,新しい仕事に慣れた。,I got used to the new job.,,verb,,very high,LHL
+voc2027,習慣,しゅうかん,k0594,shukan,habit; custom,abstract,N3,健康的な習慣を身につけた。,I developed healthy habits.,,noun,,very high,LHHL
+voc2028,慣習,かんしゅう,k0594,kanshu,custom; convention,abstract,N3,地域の慣習に従った。,I followed the local customs.,,noun,,medium,LHHL
+voc2029,窓,まど,k0595,mado,window,object,N3,窓を開けて換気した。,I opened the window to ventilate.,,noun,,very high,LH
+voc2030,窓口,まどぐち,k0595,madoguchi,counter; window,place,N3,銀行の窓口で手続きした。,I completed the procedure at the bank counter.,,noun,,very high,LHHL
+voc2031,車窓,しゃそう,k0595,shaso,train/car window,object,N3,車窓から富士山が見えた。,I could see Mt. Fuji from the train window.,,noun,,medium,LHL
+voc2032,貧しい,まずしい,k0596,mazushii,poor; needy,description,N3,貧しい生活を送っている。,I'm living a poor life.,,adjective,,high,LHHL
+voc2033,貧富,ひんぷ,k0596,hinpu,rich and poor,abstract,N3,貧富の差が広がっている。,The gap between rich and poor is widening.,,noun,,medium,LHL
+voc2034,貧困,ひんこん,k0596,hinkon,poverty,abstract,N3,貧困問題を解決したい。,I want to solve the poverty problem.,,noun,,high,LHHL
+voc2035,怒る,おこる,k0597,okoru,to get angry,feeling,N3,遅刻したので怒られた。,I was scolded for being late.,,verb,,very high,LHL
+voc2036,怒り,いかり,k0597,ikari,anger; rage,feeling,N3,怒りを抑えることが大切だ。,It is important to suppress anger.,,noun,,very high,LHL
+voc2037,激怒,げきど,k0597,gekido,furious anger,feeling,N3,不公平な扱いに激怒した。,I was furious at the unfair treatment.,,noun,,medium,LHL
+voc2038,祖父,そふ,k0598,sofu,grandfather,people,N3,祖父は八十歳だ。,My grandfather is eighty years old.,,noun,,very high,LH
+voc2039,祖母,そぼ,k0598,sobo,grandmother,people,N3,祖母の手料理が大好きだ。,I love my grandmother's home cooking.,,noun,,very high,LH
+voc2040,祖先,そせん,k0598,sosen,ancestor; forebear,people,N3,祖先の歴史を調べた。,I researched my ancestors' history.,,noun,,high,LHL
+voc2041,杯,はい,k0599,hai,cup; glass (counter),object,N3,お茶を一杯どうぞ。,Please have a cup of tea.,,noun,,very high,H
+voc2042,乾杯,かんぱい,k0599,kanpai,toast; cheers,action,N3,乾杯しましょう！,Let's toast!,,noun,,very high,LHL
+voc2043,一杯,いっぱい,k0599,ippai,one cup; full; a lot,abstract,N3,コーヒーを一杯ください。,Please give me one cup of coffee.,,noun,,very high,LHL
+voc2044,疲れる,つかれる,k0600,tsukareru,to get tired,feeling,N3,仕事で疲れた。,I got tired from work.,,verb,,very high,LHHL
+voc2045,疲労,ひろう,k0600,hiro,fatigue; exhaustion,health,N3,疲労が蓄積している。,Fatigue is accumulating.,,noun,,very high,LHL
+voc2046,疲れ果てる,つかれはてる,k0600,tsukarehiteru,to be utterly exhausted,feeling,N3,走り続けて疲れ果てた。,I ran continuously and was utterly exhausted.,,verb,,medium,LHHHHHL
+voc2047,皆,みな,k0601,mina,everyone; all,people,N3,皆さん、おはようございます。,Good morning everyone.,,noun,,very high,LH
+voc2048,皆さん,みなさん,k0601,minasan,everyone (polite),people,N3,皆さんのおかげで成功した。,It succeeded thanks to everyone.,,noun,,very high,LHHL
+voc2049,皆様,みなさま,k0601,minasama,everyone (very polite),people,N3,皆様にご連絡申し上げます。,I am informing everyone.,,noun,,high,LHHL
+voc2050,腹,はら,k0602,hara,stomach; belly,body,N3,腹が減った。,I'm hungry.,,noun,,very high,LH
+voc2051,お腹,おなか,k0602,onaka,stomach; belly (polite),body,N3,お腹が痛い。,My stomach hurts.,,noun,,very high,LHL
+voc2052,腹立たしい,はらだたしい,k0602,haradatashii,irritating; vexing,feeling,N3,腹立たしい出来事があった。,An irritating event occurred.,,adjective,,medium,LHHHHHL
+voc2053,煙,けむり,k0603,kemuri,smoke,nature,N3,煙が目に入った。,Smoke got in my eyes.,,noun,,very high,LHL
+voc2054,煙草,たばこ,k0603,tabako,cigarette; tobacco,object,N3,煙草を吸わないようにしている。,I try not to smoke cigarettes.,,noun,,very high,LHL
+voc2055,排煙,はいえん,k0603,haien,smoke exhaust,nature,N3,工場の排煙が問題だ。,Factory smoke exhaust is a problem.,,noun,,medium,LHL
+voc2056,眠る,ねむる,k0604,nemuru,to sleep; to slumber,action,N3,赤ちゃんが眠っている。,The baby is sleeping.,,verb,,very high,LHL
+voc2057,眠い,ねむい,k0604,nemui,sleepy,feeling,N3,授業中に眠くなった。,I got sleepy during class.,,adjective,,very high,LHL
+voc2058,睡眠,すいみん,k0604,suimin,sleep,health,N3,十分な睡眠が大切だ。,Sufficient sleep is important.,,noun,,very high,LHHL
+voc2059,怖い,こわい,k0605,kowai,scary; frightening,feeling,N3,暗い道が怖い。,I'm afraid of dark roads.,,adjective,,very high,LHL
+voc2060,怖がる,こわがる,k0605,kowagaru,to be scared of; to fear,feeling,N3,犬を怖がっている。,I'm scared of dogs.,,verb,,high,LHHL
+voc2061,恐怖,きょうふ,k0605,kyofu,fear; terror,feeling,N3,高所恐怖症がある。,I have a fear of heights.,,noun,,high,LHL
+voc2062,頂上,ちょうじょう,k0606,chojo,summit; top,place,N3,山の頂上から眺めた。,I gazed from the mountain summit.,,noun,,very high,LHHL
+voc2063,頂く,いただく,k0606,itadaku,to receive (humble); to eat,action,N3,プレゼントを頂いた。,I received a present.,,verb,,very high,LHHL
+voc2064,山頂,さんちょう,k0606,sancho,mountain summit,place,N3,山頂からの眺めが素晴らしい。,The view from the mountain summit is wonderful.,,noun,,high,LHHL
+voc2065,晩,ばん,k0607,ban,evening; night,time,N3,今晩は何を食べますか？,What will you eat tonight?,,noun,,very high,H
+voc2066,今晩,こんばん,k0607,konban,this evening; tonight,time,N3,今晩一緒に食事しませんか？,Shall we have dinner together tonight?,,noun,,very high,LHL
+voc2067,晩ご飯,ばんごはん,k0607,bangohan,dinner; evening meal,food,N3,晩ご飯を作った。,I made dinner.,,noun,,very high,LHHL
+voc2068,髪,かみ,k0608,kami,hair (on head),body,N3,髪を切った。,I got a haircut.,,noun,,very high,LH
+voc2069,髪型,かみがた,k0608,kamigata,hairstyle,body,N3,新しい髪型にした。,I got a new hairstyle.,,noun,,very high,LHHL
+voc2070,長髪,ちょうはつ,k0608,chohatsu,long hair,body,N3,長髪を短くした。,I cut my long hair short.,,noun,,medium,LHHL
+voc2071,忙しい,いそがしい,k0609,isogashii,busy,description,N3,毎日忙しくて大変だ。,I'm busy every day and it's tough.,,adjective,,very high,LHHHL
+voc2072,多忙,たぼう,k0609,tabo,very busy,abstract,N3,多忙な日々が続いている。,Very busy days continue.,,noun,,medium,LHL
+voc2073,繁忙,はんぼう,k0609,hanbo,busy period; rush,abstract,N3,年末は繁忙期だ。,Year-end is a busy season.,,noun,,medium,LHL
+voc2074,靴,くつ,k0610,kutsu,shoes,object,N3,新しい靴を買った。,I bought new shoes.,,noun,,very high,LH
+voc2075,靴下,くつした,k0610,kutsushita,socks,object,N3,靴下を洗った。,I washed the socks.,,noun,,very high,LHHL
+voc2076,運動靴,うんどうぐつ,k0610,undogutsu,athletic shoes; sneakers,object,N3,運動靴を履いて走った。,I wore athletic shoes and ran.,,noun,,high,LHHHL
+voc2077,恥ずかしい,はずかしい,k0611,hazukashii,embarrassing; shy,feeling,N3,人前で失敗して恥ずかしかった。,I was embarrassed to fail in front of others.,,adjective,,very high,LHHHHL
+voc2078,恥,はじ,k0611,haji,shame; disgrace,feeling,N3,恥をかかせないでください。,Please don't embarrass me.,,noun,,high,LH
+voc2079,破廉恥,はれんち,k0611,harenchi,shameless; indecent,feeling,N3,破廉恥な行為は許されない。,Shameless acts are not permitted.,,adjective,,low,LHHL
+voc2080,偶然,ぐうぜん,k0612,guzen,coincidence; by chance,abstract,N3,偶然昔の友人に会った。,I met an old friend by chance.,,noun,,very high,LHHL
+voc2081,偶数,ぐうすう,k0612,gusuu,even number,abstract,N3,偶数と奇数に分けた。,I divided into even and odd numbers.,,noun,,medium,LHHL
+voc2082,偶像,ぐうぞう,k0612,guzo,idol; image,abstract,N3,偶像崇拝は宗教的問題だ。,Idol worship is a religious issue.,,noun,,low,LHHL
+voc2083,偉い,えらい,k0613,erai,great; superior,description,N3,彼は本当に偉い人だ。,He is truly a great person.,,adjective,,very high,LHL
+voc2084,偉大,いだい,k0613,idai,great; magnificent,abstract,N3,偉大な功績を残した。,He left great achievements.,,adjective,,high,LHL
+voc2085,偉人,いじん,k0613,ijin,great person; historical figure,people,N3,歴史上の偉人について学んだ。,I learned about historical figures.,,noun,,medium,LHL
+voc2086,猫,ねこ,k0614,neko,cat,nature,N3,猫が窓の外を見ている。,The cat is looking out the window.,,noun,,very high,LH
+voc2087,野良猫,のらねこ,k0614,noraneko,stray cat,nature,N3,野良猫に餌をあげた。,I fed the stray cat.,,noun,,high,LHHL
+voc2088,猫背,ねこぜ,k0614,nekoze,hunched back,body,N3,猫背にならないよう注意した。,I was careful not to hunch my back.,,noun,,medium,LHL
+voc2089,掛ける,かける,k0615,kakeru,to hang; to put on,action,N3,壁に絵を掛けた。,I hung a picture on the wall.,,verb,,very high,LHL
+voc2090,声を掛ける,こえをかける,k0615,koe wo kakeru,to speak to; to call out to,action,N3,困っている人に声を掛けた。,I spoke to someone who was in trouble.,,expression,,very high,LHLHL
+voc2091,掛け算,かけざん,k0615,kakezan,multiplication,education,N3,掛け算の練習をした。,I practiced multiplication.,,noun,,high,LHHL
+voc2092,幾つ,いくつ,k0616,ikutsu,how many; how old,abstract,N3,りんごは幾つありますか？,How many apples are there?,,noun,,very high,LHL
+voc2093,幾ら,いくら,k0616,ikura,how much,abstract,N3,これは幾らですか？,How much is this?,,noun,,very high,LHL
+voc2094,幾度,いくど,k0616,ikudo,how many times; how often,abstract,N3,幾度も試したが失敗した。,I tried many times but failed.,,noun,,medium,LHL

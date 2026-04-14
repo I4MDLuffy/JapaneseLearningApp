@@ -1,7 +1,7 @@
-package com.example.personalproject.kanji.detail.mvi
+package app.kotori.japanese.kanji.detail.mvi
 
-import com.example.personalproject.data.repository.KanjiRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.KanjiRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class KanjiDetailViewModel(
     private val repository: KanjiRepository,

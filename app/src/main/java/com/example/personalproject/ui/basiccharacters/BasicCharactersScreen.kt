@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.basiccharacters
+package app.kotori.japanese.ui.basiccharacters
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,9 +31,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.ScreenHelpDialog
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.ScreenHelpDialog
 
 @Composable
 fun BasicCharactersScreen(

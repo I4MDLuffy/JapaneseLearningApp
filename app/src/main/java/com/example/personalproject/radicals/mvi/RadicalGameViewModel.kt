@@ -1,8 +1,8 @@
-package com.example.personalproject.radicals.mvi
+package app.kotori.japanese.radicals.mvi
 
-import com.example.personalproject.data.model.RadicalEntry
-import com.example.personalproject.data.repository.RadicalRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.model.RadicalEntry
+import app.kotori.japanese.data.repository.RadicalRepository
+import app.kotori.japanese.mvi.BaseViewModel
 import kotlinx.coroutines.delay
 
 class RadicalGameViewModel(

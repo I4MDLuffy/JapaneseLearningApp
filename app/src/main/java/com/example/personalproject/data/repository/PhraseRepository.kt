@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.PhraseEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.PhraseEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class PhraseRepository(private val context: Context) {
+class PhraseRepository() {
 
     private var cache: List<PhraseEntry>? = null
 
@@ -33,5 +32,5 @@ class PhraseRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<PhraseEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parsePhrases(context, "phrases.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parsePhrases("phrases.csv") }
 }

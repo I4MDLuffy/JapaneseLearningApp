@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.GrammarEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.GrammarEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class GrammarRepository(private val context: Context) {
+class GrammarRepository() {
 
     private var cache: List<GrammarEntry>? = null
 
@@ -33,5 +32,5 @@ class GrammarRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<GrammarEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseGrammar(context, "grammar.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseGrammar("grammar.csv") }
 }

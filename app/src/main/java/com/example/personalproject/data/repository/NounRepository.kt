@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.NounEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.NounEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class NounRepository(private val context: Context) {
+class NounRepository() {
 
     private var cache: List<NounEntry>? = null
 
@@ -34,5 +33,5 @@ class NounRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<NounEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseNouns(context, "nouns.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseNouns("nouns.csv") }
 }

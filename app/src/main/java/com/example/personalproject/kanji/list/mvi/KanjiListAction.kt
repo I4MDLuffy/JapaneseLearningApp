@@ -1,6 +1,6 @@
-package com.example.personalproject.kanji.list.mvi
+package app.kotori.japanese.kanji.list.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface KanjiListAction : BaseAction {
     data object LoadEntries : KanjiListAction

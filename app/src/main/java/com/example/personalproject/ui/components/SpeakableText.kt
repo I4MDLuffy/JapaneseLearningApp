@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.components
+package app.kotori.japanese.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 
 /**
  * Displays Japanese text with a small inline volume button that reads it aloud via TTS.
- * Pass the `speak` lambda from [com.example.personalproject.util.rememberTts].
+ * Pass the `speak` lambda from [app.kotori.japanese.util.rememberTts].
  */
 @Composable
 fun SpeakableText(

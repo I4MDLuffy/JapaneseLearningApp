@@ -1,7 +1,7 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import com.example.personalproject.data.db.KanaStatsDao
-import com.example.personalproject.data.db.KanaStatsEntity
+import app.kotori.japanese.data.db.KanaStatsDao
+import app.kotori.japanese.data.db.KanaStatsEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

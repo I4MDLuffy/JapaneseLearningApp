@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.KanjiEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.KanjiEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class KanjiRepository(private val context: Context) {
+class KanjiRepository() {
 
     private var cache: List<KanjiEntry>? = null
 
@@ -32,5 +31,5 @@ class KanjiRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<KanjiEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseKanji(context, "kanji.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseKanji("kanji.csv") }
 }

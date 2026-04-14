@@ -1,11 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import com.example.personalproject.data.model.GrammarExample
-import com.example.personalproject.data.model.LearningModule
-import com.example.personalproject.data.model.Lesson
-import com.example.personalproject.data.model.LessonSection
-import com.example.personalproject.data.model.ModuleCategory
-import com.example.personalproject.data.model.VocabularyWord
+import app.kotori.japanese.data.model.GrammarExample
+import app.kotori.japanese.data.model.LearningModule
+import app.kotori.japanese.data.model.Lesson
+import app.kotori.japanese.data.model.LessonSection
+import app.kotori.japanese.data.model.ModuleCategory
+import app.kotori.japanese.data.model.VocabularyWord
 
 /**
  * Provides learning module data.

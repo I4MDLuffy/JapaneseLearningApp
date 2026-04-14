@@ -1,7 +1,7 @@
-package com.example.personalproject.vocabulary.detail.mvi
+package app.kotori.japanese.vocabulary.detail.mvi
 
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.mvi.BaseState
 
 data class VocabularyDetailState(
     val word: VocabularyWord? = null,

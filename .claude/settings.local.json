@@ -19,7 +19,9 @@
       "Bash(./gradlew assembleDebug)",
       "Bash(JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\" ./gradlew assembleDebug)",
       "Bash(xargs ls:*)",
-      "Bash(awk '{print $9, $5}')"
+      "Bash(awk '{print $9, $5}')",
+      "Bash(grep -v \"//.*import\")",
+      "Bash(find:*)"
     ]
   }
 }

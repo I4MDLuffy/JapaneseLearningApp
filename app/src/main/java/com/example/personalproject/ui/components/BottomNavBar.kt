@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.components
+package app.kotori.japanese.ui.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
@@ -15,11 +15,11 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.personalproject.navigation.HomeRoute
-import com.example.personalproject.navigation.JlptRoute
-import com.example.personalproject.navigation.SavedRoute
-import com.example.personalproject.navigation.SettingsRoute
-import com.example.personalproject.navigation.StudyGamesRoute
+import app.kotori.japanese.navigation.HomeRoute
+import app.kotori.japanese.navigation.JlptRoute
+import app.kotori.japanese.navigation.SavedRoute
+import app.kotori.japanese.navigation.SettingsRoute
+import app.kotori.japanese.navigation.StudyGamesRoute
 import kotlin.reflect.KClass
 
 @Composable

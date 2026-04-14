@@ -1,16 +1,16 @@
-package com.example.personalproject.learning.mvi
+package app.kotori.japanese.learning.mvi
 
 import androidx.lifecycle.viewModelScope
-import com.example.personalproject.data.model.ChapterType
-import com.example.personalproject.data.repository.AdjectiveRepository
-import com.example.personalproject.data.repository.ChapterProgressRepository
-import com.example.personalproject.data.repository.GrammarRepository
-import com.example.personalproject.data.repository.KanjiRepository
-import com.example.personalproject.data.repository.NounRepository
-import com.example.personalproject.data.repository.PhraseRepository
-import com.example.personalproject.data.repository.VerbRepository
-import com.example.personalproject.data.repository.VocabularyRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.model.ChapterType
+import app.kotori.japanese.data.repository.AdjectiveRepository
+import app.kotori.japanese.data.repository.ChapterProgressRepository
+import app.kotori.japanese.data.repository.GrammarRepository
+import app.kotori.japanese.data.repository.KanjiRepository
+import app.kotori.japanese.data.repository.NounRepository
+import app.kotori.japanese.data.repository.PhraseRepository
+import app.kotori.japanese.data.repository.VerbRepository
+import app.kotori.japanese.data.repository.VocabularyRepository
+import app.kotori.japanese.mvi.BaseViewModel
 import kotlinx.coroutines.launch
 
 private const val TERM_STUDY_CHUNK = 10

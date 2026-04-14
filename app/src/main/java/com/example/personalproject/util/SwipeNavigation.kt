@@ -1,4 +1,4 @@
-package com.example.personalproject.util
+package app.kotori.japanese.util
 
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.ui.Modifier

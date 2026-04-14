@@ -1,4 +1,4 @@
-package com.example.personalproject
+package app.kotori.japanese
 
 import org.junit.Test
 

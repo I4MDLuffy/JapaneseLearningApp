@@ -1,8 +1,8 @@
-package com.example.personalproject.ui.basiccharacters
+package app.kotori.japanese.ui.basiccharacters
 
 import androidx.lifecycle.viewModelScope
-import com.example.personalproject.data.kana.KanaEntry
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.kana.KanaEntry
+import app.kotori.japanese.mvi.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

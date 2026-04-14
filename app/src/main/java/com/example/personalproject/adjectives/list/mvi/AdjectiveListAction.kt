@@ -1,6 +1,6 @@
-package com.example.personalproject.adjectives.list.mvi
+package app.kotori.japanese.adjectives.list.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface AdjectiveListAction : BaseAction {
     data object LoadEntries : AdjectiveListAction

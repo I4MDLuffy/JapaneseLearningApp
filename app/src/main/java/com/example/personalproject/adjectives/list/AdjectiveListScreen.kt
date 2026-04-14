@@ -1,4 +1,4 @@
-package com.example.personalproject.adjectives.list
+package app.kotori.japanese.adjectives.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -46,13 +46,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
+import app.kotori.japanese.LocalAppContainer
 import kotlinx.coroutines.launch
-import com.example.personalproject.adjectives.list.mvi.AdjectiveListAction
-import com.example.personalproject.adjectives.list.mvi.AdjectiveListViewModel
-import com.example.personalproject.data.model.AdjectiveEntry
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.adjectives.list.mvi.AdjectiveListAction
+import app.kotori.japanese.adjectives.list.mvi.AdjectiveListViewModel
+import app.kotori.japanese.data.model.AdjectiveEntry
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

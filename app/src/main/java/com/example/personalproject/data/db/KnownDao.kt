@@ -1,4 +1,4 @@
-package com.example.personalproject.data.db
+package app.kotori.japanese.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert

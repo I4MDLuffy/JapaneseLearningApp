@@ -1,4 +1,4 @@
-package com.example.personalproject.radicals
+package app.kotori.japanese.radicals
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -25,10 +25,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.data.model.RadicalEntry
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.data.model.RadicalEntry
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun RadicalKanjiListScreen(

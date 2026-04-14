@@ -1,6 +1,6 @@
-package com.example.personalproject.phrases.list.mvi
+package app.kotori.japanese.phrases.list.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface PhraseListAction : BaseAction {
     data object LoadEntries : PhraseListAction

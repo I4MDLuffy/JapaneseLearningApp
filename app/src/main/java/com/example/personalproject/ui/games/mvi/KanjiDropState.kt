@@ -1,7 +1,7 @@
-package com.example.personalproject.ui.games.mvi
+package app.kotori.japanese.ui.games.mvi
 
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.mvi.BaseState
 
 enum class KanjiDropMode { HIRAGANA, ROMAJI }
 

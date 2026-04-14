@@ -1,6 +1,5 @@
-package com.example.personalproject
+package app.kotori.japanese
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,7 +12,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
@@ -21,119 +19,119 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.personalproject.gettingstarted.GettingStartedScreen
-import com.example.personalproject.introduction.IntroductionScreen
-import com.example.personalproject.learning.ChapterReaderScreen
-import com.example.personalproject.learning.LevelScreen
-import com.example.personalproject.misc.CountersScreen
-import com.example.personalproject.misc.DialogueDetailScreen
-import com.example.personalproject.misc.DialogueReadingScreen
-import com.example.personalproject.misc.MiscScreen
-import com.example.personalproject.misc.PurelyGrammarScreen
-import com.example.personalproject.misc.TermStudyScreen
-import com.example.personalproject.modules.detail.ModuleDetailScreen
-import com.example.personalproject.modules.list.ModulesScreen
-import com.example.personalproject.adjectives.detail.AdjectiveDetailScreen
-import com.example.personalproject.adjectives.list.AdjectiveListScreen
-import com.example.personalproject.grammar.detail.GrammarDetailScreen
-import com.example.personalproject.grammar.list.GrammarListScreen
-import com.example.personalproject.kanji.detail.KanjiDetailScreen
-import com.example.personalproject.kanji.list.KanjiListScreen
-import com.example.personalproject.navigation.AdjectiveDetailRoute
-import com.example.personalproject.navigation.AdjectiveListRoute
-import com.example.personalproject.navigation.AdvancedRoute
-import com.example.personalproject.navigation.BasicCharactersRoute
-import com.example.personalproject.navigation.BeginnerRoute
-import com.example.personalproject.navigation.ChapterReaderRoute
-import com.example.personalproject.navigation.StudyGameRoute
-import com.example.personalproject.navigation.CountersRoute
-import com.example.personalproject.navigation.DialogueDetailRoute
-import com.example.personalproject.navigation.DialogueReadingRoute
-import com.example.personalproject.navigation.GettingStartedRoute
-import com.example.personalproject.navigation.GrammarDetailRoute
-import com.example.personalproject.navigation.GrammarListRoute
-import com.example.personalproject.navigation.HiraganaRoute
-import com.example.personalproject.navigation.HomeRoute
-import com.example.personalproject.navigation.IntermediateRoute
-import com.example.personalproject.navigation.KanaGroupGameRoute
-import com.example.personalproject.navigation.KanjiDetailRoute
-import com.example.personalproject.navigation.KanjiListRoute
-import com.example.personalproject.navigation.KatakanaRoute
-import com.example.personalproject.navigation.MasterRoute
-import com.example.personalproject.navigation.MiscRoute
-import com.example.personalproject.navigation.ModuleDetailRoute
-import com.example.personalproject.navigation.ModulesRoute
-import com.example.personalproject.navigation.NavHubRoute
-import com.example.personalproject.navigation.NounDetailRoute
-import com.example.personalproject.navigation.NounListRoute
-import com.example.personalproject.navigation.IntroductionRoute
-import com.example.personalproject.navigation.OpeningRoute
-import com.example.personalproject.navigation.PhraseDetailRoute
-import com.example.personalproject.navigation.PhraseListRoute
-import com.example.personalproject.navigation.PurelyGrammarRoute
-import com.example.personalproject.navigation.QuickConversationalRoute
-import com.example.personalproject.navigation.GameSetupRoute
-import com.example.personalproject.navigation.SavedRoute
-import com.example.personalproject.navigation.SettingsRoute
-import com.example.personalproject.navigation.StudyGamesRoute
-import com.example.personalproject.navigation.TermStudyRoute
-import com.example.personalproject.navigation.VerbDetailRoute
-import com.example.personalproject.navigation.VerbListRoute
-import com.example.personalproject.navigation.VocabularyDetailRoute
-import com.example.personalproject.navigation.VocabularyListRoute
-import com.example.personalproject.nouns.detail.NounDetailScreen
-import com.example.personalproject.nouns.list.NounListScreen
-import com.example.personalproject.phrases.detail.PhraseDetailScreen
-import com.example.personalproject.phrases.list.PhraseListScreen
-import com.example.personalproject.verbs.detail.VerbDetailScreen
-import com.example.personalproject.verbs.list.VerbListScreen
-import com.example.personalproject.navhub.NavHubScreen
-import com.example.personalproject.opening.OpeningScreen
-import com.example.personalproject.quickconversational.QuickConversationalScreen
-import com.example.personalproject.settings.SettingsScreen
-import com.example.personalproject.ui.basiccharacters.BasicCharactersScreen
-import com.example.personalproject.ui.basiccharacters.KanaGroupGameScreen
-import com.example.personalproject.ui.basiccharacters.KanaTableScreen
-import com.example.personalproject.ui.components.BottomNavBar
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.games.GameSetupScreen
-import com.example.personalproject.ui.games.StudyGameScreen
-import com.example.personalproject.ui.games.StudyGamesScreen
-import com.example.personalproject.ui.home.HomeScreen
-import com.example.personalproject.ui.saved.SavedScreen
-import com.example.personalproject.ui.theme.PersonalProjectTheme
-import com.example.personalproject.data.kana.hiraganaGroups
-import com.example.personalproject.data.kana.katakanaGroups
-import com.example.personalproject.radicals.RadicalDetailScreen
-import com.example.personalproject.radicals.RadicalGameScreen
-import com.example.personalproject.radicals.RadicalKanjiListScreen
-import com.example.personalproject.radicals.RadicalListScreen
-import com.example.personalproject.navigation.RadicalDetailRoute
-import com.example.personalproject.navigation.RadicalGameRoute
-import com.example.personalproject.navigation.RadicalKanjiListRoute
-import com.example.personalproject.navigation.RadicalListRoute
-import com.example.personalproject.navigation.JlptRoute
-import com.example.personalproject.navigation.JlptLevelRoute
-import com.example.personalproject.navigation.JlptPracticeTestRoute
-import com.example.personalproject.navigation.OnomatopoeiaRoute
-import com.example.personalproject.navigation.VerbConjugationSetupRoute
-import com.example.personalproject.navigation.VerbConjugationGameRoute
-import com.example.personalproject.navigation.GrammarFillInRoute
-import com.example.personalproject.jlpt.JlptScreen
-import com.example.personalproject.jlpt.JlptLevelScreen
-import com.example.personalproject.jlpt.JlptPracticeTestScreen
-import com.example.personalproject.misc.OnomatopoeiaScreen
-import com.example.personalproject.ui.games.VerbConjugationSetupScreen
-import com.example.personalproject.ui.games.VerbConjugationGameScreen
-import com.example.personalproject.ui.games.GrammarFillInScreen
-import com.example.personalproject.vocabulary.detail.VocabularyDetailScreen
-import com.example.personalproject.vocabulary.list.VocabularyListScreen
-import com.example.personalproject.navigation.ReviewRoute
-import com.example.personalproject.navigation.ProgressRoute
-import com.example.personalproject.navigation.KanaWritingGameRoute
-import com.example.personalproject.ui.review.ReviewScreen
-import com.example.personalproject.ui.progress.ProgressScreen
-import com.example.personalproject.ui.games.KanaWritingGameScreen
+import app.kotori.japanese.gettingstarted.GettingStartedScreen
+import app.kotori.japanese.introduction.IntroductionScreen
+import app.kotori.japanese.learning.ChapterReaderScreen
+import app.kotori.japanese.learning.LevelScreen
+import app.kotori.japanese.misc.CountersScreen
+import app.kotori.japanese.misc.DialogueDetailScreen
+import app.kotori.japanese.misc.DialogueReadingScreen
+import app.kotori.japanese.misc.MiscScreen
+import app.kotori.japanese.misc.PurelyGrammarScreen
+import app.kotori.japanese.misc.TermStudyScreen
+import app.kotori.japanese.modules.detail.ModuleDetailScreen
+import app.kotori.japanese.modules.list.ModulesScreen
+import app.kotori.japanese.adjectives.detail.AdjectiveDetailScreen
+import app.kotori.japanese.adjectives.list.AdjectiveListScreen
+import app.kotori.japanese.grammar.detail.GrammarDetailScreen
+import app.kotori.japanese.grammar.list.GrammarListScreen
+import app.kotori.japanese.kanji.detail.KanjiDetailScreen
+import app.kotori.japanese.kanji.list.KanjiListScreen
+import app.kotori.japanese.navigation.AdjectiveDetailRoute
+import app.kotori.japanese.navigation.AdjectiveListRoute
+import app.kotori.japanese.navigation.AdvancedRoute
+import app.kotori.japanese.navigation.BasicCharactersRoute
+import app.kotori.japanese.navigation.BeginnerRoute
+import app.kotori.japanese.navigation.ChapterReaderRoute
+import app.kotori.japanese.navigation.StudyGameRoute
+import app.kotori.japanese.navigation.CountersRoute
+import app.kotori.japanese.navigation.DialogueDetailRoute
+import app.kotori.japanese.navigation.DialogueReadingRoute
+import app.kotori.japanese.navigation.GettingStartedRoute
+import app.kotori.japanese.navigation.GrammarDetailRoute
+import app.kotori.japanese.navigation.GrammarListRoute
+import app.kotori.japanese.navigation.HiraganaRoute
+import app.kotori.japanese.navigation.HomeRoute
+import app.kotori.japanese.navigation.IntermediateRoute
+import app.kotori.japanese.navigation.KanaGroupGameRoute
+import app.kotori.japanese.navigation.KanjiDetailRoute
+import app.kotori.japanese.navigation.KanjiListRoute
+import app.kotori.japanese.navigation.KatakanaRoute
+import app.kotori.japanese.navigation.MasterRoute
+import app.kotori.japanese.navigation.MiscRoute
+import app.kotori.japanese.navigation.ModuleDetailRoute
+import app.kotori.japanese.navigation.ModulesRoute
+import app.kotori.japanese.navigation.NavHubRoute
+import app.kotori.japanese.navigation.NounDetailRoute
+import app.kotori.japanese.navigation.NounListRoute
+import app.kotori.japanese.navigation.IntroductionRoute
+import app.kotori.japanese.navigation.OpeningRoute
+import app.kotori.japanese.navigation.PhraseDetailRoute
+import app.kotori.japanese.navigation.PhraseListRoute
+import app.kotori.japanese.navigation.PurelyGrammarRoute
+import app.kotori.japanese.navigation.QuickConversationalRoute
+import app.kotori.japanese.navigation.GameSetupRoute
+import app.kotori.japanese.navigation.SavedRoute
+import app.kotori.japanese.navigation.SettingsRoute
+import app.kotori.japanese.navigation.StudyGamesRoute
+import app.kotori.japanese.navigation.TermStudyRoute
+import app.kotori.japanese.navigation.VerbDetailRoute
+import app.kotori.japanese.navigation.VerbListRoute
+import app.kotori.japanese.navigation.VocabularyDetailRoute
+import app.kotori.japanese.navigation.VocabularyListRoute
+import app.kotori.japanese.nouns.detail.NounDetailScreen
+import app.kotori.japanese.nouns.list.NounListScreen
+import app.kotori.japanese.phrases.detail.PhraseDetailScreen
+import app.kotori.japanese.phrases.list.PhraseListScreen
+import app.kotori.japanese.verbs.detail.VerbDetailScreen
+import app.kotori.japanese.verbs.list.VerbListScreen
+import app.kotori.japanese.navhub.NavHubScreen
+import app.kotori.japanese.opening.OpeningScreen
+import app.kotori.japanese.quickconversational.QuickConversationalScreen
+import app.kotori.japanese.settings.SettingsScreen
+import app.kotori.japanese.ui.basiccharacters.BasicCharactersScreen
+import app.kotori.japanese.ui.basiccharacters.KanaGroupGameScreen
+import app.kotori.japanese.ui.basiccharacters.KanaTableScreen
+import app.kotori.japanese.ui.components.BottomNavBar
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.games.GameSetupScreen
+import app.kotori.japanese.ui.games.StudyGameScreen
+import app.kotori.japanese.ui.games.StudyGamesScreen
+import app.kotori.japanese.ui.home.HomeScreen
+import app.kotori.japanese.ui.saved.SavedScreen
+import app.kotori.japanese.ui.theme.PersonalProjectTheme
+import app.kotori.japanese.data.kana.hiraganaGroups
+import app.kotori.japanese.data.kana.katakanaGroups
+import app.kotori.japanese.radicals.RadicalDetailScreen
+import app.kotori.japanese.radicals.RadicalGameScreen
+import app.kotori.japanese.radicals.RadicalKanjiListScreen
+import app.kotori.japanese.radicals.RadicalListScreen
+import app.kotori.japanese.navigation.RadicalDetailRoute
+import app.kotori.japanese.navigation.RadicalGameRoute
+import app.kotori.japanese.navigation.RadicalKanjiListRoute
+import app.kotori.japanese.navigation.RadicalListRoute
+import app.kotori.japanese.navigation.JlptRoute
+import app.kotori.japanese.navigation.JlptLevelRoute
+import app.kotori.japanese.navigation.JlptPracticeTestRoute
+import app.kotori.japanese.navigation.OnomatopoeiaRoute
+import app.kotori.japanese.navigation.VerbConjugationSetupRoute
+import app.kotori.japanese.navigation.VerbConjugationGameRoute
+import app.kotori.japanese.navigation.GrammarFillInRoute
+import app.kotori.japanese.jlpt.JlptScreen
+import app.kotori.japanese.jlpt.JlptLevelScreen
+import app.kotori.japanese.jlpt.JlptPracticeTestScreen
+import app.kotori.japanese.misc.OnomatopoeiaScreen
+import app.kotori.japanese.ui.games.VerbConjugationSetupScreen
+import app.kotori.japanese.ui.games.VerbConjugationGameScreen
+import app.kotori.japanese.ui.games.GrammarFillInScreen
+import app.kotori.japanese.vocabulary.detail.VocabularyDetailScreen
+import app.kotori.japanese.vocabulary.list.VocabularyListScreen
+import app.kotori.japanese.navigation.ReviewRoute
+import app.kotori.japanese.navigation.ProgressRoute
+import app.kotori.japanese.navigation.KanaWritingGameRoute
+import app.kotori.japanese.ui.review.ReviewScreen
+import app.kotori.japanese.ui.progress.ProgressScreen
+import app.kotori.japanese.ui.games.KanaWritingGameScreen
 
 @Composable
 fun App(appContainer: AppContainer) {
@@ -775,27 +773,6 @@ fun App(appContainer: AppContainer) {
                     }
                 }
             }
-        }
-    }
-}
-
-/** Temporary placeholder for list screens not yet implemented. */
-@Composable
-private fun StubScreen(title: String, onBack: () -> Unit) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        KotobaTopBar(title = title, onBack = onBack)
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(32.dp),
-            contentAlignment = Alignment.Center,
-        ) {
-            Text(
-                text = "$title list screen\ncoming in the next phase.",
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f),
-                textAlign = TextAlign.Center,
-            )
         }
     }
 }

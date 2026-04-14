@@ -1,21 +1,21 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
+import com.russhwolf.settings.Settings
+import com.russhwolf.settings.get
+import com.russhwolf.settings.set
 
-class OnboardingRepository(context: Context) {
+class OnboardingRepository(private val prefs: Settings) {
 
-    private val prefs = context.getSharedPreferences("kotoba_onboarding", Context.MODE_PRIVATE)
-
-    val introSeen: Boolean get() = prefs.getBoolean("intro_seen", false)
+    val introSeen: Boolean get() = prefs["intro_seen", false]
 
     fun markIntroSeen() {
-        prefs.edit().putBoolean("intro_seen", true).apply()
+        prefs["intro_seen"] = true
     }
 
     fun isScreenSeen(screenKey: String): Boolean =
-        prefs.getBoolean("screen_$screenKey", false)
+        prefs["screen_$screenKey", false]
 
     fun markScreenSeen(screenKey: String) {
-        prefs.edit().putBoolean("screen_$screenKey", true).apply()
+        prefs["screen_$screenKey"] = true
     }
 }

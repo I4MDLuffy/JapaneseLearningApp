@@ -1,7 +1,7 @@
-package com.example.personalproject.nouns.detail.mvi
+package app.kotori.japanese.nouns.detail.mvi
 
-import com.example.personalproject.data.repository.NounRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.NounRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class NounDetailViewModel(
     private val repository: NounRepository,

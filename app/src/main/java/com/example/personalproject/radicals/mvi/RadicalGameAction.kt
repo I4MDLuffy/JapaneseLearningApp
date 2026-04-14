@@ -1,6 +1,6 @@
-package com.example.personalproject.radicals.mvi
+package app.kotori.japanese.radicals.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface RadicalGameAction : BaseAction {
     object FlipCard : RadicalGameAction

@@ -1,4 +1,4 @@
-package com.example.personalproject.viewmodel
+package app.kotori.japanese.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

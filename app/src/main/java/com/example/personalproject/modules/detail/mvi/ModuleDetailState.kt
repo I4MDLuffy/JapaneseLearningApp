@@ -1,7 +1,7 @@
-package com.example.personalproject.modules.detail.mvi
+package app.kotori.japanese.modules.detail.mvi
 
-import com.example.personalproject.data.model.LearningModule
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.LearningModule
+import app.kotori.japanese.mvi.BaseState
 
 data class ModuleDetailState(
     val module: LearningModule? = null,

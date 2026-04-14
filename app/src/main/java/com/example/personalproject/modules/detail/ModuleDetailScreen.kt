@@ -1,4 +1,4 @@
-package com.example.personalproject.modules.detail
+package app.kotori.japanese.modules.detail
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -43,15 +43,15 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.GrammarExample
-import com.example.personalproject.data.model.Lesson
-import com.example.personalproject.data.model.LessonSection
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.modules.detail.mvi.ModuleDetailAction
-import com.example.personalproject.modules.detail.mvi.ModuleDetailViewModel
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.GrammarExample
+import app.kotori.japanese.data.model.Lesson
+import app.kotori.japanese.data.model.LessonSection
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.modules.detail.mvi.ModuleDetailAction
+import app.kotori.japanese.modules.detail.mvi.ModuleDetailViewModel
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun ModuleDetailScreen(

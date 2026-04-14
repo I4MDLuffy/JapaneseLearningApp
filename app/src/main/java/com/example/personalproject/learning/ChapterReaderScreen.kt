@@ -1,4 +1,4 @@
-package com.example.personalproject.learning
+package app.kotori.japanese.learning
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -60,18 +60,18 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.ChapterType
-import com.example.personalproject.data.model.GrammarEntry
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.learning.mvi.ChapterItem
-import com.example.personalproject.learning.mvi.ChapterReaderAction
-import com.example.personalproject.learning.mvi.ChapterReaderViewModel
-import com.example.personalproject.learning.mvi.StudyCardMode
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.util.rememberTts
-import com.example.personalproject.util.swipeToNavigate
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.ChapterType
+import app.kotori.japanese.data.model.GrammarEntry
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.learning.mvi.ChapterItem
+import app.kotori.japanese.learning.mvi.ChapterReaderAction
+import app.kotori.japanese.learning.mvi.ChapterReaderViewModel
+import app.kotori.japanese.learning.mvi.StudyCardMode
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.util.rememberTts
+import app.kotori.japanese.util.swipeToNavigate
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 
@@ -813,7 +813,7 @@ private fun TermStudyItemContent(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun KanjiItemContent(
-    entry: com.example.personalproject.data.model.KanjiEntry,
+    entry: app.kotori.japanese.data.model.KanjiEntry,
     isSaved: Boolean,
     isKnown: Boolean,
     isLast: Boolean,

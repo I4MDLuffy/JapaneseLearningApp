@@ -1,7 +1,7 @@
-package com.example.personalproject.learning.mvi
+package app.kotori.japanese.learning.mvi
 
-import com.example.personalproject.data.model.Chapter
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.Chapter
+import app.kotori.japanese.mvi.BaseState
 
 data class LevelState(
     val levelName: String = "",

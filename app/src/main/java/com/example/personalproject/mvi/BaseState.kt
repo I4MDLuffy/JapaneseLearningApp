@@ -1,3 +1,3 @@
-package com.example.personalproject.mvi
+package app.kotori.japanese.mvi
 
 interface BaseState

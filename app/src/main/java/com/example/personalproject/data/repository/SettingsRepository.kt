@@ -1,33 +1,33 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.model.AppSettings
-import com.example.personalproject.data.model.AppTheme
-import com.example.personalproject.data.model.StudyDirection
+import app.kotori.japanese.data.model.AppSettings
+import app.kotori.japanese.data.model.AppTheme
+import app.kotori.japanese.data.model.StudyDirection
+import com.russhwolf.settings.Settings
+import com.russhwolf.settings.get
+import com.russhwolf.settings.set
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class SettingsRepository(context: Context) {
-
-    private val prefs = context.getSharedPreferences("kotoba_settings", Context.MODE_PRIVATE)
+class SettingsRepository(private val prefs: Settings) {
 
     private val _settings = MutableStateFlow(load())
     val settings: StateFlow<AppSettings> = _settings.asStateFlow()
 
     private fun load() = AppSettings(
-        theme = AppTheme.entries.find { it.name == prefs.getString("theme", AppTheme.SAKURA.name) }
+        theme = AppTheme.entries.find { it.name == prefs.getStringOrNull("theme") }
             ?: AppTheme.SAKURA,
-        isDarkMode = prefs.getBoolean("dark_mode", false),
-        masterVolume = prefs.getFloat("master_volume", 1.0f),
-        showRomaji = prefs.getBoolean("show_romaji", true),
-        showFurigana = prefs.getBoolean("show_furigana", true),
+        isDarkMode = prefs["dark_mode", false],
+        masterVolume = prefs["master_volume", 1.0f],
+        showRomaji = prefs["show_romaji", true],
+        showFurigana = prefs["show_furigana", true],
         studyDirection = StudyDirection.entries.find {
-            it.name == prefs.getString("study_direction", StudyDirection.EN_TO_JP.name)
+            it.name == prefs.getStringOrNull("study_direction")
         } ?: StudyDirection.EN_TO_JP,
-        structuredLearning = prefs.getBoolean("structured_learning", true),
-        largerText = prefs.getBoolean("larger_text", false),
-        highContrast = prefs.getBoolean("high_contrast", false),
+        structuredLearning = prefs["structured_learning", true],
+        largerText = prefs["larger_text", false],
+        highContrast = prefs["high_contrast", false],
     )
 
     private fun persist(block: () -> Unit) {
@@ -36,29 +36,29 @@ class SettingsRepository(context: Context) {
     }
 
     fun updateTheme(theme: AppTheme) =
-        persist { prefs.edit().putString("theme", theme.name).apply() }
+        persist { prefs["theme"] = theme.name }
 
     fun updateDarkMode(dark: Boolean) =
-        persist { prefs.edit().putBoolean("dark_mode", dark).apply() }
+        persist { prefs["dark_mode"] = dark }
 
     fun updateVolume(volume: Float) =
-        persist { prefs.edit().putFloat("master_volume", volume).apply() }
+        persist { prefs["master_volume"] = volume }
 
     fun updateShowRomaji(show: Boolean) =
-        persist { prefs.edit().putBoolean("show_romaji", show).apply() }
+        persist { prefs["show_romaji"] = show }
 
     fun updateShowFurigana(show: Boolean) =
-        persist { prefs.edit().putBoolean("show_furigana", show).apply() }
+        persist { prefs["show_furigana"] = show }
 
     fun updateStudyDirection(direction: StudyDirection) =
-        persist { prefs.edit().putString("study_direction", direction.name).apply() }
+        persist { prefs["study_direction"] = direction.name }
 
     fun updateStructuredLearning(enabled: Boolean) =
-        persist { prefs.edit().putBoolean("structured_learning", enabled).apply() }
+        persist { prefs["structured_learning"] = enabled }
 
     fun updateLargerText(enabled: Boolean) =
-        persist { prefs.edit().putBoolean("larger_text", enabled).apply() }
+        persist { prefs["larger_text"] = enabled }
 
     fun updateHighContrast(enabled: Boolean) =
-        persist { prefs.edit().putBoolean("high_contrast", enabled).apply() }
+        persist { prefs["high_contrast"] = enabled }
 }

@@ -1,7 +1,7 @@
-package com.example.personalproject.grammar.detail.mvi
+package app.kotori.japanese.grammar.detail.mvi
 
-import com.example.personalproject.data.repository.GrammarRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.GrammarRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class GrammarDetailViewModel(
     private val repository: GrammarRepository,

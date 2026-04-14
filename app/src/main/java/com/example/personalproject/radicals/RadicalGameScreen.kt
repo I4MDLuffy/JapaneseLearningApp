@@ -1,4 +1,4 @@
-package com.example.personalproject.radicals
+package app.kotori.japanese.radicals
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -38,12 +38,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.RadicalEntry
-import com.example.personalproject.radicals.mvi.RadicalGameAction
-import com.example.personalproject.radicals.mvi.RadicalGamePhase
-import com.example.personalproject.radicals.mvi.RadicalGameViewModel
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.RadicalEntry
+import app.kotori.japanese.radicals.mvi.RadicalGameAction
+import app.kotori.japanese.radicals.mvi.RadicalGamePhase
+import app.kotori.japanese.radicals.mvi.RadicalGameViewModel
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun RadicalGameScreen(

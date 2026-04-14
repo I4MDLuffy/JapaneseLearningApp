@@ -1,8 +1,8 @@
-package com.example.personalproject.grammar.list.mvi
+package app.kotori.japanese.grammar.list.mvi
 
-import com.example.personalproject.data.model.GrammarEntry
-import com.example.personalproject.data.repository.GrammarRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.model.GrammarEntry
+import app.kotori.japanese.data.repository.GrammarRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class GrammarListViewModel(
     private val repository: GrammarRepository,

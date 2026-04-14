@@ -1,4 +1,4 @@
-package com.example.personalproject.phrases.list
+package app.kotori.japanese.phrases.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -38,12 +38,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.PhraseEntry
-import com.example.personalproject.phrases.list.mvi.PhraseListAction
-import com.example.personalproject.phrases.list.mvi.PhraseListViewModel
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.PhraseEntry
+import app.kotori.japanese.phrases.list.mvi.PhraseListAction
+import app.kotori.japanese.phrases.list.mvi.PhraseListViewModel
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

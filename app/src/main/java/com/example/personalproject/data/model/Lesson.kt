@@ -1,4 +1,4 @@
-package com.example.personalproject.data.model
+package app.kotori.japanese.data.model
 
 /**
  * A single lesson inside a [LearningModule].

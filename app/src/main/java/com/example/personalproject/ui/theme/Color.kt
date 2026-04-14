@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.theme
+package app.kotori.japanese.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

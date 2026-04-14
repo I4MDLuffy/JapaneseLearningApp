@@ -1,26 +1,26 @@
-package com.example.personalproject.data.csv
+package app.kotori.japanese.data.csv
 
-import android.content.Context
-import com.example.personalproject.data.model.AdjectiveEntry
-import com.example.personalproject.data.model.DialogueEntry
-import com.example.personalproject.data.model.GrammarEntry
-import com.example.personalproject.data.model.KanaCharacter
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.data.model.MiscEntry
-import com.example.personalproject.data.model.NounEntry
-import com.example.personalproject.data.model.PhraseEntry
-import com.example.personalproject.data.model.RadicalEntry
-import com.example.personalproject.data.model.VerbEntry
-import com.example.personalproject.data.model.VocabularyWord
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import app.kotori.japanese.data.model.AdjectiveEntry
+import app.kotori.japanese.data.model.DialogueEntry
+import app.kotori.japanese.data.model.GrammarEntry
+import app.kotori.japanese.data.model.KanaCharacter
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.data.model.MiscEntry
+import app.kotori.japanese.data.model.NounEntry
+import app.kotori.japanese.data.model.PhraseEntry
+import app.kotori.japanese.data.model.RadicalEntry
+import app.kotori.japanese.data.model.VerbEntry
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.generated.resources.Res
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 object CsvParser {
 
     // ── Vocabulary ────────────────────────────────────────────────────────────
 
-    fun parseVocabulary(context: Context, fileName: String): List<VocabularyWord> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseVocabulary(fileName: String): List<VocabularyWord> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             VocabularyWord(
                 id = f["id"] ?: return@mapNotNull null,
@@ -44,8 +44,9 @@ object CsvParser {
 
     // ── Kanji ─────────────────────────────────────────────────────────────────
 
-    fun parseKanji(context: Context, fileName: String): List<KanjiEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseKanji(fileName: String): List<KanjiEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             KanjiEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -69,8 +70,9 @@ object CsvParser {
 
     // ── Verbs ─────────────────────────────────────────────────────────────────
 
-    fun parseVerbs(context: Context, fileName: String): List<VerbEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseVerbs(fileName: String): List<VerbEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             VerbEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -111,8 +113,9 @@ object CsvParser {
 
     // ── Adjectives ────────────────────────────────────────────────────────────
 
-    fun parseAdjectives(context: Context, fileName: String): List<AdjectiveEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseAdjectives(fileName: String): List<AdjectiveEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             AdjectiveEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -143,8 +146,9 @@ object CsvParser {
 
     // ── Nouns ─────────────────────────────────────────────────────────────────
 
-    fun parseNouns(context: Context, fileName: String): List<NounEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseNouns(fileName: String): List<NounEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             NounEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -166,8 +170,9 @@ object CsvParser {
 
     // ── Phrases ───────────────────────────────────────────────────────────────
 
-    fun parsePhrases(context: Context, fileName: String): List<PhraseEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parsePhrases(fileName: String): List<PhraseEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             PhraseEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -186,8 +191,9 @@ object CsvParser {
 
     // ── Grammar ───────────────────────────────────────────────────────────────
 
-    fun parseGrammar(context: Context, fileName: String): List<GrammarEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseGrammar(fileName: String): List<GrammarEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             GrammarEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -210,8 +216,9 @@ object CsvParser {
 
     // ── Kana ──────────────────────────────────────────────────────────────────
 
-    fun parseKana(context: Context, fileName: String): List<KanaCharacter> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseKana(fileName: String): List<KanaCharacter> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             KanaCharacter(
                 id = f["id"] ?: return@mapNotNull null,
@@ -226,8 +233,9 @@ object CsvParser {
 
     // ── Radicals ──────────────────────────────────────────────────────────────
 
-    fun parseRadicals(context: Context, fileName: String): List<RadicalEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseRadicals(fileName: String): List<RadicalEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             RadicalEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -245,8 +253,9 @@ object CsvParser {
 
     // ── Dialogues ─────────────────────────────────────────────────────────────
 
-    fun parseDialogues(context: Context, fileName: String): List<DialogueEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseDialogues(fileName: String): List<DialogueEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             DialogueEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -262,8 +271,9 @@ object CsvParser {
 
     // ── Miscellaneous ─────────────────────────────────────────────────────────
 
-    fun parseMisc(context: Context, fileName: String): List<MiscEntry> {
-        val (_, rows) = readCsv(context, fileName)
+    @OptIn(ExperimentalResourceApi::class)
+    suspend fun parseMisc(fileName: String): List<MiscEntry> {
+        val (_, rows) = readCsv(fileName)
         return rows.mapNotNull { f ->
             MiscEntry(
                 id = f["id"] ?: return@mapNotNull null,
@@ -278,31 +288,26 @@ object CsvParser {
 
     // ── Shared helpers ────────────────────────────────────────────────────────
 
-    /** Reads a CSV file from assets. Returns (header list, list of field maps). */
-    private fun readCsv(context: Context, fileName: String): Pair<List<String>, List<Map<String, String>>> {
-        val lines = context.assets.open(fileName).use { stream ->
-            BufferedReader(InputStreamReader(stream)).readLines()
-        }
+    @OptIn(ExperimentalResourceApi::class)
+    private suspend fun readCsv(fileName: String): Pair<List<String>, List<Map<String, String>>> {
+        val text = Res.readBytes("files/$fileName").decodeToString()
+        val lines = text.lines().filter { it.isNotBlank() }
         if (lines.size < 2) return Pair(emptyList(), emptyList())
 
         val header = parseLine(lines[0])
         val rows = lines.drop(1).mapNotNull { line ->
-            if (line.isBlank()) return@mapNotNull null
             val values = parseLine(line)
             if (values.isEmpty()) return@mapNotNull null
-            // Pad short rows with empty strings
             val padded = values + List((header.size - values.size).coerceAtLeast(0)) { "" }
             header.zip(padded).toMap()
         }
         return Pair(header, rows)
     }
 
-    /** "|"-separated list field → List<String>, empty strings filtered out. */
     private fun splitList(value: String?): List<String> =
         if (value.isNullOrBlank()) emptyList()
         else value.split("|").map { it.trim() }.filter { it.isNotEmpty() }
 
-    /** RFC 4180-compliant CSV line parser supporting quoted fields. */
     private fun parseLine(line: String): List<String> {
         val result = mutableListOf<String>()
         val current = StringBuilder()

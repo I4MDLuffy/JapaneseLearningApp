@@ -1,4 +1,4 @@
-package com.example.personalproject.navhub
+package app.kotori.japanese.navhub
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

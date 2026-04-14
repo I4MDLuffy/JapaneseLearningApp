@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games
+package app.kotori.japanese.ui.games
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
@@ -39,7 +39,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.text.input.ImeAction
-import com.example.personalproject.ui.games.mvi.FillBlankDirection
+import app.kotori.japanese.ui.games.mvi.FillBlankDirection
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -52,21 +52,21 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.games.mvi.GameType
-import com.example.personalproject.ui.games.mvi.KanjiBuilderAction
-import com.example.personalproject.ui.games.mvi.KanjiBuilderPhase
-import com.example.personalproject.ui.games.mvi.KanjiBuilderViewModel
-import com.example.personalproject.ui.games.mvi.KanjiDropAction
-import com.example.personalproject.ui.games.mvi.KanjiDropMode
-import com.example.personalproject.ui.games.mvi.KanjiDropPhase
-import com.example.personalproject.ui.games.mvi.KanjiDropViewModel
-import com.example.personalproject.ui.games.mvi.PairMode
-import com.example.personalproject.ui.games.mvi.StudyFeedback
-import com.example.personalproject.ui.games.mvi.StudyGameAction
-import com.example.personalproject.ui.games.mvi.StudyGamePhase
-import com.example.personalproject.ui.games.mvi.StudyGameViewModel
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.games.mvi.GameType
+import app.kotori.japanese.ui.games.mvi.KanjiBuilderAction
+import app.kotori.japanese.ui.games.mvi.KanjiBuilderPhase
+import app.kotori.japanese.ui.games.mvi.KanjiBuilderViewModel
+import app.kotori.japanese.ui.games.mvi.KanjiDropAction
+import app.kotori.japanese.ui.games.mvi.KanjiDropMode
+import app.kotori.japanese.ui.games.mvi.KanjiDropPhase
+import app.kotori.japanese.ui.games.mvi.KanjiDropViewModel
+import app.kotori.japanese.ui.games.mvi.PairMode
+import app.kotori.japanese.ui.games.mvi.StudyFeedback
+import app.kotori.japanese.ui.games.mvi.StudyGameAction
+import app.kotori.japanese.ui.games.mvi.StudyGamePhase
+import app.kotori.japanese.ui.games.mvi.StudyGameViewModel
 
 @Composable
 fun StudyGameScreen(

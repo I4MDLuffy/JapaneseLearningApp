@@ -1,4 +1,4 @@
-package com.example.personalproject.gettingstarted
+package app.kotori.japanese.gettingstarted
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,7 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 private data class GlossaryEntry(val term: String, val definition: String)
 

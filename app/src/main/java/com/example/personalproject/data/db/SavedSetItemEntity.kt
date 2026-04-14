@@ -1,4 +1,4 @@
-package com.example.personalproject.data.db
+package app.kotori.japanese.data.db
 
 import androidx.room.Entity
 import androidx.room.ForeignKey

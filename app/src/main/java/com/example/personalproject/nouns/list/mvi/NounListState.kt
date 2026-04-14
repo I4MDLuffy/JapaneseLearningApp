@@ -1,7 +1,7 @@
-package com.example.personalproject.nouns.list.mvi
+package app.kotori.japanese.nouns.list.mvi
 
-import com.example.personalproject.data.model.NounEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.NounEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class NounListState(
     val allEntries: List<NounEntry> = emptyList(),

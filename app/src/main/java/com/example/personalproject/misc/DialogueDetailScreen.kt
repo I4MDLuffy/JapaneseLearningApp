@@ -1,4 +1,4 @@
-package com.example.personalproject.misc
+package app.kotori.japanese.misc
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -25,7 +25,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import com.example.personalproject.util.rememberTts
+import app.kotori.japanese.util.rememberTts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -39,9 +39,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.DialogueEntry
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.DialogueEntry
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun DialogueDetailScreen(

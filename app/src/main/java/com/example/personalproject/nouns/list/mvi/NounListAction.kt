@@ -1,6 +1,6 @@
-package com.example.personalproject.nouns.list.mvi
+package app.kotori.japanese.nouns.list.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface NounListAction : BaseAction {
     data object LoadEntries : NounListAction

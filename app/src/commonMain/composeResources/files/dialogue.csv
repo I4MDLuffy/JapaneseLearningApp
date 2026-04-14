@@ -1,0 +1,61 @@
+id,japanese_content,english_content,kanji_references,vocab_references,reading,romaji
+d001,はじめまして。田中です。どうぞよろしく。,Nice to meet you. I'm Tanaka. Please treat me well.,,, はじめまして。たなかです。どうぞよろしく。,Hajimemashite. Tanaka desu. Douzo yoroshiku.
+d002,はじめまして。スミスです。こちらこそよろしくお願いします。,Nice to meet you too. I'm Smith. Likewise please treat me well.,,,はじめまして。スミスです。こちらこそよろしくおねがいします。,Hajimemashite. Sumisu desu. Kochira koso yoroshiku onegaishimasu.
+d003,お名前は何ですか。,What is your name?,,, おなまえはなんですか。,Onamae wa nan desu ka.
+d004,私はケンと申します。どちらからいらっしゃいましたか。,My name is Ken. Where did you come from?,,,わたしはケンともうします。どちらからいらっしゃいましたか。,Watashi wa Ken to moushimasu. Dochira kara irasshaimashita ka.
+d005,アメリカから来ました。日本語を勉強しています。,I came from America. I am studying Japanese.,,,アメリカからきました。にほんごをべんきょうしています。,Amerika kara kimashita. Nihongo wo benkyou shite imasu.
+d006,日本語がお上手ですね。,Your Japanese is very good.,,,にほんごがおじょうずですね。,Nihongo ga ojouzu desu ne.
+d007,いいえ、まだまだです。,No, I still have a long way to go.,,,いいえ、まだまだです。,Iie, mada mada desu.
+d008,すみません、駅はどこですか。,Excuse me, where is the station?,,,すみません、えきはどこですか。,Sumimasen, eki wa doko desu ka.
+d009,あの角を右に曲がると、すぐ見えます。,Turn right at that corner and you will see it right away.,,,あのかどをみぎにまがると、すぐみえます。,Ano kado wo migi ni magaru to, sugu miemasu.
+d010,ありがとうございます。歩いて何分くらいかかりますか。,Thank you very much. About how many minutes does it take on foot?,,,ありがとうございます。あるいてなんぷんくらいかかりますか。,Arigatou gozaimasu. Aruite nan-pun kurai kakarimasu ka.
+d011,だいたい五分くらいです。,It's about five minutes.,,,だいたいごふんくらいです。,Daitai go-fun kurai desu.
+d012,いらっしゃいませ。何名様ですか。,Welcome. How many in your party?,,,いらっしゃいませ。なんめいさまですか。,Irasshaimase. Nan-mei-sama desu ka.
+d013,二人です。禁煙席をお願いします。,Two people. Non-smoking please.,,,ふたりです。きんえんせきをおねがいします。,Futari desu. Kin'en-seki wo onegaishimasu.
+d014,ご注文はお決まりですか。,Have you decided on your order?,,,ごちゅうもんはおきまりですか。,Go-chuumon wa okimari desu ka.
+d015,ラーメンをひとつと餃子をふたつください。,One ramen and two gyoza please.,,,ラーメンをひとつとぎょうざをふたつください。,Raamen wo hitotsu to gyouza wo futatsu kudasai.
+d016,少々お待ちください。,Please wait a moment.,,,しょうしょうおまちください。,Shoushou omachi kudasai.
+d017,お会計をお願いします。,Check please.,,,おかいけいをおねがいします。,Okaikei wo onegaishimasu.
+d018,合わせて千五百円になります。,The total comes to one thousand five hundred yen.,,,あわせてせんごひゃくえんになります。,Awasete sen go-hyaku-en ni narimasu.
+d019,このシャツはいくらですか。,How much is this shirt?,,,このシャツはいくらですか。,Kono shatsu wa ikura desu ka.
+d020,三千円です。,It is three thousand yen.,,,さんぜんえんです。,San-zen-en desu.
+d021,少し安くなりますか。,Can you make it a little cheaper?,,,すこしやすくなりますか。,Sukoshi yasuku narimasu ka.
+d022,申し訳ありませんが、値引きはできません。,I'm sorry but we cannot discount it.,,,もうしわけありませんが、ねびきはできません。,Moushiwake arimasen ga, nebiki wa dekimasen.
+d023,では、これをください。,Then I will take this please.,,,では、これをください。,Dewa, kore wo kudasai.
+d024,今日の天気はどうですか。,How is the weather today?,,,きょうのてんきはどうですか。,Kyou no tenki wa dou desu ka.
+d025,曇っていますが、午後から晴れるそうです。,It is cloudy but I hear it will clear up in the afternoon.,,,くもっていますが、ごごからはれるそうです。,Kumotte imasu ga, gogo kara hareru sou desu.
+d026,最近とても寒いですね。,It has been very cold lately hasn't it.,,,さいきんとてもさむいですね。,Saikin totemo samui desu ne.
+d027,そうですね。もうすぐ冬ですから。,That's right. It is almost winter after all.,,,そうですね。もうすぐふゆですから。,Sou desu ne. Mou sugu fuyu desu kara.
+d028,気分はどうですか。,How are you feeling?,,,きぶんはどうですか。,Kibun wa dou desu ka.
+d029,あまりよくないです。頭が痛いです。,Not very well. I have a headache.,,,あまりよくないです。あたまがいたいです。,Amari yokunai desu. Atama ga itai desu.
+d030,大変ですね。お大事に。,That must be tough. Please take care.,,,たいへんですね。おだいじに。,Taihen desu ne. Odaiji ni.
+d031,今週末、何か予定がありますか。,Do you have any plans this weekend?,,,こんしゅうまつ、なにかよていがありますか。,Konshuu-matsu, nanika yotei ga arimasu ka.
+d032,特にありませんが、どうかしましたか。,Nothing in particular, did something happen?,,,とくにありませんが、どうかしましたか。,Toku ni arimasen ga, dou ka shimashita ka.
+d033,映画を見に行きませんか。新しいアクション映画が来ているんです。,Shall we go see a movie? A new action film has arrived.,,,えいがをみにいきませんか。あたらしいアクションえいががきているんです。,Eiga wo mi ni ikimasen ka. Atarashii akushon eiga ga kite iru n desu.
+d034,いいですね。何時に始まりますか。,That sounds great. What time does it start?,,,いいですね。なんじにはじまりますか。,Ii desu ne. Nanji ni hajimarimasu ka.
+d035,三時からです。駅で待ち合わせましょう。,It starts at three. Let's meet at the station.,,,さんじからです。えきでまちあわせましょう。,Sanji kara desu. Eki de machiawasemashoo.
+d036,わかりました。じゃあ、二時半に駅の改札前で。,Understood. Then let's meet at the ticket gate at two thirty.,,,わかりました。じゃあ、にじはんにえきのかいさつまえで。,Wakarimashita. Jaa, niji-han ni eki no kaisatsu mae de.
+d037,日本語の勉強はどうですか。,How is your Japanese study going?,,,にほんごのべんきょうはどうですか。,Nihongo no benkyou wa dou desu ka.
+d038,最近難しくなってきました。漢字が覚えられません。,Recently it has been getting harder. I cannot remember the kanji.,,,さいきんむずかしくなってきました。かんじがおぼえられません。,Saikin muzukashiku natte kimashita. Kanji ga oboeraremasen.
+d039,私も最初は大変でした。毎日少しずつ練習するといいですよ。,It was hard for me at first too. It's good to practice a little every day.,,,わたしもさいしょはたいへんでした。まいにちすこしずつれんしゅうするといいですよ。,Watashi mo saisho wa taihen deshita. Mainichi sukoshi zutsu renshuu suru to ii desu yo.
+d040,アドバイスをありがとうございます。頑張ります。,Thank you for the advice. I will do my best.,,,アドバイスをありがとうございます。がんばります。,Adobaisu wo arigatou gozaimasu. Ganbarimasu.
+d041,この電車は新宿に止まりますか。,Does this train stop at Shinjuku?,,,このでんしゃはしんじゅくにとまりますか。,Kono densha wa Shinjuku ni tomarimasu ka.
+d042,はい、次の駅が新宿です。,Yes, the next station is Shinjuku.,,,はい、つぎのえきがしんじゅくです。,Hai, tsugi no eki ga Shinjuku desu.
+d043,東京駅まで何駅ありますか。,How many stations are there to Tokyo Station?,,,とうきょうえきまでなんえきありますか。,Tokyo-eki made nan-eki arimasu ka.
+d044,三駅です。約十分かかります。,There are three stations. It takes about ten minutes.,,,みっつえきです。やくじゅっぷんかかります。,Mittsu-eki desu. Yaku juppun kakarimasu.
+d045,ありがとうございます。助かりました。,Thank you. That was helpful.,,,ありがとうございます。たすかりました。,Arigatou gozaimasu. Tasukarimashita.
+d046,これ、好きですか。,Do you like this?,,,これ、すきですか。,Kore, suki desu ka.
+d047,はい、とても好きです。特に音楽が好きです。,Yes, I like it very much. Especially music.,,,はい、とてもすきです。とくにおんがくがすきです。,Hai, totemo suki desu. Toku ni ongaku ga suki desu.
+d048,どんな音楽が好きですか。,What kind of music do you like?,,,どんなおんがくがすきですか。,Donna ongaku ga suki desu ka.
+d049,ポップスが一番好きです。,I like pop music the most.,,,ポップスがいちばんすきです。,Poppusu ga ichiban suki desu.
+d050,予約をしたいのですが。,I would like to make a reservation.,,,よやくをしたいのですが。,Yoyaku wo shitai no desu ga.
+d051,何名様でいつですか。,For how many people and when?,,,なんめいさまでいつですか。,Nan-mei-sama de itsu desu ka.
+d052,来週の土曜日、二名でお願いします。,Next Saturday for two people please.,,,らいしゅうのどようび、ふためいでおねがいします。,Raishuu no doyoubi, futamei de onegaishimasu.
+d053,おそれ入りますが、その日は満席です。,I'm terribly sorry but that day is fully booked.,,,おそれいりますが、そのひはまんせきです。,Osoreirimasu ga, sono hi wa manseki desu.
+d054,では、日曜日はどうですか。,Then how about Sunday?,,,では、にちようびはどうですか。,Dewa, nichiyoubi wa dou desu ka.
+d055,日曜日でしたら大丈夫です。何時がよろしいですか。,If it's Sunday that will be fine. What time would be good?,,,にちようびでしたらだいじょうぶです。なんじがよろしいですか。,Nichiyoubi deshitara daijoubu desu. Nanji ga yoroshii desu ka.
+d056,七時でお願いします。,Seven o'clock please.,,,しちじでおねがいします。,Shichiji de onegaishimasu.
+d057,田中さんのことが心配です。最近元気がないようですね。,I am worried about Tanaka-san. They don't seem to have much energy lately.,,,たなかさんのことがしんぱいです。さいきんげんきがないようですね。,Tanaka-san no koto ga shinpai desu. Saikin genki ga nai you desu ne.
+d058,そうですね。何か悩みがあるのかもしれません。,That's right. They may have some worries.,,,そうですね。なにかなやみがあるのかもしれません。,Sou desu ne. Nanika nayami ga aru no kamo shiremasen.
+d059,今日は何をしますか。,What will you do today?,,,きょうはなにをしますか。,Kyou wa nani wo shimasu ka.
+d060,図書館で勉強してから、友達と買い物に行くつもりです。,I plan to study at the library and then go shopping with a friend.,,,としょかんでべんきょうしてから、ともだちとかいものにいくつもりです。,Toshokan de benkyou shite kara, tomodachi to kaimono ni iku tsumori desu.

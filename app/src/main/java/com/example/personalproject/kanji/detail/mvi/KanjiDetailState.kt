@@ -1,7 +1,7 @@
-package com.example.personalproject.kanji.detail.mvi
+package app.kotori.japanese.kanji.detail.mvi
 
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class KanjiDetailState(
     val entry: KanjiEntry? = null,

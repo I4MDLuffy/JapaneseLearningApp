@@ -1,7 +1,7 @@
-package com.example.personalproject.ui.basiccharacters
+package app.kotori.japanese.ui.basiccharacters
 
-import com.example.personalproject.data.kana.KanaEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.kana.KanaEntry
+import app.kotori.japanese.mvi.BaseState
 
 enum class GameMode { MATCHING, TYPING, FLASHCARD, MULTIPLE_CHOICE, KANA_SPEED }
 

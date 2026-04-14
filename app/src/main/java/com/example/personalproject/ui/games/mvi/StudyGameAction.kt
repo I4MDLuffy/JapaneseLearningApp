@@ -1,6 +1,6 @@
-package com.example.personalproject.ui.games.mvi
+package app.kotori.japanese.ui.games.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface StudyGameAction : BaseAction {
     object Restart : StudyGameAction

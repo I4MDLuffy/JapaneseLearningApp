@@ -1,11 +1,11 @@
-package com.example.personalproject.ui.theme
+package app.kotori.japanese.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.example.personalproject.data.model.AppTheme
+import app.kotori.japanese.data.model.AppTheme
 
 // ── Jade ──────────────────────────────────────────────────────────────────────
 private val JadeLightScheme = lightColorScheme(

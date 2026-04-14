@@ -1,6 +1,6 @@
-package com.example.personalproject.learning.mvi
+package app.kotori.japanese.learning.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface ChapterReaderAction : BaseAction {
     object NextItem : ChapterReaderAction

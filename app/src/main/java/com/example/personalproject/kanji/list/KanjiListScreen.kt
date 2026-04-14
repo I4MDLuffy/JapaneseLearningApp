@@ -1,4 +1,4 @@
-package com.example.personalproject.kanji.list
+package app.kotori.japanese.kanji.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -44,14 +44,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.KanjiEntry
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.KanjiEntry
 import kotlinx.coroutines.launch
-import com.example.personalproject.kanji.list.mvi.KanjiListAction
-import com.example.personalproject.kanji.list.mvi.KanjiListViewModel
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.util.kanaToRomaji
+import app.kotori.japanese.kanji.list.mvi.KanjiListAction
+import app.kotori.japanese.kanji.list.mvi.KanjiListViewModel
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.util.kanaToRomaji
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

@@ -1,7 +1,7 @@
-package com.example.personalproject.grammar.list.mvi
+package app.kotori.japanese.grammar.list.mvi
 
-import com.example.personalproject.data.model.GrammarEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.GrammarEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class GrammarListState(
     val allEntries: List<GrammarEntry> = emptyList(),

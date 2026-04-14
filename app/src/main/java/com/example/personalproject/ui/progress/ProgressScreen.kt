@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.progress
+package app.kotori.japanese.ui.progress
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,8 +28,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun ProgressScreen(onBack: () -> Unit, onStartReview: () -> Unit = {}) {

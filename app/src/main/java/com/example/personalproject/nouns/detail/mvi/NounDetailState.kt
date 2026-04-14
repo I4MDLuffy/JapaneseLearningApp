@@ -1,7 +1,7 @@
-package com.example.personalproject.nouns.detail.mvi
+package app.kotori.japanese.nouns.detail.mvi
 
-import com.example.personalproject.data.model.NounEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.NounEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class NounDetailState(
     val entry: NounEntry? = null,

@@ -1,7 +1,7 @@
-package com.example.personalproject.adjectives.detail.mvi
+package app.kotori.japanese.adjectives.detail.mvi
 
-import com.example.personalproject.data.repository.AdjectiveRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.AdjectiveRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class AdjectiveDetailViewModel(
     private val repository: AdjectiveRepository,

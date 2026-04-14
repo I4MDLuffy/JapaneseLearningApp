@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games
+package app.kotori.japanese.ui.games
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,9 +32,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material.icons.outlined.HelpOutline
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.ScreenHelpDialog
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.ScreenHelpDialog
 
 private data class GameEntry(
     val gameType: String,

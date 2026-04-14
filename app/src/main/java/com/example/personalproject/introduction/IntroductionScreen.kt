@@ -1,4 +1,4 @@
-package com.example.personalproject.introduction
+package app.kotori.japanese.introduction
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
+import app.kotori.japanese.LocalAppContainer
 
 @Composable
 fun IntroductionScreen(onGetStarted: () -> Unit) {

@@ -1,4 +1,4 @@
-package com.example.personalproject.verbs.list
+package app.kotori.japanese.verbs.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -46,13 +46,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.VerbEntry
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.VerbEntry
 import kotlinx.coroutines.launch
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.verbs.list.mvi.VerbListAction
-import com.example.personalproject.verbs.list.mvi.VerbListViewModel
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.verbs.list.mvi.VerbListAction
+import app.kotori.japanese.verbs.list.mvi.VerbListViewModel
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

@@ -1,4 +1,4 @@
-package com.example.personalproject.verbs.detail
+package app.kotori.japanese.verbs.detail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -46,17 +46,17 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.LocalAppSettings
-import com.example.personalproject.data.model.VerbEntry
-import com.example.personalproject.ui.components.ItemNavigationBar
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.SpeakableText
-import com.example.personalproject.util.containsKana
-import com.example.personalproject.util.kanaToRomaji
-import com.example.personalproject.util.rememberTts
-import com.example.personalproject.util.swipeToNavigate
-import com.example.personalproject.verbs.detail.mvi.VerbDetailViewModel
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.LocalAppSettings
+import app.kotori.japanese.data.model.VerbEntry
+import app.kotori.japanese.ui.components.ItemNavigationBar
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.SpeakableText
+import app.kotori.japanese.util.containsKana
+import app.kotori.japanese.util.kanaToRomaji
+import app.kotori.japanese.util.rememberTts
+import app.kotori.japanese.util.swipeToNavigate
+import app.kotori.japanese.verbs.detail.mvi.VerbDetailViewModel
 
 @Composable
 fun VerbDetailScreen(

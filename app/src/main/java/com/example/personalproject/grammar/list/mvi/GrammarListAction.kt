@@ -1,6 +1,6 @@
-package com.example.personalproject.grammar.list.mvi
+package app.kotori.japanese.grammar.list.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface GrammarListAction : BaseAction {
     data object LoadEntries : GrammarListAction

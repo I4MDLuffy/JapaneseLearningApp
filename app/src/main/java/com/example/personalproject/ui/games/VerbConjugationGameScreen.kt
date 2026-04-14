@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games
+package app.kotori.japanese.ui.games
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -35,9 +35,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.VerbEntry
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.VerbEntry
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 private data class ConjQuestion(
     val verb: VerbEntry,

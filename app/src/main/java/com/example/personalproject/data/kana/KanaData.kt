@@ -1,4 +1,4 @@
-package com.example.personalproject.data.kana
+package app.kotori.japanese.data.kana
 
 data class KanaEntry(val kana: String, val romaji: String)
 

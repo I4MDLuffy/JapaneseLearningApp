@@ -1,6 +1,6 @@
-package com.example.personalproject.verbs.detail.mvi
+package app.kotori.japanese.verbs.detail.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface VerbDetailAction : BaseAction {
     data object Load : VerbDetailAction

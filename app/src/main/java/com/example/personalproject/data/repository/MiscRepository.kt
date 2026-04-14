@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.MiscEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.MiscEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class MiscRepository(private val context: Context) {
+class MiscRepository() {
 
     private var cache: List<MiscEntry>? = null
 
@@ -20,5 +19,5 @@ class MiscRepository(private val context: Context) {
         getAllMisc().filter { it.type.equals(type, ignoreCase = true) }
 
     private suspend fun load(): List<MiscEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseMisc(context, "miscellaneous.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseMisc("miscellaneous.csv") }
 }

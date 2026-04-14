@@ -1,8 +1,8 @@
-package com.example.personalproject.phrases.list.mvi
+package app.kotori.japanese.phrases.list.mvi
 
-import com.example.personalproject.data.model.PhraseEntry
-import com.example.personalproject.data.repository.PhraseRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.model.PhraseEntry
+import app.kotori.japanese.data.repository.PhraseRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class PhraseListViewModel(
     private val repository: PhraseRepository,

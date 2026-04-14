@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.review
+package app.kotori.japanese.ui.review
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
@@ -41,9 +41,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.LocalAppSettings
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.LocalAppSettings
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun ReviewScreen(onBack: () -> Unit) {

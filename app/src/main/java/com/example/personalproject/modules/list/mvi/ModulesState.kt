@@ -1,8 +1,8 @@
-package com.example.personalproject.modules.list.mvi
+package app.kotori.japanese.modules.list.mvi
 
-import com.example.personalproject.data.model.LearningModule
-import com.example.personalproject.data.model.ModuleCategory
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.LearningModule
+import app.kotori.japanese.data.model.ModuleCategory
+import app.kotori.japanese.mvi.BaseState
 
 data class ModulesState(
     val allModules: List<LearningModule> = emptyList(),

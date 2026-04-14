@@ -1,0 +1,767 @@
+id,kanji,meaning,hiragana,on_yomi,kun_yomi,vocab_references,jlpt_level,theme,unicode,stroke_order_image,radical_references,stroke_count,grade_level,component_structure,lesson_number
+k0001,日,sun; day,ひ,ニチ|ジツ,ひ|び,,N5,time,U+65E5,,r107,4,1,single,1
+k0002,一,one,いち,イチ|イツ,ひと,,N5,number,U+4E00,,r001,1,1,single,1
+k0003,国,country,くに,コク,くに,,N5,society,U+56FD,,r039|r146,8,2,enclosure,1
+k0004,人,person,ひと,ジン|ニン,ひと,,N5,people,U+4EBA,,r011,2,1,single,1
+k0005,年,year,とし,ネン,とし,,N5,time,U+5E74,,r150,6,2,single,1
+k0006,大,big,おお,ダイ|タイ,おお,,N5,description,U+5927,,r047,3,1,single,1
+k0007,十,ten,じゅう,ジュウ,とお,,N5,number,U+5341,,r031,2,1,single,1
+k0008,二,two,に,ニ,ふた,,N5,number,U+4E8C,,r009,2,1,single,1
+k0009,本,book; origin,ほん,ホン,もと,,N5,object,U+672C,,r113,5,1,single,1
+k0010,中,middle; inside,なか,チュウ,なか,,N5,position,U+4E2D,,r039,4,1,enclosure,1
+k0011,長,long; leader,なが,チョウ,なが,,N5,description,U+9577,,r262,8,2,single,1
+k0012,出,exit; go out,でる,シュツ,で-|だ,,N5,action,U+51FA,,r060,5,1,top-bottom,1
+k0013,三,three,さん,サン,みっ,,N5,number,U+4E09,,r001,3,1,single,1
+k0014,時,time; hour,とき,ジ,とき,,N5,time,U+6642,,r107|r040,10,2,left-right,1
+k0015,行,go; act,いく,コウ|ギョウ,い-|ゆ,,N5,action,U+884C,,r220,6,2,single,1
+k0016,見,see,みる,ケン,み,,N5,action,U+898B,,r225,7,1,single,1
+k0017,月,moon; month,つき,ゲツ|ガツ,つき,,N5,time,U+6708,,r110,4,1,single,1
+k0018,分,divide; minute,ふん,ブン|フン,わ-ける,,N5,time,U+5206,,r016|r024,4,2,top-bottom,1
+k0019,後,after,あと,ゴ|コウ,あと,,N5,time,U+5F8C,,r060|r084,9,2,left-right,1
+k0020,前,before,まえ,ゼン,まえ,,N5,time,U+524D,,r140|r024,9,2,top-bottom,1
+k0021,生,life; birth,いきる,セイ|ショウ,い-|う-まれる,,N5,life,U+751F,,r150,5,1,single,2
+k0022,五,five,ご,ゴ,いつ,,N5,number,U+4E94,,r001,4,1,single,2
+k0023,間,interval; space,あいだ,カン|ケン,あいだ,,N5,time,U+9593,,r263|r107,12,2,enclosure,2
+k0024,上,up; above,うえ,ジョウ,うえ,,N5,position,U+4E0A,,r001,3,1,single,2
+k0025,東,east,ひがし,トウ,ひがし,,N5,direction,U+6771,,r113,8,2,single,2
+k0026,四,four,よん,シ,よ|よっ,,N5,number,U+56DB,,r039,5,1,enclosure,2
+k0027,今,now,いま,コン,いま,,N5,time,U+4ECA,,r011,4,2,top-bottom,2
+k0028,金,gold; money,かね,キン|コン,かね,,N5,object,U+91D1,,r260,8,1,single,2
+k0029,九,nine,きゅう,キュウ|ク,ここの,,N5,number,U+4E5D,,r004,2,1,single,2
+k0030,入,enter,はいる,ニュウ,い-|はい-る,,N5,action,U+5165,,r015,2,1,single,2
+k0031,学,study,まなぶ,ガク,まな-ぶ,,N5,education,U+5B66,,r039|r050,8,1,top-bottom,2
+k0032,高,high; tall,たかい,コウ,たか-い,,N5,description,U+9AD8,,r289,10,2,enclosure,2
+k0033,円,yen; circle,えん,エン,まる-い,,N5,money,U+5186,,r018,4,1,enclosure,2
+k0034,子,child,こ,シ,こ,,N5,people,U+5B50,,r050,3,1,single,2
+k0035,外,outside,そと,ガイ|ゲ,そと,,N5,position,U+5916,,r046|r032,5,2,left-right,2
+k0036,八,eight,はち,ハチ,やっ,,N5,number,U+516B,,r016,2,1,single,2
+k0037,六,six,ろく,ロク,むっ,,N5,number,U+516D,,r008,4,1,top-bottom,2
+k0038,下,down; below,した,カ|ゲ,した,,N5,position,U+4E0B,,r001,3,1,single,2
+k0039,来,come,くる,ライ,く-る,,N5,action,U+6765,,r075,7,2,single,2
+k0040,気,spirit; energy,き,キ,き,,N5,state,U+6C17,,r124,6,1,single,2
+k0041,小,small,ちいさい,ショウ,ちい-さい,,N5,description,U+5C0F,,r055,3,1,single,3
+k0042,七,seven,なな,シチ,なな|なの,,N5,number,U+4E03,,r005,2,1,single,3
+k0043,山,mountain,やま,サン,やま,,N5,nature,U+5C71,,r060,3,1,single,3
+k0044,話,talk; speak,はなす,ワ,はな-す|はなし,,N5,action,U+8A71,,r228,13,2,left-right,3
+k0045,女,woman,おんな,ジョ|ニョ,おんな,,N5,people,U+5973,,r048,3,1,single,3
+k0046,北,north,きた,ホク,きた,,N5,direction,U+5317,,r021,5,2,left-right,3
+k0047,午,noon,ご,ゴ,うま,,N5,time,U+5348,,r070,4,2,single,3
+k0048,百,hundred,ひゃく,ヒャク,もも,,N5,number,U+767E,,r106,6,1,single,3
+k0049,書,write,かく,ショ,か-く,,N5,action,U+66F8,,r129,10,2,top-bottom,3
+k0050,先,previous; ahead,さき,セン,さき,,N5,time,U+5148,,r014,6,1,top-bottom,3
+k0051,名,name,な,メイ|ミョウ,な,,N5,people,U+540D,,r046|r037,6,1,top-bottom,3
+k0052,川,river,かわ,セン,かわ,,N5,nature,U+5DDD,,r064,3,1,single,3
+k0053,千,thousand,せん,セン,ち,,N5,number,U+5343,,r031,3,1,single,3
+k0054,水,water,みず,スイ,みず,,N5,nature,U+6C34,,r125,4,1,single,3
+k0055,半,half,はん,ハン,なか-ば,,N5,number,U+534A,,r026|r031,5,2,top-bottom,3
+k0056,男,man,おとこ,ダン|ナン,おとこ,,N5,people,U+7537,,r102|r026,7,1,top-bottom,3
+k0057,西,west,にし,セイ|サイ,にし,,N5,direction,U+897F,,r223,6,2,single,3
+k0058,電,electricity,でん,デン,,,N5,technology,U+96FB,,r267|r107,13,2,top-bottom,3
+k0059,校,school,こう,コウ,,,N5,education,U+6821,,r113|r101,10,2,left-right,3
+k0060,語,language,ご,ゴ,かた-る,,N5,language,U+8A9E,,r228,14,2,left-right,3
+k0061,土,soil; earth,つち,ド|ト,つち,,N5,nature,U+571F,,r040,3,1,single,4
+k0062,木,tree; wood,き,ボク|モク,き,,N5,nature,U+6728,,r113,4,1,single,4
+k0063,聞,hear; ask,きく,ブン|モン,き-く,,N5,action,U+805E,,r263|r128,14,2,enclosure,4
+k0064,食,eat,たべる,ショク,た-べる,,N5,action,U+98DF,,r282,9,2,single,4
+k0065,車,car,くるま,シャ,くるま,,N5,object,U+8ECA,,r245,7,1,single,4
+k0066,何,what,なに,カ,なに|なん,,N5,question,U+4F55,,r012|r037,7,2,left-right,4
+k0067,南,south,みなみ,ナン,みなみ,,N5,direction,U+5357,,r070,9,2,single,4
+k0068,万,ten thousand,まん,マン|バン,よろず,,N5,number,U+4E07,,r004,3,2,single,4
+k0069,毎,every,まい,マイ,ごと,,N5,time,U+6BCE,,r120,6,2,single,4
+k0070,白,white,しろ,ハク|ビャク,しろ|しら,,N5,color,U+767D,,r158,5,1,single,4
+k0071,天,heaven; sky,てん,テン,あめ,,N5,nature,U+5929,,r037,4,1,top-bottom,4
+k0072,母,mother,はは,ボ,はは,,N5,people,U+6BCD,,r120,5,2,single,4
+k0073,火,fire,ひ,カ,ひ,,N5,nature,U+706B,,r126,4,1,single,4
+k0074,右,right,みぎ,ウ|ユウ,みぎ,,N5,position,U+53F3,,r047|r037,5,1,left-right,4
+k0075,読,read,よむ,ドク,よ-む,,N5,action,U+8AAD,,r228|r070,14,2,left-right,4
+k0076,友,friend,とも,ユウ,とも,,N5,people,U+53CB,,r029,4,2,single,4
+k0077,左,left,ひだり,サ,ひだり,,N5,position,U+5DE6,,r047|r065,5,1,left-right,4
+k0078,休,rest,やすむ,キュウ,やす-む,,N5,action,U+4F11,,r012|r113,6,1,left-right,4
+k0079,父,father,ちち,フ,ちち,,N5,people,U+7236,,r132,4,1,single,4
+k0080,雨,rain,あめ,ウ,あめ,,N5,nature,U+96E8,,r267,8,1,single,4
+k0081,会,meet; association,あう,カイ|エ,あ-う,,N4,society,U+4F1A,,r011,6,2,top-bottom,5
+k0082,社,company; shrine,しゃ,シャ,やしろ,,N4,society,U+793E,,r142,7,2,left-right,5
+k0083,新,new,あたらしい,シン,あたら-しい,,N4,description,U+65B0,,r069|r101,13,2,left-right,5
+k0084,立,stand,たつ,リツ,た-つ,,N4,action,U+7ACB,,r176,5,1,single,5
+k0085,手,hand,て,シュ,て,,N4,body,U+624B,,r097,4,1,single,5
+k0086,目,eye,め,モク|ボク,め,,N4,body,U+76EE,,r162,5,1,single,5
+k0087,言,say; word,いう,ゲン|ゴン,い-う,,N4,language,U+8A00,,r228,7,1,single,5
+k0088,多,many,おおい,タ,おお-い,,N4,quantity,U+591A,,r046,6,2,top-bottom,5
+k0089,安,cheap; safe,やすい,アン,やす-い,,N4,description,U+5B89,,r040|r048,6,2,top-bottom,5
+k0090,道,road; way,みち,ドウ|トウ,みち,,N4,place,U+9053,,r249|r283,12,2,left-right,5
+k0091,口,mouth,くち,コウ|ク,くち,,N4,body,U+53E3,,r037,3,1,single,5
+k0092,少,few,すくない,ショウ,すく-ない,,N4,quantity,U+5C11,,r055,4,2,top-bottom,5
+k0093,空,sky; empty,そら,クウ,そら|あ-く,,N4,nature,U+7A7A,,r174|r065,8,2,top-bottom,5
+k0094,足,foot; sufficient,あし,ソク,あし|た-りる,,N4,body,U+8DB3,,r241,7,1,single,5
+k0095,店,store,みせ,テン,みせ,,N4,place,U+5E97,,r072,8,2,enclosure,5
+k0096,古,old,ふるい,コ,ふる-い,,N4,time,U+53E4,,r037,5,2,top-bottom,5
+k0097,買,buy,かう,バイ,か-う,,N4,action,U+8CB7,,r236,12,2,top-bottom,5
+k0098,週,week,しゅう,シュウ,,,N4,time,U+9031,,r249|r039,11,2,left-right,5
+k0099,花,flower,はな,カ,はな,,N4,nature,U+82B1,,r083,7,1,top-bottom,5
+k0100,駅,station,えき,エキ,,,N4,place,U+99C5,,r285,14,3,left-right,5
+k0101,飲,drink,のむ,イン,の-む,,N4,action,U+98F2,,r282,12,3,left-right,6
+k0102,魚,fish,さかな,ギョ,さかな,,N4,nature,U+9B5A,,r296,11,2,single,6
+k0103,同,same,おなじ,ドウ,おな-じ,,N4,abstract,U+540C,,r037,6,2,enclosure,6
+k0104,事,thing; matter,こと,ジ,こと,,N4,abstract,U+4E8B,,r007,8,3,single,6
+k0105,自,self,じ,ジ,みずか-ら,,N4,abstract,U+81EA,,r205,6,2,single,6
+k0106,発,depart; emit,はつ,ハツ,,,N4,action,U+767A,,r105,9,3,top-bottom,6
+k0107,者,person (one who...),もの,シャ,もの,,N4,people,U+8005,,r125,8,2,top-bottom,6
+k0108,地,ground; earth,ち,チ|ジ,,,N4,nature,U+5730,,r040,6,2,left-right,6
+k0109,業,business; work,ぎょう,ギョウ,わざ,,N4,society,U+696D,,r224,13,3,top-bottom,6
+k0110,方,direction; way,かた,ホウ,かた,,N4,position,U+65B9,,r104,4,2,single,6
+k0111,場,place,ば,ジョウ,ば,,N4,place,U+5834,,r040,12,2,left-right,6
+k0112,員,member,いん,イン,,,N4,people,U+54E1,,r037|r236,10,3,top-bottom,6
+k0113,開,open,ひらく,カイ,ひら-く|あ-く,,N4,action,U+958B,,r263,12,3,enclosure,6
+k0114,力,power,ちから,リョク|リキ,ちから,,N4,abstract,U+529B,,r026,2,1,single,6
+k0115,問,question; ask,とい,モン,と-う,,N4,action,U+554F,,r263,11,2,enclosure,6
+k0116,代,generation; substitute,だい,ダイ,か-わる,,N4,time,U+4EE3,,r012,5,3,left-right,6
+k0117,明,bright,あかるい,メイ|ミョウ,あか-るい,,N4,description,U+660E,,r107|r110,8,2,left-right,6
+k0118,動,move,うごく,ドウ,うご-く,,N4,action,U+52D5,,r026|r150,11,3,left-right,6
+k0119,京,capital,きょう,キョウ,,,N4,place,U+4EAC,,r008,8,2,top-bottom,6
+k0120,通,pass; commute,とおる,ツウ|ツ,とお-る|かよ-う,,N4,action,U+901A,,r249|r080,10,2,left-right,6
+k0121,理,reason; logic,り,リ,ことわり,,N4,abstract,U+7406,,r146|r127,11,3,left-right,7
+k0122,体,body,からだ,タイ,からだ,,N4,body,U+4F53,,r012|r146,7,2,left-right,7
+k0123,田,rice field,た,デン,た,,N4,nature,U+7530,,r152,5,1,single,7
+k0124,主,main; master,ぬし,シュ,ぬし,,N4,abstract,U+4E3B,,r004,5,2,single,7
+k0125,題,topic; subject,だい,ダイ,,,N4,abstract,U+984C,,r279|r152,18,3,left-right,7
+k0126,意,idea; meaning,い,イ,,,N4,abstract,U+610F,,r092|r108,13,3,top-bottom,7
+k0127,不,not,ふ,フ,,,N4,abstract,U+4E0D,,r001,4,1,single,7
+k0128,作,make; create,つくる,サク|サ,つく-る,,N4,action,U+4F5C,,r012|r167,7,2,left-right,7
+k0129,用,use,もちいる,ヨウ,もち-いる,,N4,action,U+7528,,r151,5,2,single,7
+k0130,度,degree; extent,ど,ド|ト,,,N4,abstract,U+5EA6,,r072,9,3,enclosure,7
+k0131,強,strong,つよい,キョウ|ゴウ,つよ-い,,N4,description,U+5F37,,r076|r026,11,2,left-right,7
+k0132,持,hold,もつ,ジ,も-つ,,N4,action,U+6301,,r089|r053,9,2,left-right,7
+k0133,野,field; plains,の,ヤ,の,,N4,nature,U+91CE,,r152|r165,11,2,left-right,7
+k0134,以,by means of,い,イ,,,N4,abstract,U+4EE5,,r013,5,3,single,7
+k0135,思,think,おもう,シ,おも-う,,N4,abstract,U+601D,,r092|r152,9,2,top-bottom,7
+k0136,家,house; family,いえ,カ|ケ,いえ|や,,N4,place,U+5BB6,,r174|r130,10,2,top-bottom,7
+k0137,世,world,よ,セ|セイ,よ,,N4,abstract,U+4E16,,r001,5,2,single,7
+k0138,正,correct,ただしい,セイ|ショウ,ただ-しい,,N4,abstract,U+6B63,,r116,5,1,single,7
+k0139,院,institution,いん,イン,,,N4,place,U+9662,,r086|r014,10,3,left-right,7
+k0140,心,heart,こころ,シン,こころ,,N4,body,U+5FC3,,r092,4,1,single,7
+k0141,界,world; boundary,かい,カイ,,,N4,abstract,U+754C,,r152|r026,9,3,top-bottom,8
+k0142,教,teach,おしえる,キョウ,おし-える,,N4,education,U+6559,,r101|r039,11,2,left-right,8
+k0143,文,sentence; writing,ぶん,ブン|モン,ふみ,,N4,language,U+6587,,r101,4,1,single,8
+k0144,元,origin,もと,ゲン|ガン,もと,,N4,abstract,U+5143,,r014,4,2,single,8
+k0145,重,heavy; important,おもい,ジュウ|チョウ,おも-い|かさ-ねる,,N4,description,U+91CD,,r150,9,2,single,8
+k0146,近,near,ちかい,キン,ちか-い,,N4,position,U+8FD1,,r249|r103,7,2,left-right,8
+k0147,考,think; consider,かんがえる,コウ,かんが-える,,N4,abstract,U+8003,,r125,6,2,top-bottom,8
+k0148,画,picture; draw,が,ガ|カク,えが-く,,N4,art,U+753B,,r102,8,2,single,8
+k0149,海,sea,うみ,カイ,うみ,,N4,nature,U+6D77,,r090|r120,9,2,left-right,8
+k0150,売,sell,うる,バイ,う-る|う-れる,,N4,action,U+58F2,,r040,7,2,top-bottom,8
+k0151,知,know,しる,チ,し-る,,N4,abstract,U+77E5,,r167|r037,8,2,left-right,8
+k0152,集,gather,あつまる,シュウ,あつ-まる|あつ-める,,N4,action,U+96C6,,r172,12,2,top-bottom,8
+k0153,別,separate,べつ,ベツ,わか-れる,,N4,abstract,U+5225,,r024|r037,7,2,left-right,8
+k0154,物,thing,もの,ブツ|モツ,もの,,N4,abstract,U+7269,,r138|r121,8,2,left-right,8
+k0155,使,use,つかう,シ,つか-う,,N4,action,U+4F7F,,r012|r166,8,2,left-right,8
+k0156,品,goods; item,しな,ヒン,しな,,N4,object,U+54C1,,r037,9,2,top-bottom,8
+k0157,計,measure; plan,はかる,ケイ,はか-る,,N4,abstract,U+8A08,,r228|r031,9,2,left-right,8
+k0158,死,die,しぬ,シ,し-ぬ,,N4,action,U+6B7B,,r115,6,3,left-right,8
+k0159,特,special,とく,トク,,,N4,description,U+7279,,r138|r053,10,3,left-right,8
+k0160,私,private; I,わたし,シ,わたし,,N4,people,U+79C1,,r173,7,1,left-right,8
+k0161,始,begin,はじめる,シ,はじ-める|はじ-まる,,N4,action,U+59CB,,r048|r029,8,2,left-right,9
+k0162,朝,morning,あさ,チョウ,あさ,,N4,time,U+671D,,r107|r110,12,2,left-right,9
+k0163,運,carry; transport,はこぶ,ウン,はこ-ぶ,,N4,action,U+904B,,r249|r024,12,2,left-right,9
+k0164,終,end,おわる,シュウ,お-わる|お-える,,N4,time,U+7D42,,r189|r001,11,2,left-right,9
+k0165,台,platform; stand,だい,ダイ|タイ,,,N4,object,U+53F0,,r037,5,2,top-bottom,9
+k0166,広,wide,ひろい,コウ,ひろ-い,,N4,description,U+5E83,,r072,5,2,enclosure,9
+k0167,住,live; reside,すむ,ジュウ,す-む|す-まう,,N4,action,U+4F4F,,r012|r004,7,2,left-right,9
+k0168,真,true,ま,シン,ま,,N4,abstract,U+771F,,r181,10,2,top-bottom,9
+k0169,有,have; exist,ある,ユウ|ウ,あ-る,,N4,abstract,U+6709,,r132|r110,6,2,top-bottom,9
+k0170,町,town,まち,チョウ,まち,,N4,place,U+753A,,r152|r070,7,2,left-right,9
+k0171,料,material; fee,りょう,リョウ,,,N4,object,U+6599,,r187|r102,10,3,left-right,9
+k0172,工,craft; construction,こう,コウ,,,N4,action,U+5DE5,,r065,3,2,single,9
+k0173,建,build,たてる,ケン,た-てる|た-つ,,N4,action,U+5EFA,,r054|r076,9,3,left-right,9
+k0174,急,urgent,いそぐ,キュウ,いそ-ぐ,,N4,state,U+6025,,r080|r092,9,3,top-bottom,9
+k0175,止,stop,とまる,シ,と-まる|と-める,,N4,action,U+6B62,,r116,4,1,single,9
+k0176,送,send,おくる,ソウ,おく-る,,N4,action,U+9001,,r249|r132,9,2,left-right,9
+k0177,切,cut,きる,セツ|サイ,き-る,,N4,action,U+5207,,r024|r001,4,2,left-right,9
+k0178,転,turn,ころぶ,テン,ころ-ぶ,,N4,action,U+8EE2,,r245|r009,11,3,left-right,9
+k0179,研,grind; study,とぐ,ケン,と-ぐ,,N4,action,U+7814,,r169|r065,9,3,left-right,9
+k0180,究,research,きゅう,キュウ,きわ-める,,N4,academic,U+7A76,,r174|r021,7,3,top-bottom,9
+k0181,楽,comfort; music,たのしい,ガク|ラク,たの-しい|たの-しむ,,N4,life,U+697D,,r075|r056,13,2,top-bottom,10
+k0182,起,wake; rise,おきる,キ,お-きる|お-こす,,N4,action,U+8D77,,r239|r067,10,2,left-right,10
+k0183,着,wear; arrive,きる,チャク|ジャク,き-る|つ-く,,N4,action,U+7740,,r193|r162,12,2,top-bottom,10
+k0184,病,illness,びょう,ビョウ,や-む,,N4,health,U+75C5,,r104,10,2,enclosure,10
+k0185,質,quality,しつ,シツ,,,N4,abstract,U+8CEA,,r236|r103,15,3,top-bottom,10
+k0186,待,wait,まつ,タイ,ま-つ,,N4,action,U+5F85,,r060|r053,9,2,left-right,10
+k0187,試,test,ためす,シ,ため-す|こころ-みる,,N4,action,U+8A66,,r228|r065,13,2,left-right,10
+k0188,族,tribe; family,ぞく,ゾク,,,N4,society,U+65CF,,r104|r167,11,3,left-right,10
+k0189,銀,silver,ぎん,ギン,,,N4,object,U+9280,,r260|r124,14,3,left-right,10
+k0190,早,early,はやい,ソウ|サッ,はや-い,,N4,time,U+65E9,,r107,6,1,top-bottom,10
+k0191,映,reflect,うつる,エイ,うつ-る|うつ-す,,N4,action,U+6620,,r107|r047,9,2,left-right,10
+k0192,親,parent,おや,シン,おや|した-しい,,N4,people,U+89AA,,r147|r225,16,2,left-right,10
+k0193,験,test; examine,けん,ケン,,,N4,education,U+9A13,,r285|r166,18,3,left-right,10
+k0194,英,England; excellent,えい,エイ,,,N4,abstract,U+82F1,,r083|r047,8,2,top-bottom,10
+k0195,医,medicine,い,イ,,,N4,health,U+533B,,r022,7,3,enclosure,10
+k0196,仕,do; serve,する,シ,つか-える,,N4,action,U+4ED5,,r012|r031,5,3,left-right,10
+k0197,去,go away,さる,キョ|コ,さ-る,,N4,action,U+53BB,,r040,5,2,top-bottom,10
+k0198,味,taste,あじ,ミ,あじ,,N4,sense,U+5473,,r037|r150,8,2,left-right,10
+k0199,写,copy,うつす,シャ,うつ-す|うつ-る,,N4,action,U+5199,,r018|r029,5,2,top-bottom,10
+k0200,字,character,じ,ジ,あざ,,N4,language,U+5B57,,r174|r050,6,1,top-bottom,10
+k0201,答,answer,こたえる,トウ,こた-える,,N4,action,U+7B54,,r185|r037,12,2,top-bottom,11
+k0202,夜,night,よる,ヤ,よる,,N4,time,U+591C,,r036,8,2,top-bottom,11
+k0203,音,sound,おと,オン,おと|ね,,N4,sense,U+97F3,,r180,9,1,single,11
+k0204,注,pour; note,そそぐ,チュウ,そそ-ぐ,,N4,action,U+6CE8,,r090|r004,8,2,left-right,11
+k0205,帰,return,かえる,キ,かえ-る|かえ-す,,N4,action,U+5E30,,r068|r058,10,2,left-right,11
+k0206,歌,song,うた,カ,うた|うた-う,,N4,art,U+6B4C,,r115|r037,14,2,left-right,11
+k0207,悪,bad,わるい,アク|オ,わる-い,,N4,description,U+60AA,,r092|r107,11,2,top-bottom,11
+k0208,図,diagram,ず,ズ|ト,,,N4,abstract,U+56F3,,r039,7,2,enclosure,11
+k0209,室,room,しつ,シツ,むろ,,N4,place,U+5BA4,,r174|r206,9,2,top-bottom,11
+k0210,歩,walk,あるく,ホ|ブ,ある-く,,N4,action,U+6B69,,r116,8,2,top-bottom,11
+k0211,風,wind,かぜ,フウ|フ,かぜ,,N4,nature,U+98A8,,r280,9,2,enclosure,11
+k0212,紙,paper,かみ,シ,かみ,,N4,object,U+7D19,,r189|r123,10,2,left-right,11
+k0213,黒,black,くろ,コク,くろ|くろ-い,,N4,color,U+9ED2,,r309,11,2,single,11
+k0214,春,spring,はる,シュン,はる,,N4,time,U+6625,,r109|r047,9,2,top-bottom,11
+k0215,赤,red,あか,セキ|シャク,あか|あか-い,,N4,color,U+8D64,,r238,7,1,single,11
+k0216,青,blue,あお,セイ|ショウ,あお|あお-い,,N4,color,U+9752,,r270,8,1,single,11
+k0217,館,building,かん,カン,やかた,,N4,place,U+9928,,r282|r059,16,3,left-right,11
+k0218,屋,roof; shop,や,オク,や,,N4,place,U+5C4B,,r058|r040,9,2,top-bottom,11
+k0219,色,color,いろ,ショク|シキ,いろ,,N4,color,U+8272,,r214,6,1,single,11
+k0220,走,run,はしる,ソウ,はし-る,,N4,action,U+8D70,,r239,7,2,single,11
+k0221,秋,autumn,あき,シュウ,あき,,N4,time,U+79CB,,r173|r126,9,2,left-right,12
+k0222,夏,summer,なつ,カ|ゲ,なつ,,N4,time,U+590F,,r047,10,2,top-bottom,12
+k0223,習,learn,ならう,シュウ,なら-う,,N4,education,U+7FD2,,r196|r107,11,2,top-bottom,12
+k0224,洋,ocean; western,よう,ヨウ,,,N4,nature,U+6D0B,,r090|r104,9,2,left-right,12
+k0225,旅,travel,たび,リョ,たび,,N4,action,U+65C5,,r104|r029,10,3,left-right,12
+k0226,服,clothes; obey,ふく,フク,,,N4,object,U+670D,,r110|r036,8,2,left-right,12
+k0227,夕,evening,ゆう,セキ,ゆう,,N4,time,U+5915,,r046,3,1,single,12
+k0228,借,borrow,かりる,シャク,か-りる,,N4,action,U+501F,,r012|r110,10,2,left-right,12
+k0229,曜,weekday,よう,ヨウ,,,N4,time,U+66DC,,r107|r172,18,3,left-right,12
+k0230,肉,meat,にく,ニク,,,N4,object,U+8089,,r203,6,1,single,12
+k0231,貸,lend,かす,タイ,か-す,,N4,action,U+8CB8,,r236|r012,12,2,left-right,12
+k0232,堂,hall,どう,ドウ,,,N4,place,U+5802,,r040|r008,11,3,top-bottom,12
+k0233,鳥,bird,とり,チョウ,とり,,N4,nature,U+9CE5,,r298,11,2,single,12
+k0234,飯,meal,はん,ハン,めし,,N4,food,U+98EF,,r282|r036,12,2,left-right,12
+k0235,勉,exert; study,べん,ベン,,,N4,education,U+52C9,,r026|r063,10,3,left-right,12
+k0236,冬,winter,ふゆ,トウ,ふゆ,,N4,time,U+51AC,,r034,5,1,top-bottom,12
+k0237,昼,daytime,ひる,チュウ,ひる,,N4,time,U+663C,,r107,9,2,top-bottom,12
+k0238,茶,tea,ちゃ,チャ|サ,,,N4,food,U+8336,,r083|r008,9,2,top-bottom,12
+k0239,弟,younger brother,おとうと,テイ|ダイ,おとうと,,N4,people,U+5F1F,,r057,7,2,single,12
+k0240,牛,cow,うし,ギュウ,うし,,N4,animal,U+725B,,r138,4,1,single,12
+k0241,兄,older brother,あに,ケイ|キョウ,あに,,N4,people,U+5144,,r014,5,1,top-bottom,12
+k0242,犬,dog,いぬ,ケン,いぬ,,N4,animal,U+72AC,,r140,4,1,single,12
+k0243,妹,younger sister,いもうと,マイ,いもうと,,N4,people,U+59B9,,r048|r150,8,2,left-right,12
+k0244,姉,older sister,あね,シ,あね,,N4,people,U+59C9,,r048|r068,8,2,left-right,12
+k0245,漢,Chinese; Han,かん,カン,,,N4,language,U+6F22,,r090|r029,13,3,left-right,12
+k0246,公,public,こう,コウ,おおやけ,,N4,society,U+516C,,r016,4,2,top-bottom,12
+k0247,耳,ear,みみ,ジ,みみ,,N3,body,U+8033,,r200,6,1,single,1
+k0248,民,people; nation,たみ,ミン,たみ,,N3,society,U+6C11,,r067,5,2,single,1
+k0249,合,join; fit,あう,ゴウ|ガッ,あ-う,,N3,action,U+5408,,r011|r037,6,2,top-bottom,1
+k0250,市,city; market,いち,シ,いち,,N3,place,U+5E02,,r068,5,2,top-bottom,1
+k0251,回,turn; times,まわる,カイ,まわ-る|まわ-す,,N3,action,U+56DE,,r039,6,2,enclosure,1
+k0252,首,neck; head,くび,シュ,くび,,N3,body,U+9996,,r283,9,2,single,1
+k0253,都,capital,みやこ,ト|ツ,みやこ,,N3,place,U+90FD,,r085|r040,11,3,left-right,1
+k0254,進,advance,すすむ,シン,すす-む|すす-める,,N3,action,U+9032,,r249|r172,11,3,left-right,1
+k0255,産,produce,うむ,サン,う-む|う-まれる,,N3,action,U+7523,,r104|r150,11,3,top-bottom,1
+k0256,引,pull,ひく,イン,ひ-く,,N3,action,U+5F15,,r076,4,1,single,1
+k0257,所,place,ところ,ショ,ところ,,N3,place,U+6240,,r095|r063,8,1,left-right,1
+k0258,説,explain; theory,せつ,セツ,と-く,,N3,abstract,U+8AAC,,r228|r131,14,3,left-right,1
+k0259,乗,ride,のる,ジョウ,の-る|の-せる,,N3,action,U+4E57,,r009,9,2,single,1
+k0260,声,voice,こえ,セイ|ショウ,こえ,,N3,sense,U+58F0,,r040,7,2,top-bottom,1
+k0261,働,work,はたらく,ドウ,はたら-く,,N3,action,U+50CD,,r012|r026,13,3,left-right,1
+k0262,好,like,すき,コウ,す-き|この-む,,N3,feeling,U+597D,,r048|r050,6,2,left-right,1
+k0263,頭,head,あたま,トウ|ズ,あたま,,N3,body,U+982D,,r279|r037,16,2,left-right,1
+k0264,光,light,ひかり,コウ,ひかり|ひか-る,,N3,nature,U+5149,,r014,6,1,top-bottom,1
+k0265,太,thick; big,ふとい,タイ,ふと-い,,N3,description,U+592A,,r047,4,2,single,1
+k0266,顔,face,かお,ガン,かお,,N3,body,U+9854,,r279|r046,18,3,left-right,1
+k0267,薬,medicine,くすり,ヤク,くすり,,N3,health,U+85AC,,r083|r126,16,3,top-bottom,2
+k0268,便,convenience,べん,ベン|ビン,たよ-り,,N3,abstract,U+4FBF,,r012|r131,9,3,left-right,2
+k0269,遠,far,とおい,エン,とお-い,,N3,position,U+9060,,r249|r046,13,2,left-right,2
+k0270,暗,dark,くらい,アン,くら-い,,N3,description,U+6697,,r107|r108,13,2,left-right,2
+k0271,洗,wash,あらう,セン,あら-う,,N3,action,U+6D17,,r090|r014,9,2,left-right,2
+k0272,寒,cold,さむい,カン,さむ-い,,N3,description,U+5BD2,,r174|r034,12,2,top-bottom,2
+k0273,議,deliberate,ぎ,ギ,,,N3,abstract,U+8B70,,r228|r047,20,3,left-right,2
+k0274,連,connect,つらなる,レン,つら-なる|つら-ねる,,N3,action,U+9023,,r249|r075,10,2,left-right,2
+k0275,対,oppose,たい,タイ,,,N3,abstract,U+5BFE,,r053|r049,7,2,left-right,2
+k0276,部,section,ぶ,ブ,,,N3,society,U+90E8,,r185|r085,11,2,left-right,2
+k0277,内,inside,うち,ナイ,うち,,N3,position,U+5185,,r018,4,1,enclosure,2
+k0278,相,mutual,あい,ソウ|ショウ,あい,,N3,abstract,U+76F8,,r113|r162,9,2,left-right,2
+k0279,定,decide,さだめる,テイ|ジョウ,さだ-める,,N3,action,U+5B9A,,r174|r116,8,2,top-bottom,2
+k0280,選,select,えらぶ,セン,えら-ぶ,,N3,action,U+9078,,r249|r067,15,3,left-right,2
+k0281,米,rice,こめ,ベイ|マイ,こめ,,N3,food,U+7C73,,r187,6,1,single,2
+k0282,実,truth; fruit,み,ジツ,み|みの-る,,N3,abstract,U+5B9F,,r174|r034,8,2,top-bottom,2
+k0283,関,relation,かん,カン,,,N3,abstract,U+95A2,,r263|r076,14,3,enclosure,2
+k0284,決,decide,きめる,ケツ,き-める|き-まる,,N3,action,U+6C7A,,r090|r015,7,2,left-right,2
+k0285,全,all,ぜん,ゼン,まった-く,,N3,abstract,U+5168,,r011,6,1,top-bottom,2
+k0286,表,express; table,ひょう,ヒョウ,あらわ-す,,N3,abstract,U+8868,,r221|r001,8,2,top-bottom,2
+k0287,戦,war; battle,たたかう,セン,たたか-う,,N3,action,U+6226,,r091|r094,13,3,left-right,3
+k0288,最,most,もっとも,サイ,もっと-も,,N3,abstract,U+6700,,r107|r057,12,2,top-bottom,3
+k0289,調,investigate; tone,しらべる,チョウ,しら-べる,,N3,action,U+8ABF,,r228|r181,15,3,left-right,3
+k0290,化,change,か,カ|ケ,ば-ける|ば-かす,,N3,action,U+5316,,r012,4,1,single,3
+k0291,当,appropriate; hit,あたる,トウ,あ-たる|あ-てる,,N3,abstract,U+5F53,,r056,6,2,top-bottom,3
+k0292,約,promise; approx.,やく,ヤク,,,N3,abstract,U+7D04,,r189|r140,9,2,left-right,3
+k0293,法,law,ほう,ホウ,のり,,N3,society,U+6CD5,,r090|r040,8,2,left-right,3
+k0294,的,target; -al suffix,てき,テキ,まと,,N3,grammar,U+7684,,r169|r003,8,2,left-right,3
+k0295,要,need; main point,いる,ヨウ,い-る,,N3,abstract,U+8981,,r147|r048,9,2,top-bottom,3
+k0296,治,govern; heal,なおす,チ|ジ,なお-す|なお-る,,N3,action,U+6CBB,,r090|r037,8,2,left-right,3
+k0297,成,become; achieve,なる,セイ|ジョウ,な-る,,N3,action,U+6210,,r062,6,2,single,3
+k0298,期,period,き,キ|ゴ,,,N3,time,U+671F,,r110|r065,12,3,left-right,3
+k0299,取,take,とる,シュ,と-る,,N3,action,U+53D6,,r200|r036,8,1,left-right,3
+k0300,和,harmony,わ,ワ,やわ-らぐ|なご-む,,N3,abstract,U+548C,,r173|r037,8,2,left-right,3
+k0301,機,machine; opportunity,き,キ,,,N3,object,U+6A5F,,r113|r120,16,3,left-right,3
+k0302,平,flat; peace,たいら,ヘイ|ビョウ,たい-ら,,N3,abstract,U+5E73,,r070,5,1,single,3
+k0303,加,add,くわえる,カ,くわ-える|くわ-わる,,N3,action,U+52A0,,r026|r037,5,1,left-right,3
+k0304,受,receive,うける,ジュ,う-ける,,N3,action,U+53D7,,r130|r029,8,2,top-bottom,3
+k0305,続,continue,つづく,ゾク,つづ-く|つづ-ける,,N3,action,U+7D9A,,r189|r120,13,2,left-right,3
+k0306,数,number; count,かず,スウ|ス,かず|かぞ-える,,N3,number,U+6570,,r101|r150,13,2,left-right,3
+k0307,記,record,き,キ,しる-す,,N3,action,U+8A18,,r228|r005,10,2,left-right,4
+k0308,初,first; beginning,はじめ,ショ,はじ-め,,N3,time,U+521D,,r183|r024,7,2,left-right,4
+k0309,指,finger; point,ゆび,シ,ゆび|さ-す,,N3,body,U+6307,,r089|r107,9,2,left-right,4
+k0310,点,point; mark,てん,テン,,,N3,abstract,U+70B9,,r128|r004,9,2,top-bottom,4
+k0311,活,live; active,いきる,カツ,い-きる|い-かす,,N3,action,U+6D3B,,r090|r209,9,2,left-right,4
+k0312,原,origin; field,はら,ゲン,はら,,N3,nature,U+539F,,r034|r107,10,2,top-bottom,4
+k0313,共,together,とも,キョウ,とも,,N3,abstract,U+5171,,r016,6,2,top-bottom,4
+k0314,得,gain; obtain,える,トク,え-る|う-る,,N3,action,U+5F97,,r060|r109,11,2,left-right,4
+k0315,交,interact; mix,まじわる,コウ,まじ-わる|ま-ざる,,N3,action,U+4EA4,,r008,6,2,top-bottom,4
+k0316,予,advance; beforehand,よ,ヨ,あらかじ-め,,N3,time,U+4E88,,r063,4,2,single,4
+k0317,向,direction; face,むく,コウ,む-く|む-ける,,N3,position,U+5411,,r037,6,2,enclosure,4
+k0318,勝,win,かつ,ショウ,か-つ,,N3,action,U+52DD,,r026|r110,12,2,left-right,4
+k0319,面,face; surface,めん,メン,おもて,,N3,abstract,U+9762,,r274,9,2,single,4
+k0320,告,inform,つげる,コク,つ-げる,,N3,action,U+544A,,r125|r037,7,2,top-bottom,4
+k0321,反,oppose,はん,ハン,そ-る,,N3,action,U+53CD,,r029,4,2,single,4
+k0322,参,participate,さん,サン,まい-る,,N3,action,U+53C2,,r036|r011,8,2,top-bottom,4
+k0323,利,benefit,り,リ,き-く,,N3,abstract,U+5229,,r173|r024,7,2,left-right,4
+k0324,組,group,くみ,ソ,く-む|くみ,,N3,society,U+7D44,,r189|r048,11,2,left-right,4
+k0325,信,believe,しん,シン,しん-じる,,N3,abstract,U+4FE1,,r012|r228,9,2,left-right,4
+k0326,側,side,がわ,ソク,がわ,,N3,position,U+5074,,r012|r063,11,3,left-right,4
+k0327,求,seek,もとめる,キュウ,もと-める,,N3,action,U+6C42,,r124,7,2,single,5
+k0328,次,next,つぎ,ジ,つぎ,,N3,time,U+6B21,,r115,6,2,left-right,5
+k0329,昨,yesterday,さく,サク,,,N3,time,U+6628,,r107|r039,9,2,left-right,5
+k0330,官,government official,かん,カン,,,N3,society,U+5B98,,r174,8,2,top-bottom,5
+k0331,係,relation,かかり,ケイ,かか-る,,N3,abstract,U+4FC2,,r012|r189,9,2,left-right,5
+k0332,感,feeling,かん,カン,,,N3,feeling,U+611F,,r092|r062,13,3,top-bottom,5
+k0333,投,throw,なげる,トウ,な-げる,,N3,action,U+6295,,r089|r036,7,2,left-right,5
+k0334,変,change,かわる,ヘン,か-わる|か-える,,N3,action,U+5909,,r036,9,2,top-bottom,5
+k0335,打,hit,うつ,ダ,う-つ,,N3,action,U+6253,,r089|r031,5,1,left-right,5
+k0336,直,straight; fix,なおす,チョク|ジキ,なお-す|なお-る,,N3,abstract,U+76F4,,r181,8,2,top-bottom,5
+k0337,両,both,りょう,リョウ,,,N3,quantity,U+4E21,,r018,6,2,enclosure,5
+k0338,式,style; formula,しき,シキ,,,N3,abstract,U+5F0F,,r094,6,2,single,5
+k0339,果,fruit; result,はたす,カ,は-たす|は-てる,,N3,abstract,U+679C,,r075,8,2,single,5
+k0340,必,certainly,かならず,ヒツ,かなら-ず,,N3,abstract,U+5FC5,,r004,5,2,single,5
+k0341,争,contest,あらそう,ソウ,あらそ-う,,N3,action,U+4E89,,r080,6,2,top-bottom,5
+k0342,談,talk,だん,ダン,,,N3,action,U+8AC7,,r228|r126,15,3,left-right,5
+k0343,無,none,ない,ム|ブ,な-い,,N3,abstract,U+7121,,r128,12,2,top-bottom,5
+k0344,位,rank,い,イ,くらい,,N3,abstract,U+4F4D,,r012|r176,7,2,left-right,5
+k0345,置,put; place,おく,チ,お-く,,N3,action,U+7F6E,,r192|r162,13,2,top-bottom,5
+k0346,流,flow,ながれる,リュウ,なが-れる|なが-す,,N3,action,U+6D41,,r090|r063,10,2,left-right,5
+k0347,局,bureau;局,きょく,キョク,,,N3,society,U+5C40,,r058|r037,7,2,enclosure,6
+k0348,放,release; put,はなす,ホウ,はな-す|はな-つ,,N3,action,U+653E,,r104|r100,8,2,left-right,6
+k0349,球,ball,たま,キュウ,たま,,N3,object,U+7403,,r146|r004,11,2,left-right,6
+k0350,役,role,やく,ヤク,,,N3,society,U+5F79,,r060|r036,7,2,left-right,6
+k0351,身,body,み,シン,み,,N3,body,U+8EAB,,r243,7,2,single,6
+k0352,費,expense,ひ,ヒ,つい-やす,,N3,money,U+8CBB,,r236|r067,12,2,top-bottom,6
+k0353,付,attach,つける,フ,つ-ける|つ-く,,N3,action,U+4ED8,,r012|r053,5,1,left-right,6
+k0354,由,reason,ゆ,ユ|ユウ,よし,,N3,abstract,U+7531,,r152,5,1,single,6
+k0355,夫,husband,おっと,フ|フウ,おっと,,N3,people,U+592B,,r047,4,1,single,6
+k0356,石,stone,いし,セキ|シャク,いし,,N3,nature,U+77F3,,r169,5,1,single,6
+k0357,消,extinguish; erase,けす,ショウ,け-す|き-える,,N3,action,U+6D88,,r090|r055,10,2,left-right,6
+k0358,神,god,かみ,シン|ジン,かみ,,N3,religion,U+795E,,r142|r080,9,2,left-right,6
+k0359,番,number; turn,ばん,バン,,,N3,number,U+756A,,r102|r150,12,2,top-bottom,6
+k0360,害,harm,がい,ガイ,,,N3,abstract,U+5BB3,,r174|r037,10,2,top-bottom,6
+k0361,配,distribute,くばる,ハイ,くば-る,,N3,action,U+914D,,r251|r067,10,2,left-right,6
+k0362,育,educate,そだてる,イク,そだ-てる|そだ-つ,,N3,education,U+80B2,,r130|r110,8,2,top-bottom,6
+k0363,席,seat,せき,セキ,,,N3,place,U+5E2D,,r072|r068,10,2,left-right,6
+k0364,残,remain,のこる,ザン,のこ-る|のこ-す,,N3,action,U+6B8B,,r115|r062,10,2,left-right,6
+k0365,想,thought,そう,ソウ,おも-う,,N3,abstract,U+60F3,,r092|r113,13,2,top-bottom,6
+k0366,念,idea; thought,ねん,ネン,,,N3,abstract,U+5FF5,,r092|r004,8,2,top-bottom,6
+k0367,助,help,たすける,ジョ,たす-ける,,N3,action,U+52A9,,r026|r050,7,2,left-right,7
+k0368,労,labor,ろう,ロウ,,,N3,work,U+52B4,,r026|r019,7,2,top-bottom,7
+k0369,例,example,れい,レイ,たと-える,,N3,abstract,U+4F8B,,r012|r165,8,2,left-right,7
+k0370,然,so; thus,ぜん,ゼン|ネン,しか-り,,N3,abstract,U+7136,,r128|r046,12,2,top-bottom,7
+k0371,追,chase,おう,ツイ,お-う,,N3,action,U+8FFD,,r249|r063,9,2,left-right,7
+k0372,商,commerce,しょう,ショウ,あきな-う,,N3,economy,U+5546,,r008|r037,11,2,top-bottom,7
+k0373,葉,leaf,は,ヨウ,は,,N3,nature,U+8449,,r083|r075,12,2,top-bottom,7
+k0374,伝,transmit,つたえる,デン,つた-える|つた-わる,,N3,action,U+4F1D,,r012|r009,6,2,left-right,7
+k0375,形,shape,かたち,ケイ|ギョウ,かたち,,N3,abstract,U+5F62,,r063|r026,7,2,left-right,7
+k0376,景,scenery,けい,ケイ,,,N3,nature,U+666F,,r107|r047,12,2,top-bottom,7
+k0377,落,fall,おちる,ラク,お-ちる|お-とす,,N3,action,U+843D,,r083|r037,12,2,top-bottom,7
+k0378,負,lose; carry,まける,フ,ま-ける|お-う,,N3,action,U+8CA0,,r236,9,2,single,7
+k0379,失,lose,うしなう,シツ,うしな-う,,N3,action,U+5931,,r047,5,1,single,7
+k0380,差,difference,さ,サ,さ-す,,N3,abstract,U+5DEE,,r193|r065,10,2,top-bottom,7
+k0381,末,end,すえ,マツ|バツ,すえ,,N3,time,U+672B,,r075,5,1,single,7
+k0382,守,protect,まもる,シュ|ス,まも-る,,N3,action,U+5B88,,r174|r053,6,2,top-bottom,7
+k0383,種,kind,たね,シュ,たね,,N3,nature,U+7A2E,,r173|r150,14,2,left-right,7
+k0384,美,beauty,び,ビ,うつく-しい,,N3,description,U+7F8E,,r193|r047,9,2,top-bottom,7
+k0385,命,life; command,いのち,メイ|ミョウ,いのち,,N3,life,U+547D,,r037|r011,8,2,top-bottom,7
+k0386,福,fortune,ふく,フク,,,N3,abstract,U+798F,,r142|r152,13,2,left-right,7
+k0387,望,hope; desire,のぞむ,ボウ,のぞ-む,,N3,abstract,U+671B,,r107|r001,11,2,left-right,8
+k0388,観,observe,みる,カン,,,N3,action,U+898B,,r101|r006,14,2,left-right,8
+k0389,察,examine,さつ,サツ,,,N3,action,U+63A2,,r037|r036,15,2,top-bottom,8
+k0390,横,horizontal,よこ,オウ,よこ,,N3,position,U+6A2A,,r176|r036,15,2,left-right,8
+k0391,深,deep,ふかい,シン,ふか-い,,N3,nature,U+6DF1,,r180|r090,11,2,left-right,8
+k0392,申,say; report,もうす,シン,もう-す,,N3,action,U+7533,,r011|r010,5,1,top-bottom,8
+k0393,様,manner; appearance,さま,ヨウ,さま,,N3,abstract,U+69D8,,r047|r002,14,2,left-right,8
+k0394,港,port,みなと,コウ,みなと,,N3,place,U+6E2F,,r091|r060,11,2,left-right,8
+k0395,達,reach; attain,たつ,タツ,,,N3,action,U+9054,,r060|r036,12,2,left-right,8
+k0396,良,good,よい,リョウ,よ-い,,N3,description,U+826F,,r047|r037,7,2,left-right,8
+k0397,候,climate; wait,そうろう,コウ,,,N3,time,U+5019,,r095|r037,10,2,top-bottom,8
+k0398,満,full,みちる,マン,み-ちる,,N3,abstract,U+6E80,,r066|r090,12,2,left-right,8
+k0399,敗,failure,やぶれる,ハイ,やぶ-れる,,N3,action,U+6557,,r177|r036,12,2,top-bottom,8
+k0400,路,road,みち,ロ,みち,,N3,place,U+8DEF,,r242|r037,13,2,left-right,8
+k0401,科,department; course,か,カ,,,N3,abstract,U+79D1,,r169|r113,9,2,left-right,8
+k0402,積,accumulate,つむ,セキ,つ-む|つ-もる,,N3,action,U+7A4D,,r113|r031,16,2,left-right,8
+k0403,他,other,ほか,タ,ほか,,N3,abstract,U+4ED6,,r012|r037,5,1,left-right,8
+k0404,客,customer,きゃく,キャク,,,N3,society,U+5BA2,,r047|r011,10,2,top-bottom,8
+k0405,登,climb,のぼる,トウ,のぼ-る,,N3,action,U+767B,,r047|r061,12,2,left-right,8
+k0406,速,fast,はやい,ソク,はや-い,,N3,description,U+901F,,r156|r036,10,2,left-right,8
+k0407,飛,fly,とぶ,ヒ,と-ぶ|と-ばす,,N3,action,U+98DB,,r060|r029,9,2,left-right,9
+k0408,殺,kill,ころす,サツ|サイ,ころ-す,,N3,action,U+6BBA,,r026|r036,10,2,left-right,9
+k0409,号,number; title,ごう,ゴウ,,,N3,abstract,U+53F7,,r031|r037,5,1,left-right,9
+k0410,単,single,ひとえ,タン,,,N3,abstract,U+5358,,r074|r036,10,2,top-bottom,9
+k0411,完,complete,かん,カン,,,N3,abstract,U+5B8C,,r175|r036,7,2,top-bottom,9
+k0412,給,provide,きゅう,キュウ,たまわ-る,,N3,action,U+7D66,,r007|r026,12,2,left-right,9
+k0413,苦,pain,くるしい,ク,くる-しい|にが-い,,N3,feeling,U+82E6,,r123|r036,10,2,left-right,9
+k0414,園,garden,その,エン,その,,N3,place,U+5712,,r152|r061,13,2,enclosure,9
+k0415,具,tool,ぐ,グ,,,N3,object,U+5177,,r065|r036,8,2,left-right,9
+k0416,辞,resign; word,やめる,ジ,や-める,,N3,action,U+8F9E,,r229|r036,13,2,left-right,9
+k0417,馬,horse,うま,バ|マ,うま,,N3,nature,U+99AC,,r138,10,2,single,9
+k0418,愛,love,あい,アイ,,,N3,feeling,U+611B,,r002|r036|r083,13,3,top-bottom,9
+k0419,未,not yet,み,ミ,,,N3,time,U+672A,,r036|r007,5,1,top-bottom,9
+k0420,冷,cold,つめたい,レイ,つめ-たい|ひ-える,,N3,feeling,U+51B7,,r081|r037,7,2,left-right,9
+k0421,類,type,るい,ルイ,,,N3,abstract,U+985E,,r197|r036,18,2,top-bottom,9
+k0422,王,king,おう,オウ,,,N3,abstract,U+738B,,r146,4,1,single,9
+k0423,返,return,かえる,ヘン,かえ-す|かえ-る,,N3,action,U+8FD4,,r162|r036,9,2,left-right,9
+k0424,熱,heat,あつい,ネツ,あつ-い,,N3,nature,U+71B1,,r127|r036,15,2,left-right,9
+k0425,宿,inn,やど,シュク,やど-る,,N3,place,U+5BBF,,r174|r037,11,2,top-bottom,9
+k0426,覚,remember; awake,おぼえる,カク,おぼ-える,,N3,action,U+899A,,r112|r036,15,2,left-right,9
+k0427,船,ship,ふね,セン,ふね,,N3,place,U+8239,,r137|r000,11,2,left-right,10
+k0428,努,strive,つとめる,ド,つと-める,,N3,action,U+52AA,,r019,7,2,left-right,10
+k0429,散,scatter,ちる,サン,ちる|ちらす,,N2,action,U+6563,,,2,left-right,9,1
+k0430,静,quiet,しずか,セイ|ジョウ,しず-か,,N3,feeling,U+9759,,r047,14,2,left-right,10
+k0431,喜,rejoice,よろこぶ,キ,よろこ-ぶ,,N3,feeling,U+559C,,r049,12,2,left-right,10
+k0432,幸,happiness,しあわせ,コウ,さち,,N3,abstract,U+5E78,,r090,8,2,top-bottom,10
+k0433,等,equal,ひとしい,トウ,,,N3,abstract,U+7B49,,r120,12,2,top-bottom,10
+k0434,老,old,おいる,ロウ,おい-る,,N3,nature,U+8001,,r033,6,2,top-bottom,10
+k0435,曲,bend; music,まがる,キョク,まが-る,,N3,abstract,U+66F2,,r030,6,2,enclosure,10
+k0436,庭,courtyard,にわ,テイ,,,N3,place,U+5EAD,,r040,10,2,enclosure,10
+k0437,徒,disciple,,ト,,,N3,abstract,U+5F92,,,2,left-right,9,10
+k0438,欠,lack,かける,ケツ,か-ける,,N3,abstract,U+6B20,,r076,4,1,single,10
+k0439,息,breath,いき,ソク,い-き,,N3,nature,U+606F,,r061,10,2,left-right,10
+k0440,願,request,ねがう,ガン,ねが-う,,N3,abstract,U+9858,,r120,14,2,top-bottom,10
+k0441,絵,picture,え,カイ,,,N3,abstract,U+7D75,,,2,left-right,9,10
+k0442,笑,laugh,わらう,ショウ,わら-う|え-む,,N3,feeling,U+7B11,,r046,10,2,top-bottom,10
+k0443,束,bundle,たば,ソク,,,N3,abstract,U+675F,,r075,7,2,top-bottom,10
+k0444,列,row,,レツ,,,N3,abstract,U+5217,,r018,6,2,left-right,10
+k0445,遊,play,あそぶ,ユウ,あそ-ぶ,,N3,action,U+904A,,,2,left-right,9,10
+k0446,君,you; ruler,きみ,クン,,,N3,abstract,U+541B,,,2,left-right,9,10
+k0447,折,fold,おる,セツ,お-る,,N3,action,U+6298,,,2,left-right,9,11
+k0448,草,grass,くさ,ソウ,,,N3,nature,U+8349,,,2,top-bottom,9,11
+k0449,酒,alcohol,さけ,シュ,さけ,,N3,nature,U+9152,,,2,left-right,9,11
+k0450,悲,sad,かなしい,ヒ,かな-しい,,N3,feeling,U+60B2,,,2,left-right,9,11
+k0451,晴,clear weather,はれる,セイ,はれ,,N3,nature,U+6674,,,2,top-bottom,9,11
+k0452,陽,sun/yang,ひ,ヨウ,,,N3,nature,U+967D,,,2,left-right,9,11
+k0453,歯,tooth,は,シ,,,N2,object,U+6B6F,,,2,top-bottom,9,1
+k0454,雪,snow,ゆき,セツ,,,N3,nature,U+96EA,,,2,top-bottom,9,11
+k0455,礼,thanks,,レイ,,,N3,abstract,U+79AE,,,1,left-right,9,11
+k0456,昔,long ago,むかし,セキ,,,N3,time,U+6614,,,2,top-bottom,9,11
+k0457,泳,swim,およぐ,エイ,およ-ぐ,,N3,action,U+6C34,,,2,left-right,9,11
+k0458,鳴,chirp/sound,なく,メイ,なく,,N3,nature,U+9CF4,,,2,left-right,9,11
+k0459,箱,box,はこ,ソウ,,,N3,object,U+7BB1,,,2,top-bottom,9,11
+k0460,才,talent,,サイ,,,N3,abstract,U+624D,,,1,single,9,11
+k0461,政,politics,まつりごと,セイ|ショウ,,,N3,abstract,U+653F,,,2,left-right,9,11
+k0462,経,pass thru,へる,ケイ,,,N3,abstract,U+7D4C,,,2,left-right,9,11
+k0463,現,appear,あらわれる,ゲン,あらわ-れる,,N3,abstract,U+73FE,,,2,left-right,9,11
+k0464,性,nature/sex,,セイ|ショウ,,,N3,abstract,U+6027,,,2,left-right,9,11
+k0465,制,system,,セイ,,,N3,abstract,U+5236,,,2,left-right,9,11
+k0466,務,duty,つとめ,ム,つと-める,,N3,abstract,U+52D9,,,2,left-right,9,11
+k0467,権,authority,けん,ケン,,,N3,abstract,U+6A29,,r198,15,2,left-right,12
+k0468,支,support,ささえる,シ,ささ-える,,N3,action,U+652F,,,1,single,9,12
+k0469,報,report,ほう,ホウ,,,N3,abstract,U+5831,,r149,12,2,left-right,12
+k0470,済,settle,すむ,サイ,す-む,,N3,abstract,U+6B8B,,r085,11,2,left-right,12
+k0471,解,resolution,とく,カイ,と-く|と-ける,,N3,abstract,U+89E3,,r149,13,2,left-right,12
+k0472,資,resources,し,シ,,,N3,abstract,U+8CC7,,r154,13,2,left-right,12
+k0473,際,occasion,きわ,サイ,きわ,,N3,abstract,U+969B,,r170,14,2,left-right,12
+k0474,判,judge,わかる,ハン,,,N3,abstract,U+5224,,,2,left-right,9,12
+k0475,認,acknowledge,みとめる,ニン,みと-める,,N3,abstract,U+8A8D,,,2,left-right,9,12
+k0476,在,exist,ある,ザイ,,,N3,abstract,U+5728,,,2,left-right,9,12
+k0477,件,matter,くだん,ケン,,,N3,abstract,U+4EF6,,,2,left-right,9,12
+k0478,任,responsibility,まかせる,ニン,まか-せる,,N3,abstract,U+4ED5,,,2,left-right,9,12
+k0479,論,discuss,,ロン,,,N3,abstract,U+8AD6,,,2,left-right,9,12
+k0480,増,increase,ふえる,ゾウ,ふ-える|ふ-やす,,N3,abstract,U+5897,,,2,left-right,9,12
+k0481,情,feelings,なさけ,ジョウ|セイ,なさけ,,N3,feeling,U+60C5,,,2,left-right,9,12
+k0482,示,show,しめす,ジ|シ,しめ-す,,N3,abstract,U+793A,,,1,single,9,12
+k0483,確,certain,たしか,カク|コウ,たし-か,,N3,abstract,U+78BA,,,2,left-right,9,12
+k0484,容,contain,いれる,ヨウ,い-れる,,N3,abstract,U+5BB9,,,2,top-bottom,9,12
+k0485,演,performance,,エン,,,N3,action,U+6F14,,,2,left-right,9,12
+k0486,歳,age/years,さい,サイ,,,N3,time,U+6B73,,,2,left-right,9,12
+k0487,能,ability,よく,ノウ,,,N3,abstract,U+80FD,,r166,10,2,left-right,13
+k0488,格,status,,カク,,,N3,abstract,U+683C,,r075,10,2,left-right,13
+k0489,疑,doubt,うたがう,ギ,うたが-う,,N3,abstract,U+7591,,,2,left-right,9,13
+k0490,過,pass over,すぎる,カ,すぎ-る,,N3,action,U+904E,,,2,left-right,9,13
+k0491,常,normal,つね,ジョウ,つね,,N3,abstract,U+5E38,,,2,top-bottom,9,13
+k0492,状,condition,,ジョウ,,,N3,abstract,U+72B6,,,2,left-right,9,13
+k0493,職,job,,ショク,,,N3,abstract,U+8077,,,2,left-right,9,13
+k0494,与,give,あたえる,ヨ,あた-える,,N3,action,U+4E0E,,,1,single,9,13
+k0495,供,accompany,とも,キョウ,とも,,N3,abstract,U+4F9B,,,2,left-right,9,13
+k0496,構,structure,かまえる,コウ,かま-える,,N3,abstract,U+69CB,,,2,left-right,9,13
+k0497,割,divide,わる,カツ,わ-る,,N3,action,U+5272,,,2,left-right,9,13
+k0498,難,difficult,むずかしい,ナン,むずか-しい,,N3,abstract,U+96E3,,,2,left-right,9,13
+k0499,優,superior,やさしい,ユウ,やさ-しい,,N3,abstract,U+512A,,,2,left-right,9,13
+k0500,収,collect,おさめる,シュウ,おさ-める,,N3,action,U+53D6,,,2,left-right,9,13
+k0501,断,cut off,たつ,ダン,た-つ,,N3,action,U+65AD,,,2,left-right,9,13
+k0502,違,differs,ちがう,イ,ちが-う,,N3,abstract,U+9053,,,2,left-right,9,13
+k0503,規,rule,,キ,,,N3,abstract,U+898F,,,2,left-right,9,13
+k0504,術,art/technique,,ジュツ,,,N3,abstract,U+8853,,,2,left-right,9,13
+k0505,備,prepare,そなえる,ビ,そな-える,,N3,action,U+5099,,,2,left-right,9,13
+k0506,宅,home,,タク,,,N3,place,U+5BBF,,,2,top-bottom,9,13
+k0507,警,alert/guard,いましめる,ケイ,いましめる,,N3,abstract,U+8B66,,r149,18,2,left-right,14
+k0508,訪,visit,たずねる,ホウ,たずねる|おとずれる,,N3,action,U+8A2A,,r149,12,2,left-right,14
+k0509,限,limit,かぎる,ゲン,かぎる,,N3,abstract,U+9650,,,2,left-right,9,14
+k0510,退,retreat,しりぞく,タイ,しりぞく|どく,,N3,action,U+9000,,,2,left-right,9,14
+k0511,渡,cross over,わたる,ト,わたる|わたす,,N3,action,U+6E21,,,2,left-right,9,14
+k0512,若,young,わかい,ジャク|ニャク,わかい,,N3,nature,U+82E5,,,2,top-bottom,9,14
+k0513,非,not; negative,,ヒ,,,N3,abstract,U+975E,,,1,single,9,14
+k0514,段,step/grade,,ダン|タン,,,N3,abstract,U+6BB5,,,2,left-right,9,14
+k0515,財,wealth,たから,ザイ|サイ,たから,,N3,abstract,U+8CA1,,,2,left-right,9,14
+k0516,識,know; consciousness,しる,シキ,しる,,N3,abstract,U+8B58,,,2,left-right,9,14
+k0517,呼,call,よぶ,コ,よぶ,,N3,action,U+547C,,,2,left-right,9,14
+k0518,程,degree,ほど,テイ,,,N3,abstract,U+7A0B,,,2,left-right,9,14
+k0519,値,value,あたい,チ,あたい,,N3,abstract,U+5024,,,2,left-right,9,14
+k0520,突,thrust,つく,トツ|カ,つく,,N3,action,U+7A81,,,2,left-right,9,14
+k0521,処,deal with,ところ,ショ,ところ|こ,,N3,abstract,U+51E6,,,2,left-right,9,14
+k0522,否,no; negate,いな,ヒ,いな,,N3,abstract,U+5426,,,2,left-right,9,14
+k0523,師,teacher/expert,,シ,,,N3,abstract,U+5E2B,,,2,left-right,9,14
+k0524,易,easy,やさしい,イ|エキ,やさしい,,N3,abstract,U+6613,,,2,left-right,9,14
+k0525,存,exist,たもつ,ゾン,たもつ,,N3,abstract,U+5B58,,,2,left-right,9,14
+k0526,座,seat,すわる,ザ,すわる,,N3,place,U+5EA7,,,2,top-bottom,9,14
+k0527,破,break,やぶる,ハ,やぶ-る,,N3,action,U+7834,,r112,10,2,left-right,15
+k0528,除,remove,のぞく,ジョ,のぞ-く,,N3,action,U+9664,,,2,left-right,9,15
+k0529,降,descend,ふる,コウ|ゴ,ふ-る,,N3,action,U+964D,,,2,left-right,9,15
+k0530,責,responsibility,せめる,セキ,せめ-る,,N3,abstract,U+8CAC,,,2,left-right,9,15
+k0531,捕,capture,つかまえる,ホ,つかま-える,,N3,action,U+6355,,,2,left-right,9,15
+k0532,危,dangerous,あぶない,キ,あぶな-い,,N3,nature,U+5371,,,2,left-right,9,15
+k0533,迎,welcome,むかえる,ゲイ,むか-える,,N3,action,U+8FCE,,,2,left-right,9,15
+k0534,因,cause,よる,イン,,,N3,abstract,U+56E0,,,2,left-right,9,15
+k0535,富,wealth,とみ,フ,とみ,,N3,abstract,U+5BFF,,,2,top-bottom,9,15
+k0536,彼,that,かれ,ヒ,かれ,,N3,abstract,U+5F7C,,,2,left-right,9,15
+k0537,舞,dance,まう,ブ|ム,まう,,N3,action,U+821E,,,2,left-right,9,15
+k0538,亡,deceased,,ボウ|モウ,,,N3,abstract,U+4EA1,,,1,single,9,15
+k0539,適,suitable,,テキ,,,N3,abstract,U+9069,,,2,left-right,9,15
+k0540,婦,woman/wife,よめ,フ,,,N3,abstract,U+5A66,,,2,left-right,9,15
+k0541,寄,approach,よる,キ,よ-る,,N3,action,U+5BC4,,,2,left-right,9,15
+k0542,込,enter,こむ,コウ,こ-む,,N3,action,U+8FBC,,,2,left-right,9,15
+k0543,余,extra,あまる,ヨ,あま-る,,N3,abstract,U+4F59,,,2,left-right,9,15
+k0544,妻,wife,つま,サイ,つま,,N3,abstract,U+59BB,,,2,left-right,9,15
+k0545,背,back,せ,ハイ,せ,,N3,abstract,U+80CC,,,2,left-right,9,15
+k0546,険,rugged/dangerous,けわしい,ケン,けわ-しい,,N3,nature,U+96A0,,,2,left-right,9,15
+k0547,頼,rely,たのむ,ライ,たの-む,,N3,action,U+983C,,,2,left-right,9,16
+k0548,途,route,みち,ト,,,N3,abstract,U+9014,,,2,left-right,9,16
+k0549,許,permit,ゆるす,キョ,ゆる-す,,N3,action,U+8A31,,,2,left-right,9,16
+k0550,抜,pull out,ぬく,バツ,ぬ-く,,N3,action,U+6298,,,2,left-right,9,16
+k0551,留,stay,とめる,リュウ|ル,と-める,,N3,action,U+7559,,,2,top-bottom,9,16
+k0552,罪,sin,つみ,ザイ,,,N3,abstract,U+7F6A,,,2,left-right,9,16
+k0553,精,refined,,セイ,,,N3,abstract,U+7CBE,,,2,left-right,9,16
+k0554,婚,marriage,とつぐ,コン,とつ-ぐ,,N3,abstract,U+5A5A,,,2,left-right,9,16
+k0555,浮,float,うく,フ,う-く|う-かれる,,N3,nature,U+6D6E,,,2,left-right,9,16
+k0556,絶,end,たえる,ゼツ,た-える,,N3,action,U+7D76,,,2,left-right,9,16
+k0557,押,push,おす,オウ,お-す,,N3,action,U+625B,,,2,left-right,9,16
+k0558,倒,fall,たおれる,トウ,たお-れる,,N3,action,U+5012,,,2,left-right,9,16
+k0559,払,pay,はらう,フツ,はら-う,,N3,action,U+6255,,,2,left-right,9,16
+k0560,勤,diligent,つとめる,キン,つと-める,,N3,action,U+52E4,,,2,left-right,9,16
+k0561,遅,late,おそい,チ,おそ-い,,N3,abstract,U+9069,,,2,left-right,9,16
+k0562,居,reside,いる,キョ,,,N3,abstract,U+5C45,,,2,top-bottom,9,16
+k0563,雑,miscellaneous,まじる,ザツ|ゾウ,まじ-る,,N3,abstract,U+96D1,,,2,left-right,9,16
+k0564,招,summon,まねく,ショウ,まね-く,,N3,action,U+62DB,,,2,left-right,9,16
+k0565,困,troubled,こまる,コン,こま-る,,N3,abstract,U+56F0,,,2,left-right,9,16
+k0566,更,change,さら,コウ,さら,,N3,abstract,U+66F4,,,2,top-bottom,9,16
+k0567,刻,carve/time,きざむ,コク,きざ-む,,N3,action,U+523B,,,2,left-right,9,17
+k0568,賛,praise,たたえる,サン,たた-える,,N3,abstract,U+8CA0,,,2,left-right,9,17
+k0569,抱,embrace,だく,ホウ,だ-く|いだ-く,,N3,action,U+62B1,,,2,left-right,9,17
+k0570,犯,crime,おかす,ハン,おか-す,,N3,action,U+72AF,,,2,left-right,9,17
+k0571,恐,fear,おそれる,キョウ,おそ-れる,,N3,feeling,U+6050,,,2,left-right,9,17
+k0572,戻,return,もどる,レイ,もど-る,,N3,action,U+623B,,,2,left-right,9,17
+k0573,越,cross over,こす,エツ,こ-す|こ-える,,N3,action,U+8D8A,,,2,left-right,9,17
+k0574,欲,want,ほしい,ヨク,ほ-しい,,N3,abstract,U+6B32,,,2,left-right,9,17
+k0575,痛,pain,いたい,ツウ,いた-い,,N3,feeling,U+75DB,,,2,left-right,9,17
+k0576,互,mutual,たがい,ゴ,,,N3,abstract,U+4E92,,,2,left-right,9,17
+k0577,似,resemble,にる,ジ,に-る,,N3,abstract,U+4F3C,,,2,left-right,9,17
+k0578,探,search,さがす,タン,さが-す,,N3,action,U+63A2,,,2,left-right,9,17
+k0579,逃,run away,にげる,トウ,にげ-る,,N3,action,U+9003,,,2,left-right,9,17
+k0580,迷,be lost,まよう,メイ,まよう,,N3,abstract,U+8FF7,,,2,left-right,9,17
+k0581,夢,dream,ゆめ,ム,,,N3,abstract,U+5922,,,2,top-bottom,9,17
+k0582,閉,close,とじる,ヘイ,とじ-る,,N3,action,U+9589,,,2,enclosure,9,17
+k0583,緒,beginning/thread,お,ショ,お,,N3,abstract,U+7DD2,,,2,left-right,9,17
+k0584,暮,end of day,くれる,ボ,く-れる,,N3,nature,U+66AE,,,2,top-bottom,9,17
+k0585,到,arrive,いたる,トウ,いた-る,,N3,action,U+5230,,,2,left-right,9,17
+k0586,寝,sleep,ねる,シン,ね-る,,N3,action,U+5BDD,,,2,top-bottom,9,17
+k0587,盗,steal,ぬすむ,トウ,ぬす-む,,N3,action,U+76DC,,,2,left-right,9,18
+k0588,吸,inhale,すう,キュウ,す-う,,N3,action,U+5438,,,2,left-right,9,18
+k0589,御,honorific,おん,ギョ|ゴ,おん,,N3,abstract,U+5FA1,,,2,left-right,9,18
+k0590,忘,forget,わすれる,ボウ,わす-れる,,N3,action,U+5FD8,,,2,left-right,9,18
+k0591,吹,blow,ふく,スイ,ふ-く,,N3,action,U+5439,,,2,left-right,9,18
+k0592,娘,daughter,むすめ,ジョウ,むすめ,,N3,abstract,U+5A18,,,2,left-right,9,18
+k0593,誤,mistake,あやまる,ゴ,あやま-る,,N3,action,U+8AA4,,,2,left-right,9,18
+k0594,慣,accustomed,なれる,カン,な-れる,,N3,abstract,U+6163,,,2,left-right,9,18
+k0595,窓,window,まど,ソウ,,,N3,object,U+7A93,,,2,top-bottom,9,18
+k0596,貧,poor,まずしい,ヒン,まず-しい,,N3,abstract,U+8CA7,,,2,left-right,9,18
+k0597,怒,anger,いかる,ド,いか-る,,N3,feeling,U+6012,,,2,left-right,9,18
+k0598,祖,ancestor,そ,ソ,,,N3,abstract,U+7956,,,2,left-right,9,18
+k0599,杯,cup,さかずき,ハイ,,,N3,object,U+676F,,,2,left-right,9,18
+k0600,疲,tired,つかれる,ヒ,つか-れる,,N3,feeling,U+75B2,,,2,left-right,9,18
+k0601,皆,all,みな,カイ,みな,,N3,abstract,U+7686,,,2,top-bottom,9,18
+k0602,腹,stomach,はら,フク,はら,,N3,nature,U+8179,,,2,left-right,9,18
+k0603,煙,smoke,けむり,エン,けむ-る,,N3,nature,U+7159,,,2,left-right,9,18
+k0604,眠,sleep,ねむる,ミン,ねむ-る,,N3,nature,U+7720,,,2,left-right,9,18
+k0605,怖,scary,こわい,フ,こわ-い,,N3,feeling,U+6015,,,2,left-right,9,18
+k0606,頂,top,いただく,チョウ,いただ-く,,N3,abstract,U+9802,,,2,left-right,9,18
+k0607,晩,late evening,ばん,,,,N3,nature,U+665A,,,2,top-bottom,9,19
+k0608,髪,hair,かみ,ハツ,かみ,,N3,nature,U+9AEA,,,2,top-bottom,9,19
+k0609,忙,busy,いそがしい,ボウ,いそが-しい,,N3,abstract,U+5FD9,,,2,left-right,9,19
+k0610,靴,shoes,くつ,カ,くつ,,N3,object,U+978B,,,2,top-bottom,9,19
+k0611,恥,shame,はじ,チ,はじ,,N3,feeling,U+6065,,,2,left-right,9,19
+k0612,偶,偶然,たま,グウ,たま,,N3,abstract,U+5076,,,2,left-right,9,19
+k0613,偉,great,えらい,イ,えら-い,,N3,abstract,U+5049,,,2,left-right,9,19
+k0614,猫,cat,ねこ,ビョウ,ねこ,,N3,nature,U+732B,,,2,left-right,9,19
+k0615,掛,hang,かける,カイ,かけ-る,,N3,action,U+639B,,,2,left-right,9,19
+k0616,幾,how many,いく,キ,いく,,N3,abstract,U+5E7E,,,2,left-right,9,19
+k0617,区,ward; district,く,ク,,,N2,place,U+533A,,r022,4,3,enclosure,1
+k0618,県,prefecture,けん,ケン,,,N2,society,U+770C,,r162,9,3,top-bottom,1
+k0619,村,village,むら,ソン,むら,,N2,place,U+6751,,r075|r036,7,1,left-right,1
+k0620,低,low,ひくい,テイ,ひくい,,N2,description,U+4F4E,,r012|r075,7,3,left-right,1
+k0621,門,gate,もん,モン,もん,,N2,object,U+9580,,r263,8,2,enclosure,1
+k0622,森,forest,もり,シン,もり,,N2,nature,U+68EE,,r113,12,1,left-right,1
+k0623,林,woods,はやし,リン,はやし,,N2,nature,U+6797,,r113,8,1,left-right,1
+k0624,短,short,みじかい,タン,みじかい,,N2,description,U+77ED,,r169|r046,12,3,left-right,1
+k0625,軽,light (weight),かるい,ケイ,かるい,,N2,description,U+8EFD,,r245,12,3,left-right,1
+k0626,池,pond,いけ,チ,いけ,,N2,nature,U+6C60,,r090|r004,6,2,left-right,1
+k0627,弱,weak,よわい,ジャク,よわい,,N2,description,U+5F31,,r057,10,2,left-right,1
+k0628,菜,vegetable,な,サイ,な,,N2,food,U+83DC,,r083,11,4,top-bottom,1
+k0629,協,cooperate,きょう,キョウ,,,N2,society,U+5354,,r026,8,4,left-right,1
+k0630,改,reform,あらためる,カイ,あらためる,,N2,action,U+6539,,r101|r065,7,4,left-right,1
+k0631,府,city office,ふ,フ,,,N2,society,U+5E9C,,r072,8,4,enclosure,1
+k0632,委,entrust,い,イ,,,N2,action,U+59D4,,r048|r004,8,3,top-bottom,1
+k0633,軍,army,ぐん,グン,,,N2,society,U+8ECD,,r245,9,4,enclosure,1
+k0634,各,each,おのおの,カク,おのおの,,N2,abstract,U+5404,,r029|r037,6,4,top-bottom,1
+k0635,島,island,しま,トウ,しま,,N2,nature,U+5CF6,,r059,10,3,single,1
+k0636,副,vice; secondary,ふく,フク,,,N2,abstract,U+526F,,r024,11,4,left-right,1
+k0637,算,calculate,さんする,サン,,,N2,number,U+7B97,,r118|r052,14,2,top-bottom,2
+k0638,線,line,せん,セン,,,N2,abstract,U+7DDA,,r189,15,2,left-right,2
+k0639,農,farming,のう,ノウ,,,N2,society,U+8FB2,,r084,13,3,top-bottom,2
+k0640,州,state; province,しゅう,シュウ,,,N2,place,U+5DDE,,r064,6,3,single,2
+k0641,象,elephant; symbol,ぞう,ショウ,,,N2,nature,U+8C61,,r130,12,5,single,2
+k0642,賞,prize,しょう,ショウ,,,N2,abstract,U+8CDE,,r236|r047,15,4,top-bottom,2
+k0643,辺,area; vicinity,へん,ヘン,あたり,,N2,position,U+8FBA,,r249,5,4,left-right,2
+k0644,課,section; lesson,か,カ,,,N2,society,U+8AB2,,r228|r151,15,4,left-right,2
+k0645,極,extreme,きわめる,キョク,きわめる,,N2,abstract,U+6975,,r113|r126,12,4,left-right,2
+k0646,量,quantity,りょう,リョウ,はかる,,N2,abstract,U+91CF,,r150,12,4,single,2
+k0647,型,model; type,かた,ケイ,かた,,N2,abstract,U+578B,,r040|r094,9,4,top-bottom,2
+k0648,谷,valley,たに,コク,たに,,N2,nature,U+8C37,,r076,7,2,single,2
+k0649,史,history,し,シ,,,N2,abstract,U+53F2,,r037,5,4,single,2
+k0650,階,floor; level,かい,カイ,,,N2,place,U+968E,,r086|r040,12,3,left-right,2
+k0651,管,pipe; manage,くだ,カン,くだ,,N2,object,U+7BA1,,r118,14,4,top-bottom,2
+k0652,兵,soldier,へい,ヘイ|ヒョウ,,,N2,society,U+5175,,r016,7,4,top-bottom,2
+k0653,細,thin; detailed,ほそい,サイ,ほそい,,N2,description,U+7D30,,r189,11,2,left-right,2
+k0654,丸,round; circle,まる,ガン,まる,,N2,description,U+4E38,,r004,3,2,single,2
+k0655,録,record,ろく,ロク,,,N2,action,U+9332,,r260,16,4,left-right,2
+k0656,省,ministry; save,はぶく,ショウ|セイ,はぶく,,N2,society,U+7701,,r162,9,4,top-bottom,2
+k0657,橋,bridge,はし,キョウ,はし,,N2,object,U+6A4B,,r113|r126,16,3,left-right,3
+k0658,岸,shore,きし,ガン,きし,,N2,nature,U+5CB8,,r046|r060,8,3,top-bottom,3
+k0659,周,circumference,まわり,シュウ,まわり,,N2,abstract,U+5468,,r037,8,4,enclosure,3
+k0660,材,material,ざい,ザイ,,,N2,object,U+6750,,r113|r046,7,4,left-right,3
+k0661,戸,door,と,コ,と,,N2,object,U+6238,,r068,4,2,single,3
+k0662,央,center,おう,オウ,,,N2,position,U+592E,,r037|r047,5,3,single,3
+k0663,竹,bamboo,たけ,チク,たけ,,N2,nature,U+7AF9,,r118,6,1,single,3
+k0664,競,compete,きそう,キョウ|ケイ,きそう,,N2,action,U+7AF6,,r176,20,4,left-right,3
+k0665,根,root,ね,コン,ね,,N2,nature,U+6839,,r113|r067,10,3,left-right,3
+k0666,歴,history,れき,レキ,,,N2,abstract,U+6B74,,r072|r115,14,4,left-right,3
+k0667,航,navigate,こう,コウ,,,N2,action,U+822A,,r137,10,4,left-right,3
+k0668,鉄,iron,てつ,テツ,,,N2,object,U+9244,,r260|r046,13,3,left-right,3
+k0669,児,child,こ,ジ,,,N2,people,U+5150,,r014,8,4,single,3
+k0670,印,stamp; mark,しるし,イン,しるし,,N2,abstract,U+5370,,r026|r048,6,4,left-right,3
+k0671,油,oil,あぶら,ユ,あぶら,,N2,object,U+6CB9,,r090|r152,8,3,left-right,3
+k0672,輪,wheel; ring,わ,リン,わ,,N2,object,U+8F2A,,r245,15,4,left-right,3
+k0673,植,plant,うえる,ショク,うえる,,N2,nature,U+690D,,r113|r004,12,3,left-right,3
+k0674,清,clear; pure,きよい,セイ|ショウ,きよい,,N2,nature,U+6E05,,r090|r040,11,4,left-right,3
+k0675,倍,double,ばい,バイ,,,N2,number,U+500D,,r012|r037,10,3,left-right,3
+k0676,億,hundred million,おく,オク,,,N2,number,U+5104,,r012,15,4,left-right,3
+k0677,芸,art; craft,げい,ゲイ,,,N2,art,U+82B8,,r083,7,4,top-bottom,4
+k0678,停,stop; halt,とまる,テイ,とまる,,N2,action,U+505C,,r012|r040,11,4,left-right,4
+k0679,陸,land,りく,リク,,,N2,nature,U+9678,,r086|r040,11,4,left-right,4
+k0680,玉,jewel; ball,たま,ギョク,たま,,N2,object,U+7389,,r146,5,1,single,4
+k0681,波,wave,なみ,ハ,なみ,,N2,nature,U+6CE2,,r090|r123,8,3,left-right,4
+k0682,帯,belt; zone,おび,タイ,おび,,N2,object,U+5E2F,,r068,10,4,top-bottom,4
+k0683,羽,feather; wing,はね,ウ,はね,,N2,nature,U+7FBD,,r196,6,2,single,4
+k0684,固,hard; solid,かたい,コ,かたい,,N2,description,U+56FA,,r039|r037,8,4,enclosure,4
+k0685,囲,surround,かこむ,イ,かこむ,,N2,action,U+56F2,,r039|r037,7,4,enclosure,4
+k0686,卒,graduate,そつ,ソツ,,,N2,education,U+5352,,r039,8,4,top-bottom,4
+k0687,順,order; obey,じゅん,ジュン,,,N2,abstract,U+9806,,r279|r037,12,4,left-right,4
+k0688,岩,rock,いわ,ガン,いわ,,N2,nature,U+5CA9,,r046|r060,8,2,top-bottom,4
+k0689,練,practice,ねる,レン,ねる,,N2,action,U+7DF4,,r189|r046,14,4,left-right,4
+k0690,令,order; command,れい,レイ,,,N2,abstract,U+4EE4,,r011,5,4,top-bottom,4
+k0691,角,angle; horn,かど,カク,かど,,N2,abstract,U+89D2,,r148,7,2,single,4
+k0692,貨,goods; cargo,か,カ,,,N2,object,U+8CA8,,r236,11,4,top-bottom,4
+k0693,血,blood,ち,ケツ,ち,,N2,body,U+8840,,r155,6,3,single,4
+k0694,温,warm,あたたかい,オン,あたたかい,,N2,nature,U+6E29,,r090|r040,12,3,left-right,4
+k0695,季,season,き,キ,,,N2,time,U+5B63,,r050|r046,8,4,top-bottom,4
+k0696,星,star,ほし,セイ|ショウ,ほし,,N2,nature,U+661F,,r107|r174,9,2,top-bottom,4
+k0697,庫,warehouse,くら,コ,くら,,N2,place,U+5EAB,,r072|r245,10,3,enclosure,5
+k0698,坂,slope,さか,ハン,さか,,N2,nature,U+5742,,r040|r029,7,3,left-right,5
+k0699,底,bottom,そこ,テイ,そこ,,N2,position,U+5E95,,r072|r004,8,4,enclosure,5
+k0700,寺,temple,てら,ジ,てら,,N2,place,U+5BFA,,r040|r053,6,2,top-bottom,5
+k0701,希,hope; rare,のぞむ,キ,のぞむ,,N2,abstract,U+5E0C,,r068,7,4,top-bottom,5
+k0702,仲,relationship; middle,なか,チュウ,なか,,N2,people,U+4EC6,,r012|r039,6,4,left-right,5
+k0703,栄,flourish,さかえる,エイ,さかえる,,N2,abstract,U+6804,,r113,9,4,top-bottom,5
+k0704,札,tag; bill,ふだ,サツ,ふだ,,N2,object,U+672D,,r113,5,4,left-right,5
+k0705,板,board; plank,いた,ハン|バン,いた,,N2,object,U+677F,,r113|r029,8,3,left-right,5
+k0706,包,wrap,つつむ,ホウ,つつむ,,N2,action,U+5305,,r021,5,4,enclosure,5
+k0707,焼,burn; roast,やく,ショウ,やく,,N2,action,U+713C,,r128|r040,12,4,left-right,5
+k0708,章,chapter; badge,しょう,ショウ,,,N2,abstract,U+7AE0,,r176,11,3,top-bottom,5
+k0709,照,illuminate,てらす,ショウ,てらす,,N2,action,U+7167,,r107|r126,13,4,top-bottom,5
+k0710,秒,second (time),びょう,ビョウ,,,N2,time,U+79D2,,r173|r046,9,3,left-right,5
+k0711,皮,skin; leather,かわ,ヒ,かわ,,N2,body,U+76AE,,r030,5,3,single,5
+k0712,漁,fishing,りょう,ギョ|リョウ,,,N2,action,U+6F01,,r090|r203,14,4,left-right,5
+k0713,貯,save; store,たくわえる,チョ,たくわえる,,N2,action,U+8CBC,,r236|r039,12,4,left-right,5
+k0714,柱,pillar,はしら,チュウ,はしら,,N2,object,U+6932,,r113|r004,9,3,left-right,5
+k0715,祭,festival,まつり,サイ,まつり,,N2,society,U+796D,,r142,11,3,top-bottom,5
+k0716,筆,brush; writing,ふで,ヒツ,ふで,,N2,object,U+7B46,,r118|r048,12,3,top-bottom,5
+k0717,暑,hot (weather),あつい,ショ,あつい,,N1,nature,U+6691,,r107|r040,12,3,left-right,1
+k0718,第,ordinal prefix,だい,ダイ,,,N1,abstract,U+7B2C,,r118|r040,11,3,top-bottom,1
+k0719,結,tie; conclude,むすぶ,ケツ,むすぶ,,N1,action,U+7D50,,r189|r040,12,4,left-right,1
+k0720,案,proposal; plan,あん,アン,,,N1,abstract,U+6848,,r113|r040,10,4,top-bottom,1
+k0721,整,arrange; tidy,ととのえる,セイ,ととのえる,,N1,action,U+6574,,r101|r065,16,3,left-right,1
+k0722,器,vessel; device,うつわ,キ,うつわ,,N1,object,U+5668,,r037,15,4,enclosure,1
+k0723,健,healthy,けん,ケン,,,N1,health,U+5065,,r012|r076,11,4,left-right,1
+k0724,標,mark; target,しるし,ヒョウ,しるし,,N1,abstract,U+6A19,,r113|r040,15,4,left-right,1
+k0725,司,manage; officer,つかさ,シ,つかさ,,N1,society,U+53F8,,r037,5,4,enclosure,1
+k0726,康,health; peace,こう,コウ,,,N1,health,U+5EB7,,r072,11,4,enclosure,1
+k0727,級,class; grade,きゅう,キュウ,,,N1,education,U+7D1A,,r189|r036,9,3,left-right,1
+k0728,救,rescue,すくう,キュウ,すくう,,N1,action,U+6551,,r101|r065,11,4,left-right,1
+k0729,節,section; joint,ふし,セツ,ふし,,N1,abstract,U+7BC0,,r118|r040,13,4,top-bottom,1
+k0730,泣,cry,なく,キュウ,なく,,N1,action,U+6CE3,,r090|r176,8,4,left-right,1
+k0731,保,protect; keep,たもつ,ホ,たもつ,,N1,action,U+4FDD,,r012|r009,9,5,left-right,1
+k0732,基,base; foundation,もとい,キ,もとい,,N1,abstract,U+57FA,,r040|r037,11,5,top-bottom,1
+k0733,価,price; value,ね,カ,ね,,N1,money,U+4FA1,,r012|r016,8,5,left-right,1
+k0734,応,respond,おうじる,オウ,おうじる,,N1,action,U+5FDC,,r092,7,5,top-bottom,1
+k0735,検,examine; check,けん,ケン,,,N1,action,U+691C,,r113|r165,12,5,left-right,1
+k0736,展,expand; display,てんじる,テン,てんじる,,N1,action,U+5C55,,r058,10,6,top-bottom,1
+k0737,条,clause; strip,じょう,ジョウ,,,N1,abstract,U+6761,,r075,7,5,single,2
+k0738,独,alone; Germany,ひとり,ドク,ひとり,,N1,abstract,U+72EC,,r094,9,5,left-right,2
+k0739,率,rate; lead,りつ,ソツ|リツ,,,N1,abstract,U+7387,,r069,11,5,top-bottom,2
+k0740,張,stretch; display,はる,チョウ,はる,,N1,action,U+5F35,,r076|r046,11,5,left-right,2
+k0741,環,ring; environ,かん,カン,,,N1,abstract,U+74B0,,r146|r040,17,5,left-right,2
+k0742,評,evaluate,ひょう,ヒョウ,,,N1,abstract,U+8A55,,r228|r040,12,5,left-right,2
+k0743,製,manufacture,せい,セイ,,,N1,action,U+88FD,,r183|r040,14,5,top-bottom,2
+k0744,授,grant; teach,さずける,ジュ,さずける,,N1,education,U+6388,,r089|r040,11,5,left-right,2
+k0745,批,criticize,ひ,ヒ,,,N1,abstract,U+6279,,r089|r040,7,6,left-right,2
+k0746,修,master; study,おさめる,シュウ|シュ,おさめる,,N1,education,U+4FEE,,r012|r067,10,5,left-right,2
+k0747,拡,expand; enlarge,ひろげる,カク,ひろげる,,N1,action,U+62E1,,r089|r040,8,6,left-right,2
+k0748,故,reason; late,ゆえ,コ,ゆえ,,N1,abstract,U+6545,,r101|r065,9,5,left-right,2
+k0749,異,different,ことなる,イ,ことなる,,N1,abstract,U+7570,,r037|r040,11,6,top-bottom,2
+k0750,善,good; virtue,よい,ゼン,よい,,N1,abstract,U+5584,,r112|r037,12,6,top-bottom,2
+k0751,志,aspiration,こころざし,シ,こころざし,,N1,abstract,U+5FD7,,r040|r092,7,5,top-bottom,2
+k0752,恵,blessing; grace,めぐむ,ケイ,めぐむ,,N1,abstract,U+6075,,r092|r040,10,6,top-bottom,2
+k0753,賃,wages; rent,ちん,チン,,,N1,money,U+8CDB,,r236|r040,13,6,top-bottom,2
+k0754,宙,midair; universe,ちゅう,チュウ,,,N1,abstract,U+5B99,,r174|r037,8,6,top-bottom,2
+k0755,操,operate; conduct,あやつる,ソウ,あやつる,,N1,action,U+64CD,,r089|r040,16,6,left-right,2
+k0756,壁,wall,かべ,ヘキ,かべ,,N1,object,U+58C1,,r040|r076,16,6,top-bottom,2
+k0757,仮,temporary; suppose,かり,カ,かり,,N1,abstract,U+4EEE,,r012|r029,6,5,left-right,3
+k0758,看,watch over,みまもる,カン,みまもる,,N1,action,U+770B,,r097|r162,9,6,top-bottom,3
+k0759,較,compare,くらべる,カク,くらべる,,N1,abstract,U+6BD4,,r245|r040,13,6,left-right,3
+k0760,狭,narrow,せまい,キョウ,せまい,,N1,description,U+72ED,,r094|r037,9,6,left-right,3
+k0761,暖,warm,あたたかい,ダン,あたたかい,,N1,nature,U+6696,,r107|r040,13,6,left-right,3
+k0762,氏,family name; Mr.,うじ,シ,うじ,,N1,people,U+6C0F,,r083,4,4,single,3
+k0763,統,unify; govern,おさめる,トウ,おさめる,,N1,action,U+7D71,,r189|r040,12,5,left-right,3
+k0764,派,faction; dispatch,は,ハ,,,N1,society,U+6D3E,,r090|r040,9,6,left-right,3
+k0765,策,plan; policy,さく,サク,,,N1,abstract,U+7B56,,r118|r040,12,6,top-bottom,3
+k0766,提,propose; lift,さげる,テイ,さげる,,N1,action,U+63D0,,r089|r040,12,5,left-right,3

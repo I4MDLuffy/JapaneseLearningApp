@@ -1,7 +1,7 @@
-package com.example.personalproject.kanji.list.mvi
+package app.kotori.japanese.kanji.list.mvi
 
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class KanjiListState(
     val allEntries: List<KanjiEntry> = emptyList(),

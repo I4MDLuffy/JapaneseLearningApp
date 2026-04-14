@@ -1,4 +1,4 @@
-package com.example.personalproject.phrases.detail
+package app.kotori.japanese.phrases.detail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -44,16 +44,16 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.LocalAppSettings
-import com.example.personalproject.data.model.PhraseEntry
-import com.example.personalproject.phrases.detail.mvi.PhraseDetailViewModel
-import com.example.personalproject.ui.components.ItemNavigationBar
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.SpeakableText
-import com.example.personalproject.util.rememberTts
-import com.example.personalproject.util.swipeToNavigate
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.LocalAppSettings
+import app.kotori.japanese.data.model.PhraseEntry
+import app.kotori.japanese.phrases.detail.mvi.PhraseDetailViewModel
+import app.kotori.japanese.ui.components.ItemNavigationBar
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.SpeakableText
+import app.kotori.japanese.util.rememberTts
+import app.kotori.japanese.util.swipeToNavigate
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

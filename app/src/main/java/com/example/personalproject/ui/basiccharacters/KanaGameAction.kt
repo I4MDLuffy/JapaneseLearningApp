@@ -1,6 +1,6 @@
-package com.example.personalproject.ui.basiccharacters
+package app.kotori.japanese.ui.basiccharacters
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed interface KanaGameAction : BaseAction {
     // Mode select

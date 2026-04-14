@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.RadicalEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.RadicalEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class RadicalRepository(private val context: Context) {
+class RadicalRepository() {
 
     private var cache: List<RadicalEntry>? = null
 
@@ -29,5 +28,5 @@ class RadicalRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<RadicalEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseRadicals(context, "radicals.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseRadicals("radicals.csv") }
 }

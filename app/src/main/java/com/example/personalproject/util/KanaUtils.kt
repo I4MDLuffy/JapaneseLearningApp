@@ -1,4 +1,4 @@
-package com.example.personalproject.util
+package app.kotori.japanese.util
 
 /** Two-character yōon combinations (hiragana). */
 private val KANA_TWO = mapOf(

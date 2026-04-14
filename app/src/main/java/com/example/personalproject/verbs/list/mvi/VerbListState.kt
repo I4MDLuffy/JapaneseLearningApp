@@ -1,7 +1,7 @@
-package com.example.personalproject.verbs.list.mvi
+package app.kotori.japanese.verbs.list.mvi
 
-import com.example.personalproject.data.model.VerbEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.VerbEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class VerbListState(
     val allEntries: List<VerbEntry> = emptyList(),

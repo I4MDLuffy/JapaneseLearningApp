@@ -1,4 +1,4 @@
-package com.example.personalproject
+package app.kotori.japanese
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,7 +12,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        appContainer = AppContainer(applicationContext)
+        // Initialise the Android platform singleton before anything else.
+        AndroidPlatform.init(applicationContext)
+        appContainer = AppContainer()
         setContent {
             App(appContainer)
         }

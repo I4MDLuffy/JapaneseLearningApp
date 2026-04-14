@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.VocabularyWord
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.VocabularyWord
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class VocabularyRepository(private val context: Context) {
+class VocabularyRepository() {
 
     private var cache: List<VocabularyWord>? = null
 
@@ -36,11 +35,11 @@ class VocabularyRepository(private val context: Context) {
     /** Swap in a different CSV file name to load an alternate word list. */
     suspend fun loadFile(fileName: String): List<VocabularyWord> =
         withContext(Dispatchers.IO) {
-            CsvParser.parseVocabulary(context, fileName).also { cache = it }
+            CsvParser.parseVocabulary(fileName).also { cache = it }
         }
 
     private suspend fun load(): List<VocabularyWord> =
         withContext(Dispatchers.IO) {
-            CsvParser.parseVocabulary(context, "vocabulary.csv")
+            CsvParser.parseVocabulary("vocabulary.csv")
         }
 }

@@ -1,8 +1,8 @@
-package com.example.personalproject.verbs.list.mvi
+package app.kotori.japanese.verbs.list.mvi
 
-import com.example.personalproject.data.model.VerbEntry
-import com.example.personalproject.data.repository.VerbRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.model.VerbEntry
+import app.kotori.japanese.data.repository.VerbRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class VerbListViewModel(
     private val repository: VerbRepository,

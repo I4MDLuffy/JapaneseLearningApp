@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games.mvi
+package app.kotori.japanese.ui.games.mvi
 
 /**
  * Unified study card for all content types (vocab, kanji, verb, adjective, noun, phrase).

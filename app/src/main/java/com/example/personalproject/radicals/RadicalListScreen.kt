@@ -1,4 +1,4 @@
-package com.example.personalproject.radicals
+package app.kotori.japanese.radicals
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -36,9 +36,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.RadicalEntry
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.RadicalEntry
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun RadicalListScreen(

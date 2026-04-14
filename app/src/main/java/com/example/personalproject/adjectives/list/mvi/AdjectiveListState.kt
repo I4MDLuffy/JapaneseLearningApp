@@ -1,7 +1,7 @@
-package com.example.personalproject.adjectives.list.mvi
+package app.kotori.japanese.adjectives.list.mvi
 
-import com.example.personalproject.data.model.AdjectiveEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.AdjectiveEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class AdjectiveListState(
     val allEntries: List<AdjectiveEntry> = emptyList(),

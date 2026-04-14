@@ -1,9 +1,9 @@
-package com.example.personalproject.ui.review
+package app.kotori.japanese.ui.review
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.personalproject.AppContainer
-import com.example.personalproject.data.db.KnownItemEntity
+import app.kotori.japanese.AppContainer
+import app.kotori.japanese.data.db.KnownItemEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

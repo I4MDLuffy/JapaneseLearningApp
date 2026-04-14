@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.components
+package app.kotori.japanese.ui.components
 
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll

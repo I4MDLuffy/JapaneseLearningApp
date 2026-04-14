@@ -1,4 +1,4 @@
-package com.example.personalproject.opening
+package app.kotori.japanese.opening
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -49,9 +49,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.AppTheme
-import com.example.personalproject.data.model.StudyDirection
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.AppTheme
+import app.kotori.japanese.data.model.StudyDirection
 
 @Composable
 fun OpeningScreen(onStart: () -> Unit) {
@@ -162,7 +162,7 @@ fun OpeningScreen(onStart: () -> Unit) {
 
 @Composable
 private fun OptionsDialog(
-    settings: com.example.personalproject.data.model.AppSettings,
+    settings: app.kotori.japanese.data.model.AppSettings,
     onDismiss: () -> Unit,
     onThemeChange: (AppTheme) -> Unit,
     onDarkModeChange: (Boolean) -> Unit,
@@ -274,11 +274,11 @@ private fun SettingsToggleRow(label: String, checked: Boolean, onCheckedChange: 
 @Composable
 private fun ThemeGrid(selected: AppTheme, onSelect: (AppTheme) -> Unit) {
     val swatches = listOf(
-        AppTheme.JADE      to com.example.personalproject.ui.theme.SwatchJade,
-        AppTheme.SORBET    to com.example.personalproject.ui.theme.SwatchSorbet,
-        AppTheme.SAPPHIRE  to com.example.personalproject.ui.theme.SwatchSapphire,
-        AppTheme.AMETHYST  to com.example.personalproject.ui.theme.SwatchAmethyst,
-        AppTheme.SAKURA    to com.example.personalproject.ui.theme.SwatchSakura,
+        AppTheme.JADE      to app.kotori.japanese.ui.theme.SwatchJade,
+        AppTheme.SORBET    to app.kotori.japanese.ui.theme.SwatchSorbet,
+        AppTheme.SAPPHIRE  to app.kotori.japanese.ui.theme.SwatchSapphire,
+        AppTheme.AMETHYST  to app.kotori.japanese.ui.theme.SwatchAmethyst,
+        AppTheme.SAKURA    to app.kotori.japanese.ui.theme.SwatchSakura,
     )
     Row(
         modifier = Modifier.fillMaxWidth(),

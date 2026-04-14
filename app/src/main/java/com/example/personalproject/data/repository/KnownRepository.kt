@@ -1,8 +1,8 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import com.example.personalproject.data.db.KnownDao
-import com.example.personalproject.data.db.KnownItemEntity
-import com.example.personalproject.data.db.KotobaDatabase
+import app.kotori.japanese.data.db.KnownDao
+import app.kotori.japanese.data.db.KnownItemEntity
+import app.kotori.japanese.data.db.KotobaDatabase
 import kotlinx.coroutines.flow.Flow
 
 class KnownRepository(private val dao: KnownDao) {

@@ -1,6 +1,6 @@
-package com.example.personalproject.vocabulary.list.mvi
+package app.kotori.japanese.vocabulary.list.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed class VocabularyListAction : BaseAction {
     data object LoadWords : VocabularyListAction()

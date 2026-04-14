@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.KanaCharacter
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.KanaCharacter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class KanaRepository(private val context: Context) {
+class KanaRepository() {
 
     private var cache: List<KanaCharacter>? = null
 
@@ -23,5 +22,5 @@ class KanaRepository(private val context: Context) {
         getAllKana().filter { it.group.equals(group, ignoreCase = true) }
 
     private suspend fun load(): List<KanaCharacter> =
-        withContext(Dispatchers.IO) { CsvParser.parseKana(context, "kana.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseKana("kana.csv") }
 }

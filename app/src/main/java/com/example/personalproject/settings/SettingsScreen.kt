@@ -1,4 +1,4 @@
-package com.example.personalproject.settings
+package app.kotori.japanese.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -48,16 +48,16 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.AppTheme
-import com.example.personalproject.data.model.StudyDirection
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.ScreenHelpDialog
-import com.example.personalproject.ui.theme.SwatchAmethyst
-import com.example.personalproject.ui.theme.SwatchJade
-import com.example.personalproject.ui.theme.SwatchSakura
-import com.example.personalproject.ui.theme.SwatchSapphire
-import com.example.personalproject.ui.theme.SwatchSorbet
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.AppTheme
+import app.kotori.japanese.data.model.StudyDirection
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.ScreenHelpDialog
+import app.kotori.japanese.ui.theme.SwatchAmethyst
+import app.kotori.japanese.ui.theme.SwatchJade
+import app.kotori.japanese.ui.theme.SwatchSakura
+import app.kotori.japanese.ui.theme.SwatchSapphire
+import app.kotori.japanese.ui.theme.SwatchSorbet
 
 @Composable
 fun SettingsScreen(onBack: () -> Unit) {

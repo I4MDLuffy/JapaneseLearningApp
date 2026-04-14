@@ -1,7 +1,7 @@
-package com.example.personalproject.modules.list.mvi
+package app.kotori.japanese.modules.list.mvi
 
-import com.example.personalproject.data.model.ModuleCategory
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.data.model.ModuleCategory
+import app.kotori.japanese.mvi.BaseAction
 
 sealed class ModulesAction : BaseAction {
     data object LoadModules : ModulesAction()

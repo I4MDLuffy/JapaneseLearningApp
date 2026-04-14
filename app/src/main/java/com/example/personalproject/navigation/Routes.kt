@@ -1,4 +1,4 @@
-package com.example.personalproject.navigation
+package app.kotori.japanese.navigation
 
 import kotlinx.serialization.Serializable
 

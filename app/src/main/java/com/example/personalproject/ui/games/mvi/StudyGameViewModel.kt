@@ -1,15 +1,15 @@
-package com.example.personalproject.ui.games.mvi
+package app.kotori.japanese.ui.games.mvi
 
 import androidx.lifecycle.viewModelScope
-import com.example.personalproject.AppContainer
-import com.example.personalproject.data.model.AdjectiveEntry
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.data.model.NounEntry
-import com.example.personalproject.data.model.PhraseEntry
-import com.example.personalproject.data.model.VerbEntry
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.mvi.BaseViewModel
-import com.example.personalproject.ui.games.HiraganaUtils
+import app.kotori.japanese.AppContainer
+import app.kotori.japanese.data.model.AdjectiveEntry
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.data.model.NounEntry
+import app.kotori.japanese.data.model.PhraseEntry
+import app.kotori.japanese.data.model.VerbEntry
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.mvi.BaseViewModel
+import app.kotori.japanese.ui.games.HiraganaUtils
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

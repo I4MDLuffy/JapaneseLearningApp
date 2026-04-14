@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.VerbEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.VerbEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class VerbRepository(private val context: Context) {
+class VerbRepository() {
 
     private var cache: List<VerbEntry>? = null
 
@@ -34,5 +33,5 @@ class VerbRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<VerbEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseVerbs(context, "verbs.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseVerbs("verbs.csv") }
 }

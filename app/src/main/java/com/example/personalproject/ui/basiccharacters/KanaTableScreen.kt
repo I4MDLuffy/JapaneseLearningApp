@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.basiccharacters
+package app.kotori.japanese.ui.basiccharacters
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -39,9 +39,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.data.kana.KanaEntry
-import com.example.personalproject.data.kana.KanaGroup
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.data.kana.KanaEntry
+import app.kotori.japanese.data.kana.KanaGroup
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun KanaTableScreen(

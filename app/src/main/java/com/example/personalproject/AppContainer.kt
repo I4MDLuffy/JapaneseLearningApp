@@ -1,64 +1,54 @@
-package com.example.personalproject
+package app.kotori.japanese
 
-import android.content.Context
 import androidx.compose.runtime.compositionLocalOf
-import com.example.personalproject.data.db.KotobaDatabase
-import com.example.personalproject.data.repository.AdjectiveRepository
-import com.example.personalproject.data.repository.ChapterProgressRepository
-import com.example.personalproject.data.repository.SavedRepository
-import com.example.personalproject.data.repository.DialogueRepository
-import com.example.personalproject.data.repository.GrammarRepository
-import com.example.personalproject.data.repository.KanaRepository
-import com.example.personalproject.data.repository.KanjiRepository
-import com.example.personalproject.data.repository.MiscRepository
-import com.example.personalproject.data.repository.ModuleRepository
-import com.example.personalproject.data.repository.NounRepository
-import com.example.personalproject.data.repository.PhraseRepository
-import com.example.personalproject.data.repository.RadicalRepository
-import com.example.personalproject.data.repository.KanaStatsRepository
-import com.example.personalproject.data.repository.KnownRepository
-import com.example.personalproject.data.repository.OnboardingRepository
-import com.example.personalproject.data.repository.SettingsRepository
-import com.example.personalproject.data.repository.VerbRepository
-import com.example.personalproject.data.repository.VocabularyRepository
+import app.kotori.japanese.data.repository.AdjectiveRepository
+import app.kotori.japanese.data.repository.ChapterProgressRepository
+import app.kotori.japanese.data.repository.SavedRepository
+import app.kotori.japanese.data.repository.DialogueRepository
+import app.kotori.japanese.data.repository.GrammarRepository
+import app.kotori.japanese.data.repository.KanaRepository
+import app.kotori.japanese.data.repository.KanjiRepository
+import app.kotori.japanese.data.repository.MiscRepository
+import app.kotori.japanese.data.repository.ModuleRepository
+import app.kotori.japanese.data.repository.NounRepository
+import app.kotori.japanese.data.repository.PhraseRepository
+import app.kotori.japanese.data.repository.RadicalRepository
+import app.kotori.japanese.data.repository.KanaStatsRepository
+import app.kotori.japanese.data.repository.KnownRepository
+import app.kotori.japanese.data.repository.OnboardingRepository
+import app.kotori.japanese.data.repository.SettingsRepository
+import app.kotori.japanese.data.repository.VerbRepository
+import app.kotori.japanese.data.repository.VocabularyRepository
 
-class AppContainer(context: Context) {
-    // Legacy
-    val vocabularyRepository: VocabularyRepository = VocabularyRepository(context.applicationContext)
+class AppContainer {
+    // CSV-backed repositories (no Context — use Compose Resources internally)
+    val vocabularyRepository: VocabularyRepository = VocabularyRepository()
     val moduleRepository: ModuleRepository = ModuleRepository()
+    val kanjiRepository: KanjiRepository = KanjiRepository()
+    val verbRepository: VerbRepository = VerbRepository()
+    val adjectiveRepository: AdjectiveRepository = AdjectiveRepository()
+    val nounRepository: NounRepository = NounRepository()
+    val phraseRepository: PhraseRepository = PhraseRepository()
+    val grammarRepository: GrammarRepository = GrammarRepository()
+    val kanaRepository: KanaRepository = KanaRepository()
+    val radicalRepository: RadicalRepository = RadicalRepository()
+    val dialogueRepository: DialogueRepository = DialogueRepository()
+    val miscRepository: MiscRepository = MiscRepository()
 
-    // New data types
-    val kanjiRepository: KanjiRepository = KanjiRepository(context.applicationContext)
-    val verbRepository: VerbRepository = VerbRepository(context.applicationContext)
-    val adjectiveRepository: AdjectiveRepository = AdjectiveRepository(context.applicationContext)
-    val nounRepository: NounRepository = NounRepository(context.applicationContext)
-    val phraseRepository: PhraseRepository = PhraseRepository(context.applicationContext)
-    val grammarRepository: GrammarRepository = GrammarRepository(context.applicationContext)
-    val kanaRepository: KanaRepository = KanaRepository(context.applicationContext)
-    val radicalRepository: RadicalRepository = RadicalRepository(context.applicationContext)
-    val dialogueRepository: DialogueRepository = DialogueRepository(context.applicationContext)
-    val miscRepository: MiscRepository = MiscRepository(context.applicationContext)
+    // Settings-backed repositories (platform-specific storage via createSettings())
+    val chapterProgressRepository: ChapterProgressRepository =
+        ChapterProgressRepository(createSettings("kotoba_chapter_progress"))
+    val settingsRepository: SettingsRepository =
+        SettingsRepository(createSettings("kotoba_settings"))
+    val onboardingRepository: OnboardingRepository =
+        OnboardingRepository(createSettings("kotoba_onboarding"))
 
-    // Chapter progress (SharedPreferences)
-    val chapterProgressRepository: ChapterProgressRepository = ChapterProgressRepository(context.applicationContext)
-
-    // Room database
-    private val kotobaDatabase: KotobaDatabase = KotobaDatabase.getInstance(context.applicationContext)
-
-    // Saved items (Room-backed)
+    // Room-backed repositories
+    private val kotobaDatabase = createDatabase()
     val savedRepository: SavedRepository = SavedRepository.create(kotobaDatabase)
-
-    // Known/mastery items (Room-backed)
     val knownRepository: KnownRepository = KnownRepository.create(kotobaDatabase)
-
-    // Kana weakness tracker (Room-backed)
-    val kanaStatsRepository: KanaStatsRepository = KanaStatsRepository.create(kotobaDatabase.kanaStatsDao())
-
-    // Settings (SharedPreferences)
-    val settingsRepository: SettingsRepository = SettingsRepository(context.applicationContext)
-
-    // Onboarding / first-visit tracking (SharedPreferences)
-    val onboardingRepository: OnboardingRepository = OnboardingRepository(context.applicationContext)
+    val kanaStatsRepository: KanaStatsRepository =
+        KanaStatsRepository.create(kotobaDatabase.kanaStatsDao())
 }
 
 val LocalAppContainer = compositionLocalOf<AppContainer> {

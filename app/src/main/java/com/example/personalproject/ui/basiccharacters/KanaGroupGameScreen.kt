@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.basiccharacters
+package app.kotori.japanese.ui.basiccharacters
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -45,10 +45,10 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.kana.hiraganaGroups
-import com.example.personalproject.data.kana.katakanaGroups
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.kana.hiraganaGroups
+import app.kotori.japanese.data.kana.katakanaGroups
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @Composable
 fun KanaGroupGameScreen(

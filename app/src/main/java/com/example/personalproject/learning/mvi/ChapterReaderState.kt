@@ -1,9 +1,9 @@
-package com.example.personalproject.learning.mvi
+package app.kotori.japanese.learning.mvi
 
-import com.example.personalproject.data.model.GrammarEntry
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.GrammarEntry
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.mvi.BaseState
 
 sealed interface ChapterItem {
     data class GrammarItem(val entry: GrammarEntry) : ChapterItem

@@ -1,4 +1,4 @@
-package com.example.personalproject.learning
+package app.kotori.japanese.learning
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -38,19 +38,19 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.Chapter
-import com.example.personalproject.data.model.ChapterType
-import com.example.personalproject.learning.mvi.LevelAction
-import com.example.personalproject.learning.mvi.LevelViewModel
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.Chapter
+import app.kotori.japanese.data.model.ChapterType
+import app.kotori.japanese.learning.mvi.LevelAction
+import app.kotori.japanese.learning.mvi.LevelViewModel
 import androidx.compose.material.icons.outlined.HelpOutline
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.components.ScreenHelpDialog
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.ScreenHelpDialog
 
 @Composable
 fun LevelScreen(

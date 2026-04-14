@@ -1,6 +1,6 @@
-package com.example.personalproject.home.mvi
+package app.kotori.japanese.home.mvi
 
-import com.example.personalproject.mvi.BaseAction
+import app.kotori.japanese.mvi.BaseAction
 
 sealed class HomeAction : BaseAction {
     data object LoadData : HomeAction()

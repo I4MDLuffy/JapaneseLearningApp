@@ -1,7 +1,7 @@
-package com.example.personalproject.radicals.mvi
+package app.kotori.japanese.radicals.mvi
 
-import com.example.personalproject.data.model.RadicalEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.RadicalEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class RadicalGameState(
     val phase: RadicalGamePhase = RadicalGamePhase.Loading,

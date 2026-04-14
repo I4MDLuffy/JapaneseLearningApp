@@ -1,8 +1,8 @@
-package com.example.personalproject.home.mvi
+package app.kotori.japanese.home.mvi
 
-import com.example.personalproject.data.repository.ModuleRepository
-import com.example.personalproject.data.repository.VocabularyRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.ModuleRepository
+import app.kotori.japanese.data.repository.VocabularyRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class HomeViewModel(
     private val vocabularyRepository: VocabularyRepository,

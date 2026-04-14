@@ -1,4 +1,4 @@
-package com.example.personalproject.data.model
+package app.kotori.japanese.data.model
 
 data class RadicalEntry(
     val id: String,

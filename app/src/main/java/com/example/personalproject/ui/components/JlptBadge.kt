@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.components
+package app.kotori.japanese.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
@@ -11,11 +11,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.ui.theme.JlptN1Color
-import com.example.personalproject.ui.theme.JlptN2Color
-import com.example.personalproject.ui.theme.JlptN3Color
-import com.example.personalproject.ui.theme.JlptN4Color
-import com.example.personalproject.ui.theme.JlptN5Color
+import app.kotori.japanese.ui.theme.JlptN1Color
+import app.kotori.japanese.ui.theme.JlptN2Color
+import app.kotori.japanese.ui.theme.JlptN3Color
+import app.kotori.japanese.ui.theme.JlptN4Color
+import app.kotori.japanese.ui.theme.JlptN5Color
 
 @Composable
 fun JlptBadge(level: String) {

@@ -1,7 +1,7 @@
-package com.example.personalproject.adjectives.detail.mvi
+package app.kotori.japanese.adjectives.detail.mvi
 
-import com.example.personalproject.data.model.AdjectiveEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.AdjectiveEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class AdjectiveDetailState(
     val entry: AdjectiveEntry? = null,

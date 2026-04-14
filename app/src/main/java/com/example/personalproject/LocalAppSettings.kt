@@ -1,6 +1,6 @@
-package com.example.personalproject
+package app.kotori.japanese
 
 import androidx.compose.runtime.compositionLocalOf
-import com.example.personalproject.data.model.AppSettings
+import app.kotori.japanese.data.model.AppSettings
 
 val LocalAppSettings = compositionLocalOf<AppSettings> { AppSettings() }

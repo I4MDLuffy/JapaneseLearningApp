@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games
+package app.kotori.japanese.ui.games
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,7 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 /** Conjugation form key → display name */
 val verbConjugationForms = listOf(

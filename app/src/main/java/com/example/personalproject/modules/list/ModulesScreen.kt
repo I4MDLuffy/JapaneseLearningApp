@@ -1,4 +1,4 @@
-package com.example.personalproject.modules.list
+package app.kotori.japanese.modules.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -38,11 +38,11 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.LearningModule
-import com.example.personalproject.modules.list.mvi.ModulesAction
-import com.example.personalproject.modules.list.mvi.ModulesViewModel
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.LearningModule
+import app.kotori.japanese.modules.list.mvi.ModulesAction
+import app.kotori.japanese.modules.list.mvi.ModulesViewModel
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

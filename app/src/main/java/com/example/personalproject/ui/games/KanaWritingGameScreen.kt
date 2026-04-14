@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games
+package app.kotori.japanese.ui.games
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -47,9 +47,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.data.kana.hiraganaGroups
-import com.example.personalproject.data.kana.katakanaGroups
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.data.kana.hiraganaGroups
+import app.kotori.japanese.data.kana.katakanaGroups
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 private data class DrawnPath(val points: List<Offset>)
 

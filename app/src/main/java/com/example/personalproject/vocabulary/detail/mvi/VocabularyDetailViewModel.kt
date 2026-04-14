@@ -1,7 +1,7 @@
-package com.example.personalproject.vocabulary.detail.mvi
+package app.kotori.japanese.vocabulary.detail.mvi
 
-import com.example.personalproject.data.repository.VocabularyRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.VocabularyRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class VocabularyDetailViewModel(
     private val repository: VocabularyRepository,

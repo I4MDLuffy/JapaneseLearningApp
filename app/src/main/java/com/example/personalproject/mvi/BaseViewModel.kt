@@ -1,4 +1,4 @@
-package com.example.personalproject.mvi
+package app.kotori.japanese.mvi
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

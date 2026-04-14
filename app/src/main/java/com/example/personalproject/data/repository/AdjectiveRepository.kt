@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.AdjectiveEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.AdjectiveEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class AdjectiveRepository(private val context: Context) {
+class AdjectiveRepository() {
 
     private var cache: List<AdjectiveEntry>? = null
 
@@ -34,5 +33,5 @@ class AdjectiveRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<AdjectiveEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseAdjectives(context, "adjectives.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseAdjectives("adjectives.csv") }
 }

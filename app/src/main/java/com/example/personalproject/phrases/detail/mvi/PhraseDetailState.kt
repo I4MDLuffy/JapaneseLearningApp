@@ -1,7 +1,7 @@
-package com.example.personalproject.phrases.detail.mvi
+package app.kotori.japanese.phrases.detail.mvi
 
-import com.example.personalproject.data.model.PhraseEntry
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.data.model.PhraseEntry
+import app.kotori.japanese.mvi.BaseState
 
 data class PhraseDetailState(
     val entry: PhraseEntry? = null,

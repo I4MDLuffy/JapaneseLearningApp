@@ -1,7 +1,7 @@
-package com.example.personalproject.modules.detail.mvi
+package app.kotori.japanese.modules.detail.mvi
 
-import com.example.personalproject.data.repository.ModuleRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.repository.ModuleRepository
+import app.kotori.japanese.mvi.BaseViewModel
 
 class ModuleDetailViewModel(
     private val repository: ModuleRepository,

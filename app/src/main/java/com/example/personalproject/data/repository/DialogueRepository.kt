@@ -1,12 +1,11 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import android.content.Context
-import com.example.personalproject.data.csv.CsvParser
-import com.example.personalproject.data.model.DialogueEntry
+import app.kotori.japanese.data.csv.CsvParser
+import app.kotori.japanese.data.model.DialogueEntry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class DialogueRepository(private val context: Context) {
+class DialogueRepository() {
 
     private var cache: List<DialogueEntry>? = null
 
@@ -26,5 +25,5 @@ class DialogueRepository(private val context: Context) {
     }
 
     private suspend fun load(): List<DialogueEntry> =
-        withContext(Dispatchers.IO) { CsvParser.parseDialogues(context, "dialogue.csv") }
+        withContext(Dispatchers.IO) { CsvParser.parseDialogues("dialogue.csv") }
 }

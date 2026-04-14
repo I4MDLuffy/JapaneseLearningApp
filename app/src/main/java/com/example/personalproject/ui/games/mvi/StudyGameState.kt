@@ -1,6 +1,6 @@
-package com.example.personalproject.ui.games.mvi
+package app.kotori.japanese.ui.games.mvi
 
-import com.example.personalproject.mvi.BaseState
+import app.kotori.japanese.mvi.BaseState
 
 enum class GameType { FLASHCARDS, TIMED_QUIZ, MATCH_PAIRS, KANA_SPEED, KANA_SWIPE, KANJI_DROP, KANJI_BUILDER, FILL_BLANK }
 enum class PairMode { ENGLISH, ROMAJI }

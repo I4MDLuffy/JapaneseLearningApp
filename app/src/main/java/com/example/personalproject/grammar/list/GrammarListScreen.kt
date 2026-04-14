@@ -1,4 +1,4 @@
-package com.example.personalproject.grammar.list
+package app.kotori.japanese.grammar.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -46,13 +46,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.GrammarEntry
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.GrammarEntry
 import kotlinx.coroutines.launch
-import com.example.personalproject.grammar.list.mvi.GrammarListAction
-import com.example.personalproject.grammar.list.mvi.GrammarListViewModel
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
+import app.kotori.japanese.grammar.list.mvi.GrammarListAction
+import app.kotori.japanese.grammar.list.mvi.GrammarListViewModel
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

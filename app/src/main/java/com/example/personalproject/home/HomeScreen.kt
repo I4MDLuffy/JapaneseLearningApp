@@ -1,4 +1,4 @@
-package com.example.personalproject.home
+package app.kotori.japanese.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -42,10 +42,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.home.mvi.HomeAction
-import com.example.personalproject.home.mvi.HomeViewModel
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.home.mvi.HomeAction
+import app.kotori.japanese.home.mvi.HomeViewModel
 
 @Composable
 fun HomeScreen(

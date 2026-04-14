@@ -1,9 +1,9 @@
-package com.example.personalproject.ui.games.mvi
+package app.kotori.japanese.ui.games.mvi
 
 import androidx.lifecycle.viewModelScope
-import com.example.personalproject.data.model.KanjiEntry
-import com.example.personalproject.data.repository.KanjiRepository
-import com.example.personalproject.mvi.BaseViewModel
+import app.kotori.japanese.data.model.KanjiEntry
+import app.kotori.japanese.data.repository.KanjiRepository
+import app.kotori.japanese.mvi.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

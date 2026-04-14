@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.games
+package app.kotori.japanese.ui.games
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
@@ -49,9 +49,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.ui.games.mvi.StudyItem
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.ui.games.mvi.StudyItem
 
 private data class ContentTypeOption(val key: String, val label: String, val emoji: String)
 private data class JlptOption(val key: String, val label: String)
@@ -155,13 +155,11 @@ fun GameSetupScreen(
                 .fillMaxSize()
                 .padding(padding),
         ) {
-            // ── Scrollable header (game info + chips) ──────────────────────────
+            // ── Game info card ─────────────────────────────────────────────────
             Column(
-                modifier = Modifier
-                    .padding(16.dp),
+                modifier = Modifier.padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
-                // Game info card
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
@@ -186,14 +184,28 @@ fun GameSetupScreen(
 
                 // ── Kanji game ─────────────────────────────────────────────────
                 if (isKanjiGame) {
-                    SetupSection(title = "JLPT Level") {
-                        LazyRow(contentPadding = PaddingValues(0.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            items(jlptLevels) { level ->
-                                FilterChip(
-                                    selected = kanjiJlpt == level,
-                                    onClick = { kanjiJlpt = level },
-                                    label = { Text(level.label) },
-                                )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.End,
+                    ) {
+                        IconButton(onClick = { showFilterRow = !showFilterRow }) {
+                            Icon(
+                                Icons.Default.FilterList,
+                                contentDescription = "Filters",
+                                tint = if (kanjiJlpt != jlptLevels[0]) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                            )
+                        }
+                    }
+                    AnimatedVisibility(visible = showFilterRow) {
+                        SetupSection(title = "JLPT Level") {
+                            LazyRow(contentPadding = PaddingValues(0.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                items(jlptLevels) { level ->
+                                    FilterChip(
+                                        selected = kanjiJlpt == level,
+                                        onClick = { kanjiJlpt = level },
+                                        label = { Text(level.label) },
+                                    )
+                                }
                             }
                         }
                     }
@@ -219,96 +231,10 @@ fun GameSetupScreen(
                         Text("Start ${meta.name}", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                     }
                 }
-
-                // ── Browse game ────────────────────────────────────────────────
-                if (isBrowseGame) {
-                    // Content type chips
-                    SetupSection(title = "Content Type") {
-                        LazyRow(contentPadding = PaddingValues(0.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            items(contentTypes) { type ->
-                                FilterChip(
-                                    selected = !useSaved && selectedType == type,
-                                    onClick = { useSaved = false; selectedType = type },
-                                    label = { Text("${type.emoji} ${type.label}") },
-                                )
-                            }
-                            if (hasSaved) {
-                                item {
-                                    FilterChip(
-                                        selected = useSaved,
-                                        onClick = { useSaved = true; selectedIds.clear() },
-                                        label = { Text("⭐ Saved") },
-                                    )
-                                }
-                            }
-                        }
-                    }
-
-                    if (!useSaved) {
-                        // JLPT filter
-                        SetupSection(title = "JLPT Level") {
-                            LazyRow(contentPadding = PaddingValues(0.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                items(jlptLevels) { level ->
-                                    FilterChip(
-                                        selected = selectedJlpt == level,
-                                        onClick = { selectedJlpt = level },
-                                        label = { Text(level.label) },
-                                    )
-                                }
-                            }
-                        }
-
-                        // Selection summary + start button
-                        HorizontalDivider()
-                        val selectionLabel = when {
-                            selectedIds.isNotEmpty() -> "${selectedIds.size} selected"
-                            else -> "${allItems.size} ${selectedType.label.lowercase()} available — or pick below"
-                        }
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            Text(
-                                text = selectionLabel,
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
-                                modifier = Modifier.weight(1f),
-                            )
-                            if (selectedIds.isNotEmpty()) {
-                                TextButton(onClick = { selectedIds.clear() }) { Text("Clear") }
-                            }
-                        }
-                        Button(
-                            onClick = {
-                                val setKey = if (selectedIds.isNotEmpty()) {
-                                    "ids:${selectedType.key}:${selectedIds.joinToString(",")}"
-                                } else {
-                                    "browse:${selectedType.key}:${selectedJlpt.key}"
-                                }
-                                onStart(setKey)
-                            },
-                            modifier = Modifier.fillMaxWidth(),
-                            enabled = allItems.isNotEmpty() || selectedIds.isNotEmpty(),
-                        ) {
-                            val label = if (selectedIds.isNotEmpty()) "Start with ${selectedIds.size} items" else "Start with all ${allItems.size}"
-                            Text(label, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                        }
-                    } else {
-                        // Saved mode: just start
-                        HorizontalDivider()
-                        Button(
-                            onClick = { onStart("saved_vocabulary") },
-                            modifier = Modifier.fillMaxWidth(),
-                        ) {
-                            Text("Start ${meta.name}", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                        }
-                    }
-                }
             }
 
-            // ── Item picker list (browse mode, not saved) ──────────────────────
-            if (isBrowseGame && !useSaved) {
+            // ── Browse game section ────────────────────────────────────────────
+            if (isBrowseGame) {
                 HorizontalDivider()
 
                 // Search bar + filter toggle
@@ -328,125 +254,204 @@ fun GameSetupScreen(
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.None),
                     )
-                    if (categories.isNotEmpty()) {
-                        IconButton(onClick = { showFilterRow = !showFilterRow }) {
-                            Icon(
-                                Icons.Default.FilterList,
-                                contentDescription = "Filter by category",
-                                tint = if (categoryFilter.isNotBlank()) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-                            )
-                        }
+                    IconButton(onClick = { showFilterRow = !showFilterRow }) {
+                        Icon(
+                            Icons.Default.FilterList,
+                            contentDescription = "Filters",
+                            tint = if (useSaved || selectedType != contentTypes[0] || selectedJlpt != jlptLevels[0] || categoryFilter.isNotBlank())
+                                MaterialTheme.colorScheme.primary
+                            else
+                                MaterialTheme.colorScheme.onSurface,
+                        )
                     }
                 }
 
-                // Category filter chips
-                AnimatedVisibility(visible = showFilterRow && categories.isNotEmpty()) {
-                    LazyRow(
-                        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
-                        item {
-                            FilterChip(
-                                selected = categoryFilter.isBlank(),
-                                onClick = { categoryFilter = "" },
-                                label = { Text("All") },
-                            )
-                        }
-                        items(categories) { cat ->
-                            FilterChip(
-                                selected = categoryFilter == cat,
-                                onClick = { categoryFilter = if (categoryFilter == cat) "" else cat },
-                                label = { Text(cat) },
-                            )
-                        }
+                // Start button below search bar
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
+                        .padding(bottom = 4.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    if (selectedIds.isNotEmpty()) {
+                        TextButton(onClick = { selectedIds.clear() }) { Text("Clear") }
                     }
-                }
-
-                // Select all / none row
-                if (filteredItems.isNotEmpty()) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 16.dp, vertical = 2.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
-                        val allFilteredSelected = filteredItems.all { it.id in selectedIds }
-                        TextButton(onClick = {
-                            if (allFilteredSelected) {
-                                filteredItems.forEach { selectedIds.remove(it.id) }
-                            } else {
-                                filteredItems.forEach { if (it.id !in selectedIds) selectedIds.add(it.id) }
+                    Button(
+                        onClick = {
+                            val setKey = when {
+                                useSaved -> "saved_vocabulary"
+                                selectedIds.isNotEmpty() -> "ids:${selectedType.key}:${selectedIds.joinToString(",")}"
+                                else -> "browse:${selectedType.key}:${selectedJlpt.key}"
                             }
-                        }) {
-                            Text(if (allFilteredSelected) "Deselect all" else "Select all (${filteredItems.size})")
+                            onStart(setKey)
+                        },
+                        modifier = Modifier.weight(1f),
+                        enabled = useSaved || allItems.isNotEmpty() || selectedIds.isNotEmpty(),
+                    ) {
+                        val label = when {
+                            useSaved -> "Start with Saved"
+                            selectedIds.isNotEmpty() -> "Start with ${selectedIds.size} items"
+                            else -> "Start with all ${allItems.size}"
                         }
+                        Text(label, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                     }
                 }
 
-                if (allItems.isEmpty()) {
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator()
-                    }
-                } else if (filteredItems.isEmpty()) {
-                    Box(
-                        modifier = Modifier.fillMaxSize().padding(32.dp),
-                        contentAlignment = Alignment.Center,
+                // Filter popup: Content Type + JLPT + Category
+                AnimatedVisibility(visible = showFilterRow) {
+                    Column(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
-                        Text("No items match your search.", color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f))
-                    }
-                } else {
-                    LazyColumn(
-                        modifier = Modifier.fillMaxSize(),
-                        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
-                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                    ) {
-                        items(filteredItems, key = { it.id }) { item ->
-                            val isSelected = item.id in selectedIds
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable {
-                                        if (isSelected) selectedIds.remove(item.id) else selectedIds.add(item.id)
-                                    }
-                                    .padding(vertical = 8.dp, horizontal = 4.dp),
-                                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                            ) {
-                                Icon(
-                                    imageVector = if (isSelected) Icons.Default.CheckBox else Icons.Default.CheckBoxOutlineBlank,
-                                    contentDescription = null,
-                                    tint = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
-                                )
-                                Column(modifier = Modifier.weight(1f)) {
-                                    Text(
-                                        text = item.question,
-                                        style = MaterialTheme.typography.bodyLarge,
-                                        fontWeight = FontWeight.Medium,
+                        SetupSection(title = "Content Type") {
+                            LazyRow(contentPadding = PaddingValues(0.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                items(contentTypes) { type ->
+                                    FilterChip(
+                                        selected = !useSaved && selectedType == type,
+                                        onClick = { useSaved = false; selectedType = type },
+                                        label = { Text("${type.emoji} ${type.label}") },
                                     )
-                                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                        if (item.reading.isNotBlank() && item.reading != item.question) {
-                                            Text(
-                                                text = item.reading,
-                                                style = MaterialTheme.typography.bodySmall,
-                                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                            )
-                                        }
-                                        Text(
-                                            text = item.answer,
-                                            style = MaterialTheme.typography.bodySmall,
-                                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+                                }
+                                if (hasSaved) {
+                                    item {
+                                        FilterChip(
+                                            selected = useSaved,
+                                            onClick = { useSaved = true; selectedIds.clear() },
+                                            label = { Text("⭐ Saved") },
                                         )
                                     }
                                 }
-                                if (item.jlptLevel.isNotBlank()) {
-                                    Text(
-                                        text = item.jlptLevel,
-                                        style = MaterialTheme.typography.labelSmall,
-                                        color = MaterialTheme.colorScheme.primary,
-                                    )
+                            }
+                        }
+                        if (!useSaved) {
+                            SetupSection(title = "JLPT Level") {
+                                LazyRow(contentPadding = PaddingValues(0.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    items(jlptLevels) { level ->
+                                        FilterChip(
+                                            selected = selectedJlpt == level,
+                                            onClick = { selectedJlpt = level },
+                                            label = { Text(level.label) },
+                                        )
+                                    }
                                 }
                             }
-                            HorizontalDivider(thickness = 0.5.dp, color = MaterialTheme.colorScheme.outlineVariant)
+                        }
+                        if (!useSaved && categories.isNotEmpty()) {
+                            SetupSection(title = "Category") {
+                                LazyRow(
+                                    contentPadding = PaddingValues(0.dp),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                ) {
+                                    item {
+                                        FilterChip(
+                                            selected = categoryFilter.isBlank(),
+                                            onClick = { categoryFilter = "" },
+                                            label = { Text("All") },
+                                        )
+                                    }
+                                    items(categories) { cat ->
+                                        FilterChip(
+                                            selected = categoryFilter == cat,
+                                            onClick = { categoryFilter = if (categoryFilter == cat) "" else cat },
+                                            label = { Text(cat) },
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // ── Item picker list (not shown in saved mode) ─────────────────
+                if (!useSaved) {
+                    // Select all / none row
+                    if (filteredItems.isNotEmpty()) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp, vertical = 2.dp),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        ) {
+                            val allFilteredSelected = filteredItems.all { it.id in selectedIds }
+                            TextButton(onClick = {
+                                if (allFilteredSelected) {
+                                    filteredItems.forEach { selectedIds.remove(it.id) }
+                                } else {
+                                    filteredItems.forEach { if (it.id !in selectedIds) selectedIds.add(it.id) }
+                                }
+                            }) {
+                                Text(if (allFilteredSelected) "Deselect all" else "Select all (${filteredItems.size})")
+                            }
+                        }
+                    }
+
+                    if (allItems.isEmpty()) {
+                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                            CircularProgressIndicator()
+                        }
+                    } else if (filteredItems.isEmpty()) {
+                        Box(
+                            modifier = Modifier.fillMaxSize().padding(32.dp),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text("No items match your search.", color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f))
+                        }
+                    } else {
+                        LazyColumn(
+                            modifier = Modifier.fillMaxSize(),
+                            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
+                            verticalArrangement = Arrangement.spacedBy(4.dp),
+                        ) {
+                            items(filteredItems, key = { it.id }) { item ->
+                                val isSelected = item.id in selectedIds
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable {
+                                            if (isSelected) selectedIds.remove(item.id) else selectedIds.add(item.id)
+                                        }
+                                        .padding(vertical = 8.dp, horizontal = 4.dp),
+                                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                ) {
+                                    Icon(
+                                        imageVector = if (isSelected) Icons.Default.CheckBox else Icons.Default.CheckBoxOutlineBlank,
+                                        contentDescription = null,
+                                        tint = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                                    )
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Text(
+                                            text = item.question,
+                                            style = MaterialTheme.typography.bodyLarge,
+                                            fontWeight = FontWeight.Medium,
+                                        )
+                                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                            if (item.reading.isNotBlank() && item.reading != item.question) {
+                                                Text(
+                                                    text = item.reading,
+                                                    style = MaterialTheme.typography.bodySmall,
+                                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                                )
+                                            }
+                                            Text(
+                                                text = item.answer,
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+                                            )
+                                        }
+                                    }
+                                    if (item.jlptLevel.isNotBlank()) {
+                                        Text(
+                                            text = item.jlptLevel,
+                                            style = MaterialTheme.typography.labelSmall,
+                                            color = MaterialTheme.colorScheme.primary,
+                                        )
+                                    }
+                                }
+                                HorizontalDivider(thickness = 0.5.dp, color = MaterialTheme.colorScheme.outlineVariant)
+                            }
                         }
                     }
                 }
@@ -474,7 +479,7 @@ private fun SetupSection(
 // ── Data loader ───────────────────────────────────────────────────────────────
 
 private suspend fun loadItemsForType(
-    container: com.example.personalproject.AppContainer,
+    container: app.kotori.japanese.AppContainer,
     type: String,
     jlpt: String,
 ): List<StudyItem> {

@@ -1,4 +1,4 @@
-package com.example.personalproject.ui.home
+package app.kotori.japanese.ui.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -44,10 +44,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.NounEntry
-import com.example.personalproject.ui.components.ScreenHelpDialog
-import java.util.Calendar
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.NounEntry
+import app.kotori.japanese.ui.components.ScreenHelpDialog
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.todayIn
 
 @Composable
 fun HomeScreen(
@@ -71,8 +73,8 @@ fun HomeScreen(
     val wordOfDay by produceState<NounEntry?>(initialValue = null) {
         val all = container.nounRepository.getAllNouns()
         if (all.isNotEmpty()) {
-            val dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) +
-                Calendar.getInstance().get(Calendar.YEAR) * 366
+            val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
+            val dayOfYear = today.dayOfYear + today.year * 366
             value = all[dayOfYear % all.size]
         }
     }

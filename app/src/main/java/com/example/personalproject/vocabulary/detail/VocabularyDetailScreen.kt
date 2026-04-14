@@ -1,4 +1,4 @@
-package com.example.personalproject.vocabulary.detail
+package app.kotori.japanese.vocabulary.detail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -46,11 +46,11 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.personalproject.LocalAppContainer
-import com.example.personalproject.data.model.VocabularyWord
-import com.example.personalproject.ui.components.JlptBadge
-import com.example.personalproject.ui.components.KotobaTopBar
-import com.example.personalproject.vocabulary.detail.mvi.VocabularyDetailViewModel
+import app.kotori.japanese.LocalAppContainer
+import app.kotori.japanese.data.model.VocabularyWord
+import app.kotori.japanese.ui.components.JlptBadge
+import app.kotori.japanese.ui.components.KotobaTopBar
+import app.kotori.japanese.vocabulary.detail.mvi.VocabularyDetailViewModel
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

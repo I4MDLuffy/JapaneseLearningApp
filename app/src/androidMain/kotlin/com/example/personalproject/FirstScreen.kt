@@ -1,12 +1,12 @@
-package com.example.personalproject
+package app.kotori.japanese
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import com.example.personalproject.ui.screen.HomeScreen
-import com.example.personalproject.ui.theme.PersonalProjectTheme
-import com.example.personalproject.viewmodel.HomeViewModel
+import app.kotori.japanese.ui.screen.HomeScreen
+import app.kotori.japanese.ui.theme.PersonalProjectTheme
+import app.kotori.japanese.viewmodel.HomeViewModel
 
 class FirstScreen : ComponentActivity() {
 

@@ -1,10 +1,10 @@
-package com.example.personalproject.data.repository
+package app.kotori.japanese.data.repository
 
-import com.example.personalproject.data.db.KotobaDatabase
-import com.example.personalproject.data.db.SavedDao
-import com.example.personalproject.data.db.SavedItemEntity
-import com.example.personalproject.data.db.SavedSetEntity
-import com.example.personalproject.data.db.SavedSetItemEntity
+import app.kotori.japanese.data.db.KotobaDatabase
+import app.kotori.japanese.data.db.SavedDao
+import app.kotori.japanese.data.db.SavedItemEntity
+import app.kotori.japanese.data.db.SavedSetEntity
+import app.kotori.japanese.data.db.SavedSetItemEntity
 import kotlinx.coroutines.flow.Flow
 
 class SavedRepository(private val dao: SavedDao) {
